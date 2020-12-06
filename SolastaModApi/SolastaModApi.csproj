@@ -81,6 +81,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuilderHelpers\ClassBuilder.cs" />
+    <Compile Include="BuilderHelpers\EquipmentOptionsBuilder.cs" />
+    <Compile Include="BuilderHelpers\FeatureBuilder.cs" />
+    <Compile Include="BuilderHelpers\GuiPresentationBuilder.cs" />
     <Compile Include="DatabaseHelper\DatabaseHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,5 +94,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

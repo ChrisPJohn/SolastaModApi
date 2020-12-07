@@ -17,6 +17,7 @@ namespace SolastaModApi
             }
             Traverse.Create(proficiency).Field("name").SetValue(name);
             Traverse.Create(proficiency).Field("guiPresentation").SetValue(guiPresentation);
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(proficiency);
             return proficiency;
         }
 
@@ -32,6 +33,7 @@ namespace SolastaModApi
             }
             Traverse.Create(pointPool).Field("name").SetValue(name);
             Traverse.Create(pointPool).Field("guiPresentation").SetValue(guiPresentation);
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(pointPool);
             return pointPool;
         }
     }

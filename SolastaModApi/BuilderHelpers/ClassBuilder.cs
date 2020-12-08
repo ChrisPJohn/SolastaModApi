@@ -15,6 +15,7 @@ namespace SolastaModApi
         public ClassBuilder()
         {
             MyClass = ScriptableObject.CreateInstance<CharacterClassDefinition>();
+            Traverse.Create(MyClass).Field("guid").SetValue(System.Guid.NewGuid().ToString());
         }
 
         public void SetHitDice(RuleDefinitions.DieType die)
@@ -40,7 +41,7 @@ namespace SolastaModApi
             MyClass.PersonalityFlagOccurences.Add(personality);
         }
 
-        public void AddToolPreference(ToolTypeDefinition toolType )
+        public void AddToolPreference(ToolTypeDefinition toolType)
         {
             MyClass.ToolAutolearnPreference.Add(toolType.Name);
         }
@@ -88,9 +89,11 @@ namespace SolastaModApi
         public void SetName(string name)
         {
             Traverse.Create(MyClass).Field("name").SetValue(name);
+            MyClass.name = name;
         }
 
-        public void SetGuiPresentation(GuiPresentation gui) {
+        public void SetGuiPresentation(GuiPresentation gui)
+        {
             Traverse.Create(MyClass).Field("guiPresentation").SetValue(gui);
         }
 
@@ -98,7 +101,7 @@ namespace SolastaModApi
         {
             HeroEquipmentRow equipmentRow = new HeroEquipmentRow();
             HeroEquipmentColumn equipmentColumn = new HeroEquipmentColumn();
-            foreach(HeroEquipmentOption option in equipmentList)
+            foreach (HeroEquipmentOption option in equipmentList)
             {
                 equipmentColumn.EquipmentOptions.Add(option);
             }

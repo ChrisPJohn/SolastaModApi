@@ -55,6 +55,10 @@
       <HintPath>..\..\..\SteamLibrary\steamapps\common\Slasta_COTM\Solasta_Data\Managed\UnityModManager\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="I2">
+      <HintPath>..\..\..\SteamLibrary\steamapps\common\Slasta_COTM\Solasta_Data\Managed\I2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -88,11 +92,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuilderHelpers\CastSpellBuilder.cs" />
+    <Compile Include="BuilderHelpers\LocalizationHelper.cs" />
     <Compile Include="BuilderHelpers\RaceBuilder.cs" />
     <Compile Include="BuilderHelpers\ClassBuilder.cs" />
     <Compile Include="BuilderHelpers\EquipmentOptionsBuilder.cs" />
     <Compile Include="BuilderHelpers\FeatureBuilder.cs" />
     <Compile Include="BuilderHelpers\GuiPresentationBuilder.cs" />
+    <Compile Include="BuilderHelpers\SubClassBuilder.cs" />
     <Compile Include="DatabaseHelper\DatabaseHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

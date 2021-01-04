@@ -519,7 +519,7 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionWaterWalk => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionWaterWalk", "26dc0b61f3c6b43479a56e2a26aef61b");
             public static ConditionDefinition ConditionWounded => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionWounded", "225bbd42032759a4bad9eba1672cda9b");
         }
-        public static class FeatureDefinitions
+        public static class FeatureDefinitionAbilityCheckAffinitys
         {
             public static FeatureDefinitionAbilityCheckAffinity AbilityCheckAffinityBeltOfDwarvenkind => (FeatureDefinitionAbilityCheckAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AbilityCheckAffinityBeltOfDwarvenkind", "54af4a8560ae55444a52f5aea3370b48");
             public static FeatureDefinitionAbilityCheckAffinity AbilityCheckAffinityBestowCurseCharisma => (FeatureDefinitionAbilityCheckAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AbilityCheckAffinityBestowCurseCharisma", "cd55413339a0f5242aeafe8eaed6193c");
@@ -567,6 +567,9 @@ namespace SolastaModApi
             public static FeatureDefinitionAbilityCheckAffinity AbilityCheckAffinityStaffOfMetisIntelligence => (FeatureDefinitionAbilityCheckAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AbilityCheckAffinityStaffOfMetisIntelligence", "fbaa36c8db3613f4cad8c280ae8e1843");
             public static FeatureDefinitionAbilityCheckAffinity AbilityCheckAffinityStealthDisadvantage => (FeatureDefinitionAbilityCheckAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AbilityCheckAffinityStealthDisadvantage", "9c11dd5a3648c3e428c06d67996180a5");
             public static FeatureDefinitionAbilityCheckAffinity AbilityCheckAffinityStoneOfGoodLuck => (FeatureDefinitionAbilityCheckAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AbilityCheckAffinityStoneOfGoodLuck", "3fa8faccec103944f8915ab3269c807d");
+        }
+        public static class FeatureDefinitionActionAffinitys
+        {
             public static FeatureDefinitionActionAffinity ActionAffinityAggressive => (FeatureDefinitionActionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ActionAffinityAggressive", "364b543e89b7bee48b634463edba3bb7");
             public static FeatureDefinitionActionAffinity ActionAffinityClericRitualCasting => (FeatureDefinitionActionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ActionAffinityClericRitualCasting", "f8bde06e6cd906041a25d1f4b4f245a1");
             public static FeatureDefinitionActionAffinity ActionAffinityConditionCursedByBestowCurseOnActionTurn => (FeatureDefinitionActionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ActionAffinityConditionCursedByBestowCurseOnActionTurn", "eb03661c12791144a882f1dbfb0c6864");
@@ -593,12 +596,18 @@ namespace SolastaModApi
             public static FeatureDefinitionActionAffinity ActionAffinityThiefFastHands => (FeatureDefinitionActionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ActionAffinityThiefFastHands", "ef18115a49a7aa04f847b06f11cf5da4");
             public static FeatureDefinitionActionAffinity ActionAffinityUncannyDodge => (FeatureDefinitionActionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ActionAffinityUncannyDodge", "140a220d8a81e0c49880c50863ef88aa");
             public static FeatureDefinitionActionAffinity ActionAffinityWizardRitualCasting => (FeatureDefinitionActionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ActionAffinityWizardRitualCasting", "ab85ac35847f3fc4899712329db32377");
+        }
+        public static class FeatureDefinitionAdditionalActions
+        {
             public static FeatureDefinitionAdditionalAction AdditionalActionCunning => (FeatureDefinitionAdditionalAction)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalActionCunning", "81a67c89b1348f04faf09c5fc24dd345");
             public static FeatureDefinitionAdditionalAction AdditionalActionCunningFastHands => (FeatureDefinitionAdditionalAction)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalActionCunningFastHands", "939fa1352a21c564682aa23c2d034c09");
             public static FeatureDefinitionAdditionalAction AdditionalActionExpeditiousRetreat => (FeatureDefinitionAdditionalAction)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalActionExpeditiousRetreat", "b7736e50902205a4f8ee61cd77dd7db4");
             public static FeatureDefinitionAdditionalAction AdditionalActionHasted => (FeatureDefinitionAdditionalAction)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalActionHasted", "7de0bb174ce429a458b357b5838edadb");
             public static FeatureDefinitionAdditionalAction AdditionalActionHunterHordeBreaker => (FeatureDefinitionAdditionalAction)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalActionHunterHordeBreaker", "d8dd24bc7c35a1641bd6d90cc4088be5");
             public static FeatureDefinitionAdditionalAction AdditionalActionSurgedMain => (FeatureDefinitionAdditionalAction)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalActionSurgedMain", "13b583b9acea2c74ebf7f540c8f5d43d");
+        }
+        public static class FeatureDefinitionAdditionalDamages
+        {
             public static FeatureDefinitionAdditionalDamage AdditionalDamage_GoblinCutthroat_Finisher => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamage_GoblinCutthroat_Finisher", "dd156f8d6b7f6cd42aa8a6b0b1bf85ae");
             public static FeatureDefinitionAdditionalDamage AdditionalDamage_GoblinCutthroat_Predator => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamage_GoblinCutthroat_Predator", "27c61375cbb2cc14a9f5bb8930c937f4");
             public static FeatureDefinitionAdditionalDamage AdditionalDamage_Sorr_Akkath_Assassin_SneakAttack => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamage_Sorr-Akkath_Assassin_SneakAttack", "3139786d8be93824bb8b93dfdf34d177");
@@ -631,7 +640,6 @@ namespace SolastaModApi
             public static FeatureDefinitionAdditionalDamage AdditionalDamageRangerFavoredEnemyAberration => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyAberration", "b530d1b42a948204997d810a963e2490");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageRangerFavoredEnemyBeast => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyBeast", "89dd93a7d53fb934a8bfa9a3d71045de");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageRangerFavoredEnemyCelestial => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyCelestial", "edcb0cf4d49d3634687ec11a4c745180");
-            public static FeatureDefinitionFeatureSet AdditionalDamageRangerFavoredEnemyChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyChoice", "2a798d74282db5d4bb4247c6ffe14b63");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageRangerFavoredEnemyConstruct => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyConstruct", "4421e4271811cde439d9903c08d35db1");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageRangerFavoredEnemyDragon => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyDragon", "e0fdd73bfdbd8d9478a7dbe75ea3a6e8");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageRangerFavoredEnemyElemental => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyElemental", "9f36ca7f1b0b26c4d806fbdb759cfb42");
@@ -647,6 +655,36 @@ namespace SolastaModApi
             public static FeatureDefinitionAdditionalDamage AdditionalDamageShadowTamerDarkSlayerDmgHyperSensitive => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageShadowTamerDarkSlayerDmgHyperSensitive", "82219a195191f8d4c9c8cc925c76250d");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageShadowTamerDarkSlayerDmgLightSensitive => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageShadowTamerDarkSlayerDmgLightSensitive", "f266b5bc60d02c64b842704bbec09caf");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageTraditionShockArcanistArcaneFury => (FeatureDefinitionAdditionalDamage)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageTraditionShockArcanistArcaneFury", "6d905b89b6eacd84992513ff6f418266");
+        }
+        public static class FeatureDefinitionFeatureSets
+        {
+            public static FeatureDefinitionFeatureSet AdditionalDamageRangerFavoredEnemyChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AdditionalDamageRangerFavoredEnemyChoice", "2a798d74282db5d4bb4247c6ffe14b63");
+            public static FeatureDefinitionFeatureSet FeatureSetAbilityScoreChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetAbilityScoreChoice", "0f791ae5a6ffdc742be023184a115e1d");
+            public static FeatureDefinitionFeatureSet FeatureSetAllLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetAllLanguages", "ea2afb0e3cb5c9642b624d7bd4a436c9");
+            public static FeatureDefinitionFeatureSet FeatureSetAllLanguagesButCode => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetAllLanguagesButCode", "5de26378a8298b04e86f2b017358f9ed");
+            public static FeatureDefinitionFeatureSet FeatureSetClericRitualCasting => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetClericRitualCasting", "b5f687fa97a0be94a95197f0929ee304");
+            public static FeatureDefinitionFeatureSet FeatureSetDomainLawCommandingPresence => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetDomainLawCommandingPresence", "b3e77cd19c947d64e980c0adff724b2d");
+            public static FeatureDefinitionFeatureSet FeatureSetDomainLawUnyieldingEnforcer => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetDomainLawUnyieldingEnforcer", "877d7444fad748343be83f208ea292bb");
+            public static FeatureDefinitionFeatureSet FeatureSetElfFeyAncestry => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetElfFeyAncestry", "c123d2bc2667e7641a5b5bc9fdd94512");
+            public static FeatureDefinitionFeatureSet FeatureSetElfHighLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetElfHighLanguages", "752c07b8faab19c43af3b28543d9f15d");
+            public static FeatureDefinitionFeatureSet FeatureSetElfSylvanLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetElfSylvanLanguages", "01dc3c08b4f35e647a5593d87623f040");
+            public static FeatureDefinitionFeatureSet FeatureSetGreenmageWardenOfTheForest => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetGreenmageWardenOfTheForest", "35a05f7d212f7c24cb9dc108b3e2a9e0");
+            public static FeatureDefinitionFeatureSet FeatureSetHalfElfAbilityScoreIncrease => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalfElfAbilityScoreIncrease", "38424c7fca90b024cb6fb8355d62b61d");
+            public static FeatureDefinitionFeatureSet FeatureSetHalfElfLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalfElfLanguages", "3219c863ddf6e214dafa891d17e97375");
+            public static FeatureDefinitionFeatureSet FeatureSetHalflingIslandLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalflingIslandLanguages", "619ddc92dc3043142be08e25640a2396");
+            public static FeatureDefinitionFeatureSet FeatureSetHalflingMarshLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalflingMarshLanguages", "5c6b5b13bc2694647b4f31784481f089");
+            public static FeatureDefinitionFeatureSet FeatureSetHumanAbilityScoreChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHumanAbilityScoreChoice", "cf917e96ff1449641a5fc53d18ede7b8");
+            public static FeatureDefinitionFeatureSet FeatureSetHumanAbilityScoreIncreaseAdvanced => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHumanAbilityScoreIncreaseAdvanced", "f7e9682734a0c9547963a3aa9ccb15c2");
+            public static FeatureDefinitionFeatureSet FeatureSetHumanLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHumanLanguages", "6e66fbb7e912e664db535ce59f1f12be");
+            public static FeatureDefinitionFeatureSet FeatureSetHunterHuntersPrey => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHunterHuntersPrey", "3ea5b9dedb33e7f44939a9e8692cecb4");
+            public static FeatureDefinitionFeatureSet FeatureSetLoremasterKeenMind => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetLoremasterKeenMind", "53667750483570c44ac42764a06616f8");
+            public static FeatureDefinitionFeatureSet FeatureSetShadowTamerDarkSlayer => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetShadowTamerDarkSlayer", "c1c96f0fa8eab884bbcdecc603d8f573");
+            public static FeatureDefinitionFeatureSet FeatureSetUndeadFeatures => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetUndeadFeatures", "8592d3b6e3b8c674e9076802bd971e08");
+            public static FeatureDefinitionFeatureSet FeatureSetWizardRitualCasting => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetWizardRitualCasting", "bab38716f7cc9824bb498156b661422f");
+            public static FeatureDefinitionFeatureSet TerrainTypeAffinityRangerNaturalExplorerChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("TerrainTypeAffinityRangerNaturalExplorerChoice", "221976147ed339d489923450eb6c21ad");
+        }
+        public static class FeatureDefinitionAttackModifiers
+        {
             public static FeatureDefinitionAttackModifier AttackModifier_ChildOfDarkness_Darkness => (FeatureDefinitionAttackModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttackModifier_ChildOfDarkness_Darkness", "0806e328f8d073e4886b6b20494436e9");
             public static FeatureDefinitionAttackModifier AttackModifier_ChildOfDarkness_DimLight => (FeatureDefinitionAttackModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttackModifier_ChildOfDarkness_DimLight", "b05099f93a9a4b643a42ed859937b474");
             public static FeatureDefinitionAttackModifier AttackModifierFightingStyleArchery => (FeatureDefinitionAttackModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttackModifierFightingStyleArchery", "04969ccd466cdac489c0b80365bbaf86");
@@ -663,6 +701,9 @@ namespace SolastaModApi
             public static FeatureDefinitionAttackModifier AttackModifierWeaponPlus1AT => (FeatureDefinitionAttackModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttackModifierWeapon+1AT", "af316240961a7b345b635c27f16010b6");
             public static FeatureDefinitionAttackModifier AttackModifierWeaponPlus2 => (FeatureDefinitionAttackModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttackModifierWeapon+2", "55d0f93f185d1cc49a5b01ab65f42c52");
             public static FeatureDefinitionAttackModifier AttackModifierWeaponPlus3 => (FeatureDefinitionAttackModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttackModifierWeapon+3", "e6770bc63f57e204aa0728fa523640bf");
+        }
+        public static class FeatureDefinitionAttributeModifiers
+        {
             public static FeatureDefinitionAttributeModifier AttributeModifierAided => (FeatureDefinitionAttributeModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttributeModifierAided", "6db8344c65074d54c80638eb53e580c1");
             public static FeatureDefinitionAttributeModifier AttributeModifierAmuletOfHealth => (FeatureDefinitionAttributeModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttributeModifierAmuletOfHealth", "4f42fd0db5e1ee346acd6b9a90a1e364");
             public static FeatureDefinitionAttributeModifier AttributeModifierArmorPlus1 => (FeatureDefinitionAttributeModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttributeModifierArmor+1", "1befa75fb0cf6d644bfefb3b9e489e96");
@@ -729,6 +770,9 @@ namespace SolastaModApi
             public static FeatureDefinitionAttributeModifier AttributeModifierShielded => (FeatureDefinitionAttributeModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttributeModifierShielded", "e2bdfbaee1dd9a745afee348167a143c");
             public static FeatureDefinitionAttributeModifier AttributeModifierShieldedByFaith => (FeatureDefinitionAttributeModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttributeModifierShieldedByFaith", "5a6adf8b35530e6438952758ee7b9d3d");
             public static FeatureDefinitionAttributeModifier AttributeModifierWardedByWardingBond => (FeatureDefinitionAttributeModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AttributeModifierWardedByWardingBond", "0ffb45cef176d494ab33d58afb5e0d40");
+        }
+        public static class FeatureDefinitionAutoPreparedSpellss
+        {
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsDomainBattle => (FeatureDefinitionAutoPreparedSpells)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AutoPreparedSpellsDomainBattle", "7669d11841031e942af67f35475a09ed");
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsDomainElemental => (FeatureDefinitionAutoPreparedSpells)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AutoPreparedSpellsDomainElemental", "ca56c9b9c8913784991e465e7697d664");
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsDomainInsight => (FeatureDefinitionAutoPreparedSpells)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AutoPreparedSpellsDomainInsight", "82e4fdea01ccbfa46ac56cf2b7a6bdfc");
@@ -740,15 +784,24 @@ namespace SolastaModApi
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsOathOfDevotion => (FeatureDefinitionAutoPreparedSpells)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AutoPreparedSpellsOathOfDevotion", "373823dbc1c894149871f2efb16a827d");
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsOathOfMotherland => (FeatureDefinitionAutoPreparedSpells)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AutoPreparedSpellsOathOfMotherland", "a1be693f932dc9b44ac28509b715885d");
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsOathOfTirmar => (FeatureDefinitionAutoPreparedSpells)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("AutoPreparedSpellsOathOfTirmar", "87bf1aa4f87720b4e9c80525d148fb05");
+        }
+        public static class FeatureDefinitionBonusCantripss
+        {
             public static FeatureDefinitionBonusCantrips BonusCantripsDomainElementaCold => (FeatureDefinitionBonusCantrips)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("BonusCantripsDomainElementaCold", "c2c0af9e41828fd4fae84000787aa451");
             public static FeatureDefinitionBonusCantrips BonusCantripsDomainElementaFire => (FeatureDefinitionBonusCantrips)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("BonusCantripsDomainElementaFire", "4820a4af5166c4a41b5426a418d9b320");
             public static FeatureDefinitionBonusCantrips BonusCantripsDomainElementaLightning => (FeatureDefinitionBonusCantrips)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("BonusCantripsDomainElementaLightning", "579caec52e7e5af4d9c80e8459a0c286");
             public static FeatureDefinitionBonusCantrips BonusCantripsDomainOblivion => (FeatureDefinitionBonusCantrips)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("BonusCantripsDomainOblivion", "fc1c3d6a25c595345b526755aa21d799");
             public static FeatureDefinitionBonusCantrips BonusCantripsDomainSun => (FeatureDefinitionBonusCantrips)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("BonusCantripsDomainSun", "06126cf078446534e9bec57df2e2a522");
+        }
+        public static class FeatureDefinitionCampAffinitys
+        {
             public static FeatureDefinitionCampAffinity CampAffinityDomainOblivionPeacefulRest => (FeatureDefinitionCampAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CampAffinityDomainOblivionPeacefulRest", "82674c4f25c7fdb4a901085c44341f0a");
             public static FeatureDefinitionCampAffinity CampAffinityElfTrance => (FeatureDefinitionCampAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CampAffinityElfTrance", "02e0f7bc4afeb2b43ab60ec0a048f5ae");
             public static FeatureDefinitionCampAffinity CampAffinityFeatAcuteSenses => (FeatureDefinitionCampAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CampAffinityFeatAcuteSenses", "5365e560c803cd846998c8a781d0e9ef");
             public static FeatureDefinitionCampAffinity CampAffinityFeatFocusedSleeper => (FeatureDefinitionCampAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CampAffinityFeatFocusedSleeper", "700dbddba37dbe64e820acd53ce9d77f");
+        }
+        public static class FeatureDefinitionCastSpells
+        {
             public static FeatureDefinitionCastSpell CastSpellAcolyte => (FeatureDefinitionCastSpell)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CastSpellAcolyte", "8d639295a14366e42ae33c10209e0820");
             public static FeatureDefinitionCastSpell CastSpellBerylStonebeard => (FeatureDefinitionCastSpell)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CastSpellBerylStonebeard", "0c49538160b4b934ea25560bd6fdf568");
             public static FeatureDefinitionCastSpell CastSpellCleric => (FeatureDefinitionCastSpell)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CastSpellCleric", "94ac6d781469a6e49beff9d70c0d85f5");
@@ -776,7 +829,13 @@ namespace SolastaModApi
             public static FeatureDefinitionCastSpell CastSpellSkeletonSorcerer => (FeatureDefinitionCastSpell)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CastSpellSkeletonSorcerer", "24c248bcdcaca9b489e5eba46c9988ab");
             public static FeatureDefinitionCastSpell CastSpellSorr_Akkath_Acolyte_of_Sorr_Tarr => (FeatureDefinitionCastSpell)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CastSpellSorr-Akkath_Acolyte_of_Sorr-Tarr", "8131707d1a7e0ac40ab9b3503eeb04ef");
             public static FeatureDefinitionCastSpell CastSpellWizard => (FeatureDefinitionCastSpell)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CastSpellWizard", "399373f8f5f9ede498cb06ca39268290");
+        }
+        public static class FeatureDefinitionCharacterPresentations
+        {
             public static FeatureDefinitionCharacterPresentation CharacterPresentationBeltOfDwarvenKind => (FeatureDefinitionCharacterPresentation)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CharacterPresentationBeltOfDwarvenKind", "2734b7b79447d1f4f882fcf8f629172b");
+        }
+        public static class FeatureDefinitionCombatAffinitys
+        {
             public static FeatureDefinitionCombatAffinity CombatAffinityBackfromTheDead1 => (FeatureDefinitionCombatAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CombatAffinityBackfromTheDead1", "537d90c3431b63a4b94ac6fb9b19a66f");
             public static FeatureDefinitionCombatAffinity CombatAffinityBackfromTheDead2 => (FeatureDefinitionCombatAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CombatAffinityBackfromTheDead2", "7e5ab2f782623a14d936bca8ac2e3aa2");
             public static FeatureDefinitionCombatAffinity CombatAffinityBackfromTheDead3 => (FeatureDefinitionCombatAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CombatAffinityBackfromTheDead3", "d16b5416e14d07244b4457ad5420a77d");
@@ -820,6 +879,9 @@ namespace SolastaModApi
             public static FeatureDefinitionCombatAffinity CombatAffinityTargetedByGuidingBolt => (FeatureDefinitionCombatAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CombatAffinityTargetedByGuidingBolt", "40389bee32d2bd24f80b81c8666214ab");
             public static FeatureDefinitionCombatAffinity CombatAffinityTrueStrike => (FeatureDefinitionCombatAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CombatAffinityTrueStrike", "fbe1bf0aba1a9d54abeb4422b2480d90");
             public static FeatureDefinitionCombatAffinity CombatAffinityUnconscious => (FeatureDefinitionCombatAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CombatAffinityUnconscious", "284d132385d43fa44a7ac5641b148a5a");
+        }
+        public static class FeatureDefinitionConditionAffinitys
+        {
             public static FeatureDefinitionConditionAffinity ConditionAffinityBlindnessImmunity => (FeatureDefinitionConditionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ConditionAffinityBlindnessImmunity", "0d2434c320408d74e9c8fa43ec0716b7");
             public static FeatureDefinitionConditionAffinity ConditionAffinityCharmImmunity => (FeatureDefinitionConditionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ConditionAffinityCharmImmunity", "a631ef6239aa7764db463cf3f29d65fb");
             public static FeatureDefinitionConditionAffinity ConditionAffinityCloakOfArachnida => (FeatureDefinitionConditionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ConditionAffinityCloakOfArachnida", "67f8255433ddff24fa0ea270dedfe1b8");
@@ -840,10 +902,19 @@ namespace SolastaModApi
             public static FeatureDefinitionConditionAffinity ConditionAffinityProtectedFromEvilFrightenedImmunity => (FeatureDefinitionConditionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ConditionAffinityProtectedFromEvilFrightenedImmunity", "155b352dde8e8b540acf96463dda490a");
             public static FeatureDefinitionConditionAffinity ConditionAffinityProtectedFromEvilPossessedImmunity => (FeatureDefinitionConditionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ConditionAffinityProtectedFromEvilPossessedImmunity", "48b1d13b62aa1db4db7813dc142309aa");
             public static FeatureDefinitionConditionAffinity ConditionAffinityRestrainedmmunity => (FeatureDefinitionConditionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ConditionAffinityRestrainedmmunity", "76af0d7e11d8bf6488233fd523d0616b");
+        }
+        public static class FeatureDefinitionCraftingAffinitys
+        {
             public static FeatureDefinitionCraftingAffinity CraftingAffinityFeatMasterAlchemist => (FeatureDefinitionCraftingAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CraftingAffinityFeatMasterAlchemist", "cf54d8ef8f1436948884038c6480f789");
             public static FeatureDefinitionCraftingAffinity CraftingAffinityFeatMasterEnchanter => (FeatureDefinitionCraftingAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CraftingAffinityFeatMasterEnchanter", "d45e878763c9c7f4a8d4c8158ec8d47c");
             public static FeatureDefinitionCraftingAffinity CraftingAffinityLoremasterKeenMindCrafting => (FeatureDefinitionCraftingAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CraftingAffinityLoremasterKeenMindCrafting", "f984cf1b01aaa78438c7e3bcfcbca32f");
+        }
+        public static class FeatureDefinitionCriticalCharacters
+        {
             public static FeatureDefinitionCriticalCharacter CriticalCharacter => (FeatureDefinitionCriticalCharacter)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("CriticalCharacter", "b5470fd4040cbd94c9cb4203c06a03ea");
+        }
+        public static class FeatureDefinitionDamageAffinitys
+        {
             public static FeatureDefinitionDamageAffinity DamageAffinityAcidResistance => (FeatureDefinitionDamageAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DamageAffinityAcidResistance", "10a85b220b55a28479e26b695ba7392d");
             public static FeatureDefinitionDamageAffinity DamageAffinityBludgeoningResistance => (FeatureDefinitionDamageAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DamageAffinityBludgeoningResistance", "956f9745b15c6904d87322861723d5c7");
             public static FeatureDefinitionDamageAffinity DamageAffinityBludgeoningResistanceByWardingBond => (FeatureDefinitionDamageAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DamageAffinityBludgeoningResistanceByWardingBond", "3bde93028530c5249a6a07704b288917");
@@ -896,9 +967,15 @@ namespace SolastaModApi
             public static FeatureDefinitionDamageAffinity DamageAffinityWerewolf_BludgeoningImmunity => (FeatureDefinitionDamageAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DamageAffinityWerewolf_BludgeoningImmunity", "e98060886b8773640ac96c045d340ca5");
             public static FeatureDefinitionDamageAffinity DamageAffinityWerewolf_PiercingImmunity => (FeatureDefinitionDamageAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DamageAffinityWerewolf_PiercingImmunity", "3b03b8436c544a24b9cf7b1d4009642c");
             public static FeatureDefinitionDamageAffinity DamageAffinityWerewolf_SlashingImmunity => (FeatureDefinitionDamageAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DamageAffinityWerewolf_SlashingImmunity", "cddf58860c4906e448a2c6c59dd4503d");
+        }
+        public static class FeatureDefinitionDeathSavingThrowAffinitys
+        {
             public static FeatureDefinitionDeathSavingThrowAffinity DeathSavingThrowAffinityBeaconOfHope => (FeatureDefinitionDeathSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DeathSavingThrowAffinityBeaconOfHope", "082130537655d7447865f52e8c19d5b1");
             public static FeatureDefinitionDeathSavingThrowAffinity DeathSavingThrowAffinityFeatHardToKill => (FeatureDefinitionDeathSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DeathSavingThrowAffinityFeatHardToKill", "0640a21e593d1bc4c920290304ab2279");
             public static FeatureDefinitionDeathSavingThrowAffinity DeathSavingThrowAffinityGateKeeper => (FeatureDefinitionDeathSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DeathSavingThrowAffinityGateKeeper", "5a3b2bfa746462d45be5c3a6296b0dab");
+        }
+        public static class FeatureDefinitionDieRollModifiers
+        {
             public static FeatureDefinitionDieRollModifier DieRollModifierCaerLemMonsterInitiativeFirst => (FeatureDefinitionDieRollModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DieRollModifierCaerLemMonsterInitiativeFirst", "1bbe0e6e42b118340aba030655b3057d");
             public static FeatureDefinitionDieRollModifier DieRollModifierFightingStyleGreatWeapon => (FeatureDefinitionDieRollModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DieRollModifierFightingStyleGreatWeapon", "3ae18874ff75d95478c32afeb9ca144e");
             public static FeatureDefinitionDieRollModifier DieRollModifierHalfingLucky => (FeatureDefinitionDieRollModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DieRollModifierHalfingLucky", "8b06899d2a893244fabe45430b25530d");
@@ -915,49 +992,48 @@ namespace SolastaModApi
             public static FeatureDefinitionDieRollModifier DieRollModifierTutorialWolfDamagePenalty => (FeatureDefinitionDieRollModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DieRollModifierTutorialWolfDamagePenalty", "34d7d2db741a2e641a78c4db00ce7bed");
             public static FeatureDefinitionDieRollModifier DieRollModifierTutorialWolfInitiativeLast => (FeatureDefinitionDieRollModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DieRollModifierTutorialWolfInitiativeLast", "6530e24d46c6e004295a08fb56c9a760");
             public static FeatureDefinitionDieRollModifier DieRollModifierTutorialWolfSavingThrowAndAttackRollPenalty => (FeatureDefinitionDieRollModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("DieRollModifierTutorialWolfSavingThrowAndAttackRollPenalty", "474bf6afc5d2be046a0156354e72156b");
+        }
+        public static class FeatureDefinitionEquipmentAffinitys
+        {
             public static FeatureDefinitionEquipmentAffinity EquipmentAffinityBullsStrength => (FeatureDefinitionEquipmentAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("EquipmentAffinityBullsStrength", "3ddaa7e3fc93a2a439269c22a9a9cd33");
             public static FeatureDefinitionEquipmentAffinity EquipmentAffinityFeatHauler => (FeatureDefinitionEquipmentAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("EquipmentAffinityFeatHauler", "402bfd137c189124e8a6fe41af316308");
+        }
+        public static class FeatureDefinitionFactionAffinitys
+        {
             public static FeatureDefinitionFactionAffinity FactionAffinityAntiquarians => (FeatureDefinitionFactionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FactionAffinityAntiquarians", "c32fe5a697f0a4a4b9790d01eaece3e8");
             public static FeatureDefinitionFactionAffinity FactionAffinityTowerOfKnowledge => (FeatureDefinitionFactionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FactionAffinityTowerOfKnowledge", "b920145ce5806b1409090f0433e40c4d");
+        }
+        public static class FeatureDefinitionFactionChanges
+        {
             public static FeatureDefinitionFactionChange FactionChangeConditionCalmedByCalmEmotions => (FeatureDefinitionFactionChange)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FactionChangeConditionCalmedByCalmEmotions", "41ff31f74b104944b8e4e79f8569249b");
             public static FeatureDefinitionFactionChange FactionChangeConditionCharmedByAnimalFriendship => (FeatureDefinitionFactionChange)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FactionChangeConditionCharmedByAnimalFriendship", "a16ccb0137b44604aac482654c40611e");
             public static FeatureDefinitionFactionChange FactionChangeConditionCharmedByCaster => (FeatureDefinitionFactionChange)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FactionChangeConditionCharmedByCaster", "ecdb296a421d38a419c857de7bb52152");
             public static FeatureDefinitionFactionChange FactionChangeConditionMindControlledByCaster => (FeatureDefinitionFactionChange)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FactionChangeConditionMindControlledByCaster", "0f0177cb13831b54fa8b2a21d336b6d8");
-            public static FeatureDefinitionFeatureSet FeatureSetAbilityScoreChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetAbilityScoreChoice", "0f791ae5a6ffdc742be023184a115e1d");
-            public static FeatureDefinitionFeatureSet FeatureSetAllLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetAllLanguages", "ea2afb0e3cb5c9642b624d7bd4a436c9");
-            public static FeatureDefinitionFeatureSet FeatureSetAllLanguagesButCode => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetAllLanguagesButCode", "5de26378a8298b04e86f2b017358f9ed");
-            public static FeatureDefinitionFeatureSet FeatureSetClericRitualCasting => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetClericRitualCasting", "b5f687fa97a0be94a95197f0929ee304");
-            public static FeatureDefinitionFeatureSet FeatureSetDomainLawCommandingPresence => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetDomainLawCommandingPresence", "b3e77cd19c947d64e980c0adff724b2d");
-            public static FeatureDefinitionFeatureSet FeatureSetDomainLawUnyieldingEnforcer => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetDomainLawUnyieldingEnforcer", "877d7444fad748343be83f208ea292bb");
-            public static FeatureDefinitionFeatureSet FeatureSetElfFeyAncestry => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetElfFeyAncestry", "c123d2bc2667e7641a5b5bc9fdd94512");
-            public static FeatureDefinitionFeatureSet FeatureSetElfHighLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetElfHighLanguages", "752c07b8faab19c43af3b28543d9f15d");
-            public static FeatureDefinitionFeatureSet FeatureSetElfSylvanLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetElfSylvanLanguages", "01dc3c08b4f35e647a5593d87623f040");
-            public static FeatureDefinitionFeatureSet FeatureSetGreenmageWardenOfTheForest => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetGreenmageWardenOfTheForest", "35a05f7d212f7c24cb9dc108b3e2a9e0");
-            public static FeatureDefinitionFeatureSet FeatureSetHalfElfAbilityScoreIncrease => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalfElfAbilityScoreIncrease", "38424c7fca90b024cb6fb8355d62b61d");
-            public static FeatureDefinitionFeatureSet FeatureSetHalfElfLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalfElfLanguages", "3219c863ddf6e214dafa891d17e97375");
-            public static FeatureDefinitionFeatureSet FeatureSetHalflingIslandLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalflingIslandLanguages", "619ddc92dc3043142be08e25640a2396");
-            public static FeatureDefinitionFeatureSet FeatureSetHalflingMarshLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHalflingMarshLanguages", "5c6b5b13bc2694647b4f31784481f089");
-            public static FeatureDefinitionFeatureSet FeatureSetHumanAbilityScoreChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHumanAbilityScoreChoice", "cf917e96ff1449641a5fc53d18ede7b8");
-            public static FeatureDefinitionFeatureSet FeatureSetHumanAbilityScoreIncreaseAdvanced => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHumanAbilityScoreIncreaseAdvanced", "f7e9682734a0c9547963a3aa9ccb15c2");
-            public static FeatureDefinitionFeatureSet FeatureSetHumanLanguages => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHumanLanguages", "6e66fbb7e912e664db535ce59f1f12be");
-            public static FeatureDefinitionFeatureSet FeatureSetHunterHuntersPrey => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetHunterHuntersPrey", "3ea5b9dedb33e7f44939a9e8692cecb4");
-            public static FeatureDefinitionFeatureSet FeatureSetLoremasterKeenMind => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetLoremasterKeenMind", "53667750483570c44ac42764a06616f8");
-            public static FeatureDefinitionFeatureSet FeatureSetShadowTamerDarkSlayer => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetShadowTamerDarkSlayer", "c1c96f0fa8eab884bbcdecc603d8f573");
-            public static FeatureDefinitionFeatureSet FeatureSetUndeadFeatures => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetUndeadFeatures", "8592d3b6e3b8c674e9076802bd971e08");
-            public static FeatureDefinitionFeatureSet FeatureSetWizardRitualCasting => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FeatureSetWizardRitualCasting", "bab38716f7cc9824bb498156b661422f");
+        }
+        public static class FeatureDefinitionFightingStyleChoices
+        {
             public static FeatureDefinitionFightingStyleChoice FightingStyleFighter => (FeatureDefinitionFightingStyleChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FightingStyleFighter", "6dbf5f5ab0a6aaf48b194920f879f04c");
             public static FeatureDefinitionFightingStyleChoice FightingStylePaladin => (FeatureDefinitionFightingStyleChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FightingStylePaladin", "93cbf0034d6b3da4eac581661b797154");
             public static FeatureDefinitionFightingStyleChoice FightingStyleRanger => (FeatureDefinitionFightingStyleChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("FightingStyleRanger", "4dea04184c64bb44bba73da4e1b77705");
+        }
+        public static class FeatureDefinitionHealingModifiers
+        {
             public static FeatureDefinitionHealingModifier HealingModifierBeaconOfHope => (FeatureDefinitionHealingModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("HealingModifierBeaconOfHope", "587a2c865f95e274c82289616b368765");
             public static FeatureDefinitionHealingModifier HealingModifierChilledByTouch => (FeatureDefinitionHealingModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("HealingModifierChilledByTouch", "3ae4d007e0b9e314ab90c7099b6ecd5e");
             public static FeatureDefinitionHealingModifier HealingModifierDomainLifeBlessedHealer => (FeatureDefinitionHealingModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("HealingModifierDomainLifeBlessedHealer", "0e9d5efbae84d7a478f498ce72f9b726");
             public static FeatureDefinitionHealingModifier HealingModifierDomainLifeDiscipleOfLife => (FeatureDefinitionHealingModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("HealingModifierDomainLifeDiscipleOfLife", "01c167967680875469f909ff492ad5ff");
             public static FeatureDefinitionHealingModifier HealingModifierFeatRobust => (FeatureDefinitionHealingModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("HealingModifierFeatRobust", "646397db89a168f45b824195a3e5c1fe");
+        }
+        public static class FeatureDefinitionLightAffinitys
+        {
             public static FeatureDefinitionLightAffinity LightAffinity_ChildOfDarkness => (FeatureDefinitionLightAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("LightAffinity_ChildOfDarkness", "2141077e64521c640a9a42e4398aea75");
             public static FeatureDefinitionLightAffinity LightAffinity_Defiler_Darkness => (FeatureDefinitionLightAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("LightAffinity_Defiler_Darkness", "902accce294ba2f46a32c6dd76296eff");
             public static FeatureDefinitionLightAffinity LightAffinityHypersensitivity => (FeatureDefinitionLightAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("LightAffinityHypersensitivity", "cad5a138934aad54885b54000570b74d");
             public static FeatureDefinitionLightAffinity LightAffinityLightSensitivity => (FeatureDefinitionLightAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("LightAffinityLightSensitivity", "736fe1855ea505349ae72578eea585f1");
             public static FeatureDefinitionLightAffinity LightAffinityLightSensitivityImmunitySaboteur => (FeatureDefinitionLightAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("LightAffinityLightSensitivityImmunitySaboteur", "9a07ce680fea1164aa56371290777eda");
+        }
+        public static class FeatureDefinitionMagicAffinitys
+        {
             public static FeatureDefinitionMagicAffinity MagicAffinityAnnoyedByBee => (FeatureDefinitionMagicAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MagicAffinityAnnoyedByBee", "792da45b5ca416e43a8c531b554ac3e4");
             public static FeatureDefinitionMagicAffinity MagicAffinityClericRitualCasting => (FeatureDefinitionMagicAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MagicAffinityClericRitualCasting", "1c0b3c1fa82f308489cb593d01f8cc49");
             public static FeatureDefinitionMagicAffinity MagicAffinityCombatCasting => (FeatureDefinitionMagicAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MagicAffinityCombatCasting", "100a9cc70c87eef4b9b01b364a465c55");
@@ -975,6 +1051,9 @@ namespace SolastaModApi
             public static FeatureDefinitionMagicAffinity MagicAffinityShockArcanistArcaneWarfare => (FeatureDefinitionMagicAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MagicAffinityShockArcanistArcaneWarfare", "704008e9c88acbc4c9a8e1bc4b906e7f");
             public static FeatureDefinitionMagicAffinity MagicAffinityTraditionLoreMasterSpellAcademic => (FeatureDefinitionMagicAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MagicAffinityTraditionLoreMasterSpellAcademic", "c620fe1e18059f8488e69ed34bbc3de2");
             public static FeatureDefinitionMagicAffinity MagicAffinityWizardRitualCasting => (FeatureDefinitionMagicAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MagicAffinityWizardRitualCasting", "e207225348c3bc44a87047d1a27968d2");
+        }
+        public static class FeatureDefinitionMovementAffinitys
+        {
             public static FeatureDefinitionMovementAffinity MovementAffinityBootsOfStriding => (FeatureDefinitionMovementAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MovementAffinityBootsOfStriding", "20f413045afee07409b79a71974a64e9");
             public static FeatureDefinitionMovementAffinity MovementAffinityCatsGrace => (FeatureDefinitionMovementAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MovementAffinityCatsGrace", "2f7145476577fc64482e91b242746e67");
             public static FeatureDefinitionMovementAffinity MovementAffinityCloakOfArachnida => (FeatureDefinitionMovementAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MovementAffinityCloakOfArachnida", "1bb5811d1fb8b094789aec0552567387");
@@ -1001,6 +1080,9 @@ namespace SolastaModApi
             public static FeatureDefinitionMovementAffinity MovementAffinitySpiritGuardians => (FeatureDefinitionMovementAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MovementAffinitySpiritGuardians", "6c92787ab706aca4692655acc866b0df");
             public static FeatureDefinitionMovementAffinity MovementAffinityThiefSecondStory => (FeatureDefinitionMovementAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MovementAffinityThiefSecondStory", "14db86ae828bb9a428be7169437e92d8");
             public static FeatureDefinitionMovementAffinity MovementAffinityTutorialSafetyWolves => (FeatureDefinitionMovementAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MovementAffinityTutorialSafetyWolves", "81677408a3db1374db2b7e78c3010b0b");
+        }
+        public static class FeatureDefinitionMoveModes
+        {
             public static FeatureDefinitionMoveMode MoveModeClimb6 => (FeatureDefinitionMoveMode)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MoveModeClimb6", "19890dffe2c3e2945bb85799822bc6c1");
             public static FeatureDefinitionMoveMode MoveModeElfSylvanMoveSpeed => (FeatureDefinitionMoveMode)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MoveModeElfSylvanMoveSpeed", "fbc81596519eb0040a411d697eaef7a6");
             public static FeatureDefinitionMoveMode MoveModeFly12 => (FeatureDefinitionMoveMode)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MoveModeFly12", "5e70172c8e2a40146b375001ab656a44");
@@ -1013,13 +1095,22 @@ namespace SolastaModApi
             public static FeatureDefinitionMoveMode MoveModeMove5 => (FeatureDefinitionMoveMode)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MoveModeMove5", "39236d1a5cbaf114d96e2709eb817529");
             public static FeatureDefinitionMoveMode MoveModeMove6 => (FeatureDefinitionMoveMode)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MoveModeMove6", "6f358015fcdb8e147a7cfef7e2506430");
             public static FeatureDefinitionMoveMode MoveModeMove8 => (FeatureDefinitionMoveMode)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MoveModeMove8", "4c110104739c99e4d920529a058ab2e2");
+        }
+        public static class FeatureDefinitionMoveThroughEnemyModifiers
+        {
             public static FeatureDefinitionMoveThroughEnemyModifier MoveThroughEnemyModifierHalflingNimbleness => (FeatureDefinitionMoveThroughEnemyModifier)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("MoveThroughEnemyModifierHalflingNimbleness", "6ae832e9873b6e94289d046c87ea2e0f");
+        }
+        public static class FeatureDefinitionPerceptionAffinitys
+        {
             public static FeatureDefinitionPerceptionAffinity PerceptionAffinityConditionBlinded => (FeatureDefinitionPerceptionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PerceptionAffinityConditionBlinded", "f393b86164c3026418e191264bcca4d5");
             public static FeatureDefinitionPerceptionAffinity PerceptionAffinityConditionDetectedAsEvilGood => (FeatureDefinitionPerceptionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PerceptionAffinityConditionDetectedAsEvilGood", "fc6766856d6bd4b4a9bf301437e7c6aa");
             public static FeatureDefinitionPerceptionAffinity PerceptionAffinityConditionDetectedAsPoisonedOrDiseased => (FeatureDefinitionPerceptionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PerceptionAffinityConditionDetectedAsPoisonedOrDiseased", "222de38c714ab06409016b797f0db2db");
             public static FeatureDefinitionPerceptionAffinity PerceptionAffinityConditionDivinelyRevealed => (FeatureDefinitionPerceptionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PerceptionAffinityConditionDivinelyRevealed", "524462a9cc44c6c4fafa77b1f460ec15");
             public static FeatureDefinitionPerceptionAffinity PerceptionAffinityConditionInvisible => (FeatureDefinitionPerceptionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PerceptionAffinityConditionInvisible", "bc5b81ec529c4dd40b7ba4449a2eeb99");
             public static FeatureDefinitionPerceptionAffinity PerceptionAffinityFeatAcuteSenses => (FeatureDefinitionPerceptionAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PerceptionAffinityFeatAcuteSenses", "97bfd30ff60a4f743b22a04351d05476");
+        }
+        public static class FeatureDefinitionPointPools
+        {
             public static FeatureDefinitionPointPool PointPoolAbilityScoreImprovement => (FeatureDefinitionPointPool)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PointPoolAbilityScoreImprovement", "b05edca8119b31a45a8e4d638466b817");
             public static FeatureDefinitionPointPool PointPoolBackgroundLanguageChoice_one => (FeatureDefinitionPointPool)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PointPoolBackgroundLanguageChoice_one", "c6ab6f54fa4248243a511ad3151b117c");
             public static FeatureDefinitionPointPool PointPoolBackgroundLanguageChoice_two => (FeatureDefinitionPointPool)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PointPoolBackgroundLanguageChoice_two", "7d99e7b5cb7fa024886a71f896fa58b7");
@@ -1040,6 +1131,9 @@ namespace SolastaModApi
             public static FeatureDefinitionPointPool PointPoolRogueSkillPoints => (FeatureDefinitionPointPool)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PointPoolRogueSkillPoints", "57b1e35812aa86941b8a2abf319ca12d");
             public static FeatureDefinitionPointPool PointPoolWizardSkillPoints => (FeatureDefinitionPointPool)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PointPoolWizardSkillPoints", "2c68bd1101a20324d9c4fd61e40610fb");
             public static FeatureDefinitionPointPool ProficiencyMarksmanToolChoice => (FeatureDefinitionPointPool)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ProficiencyMarksmanToolChoice", "fc555a38799525846be9a0289dd71ae7");
+        }
+        public static class FeatureDefinitionPowers
+        {
             public static FeatureDefinitionPower PowerClericTurnUndead => (FeatureDefinitionPower)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PowerClericTurnUndead", "d76d6012075754e44b4d191b8b387633");
             public static FeatureDefinitionPower PowerDefilerDarkness => (FeatureDefinitionPower)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PowerDefilerDarkness", "fd6fb44696a51b24e907474087d41bd7");
             public static FeatureDefinitionPower PowerDefilerMistyFormEscape => (FeatureDefinitionPower)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PowerDefilerMistyFormEscape", "327b24f39c0894a49be64a1a3c973c34");
@@ -1135,6 +1229,9 @@ namespace SolastaModApi
             public static FeatureDefinitionPower PowerVampiricTouchIntelligence => (FeatureDefinitionPower)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PowerVampiricTouchIntelligence", "a578a0f3cd07e6b4e892d32f8e786e07");
             public static FeatureDefinitionPower PowerWinterWolfBreath => (FeatureDefinitionPower)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PowerWinterWolfBreath", "9759b82db47c72849bda8cd6c764ff95");
             public static FeatureDefinitionPower PowerWizardArcaneRecovery => (FeatureDefinitionPower)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("PowerWizardArcaneRecovery", "c1066a5d900816e49ad9a47725bc69d8");
+        }
+        public static class FeatureDefinitionProficiencys
+        {
             public static FeatureDefinitionProficiency ProficienctSpySkillsTool => (FeatureDefinitionProficiency)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ProficienctSpySkillsTool", "adb95e0f30275324b83953cc29920bb6");
             public static FeatureDefinitionProficiency ProficiencyAcademicSkills => (FeatureDefinitionProficiency)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ProficiencyAcademicSkills", "e18acf0ef457a7647bd8d3f00c40977b");
             public static FeatureDefinitionProficiency ProficiencyAcademicSkillsTool => (FeatureDefinitionProficiency)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ProficiencyAcademicSkillsTool", "020888bac2a715840a1fa1fb4ac6975c");
@@ -1206,11 +1303,17 @@ namespace SolastaModApi
             public static FeatureDefinitionProficiency ProficiencyWizardSavingThrow => (FeatureDefinitionProficiency)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ProficiencyWizardSavingThrow", "25753a6dc3e608d43bbf4648c7855bea");
             public static FeatureDefinitionProficiency ProficiencyWizardTools => (FeatureDefinitionProficiency)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ProficiencyWizardTools", "2c345e90dd967ec4fa692fae757a75cf");
             public static FeatureDefinitionProficiency ProficiencyWizardWeapon => (FeatureDefinitionProficiency)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("ProficiencyWizardWeapon", "3daf77db56dbc494aab0dc4c80f66c02");
+        }
+        public static class FeatureDefinitionRegenerations
+        {
             public static FeatureDefinitionRegeneration RegenerationChildOfDarkness_Darkness => (FeatureDefinitionRegeneration)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("RegenerationChildOfDarkness_Darkness", "93827f49381a1f247a657409fb39a322");
             public static FeatureDefinitionRegeneration RegenerationChildOfDarkness_Dim => (FeatureDefinitionRegeneration)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("RegenerationChildOfDarkness_Dim", "9be30409adeb26b47bada1d6ee997e5c");
             public static FeatureDefinitionRegeneration RegenerationDefiler => (FeatureDefinitionRegeneration)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("RegenerationDefiler", "d0b5ff985858f0b42aa74dfe4e988578");
             public static FeatureDefinitionRegeneration RegenerationRing => (FeatureDefinitionRegeneration)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("RegenerationRing", "272a41bc93deb2c4ba93b55cf01b1bee");
             public static FeatureDefinitionRegeneration RegenerationVampire => (FeatureDefinitionRegeneration)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("RegenerationVampire", "abb9d6f76c691f84f8f487e26e921f31");
+        }
+        public static class FeatureDefinitionSavingThrowAffinitys
+        {
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityAntitoxin => (FeatureDefinitionSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SavingThrowAffinityAntitoxin", "574119d476facbc4ea88b544113c4869");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityArmorOfSurvival => (FeatureDefinitionSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SavingThrowAffinityArmorOfSurvival", "ae70a5b66d4860d4e938085d89ee829a");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityAuraOfProtection => (FeatureDefinitionSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SavingThrowAffinityAuraOfProtection", "df8d5f00cf1eb0d42a75798bbd7c72d5");
@@ -1258,7 +1361,13 @@ namespace SolastaModApi
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinitySnowDwarfEndurance => (FeatureDefinitionSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SavingThrowAffinitySnowDwarfEndurance", "1c2193d0dfb68564b8862bdc84c6df9f");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinitySpellResistance => (FeatureDefinitionSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SavingThrowAffinitySpellResistance", "d6341ebb2cb967949b4426e31e993b86");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityStoneOfGoodLuck => (FeatureDefinitionSavingThrowAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SavingThrowAffinityStoneOfGoodLuck", "cff7bfd1d09e0e24fba49a7d3c16b11a");
+        }
+        public static class FeatureDefinitionSchoolSavants
+        {
             public static FeatureDefinitionSchoolSavant SchoolSavantEvocation => (FeatureDefinitionSchoolSavant)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SchoolSavantEvocation", "14758ed6de381584ea9e5331499a2234");
+        }
+        public static class FeatureDefinitionSenses
+        {
             public static FeatureDefinitionSense SenseBlindSight2 => (FeatureDefinitionSense)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SenseBlindSight2", "f6e92e044ad5c9945b1c01d9891bf49d");
             public static FeatureDefinitionSense SenseDarkvision => (FeatureDefinitionSense)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SenseDarkvision", "446f786482b07db45b6f4a0854be3056");
             public static FeatureDefinitionSense SenseDarkvision12 => (FeatureDefinitionSense)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SenseDarkvision12", "b7ab84f45ce51764ca9c430f745a6b4e");
@@ -1268,15 +1377,23 @@ namespace SolastaModApi
             public static FeatureDefinitionSense SenseSeeInvisible16 => (FeatureDefinitionSense)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SenseSeeInvisible16", "9a94a1b657b56fd419fc6eec656de1fe");
             public static FeatureDefinitionSense SenseSuperiorDarkvision => (FeatureDefinitionSense)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SenseSuperiorDarkvision", "388ca3fa81ee8a84c831be14214fd1c0");
             public static FeatureDefinitionSense SenseTruesight16 => (FeatureDefinitionSense)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SenseTruesight16", "ea70a5054de732f4f8112f2ffca185a6");
+        }
+        public static class FeatureDefinitionSocialAffinitys
+        {
             public static FeatureDefinitionSocialAffinity SocialAffinityShelterOfTheFaithful => (FeatureDefinitionSocialAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SocialAffinityShelterOfTheFaithful", "2e999493528371f47ab83520a24fdd68");
+        }
+        public static class FeatureDefinitionSubclassChoices
+        {
             public static FeatureDefinitionSubclassChoice SubclassChoiceClericDivineDomains => (FeatureDefinitionSubclassChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SubclassChoiceClericDivineDomains", "d6c7c79a648ae6847876782f4370bbfa");
             public static FeatureDefinitionSubclassChoice SubclassChoiceFighterMartialArchetypes => (FeatureDefinitionSubclassChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SubclassChoiceFighterMartialArchetypes", "e3d5d16e53da5e4419e76560aabba484");
             public static FeatureDefinitionSubclassChoice SubclassChoicePaladinSacredOaths => (FeatureDefinitionSubclassChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SubclassChoicePaladinSacredOaths", "1e2db957bbd51d342af5b952c6c5176b");
             public static FeatureDefinitionSubclassChoice SubclassChoiceRangerArchetypes => (FeatureDefinitionSubclassChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SubclassChoiceRangerArchetypes", "4a4ea1d859b7e9548a79d80a376e5858");
             public static FeatureDefinitionSubclassChoice SubclassChoiceRogueRoguishArchetypes => (FeatureDefinitionSubclassChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SubclassChoiceRogueRoguishArchetypes", "6f1a02cc72e74764dbf4db02d81cdd05");
             public static FeatureDefinitionSubclassChoice SubclassChoiceWizardArcaneTraditions => (FeatureDefinitionSubclassChoice)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("SubclassChoiceWizardArcaneTraditions", "e8d05f81af078134fb3179d25900a22d");
+        }
+        public static class FeatureDefinitionTerrainTypeAffinitys
+        {
             public static FeatureDefinitionTerrainTypeAffinity TerrainTypeAffinityRangerNaturalExplorerArctic => (FeatureDefinitionTerrainTypeAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("TerrainTypeAffinityRangerNaturalExplorerArctic", "5edf9710b4c795c4090893efa887cdc9");
-            public static FeatureDefinitionFeatureSet TerrainTypeAffinityRangerNaturalExplorerChoice => (FeatureDefinitionFeatureSet)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("TerrainTypeAffinityRangerNaturalExplorerChoice", "221976147ed339d489923450eb6c21ad");
             public static FeatureDefinitionTerrainTypeAffinity TerrainTypeAffinityRangerNaturalExplorerCoast => (FeatureDefinitionTerrainTypeAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("TerrainTypeAffinityRangerNaturalExplorerCoast", "1f6018fd973b91c4d9d1b89e364a7ea4");
             public static FeatureDefinitionTerrainTypeAffinity TerrainTypeAffinityRangerNaturalExplorerDesert => (FeatureDefinitionTerrainTypeAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("TerrainTypeAffinityRangerNaturalExplorerDesert", "1abddd96b95466545b9ca5e5cf0be0f8");
             public static FeatureDefinitionTerrainTypeAffinity TerrainTypeAffinityRangerNaturalExplorerForest => (FeatureDefinitionTerrainTypeAffinity)DatabaseRepository.GetDatabase<FeatureDefinition>().TryGetElement("TerrainTypeAffinityRangerNaturalExplorerForest", "105c7b19608adaa4ba65f0e7f2914b07");
@@ -4074,16 +4191,40 @@ namespace SolastaModApi
             public static BanterEventDefinition BanterEventTrapDisarmed => DatabaseRepository.GetDatabase<BanterEventDefinition>().TryGetElement("BanterEventTrapDisarmed", "187dfa22079bac94bbc648545af3023f");
             public static BanterEventDefinition BanterEventTrapTriggered => DatabaseRepository.GetDatabase<BanterEventDefinition>().TryGetElement("BanterEventTrapTriggered", "bd6cead258e85644f96113e4aa0df827");
         }
-        public static class RecordTableDefinitions
+        public static class AdventureLogDefinitions
         {
             public static AdventureLogDefinition AdventureLog => (AdventureLogDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("AdventureLog", "4338781aaa4aa4743b086c74fd1a262c");
+        }
+        public static class BestiaryStatsDefinitions
+        {
             public static BestiaryStatsDefinition BestiaryStats => (BestiaryStatsDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("BestiaryStats", "62ef44639204e5d41916ebe13714adcc");
+        }
+        public static class BestiaryTableDefinitions
+        {
             public static BestiaryTableDefinition BestiaryTable => (BestiaryTableDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("BestiaryTable", "4038551699094fe49bb72ee6a9f7da6b");
+        }
+        public static class ConsoleTableDefinitions
+        {
             public static ConsoleTableDefinition ConsoleTable => (ConsoleTableDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("ConsoleTable", "1dabbdd4332c7274fa77e59bc452736d");
+        }
+        public static class DailyLogDefinitions
+        {
             public static DailyLogDefinition DailyLog => (DailyLogDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("DailyLog", "2064dd2be5662774b9ba9baf73b2b8d4");
+        }
+        public static class DocumentTableDefinitions
+        {
             public static DocumentTableDefinition DocumentTable => (DocumentTableDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("DocumentTable", "7f897d9a2841f91428e5c27ed4231b9a");
+        }
+        public static class TravelJournalDefinitions
+        {
             public static TravelJournalDefinition TravelJournal => (TravelJournalDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("TravelJournal", "b55ea34427080f241bf8715d45d038a0");
+        }
+        public static class TutorialTableDefinitions
+        {
             public static TutorialTableDefinition TutorialTable => (TutorialTableDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("TutorialTable", "5ca81acdcf6358c488d2ec8e649b639f");
+        }
+        public static class TutorialTocDefinitions
+        {
             public static TutorialTocDefinition TutorialToc => (TutorialTocDefinition)DatabaseRepository.GetDatabase<RecordTableDefinition>().TryGetElement("TutorialToc", "6e391b7edf3098a4c980798e7fc07b76");
         }
         public static class NarrativeTreeDefinitions

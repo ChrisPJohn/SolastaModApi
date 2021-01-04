@@ -26,10 +26,10 @@ def read_assets():
         for line in file:
             items = line.strip('\n\r').split("\t")
             asset = Asset(*items)
-            if asset.database_type in result:
-                result[asset.database_type].append(asset)
+            if asset.asset_type in result:
+                result[asset.asset_type].append(asset)
             else:
-                result[asset.database_type] = [asset]
+                result[asset.asset_type] = [asset]
     return result
             
 def write_line(file, text, indent_count = 0):

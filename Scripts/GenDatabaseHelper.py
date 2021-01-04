@@ -11,6 +11,7 @@ class Asset:
         result = result.replace("+", "Plus")
         result = result.replace("-", "_")
         result = result.replace(" ", "_")
+        result = result.replace(".", "_")
         if re.match(r"\d", result):
             result = f"_{result}"
         return result

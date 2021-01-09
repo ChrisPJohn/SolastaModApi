@@ -15,7 +15,6 @@ namespace SolastaModApi
         public ClassBuilder()
         {
             MyClass = ScriptableObject.CreateInstance<CharacterClassDefinition>();
-            Traverse.Create(MyClass).Field("guid").SetValue(System.Guid.NewGuid().ToString());
         }
 
         public void SetHitDice(RuleDefinitions.DieType die)
@@ -90,6 +89,7 @@ namespace SolastaModApi
         {
             Traverse.Create(MyClass).Field("name").SetValue(name);
             MyClass.name = name;
+            Traverse.Create(MyClass).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
         }
 
         public void SetGuiPresentation(GuiPresentation gui)

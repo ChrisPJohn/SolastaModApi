@@ -93,12 +93,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderHelpers\CastSpellBuilder.cs" />
+    <Compile Include="BuilderHelpers\GuidHelper.cs" />
     <Compile Include="BuilderHelpers\LocalizationHelper.cs" />
     <Compile Include="BuilderHelpers\RaceBuilder.cs" />
     <Compile Include="BuilderHelpers\ClassBuilder.cs" />
     <Compile Include="BuilderHelpers\EquipmentOptionsBuilder.cs" />
     <Compile Include="BuilderHelpers\FeatureBuilder.cs" />
     <Compile Include="BuilderHelpers\GuiPresentationBuilder.cs" />
+    <Compile Include="BuilderHelpers\RestActivityBuilder.cs" />
     <Compile Include="BuilderHelpers\SubClassBuilder.cs" />
     <Compile Include="DatabaseHelper\DatabaseHelper.cs" />
     <Compile Include="Main.cs" />

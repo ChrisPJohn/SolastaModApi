@@ -20,13 +20,13 @@ namespace SolastaModApi
         public CastSpellBuilder()
         {
             CastSpell = ScriptableObject.CreateInstance<FeatureDefinitionCastSpell>();
-            Traverse.Create(CastSpell).Field("guid").SetValue(System.Guid.NewGuid().ToString());
         }
 
         public void SetName(string name)
         {
             Traverse.Create(CastSpell).Field("name").SetValue(name);
             CastSpell.name = name;
+            Traverse.Create(CastSpell).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
         }
 
         public void SetGuiPresentation(GuiPresentation gui)

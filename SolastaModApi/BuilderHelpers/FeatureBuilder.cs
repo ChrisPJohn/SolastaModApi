@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using static FeatureDefinitionAttributeModifier;
 
 namespace SolastaModApi
@@ -20,7 +21,7 @@ namespace SolastaModApi
             Traverse.Create(proficiency).Field("name").SetValue(name);
             proficiency.name = name;
             Traverse.Create(proficiency).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(proficiency).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(proficiency).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(proficiency);
             return proficiency;
         }
@@ -38,7 +39,7 @@ namespace SolastaModApi
             Traverse.Create(pointPool).Field("name").SetValue(name);
             pointPool.name = name;
             Traverse.Create(pointPool).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(pointPool).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(pointPool).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(pointPool);
             return pointPool;
         }
@@ -55,7 +56,7 @@ namespace SolastaModApi
             GuiPresentationBuilder guiBuilder = new GuiPresentationBuilder("Feature/&AttributeIncreaseDescription", "Feature/&AbilityScoreIncreaseTitle");
             Traverse.Create(attributeMod).Field("guiPresentation").SetValue(guiBuilder.Build());
 
-            Traverse.Create(attributeMod).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(attributeMod).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(attributeMod);
             return attributeMod;
         }
@@ -71,7 +72,7 @@ namespace SolastaModApi
             attributeMod.name = name;
             Traverse.Create(attributeMod).Field("guiPresentation").SetValue(guiPresentation);
 
-            Traverse.Create(attributeMod).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(attributeMod).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(attributeMod);
             return attributeMod;
         }
@@ -96,7 +97,7 @@ namespace SolastaModApi
             attackModifier.name = name;
             Traverse.Create(attackModifier).Field("guiPresentation").SetValue(guiPresentation);
 
-            Traverse.Create(attackModifier).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(attackModifier).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(attackModifier);
             return attackModifier;
         }
@@ -128,7 +129,7 @@ namespace SolastaModApi
             savingAffinity.name = name;
             Traverse.Create(savingAffinity).Field("guiPresentation").SetValue(guiPresentation);
 
-            Traverse.Create(savingAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(savingAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(savingAffinity);
             return savingAffinity;
         }
@@ -153,12 +154,10 @@ namespace SolastaModApi
             abilityAffinity.name = name;
             Traverse.Create(abilityAffinity).Field("guiPresentation").SetValue(guiPresentation);
 
-            Traverse.Create(abilityAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(abilityAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(abilityAffinity);
             return abilityAffinity;
         }
-
-
 
         public static FeatureDefinitionMagicAffinity BuildMagicAffinityConcentration(RuleDefinitions.AdvantageType advantageType, int threshold, string name, GuiPresentation guiPresentation)
         {
@@ -173,7 +172,7 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
@@ -188,7 +187,7 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
@@ -213,7 +212,7 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
@@ -231,21 +230,17 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
-
-        // ????
-        //public bool CanFailSpellcasting { get; }
-        //public int SpellcastingSuccessDC { get; }
 
         public static FeatureDefinitionMagicAffinity BuildMagicAffinityHeightenedList(List<string> spellNames, int levelBonus, string name, GuiPresentation guiPresentation)
         {
             FeatureDefinitionMagicAffinity magicAffinity = ScriptableObject.CreateInstance<FeatureDefinitionMagicAffinity>();
 
             Traverse.Create(magicAffinity).Field("warListSlotBonus").SetValue(levelBonus);
-            Traverse.Create(magicAffinity).Field("UsesWarList").SetValue(true);
+            Traverse.Create(magicAffinity).Field("usesWarList").SetValue(true);
             foreach (string spell in spellNames)
             {
                 magicAffinity.WarListSpells.Add(spell);
@@ -254,7 +249,7 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
@@ -268,7 +263,7 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
@@ -282,7 +277,7 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
@@ -299,7 +294,7 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
         }
@@ -316,9 +311,192 @@ namespace SolastaModApi
             Traverse.Create(magicAffinity).Field("name").SetValue(name);
             magicAffinity.name = name;
             Traverse.Create(magicAffinity).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(magicAffinity).Field("guid").SetValue(System.Guid.NewGuid().ToString());
+            Traverse.Create(magicAffinity).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(magicAffinity);
             return magicAffinity;
+        }
+
+        public static FeatureDefinitionPower BuildSpellFormPower(int usesPerRecharge, RuleDefinitions.UsesDetermination usesDetermination,
+            RuleDefinitions.ActivationTime activationTime, int costPerUse, RuleDefinitions.RechargeRate recharge, string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionPower power = ScriptableObject.CreateInstance<FeatureDefinitionPower>();
+
+            Traverse.Create(power).Field("fixedUsesPerRecharge").SetValue(usesPerRecharge);
+            Traverse.Create(power).Field("usesDetermination").SetValue(usesDetermination);
+            Traverse.Create(power).Field("activationTime").SetValue(activationTime);
+            Traverse.Create(power).Field("costPerUse").SetValue(costPerUse);
+            Traverse.Create(power).Field("rechargeRate").SetValue(recharge);
+
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(RuleDefinitions.Side.Ally);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.SpellSlots;
+            SpellSlotsForm spellSlotsForm = new SpellSlotsForm();
+            Traverse.Create(spellSlotsForm).Field("type").SetValue(SpellSlotsForm.EffectType.RecoverHalfLevelUp);
+            Traverse.Create(effectForm).Field("spellSlotsForm").SetValue(spellSlotsForm);
+            effect.EffectForms.Add(effectForm);
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.FeatureDefinitions.PowerWizardArcaneRecovery.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+
+            Traverse.Create(power).Field("effectDescription").SetValue(effect);
+
+            Traverse.Create(power).Field("name").SetValue(name);
+            power.name = name;
+            Traverse.Create(power).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(power).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(power);
+            return power;
+        }
+
+        /**
+         * Item powers need to apply a condition that applies the effect they want because item form effects are really just built for spells.
+         * But Condition forms just apply to the character and not the items even if they make you select an item.
+         */
+        public static FeatureDefinitionPower BuildActionItemPower(int usesPerRecharge, RuleDefinitions.UsesDetermination usesDetermination,
+            string usesAbilityScoreName,
+            RuleDefinitions.ActivationTime activationTime, int costPerUse, RuleDefinitions.RechargeRate recharge,
+            RuleDefinitions.RangeType rangeType, int rangeParameter, ActionDefinitions.ItemSelectionType itemSelectionType,
+            RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect,
+            FeatureDefinition itemFeature,
+            string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionPower power = ScriptableObject.CreateInstance<FeatureDefinitionPower>();
+
+            Traverse.Create(power).Field("fixedUsesPerRecharge").SetValue(usesPerRecharge);
+            Traverse.Create(power).Field("usesDetermination").SetValue(usesDetermination);
+            Traverse.Create(power).Field("activationTime").SetValue(activationTime);
+            Traverse.Create(power).Field("costPerUse").SetValue(costPerUse);
+            Traverse.Create(power).Field("rechargeRate").SetValue(recharge);
+            Traverse.Create(power).Field("usesAbilityScoreName").SetValue(usesAbilityScoreName);
+            Traverse.Create(power).Field("uniqueInstance").SetValue(true);
+
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(RuleDefinitions.Side.Ally);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
+            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
+            Traverse.Create(effect).Field("targetType").SetValue(RuleDefinitions.TargetType.Item);
+            Traverse.Create(effect).Field("itemSelectionType").SetValue(itemSelectionType);
+            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(true);
+            Traverse.Create(effect).Field("durationType").SetValue(durationType);
+            Traverse.Create(effect).Field("durationParameter").SetValue(durationParameter);
+            Traverse.Create(effect).Field("endOfEffect").SetValue(endOfEffect);
+
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.ItemProperty;
+            Traverse.Create(effectForm).Field("createdByCharacter").SetValue(true);
+
+            ItemPropertyForm itemForm = new ItemPropertyForm();
+            Traverse.Create(itemForm).Field("usageLimitation").SetValue(RuleDefinitions.ItemPropertyUsage.Unlimited);
+            itemForm.FeatureBySlotLevel.Add(new FeatureUnlockByLevel(itemFeature, 0));
+
+            Traverse.Create(effectForm).Field("itemPropertyForm").SetValue(itemForm);
+
+            effect.EffectForms.Add(effectForm);
+
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+            Traverse.Create(power).Field("effectDescription").SetValue(effect);
+
+            Traverse.Create(power).Field("name").SetValue(name);
+            power.name = name;
+            Traverse.Create(power).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(power).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(power);
+            return power;
+        }
+        public static FeatureDefinitionPower BuildActionConditionPower(int usesPerRecharge, RuleDefinitions.UsesDetermination usesDetermination,
+            string usesAbilityScoreName,
+            RuleDefinitions.ActivationTime activationTime, int costPerUse, RuleDefinitions.RechargeRate recharge,
+            RuleDefinitions.RangeType rangeType, int rangeParameter, RuleDefinitions.TargetType targetType,
+            ActionDefinitions.ItemSelectionType itemSelectionType, RuleDefinitions.DurationType durationType, int durationParameter,
+            RuleDefinitions.TurnOccurenceType endOfEffect, ConditionDefinition condition,
+            string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionPower power = ScriptableObject.CreateInstance<FeatureDefinitionPower>();
+
+            Traverse.Create(power).Field("fixedUsesPerRecharge").SetValue(usesPerRecharge);
+            Traverse.Create(power).Field("usesDetermination").SetValue(usesDetermination);
+            Traverse.Create(power).Field("activationTime").SetValue(activationTime);
+            Traverse.Create(power).Field("costPerUse").SetValue(costPerUse);
+            Traverse.Create(power).Field("rechargeRate").SetValue(recharge);
+            Traverse.Create(power).Field("usesAbilityScoreName").SetValue(usesAbilityScoreName);
+            Traverse.Create(power).Field("uniqueInstance").SetValue(true);
+
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(RuleDefinitions.Side.Ally);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
+            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
+            Traverse.Create(effect).Field("targetType").SetValue(targetType);
+            Traverse.Create(effect).Field("itemSelectionType").SetValue(itemSelectionType);
+            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(true);
+            Traverse.Create(effect).Field("durationType").SetValue(durationType);
+            Traverse.Create(effect).Field("durationParameter").SetValue(durationParameter);
+            Traverse.Create(effect).Field("endOfEffect").SetValue(endOfEffect);
+
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.Condition;
+            Traverse.Create(effectForm).Field("createdByCharacter").SetValue(true);
+
+            ConditionForm conditionForm = new ConditionForm();
+            Traverse.Create(conditionForm).Field("operation").SetValue(ConditionForm.ConditionOperation.Add);
+            Traverse.Create(conditionForm).Field("conditionDefinition").SetValue(condition);
+            Traverse.Create(conditionForm).Field("conditionDefinitionName").SetValue(condition.Name);
+
+            Traverse.Create(effectForm).Field("conditionForm").SetValue(conditionForm);
+            effect.EffectForms.Add(effectForm);
+
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+            Traverse.Create(power).Field("effectDescription").SetValue(effect);
+
+            Traverse.Create(power).Field("name").SetValue(name);
+            power.name = name;
+            Traverse.Create(power).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(power).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(power);
+            return power;
+        }
+
+        public static ConditionDefinition BuildCondition(List<FeatureDefinition> conditionFeatures, RuleDefinitions.DurationType durationType,
+            int durationParameter, string name, GuiPresentation guiPresentation)
+        {
+            ConditionDefinition condition = ScriptableObject.CreateInstance<ConditionDefinition>();
+            foreach (FeatureDefinition feature in conditionFeatures)
+            {
+                condition.Features.Add(feature);
+            }
+            Traverse.Create(condition).Field("conditionType").SetValue(RuleDefinitions.ConditionType.Beneficial);
+            Traverse.Create(condition).Field("allowMultipleInstances").SetValue(false);
+            Traverse.Create(condition).Field("durationType").SetValue(durationType);
+            Traverse.Create(condition).Field("durationParameter").SetValue(durationParameter);
+            AssetReference asset = new AssetReference();
+            Traverse.Create(condition).Field("conditionStartParticleReference").SetValue(asset);
+            Traverse.Create(condition).Field("conditionParticleReference").SetValue(asset);
+            Traverse.Create(condition).Field("conditionEndParticleReference").SetValue(asset);
+            Traverse.Create(condition).Field("characterShaderReference").SetValue(asset);
+            Traverse.Create(condition).Field("recurrentEffectForms").SetValue(new List<EffectForm>());
+            Traverse.Create(condition).Field("cancellingConditions").SetValue(new List<ConditionDefinition>());
+            Traverse.Create(condition).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(condition).Field("name").SetValue(name);
+            condition.name = name;
+            Traverse.Create(condition).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<ConditionDefinition>().Add(condition);
+            return condition;
         }
     }
 }

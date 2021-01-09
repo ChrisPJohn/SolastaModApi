@@ -11,13 +11,13 @@ namespace SolastaModApi
         public RaceBuilder()
         {
             MyRace = ScriptableObject.CreateInstance<CharacterRaceDefinition>();
-            Traverse.Create(MyRace).Field("guid").SetValue(System.Guid.NewGuid().ToString());
         }
 
         public void SetName(string name)
         {
             Traverse.Create(MyRace).Field("name").SetValue(name);
             MyRace.name = name;
+            Traverse.Create(MyRace).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
         }
 
         /**

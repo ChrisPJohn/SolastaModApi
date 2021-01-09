@@ -5,6 +5,8 @@ namespace SolastaModApi
 {
     public class Main
     {
+        public static Guid ModGuidNamespace = new Guid("Generate a GUID for your mod and set it here");
+
         static UnityModManager.ModEntry ModEntry;
         public static void Log(string msg)
         {

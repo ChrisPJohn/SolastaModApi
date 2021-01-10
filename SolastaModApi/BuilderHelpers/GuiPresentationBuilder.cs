@@ -13,6 +13,7 @@ namespace SolastaModApi
             guiPresentation = new GuiPresentation();
             guiPresentation.Description = description;
             guiPresentation.Title = title;
+            Traverse.Create(guiPresentation).Field("spriteReference").SetValue(new AssetReferenceSprite(""));
         }
 
         public void SetColor(Color color)

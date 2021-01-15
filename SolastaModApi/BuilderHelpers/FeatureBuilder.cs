@@ -340,7 +340,7 @@ namespace SolastaModApi
             Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
             Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
 
-            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.FeatureDefinitions.PowerWizardArcaneRecovery.EffectDescription.EffectParticleParameters);
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.FeatureDefinitionPowers.PowerWizardArcaneRecovery.EffectDescription.EffectParticleParameters);
             Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
 
             Traverse.Create(power).Field("effectDescription").SetValue(effect);

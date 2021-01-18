@@ -498,5 +498,134 @@ namespace SolastaModApi
             DatabaseRepository.GetDatabase<ConditionDefinition>().Add(condition);
             return condition;
         }
+
+        public static FeatureDefinitionPower BuildMotionFormPower(int usesPerRecharge, RuleDefinitions.UsesDetermination usesDetermination,
+            RuleDefinitions.ActivationTime activationTime, int costPerUse, RuleDefinitions.RechargeRate recharge,
+            RuleDefinitions.RangeType rangeType, int rangeParameter, RuleDefinitions.TargetType targetType,
+            RuleDefinitions.Side target, bool hasSavingThrow, bool disableSavingThrowOnAllies, string savingThrowAbility,
+            RuleDefinitions.EffectDifficultyClassComputation difficultyClassComputation, string savingThrowDifficultyAbility,
+            MotionForm.MotionType motionType, int motionDistance,
+            int fixedSavingThrowDifficultyClass, string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionPower power = ScriptableObject.CreateInstance<FeatureDefinitionPower>();
+
+            Traverse.Create(power).Field("fixedUsesPerRecharge").SetValue(usesPerRecharge);
+            Traverse.Create(power).Field("usesDetermination").SetValue(usesDetermination);
+            Traverse.Create(power).Field("activationTime").SetValue(activationTime);
+            Traverse.Create(power).Field("costPerUse").SetValue(costPerUse);
+            Traverse.Create(power).Field("rechargeRate").SetValue(recharge);
+
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(target);
+            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
+            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
+            Traverse.Create(effect).Field("targetType").SetValue(targetType);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(true);
+            Traverse.Create(effect).Field("hasSavingThrow").SetValue(hasSavingThrow);
+            Traverse.Create(effect).Field("disableSavingThrowOnAllies").SetValue(disableSavingThrowOnAllies);
+            Traverse.Create(effect).Field("savingThrowAbility").SetValue(savingThrowAbility);
+            Traverse.Create(effect).Field("difficultyClassComputation").SetValue(difficultyClassComputation);
+            Traverse.Create(effect).Field("savingThrowDifficultyAbility").SetValue(savingThrowDifficultyAbility);
+            Traverse.Create(effect).Field("fixedSavingThrowDifficultyClass").SetValue(fixedSavingThrowDifficultyClass);
+
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.Motion;
+            MotionForm motionForm = new MotionForm();
+            Traverse.Create(motionForm).Field("type").SetValue(motionType);
+            Traverse.Create(motionForm).Field("distance").SetValue(motionDistance);
+            Traverse.Create(effectForm).Field("motionForm").SetValue(motionForm);
+            effect.EffectForms.Add(effectForm);
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.FeatureDefinitionPowers.PowerWizardArcaneRecovery.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+
+            Traverse.Create(power).Field("effectDescription").SetValue(effect);
+
+            Traverse.Create(power).Field("name").SetValue(name);
+            power.name = name;
+            Traverse.Create(power).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(power).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(power);
+            return power;
+        }
+
+        public static FeatureDefinitionPower BuildPowerFromEffectDescription(int usesPerRecharge, RuleDefinitions.UsesDetermination usesDetermination,
+            RuleDefinitions.ActivationTime activationTime, int costPerUse, RuleDefinitions.RechargeRate recharge,
+            bool proficiencyBonusToAttack, bool abilityScoreBonusToAttack, string abilityScore,
+            EffectDescription effectDescription, string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionPower power = ScriptableObject.CreateInstance<FeatureDefinitionPower>();
+
+            Traverse.Create(power).Field("fixedUsesPerRecharge").SetValue(usesPerRecharge);
+            Traverse.Create(power).Field("usesDetermination").SetValue(usesDetermination);
+            Traverse.Create(power).Field("activationTime").SetValue(activationTime);
+            Traverse.Create(power).Field("costPerUse").SetValue(costPerUse);
+            Traverse.Create(power).Field("rechargeRate").SetValue(recharge);
+            Traverse.Create(power).Field("proficiencyBonusToAttack").SetValue(proficiencyBonusToAttack);
+            Traverse.Create(power).Field("abilityScoreBonusToAttack").SetValue(abilityScoreBonusToAttack);
+            Traverse.Create(power).Field("abilityScore").SetValue(abilityScore);
+
+            Traverse.Create(power).Field("effectDescription").SetValue(effectDescription);
+
+            Traverse.Create(power).Field("name").SetValue(name);
+            power.name = name;
+            Traverse.Create(power).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(power).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(power);
+            return power;
+        }
+
+        public static FeatureDefinitionBonusCantrips BuildBonusCantrips(List<SpellDefinition> cantrips, string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionBonusCantrips bonusCantrips = ScriptableObject.CreateInstance<FeatureDefinitionBonusCantrips>();
+
+            foreach (SpellDefinition cantrip in cantrips)
+            {
+                bonusCantrips.BonusCantrips.Add(cantrip);
+            }
+
+            Traverse.Create(bonusCantrips).Field("name").SetValue(name);
+            bonusCantrips.name = name;
+            Traverse.Create(bonusCantrips).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(bonusCantrips).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(bonusCantrips);
+            return bonusCantrips;
+        }
+
+        public static FeatureDefinitionAutoPreparedSpells.AutoPreparedSpellsGroup BuildAutoPreparedSpellGroup(int classLevel, List<SpellDefinition> spellnames)
+        {
+            FeatureDefinitionAutoPreparedSpells.AutoPreparedSpellsGroup spellgroup = new FeatureDefinitionAutoPreparedSpells.AutoPreparedSpellsGroup();
+            Traverse.Create(spellgroup).Field("classLevel").SetValue(classLevel);
+            Traverse.Create(spellgroup).Field("spellsList").SetValue(new List<SpellDefinition>());
+            foreach (SpellDefinition spell in spellnames)
+            {
+                spellgroup.SpellsList.Add(spell);
+            }
+            return spellgroup;
+        }
+
+        public static FeatureDefinitionAutoPreparedSpells BuildAutoPreparedSpells(List<FeatureDefinitionAutoPreparedSpells.AutoPreparedSpellsGroup> autospelllists,
+            CharacterClassDefinition characterclass, string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionAutoPreparedSpells autopreparedspell = ScriptableObject.CreateInstance<FeatureDefinitionAutoPreparedSpells>();
+            Traverse.Create(autopreparedspell).Field("autoPreparedSpellsGroups").SetValue(new List<FeatureDefinitionAutoPreparedSpells.AutoPreparedSpellsGroup>());
+            foreach (FeatureDefinitionAutoPreparedSpells.AutoPreparedSpellsGroup groups in autospelllists)
+            {
+                autopreparedspell.AutoPreparedSpellsGroups.Add(groups);
+            }
+            Traverse.Create(autopreparedspell).Field("spellcastingClass").SetValue(characterclass);
+            Traverse.Create(autopreparedspell).Field("contentCopyright").SetValue(4);
+            Traverse.Create(autopreparedspell).Field("name").SetValue(name);
+            autopreparedspell.name = name;
+            Traverse.Create(autopreparedspell).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(autopreparedspell).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(autopreparedspell);
+            return autopreparedspell;
+        }
     }
+
 }

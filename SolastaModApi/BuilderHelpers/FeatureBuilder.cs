@@ -568,6 +568,7 @@ namespace SolastaModApi
             Traverse.Create(power).Field("proficiencyBonusToAttack").SetValue(proficiencyBonusToAttack);
             Traverse.Create(power).Field("abilityScoreBonusToAttack").SetValue(abilityScoreBonusToAttack);
             Traverse.Create(power).Field("abilityScore").SetValue(abilityScore);
+            Traverse.Create(power).Field("usesAbilityScoreName").SetValue(abilityScore);
 
             Traverse.Create(power).Field("effectDescription").SetValue(effectDescription);
 
@@ -577,6 +578,168 @@ namespace SolastaModApi
             Traverse.Create(power).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(power);
             return power;
+        }
+
+        public static EffectDescription BuildEffectDescriptionTempHPForm(RuleDefinitions.RangeType rangeType, int rangeParameter,
+            RuleDefinitions.TargetType targetType, int targetParameter,
+            RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect,
+            EffectForm.LevelApplianceType applyLevel, RuleDefinitions.LevelSourceType levelType, bool applyAbilityBonus,
+            int bonusHitPoints, RuleDefinitions.DieType dieType, int diceNumber)
+        {
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(RuleDefinitions.Side.Ally);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
+            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
+            Traverse.Create(effect).Field("targetType").SetValue(targetType);
+            Traverse.Create(effect).Field("targetParameter").SetValue(targetParameter);
+            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(true);
+            Traverse.Create(effect).Field("durationType").SetValue(durationType);
+            Traverse.Create(effect).Field("durationParameter").SetValue(durationParameter);
+            Traverse.Create(effect).Field("endOfEffect").SetValue(endOfEffect);
+
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.TemporaryHitPoints;
+            Traverse.Create(effectForm).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effectForm).Field("applyLevel").SetValue(applyLevel);
+            Traverse.Create(effectForm).Field("levelType").SetValue(levelType);
+            Traverse.Create(effectForm).Field("applyAbilityBonus").SetValue(applyAbilityBonus);
+
+            TemporaryHitPointsForm tempHPForm = new TemporaryHitPointsForm();
+            tempHPForm.BonusHitPoints = bonusHitPoints;
+            tempHPForm.DieType = dieType;
+            tempHPForm.DiceNumber = diceNumber;
+
+            Traverse.Create(effectForm).Field("temporaryHitPointsForm").SetValue(tempHPForm);
+            effect.EffectForms.Add(effectForm);
+
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+
+            return effect;
+        }
+
+        public static EffectDescription BuildEffectDescriptionHealingForm(RuleDefinitions.RangeType rangeType, int rangeParameter,
+            RuleDefinitions.TargetType targetType, int targetParameter,
+            RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect,
+            EffectForm.LevelApplianceType applyLevel, RuleDefinitions.LevelSourceType levelType, bool applyAbilityBonus,
+            int bonusHitPoints, RuleDefinitions.DieType dieType, int diceNumber)
+        {
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(RuleDefinitions.Side.Ally);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
+            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
+            Traverse.Create(effect).Field("targetType").SetValue(targetType);
+            Traverse.Create(effect).Field("targetParameter").SetValue(targetParameter);
+            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(true);
+            Traverse.Create(effect).Field("durationType").SetValue(durationType);
+            Traverse.Create(effect).Field("durationParameter").SetValue(durationParameter);
+            Traverse.Create(effect).Field("endOfEffect").SetValue(endOfEffect);
+
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.Healing;
+            Traverse.Create(effectForm).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effectForm).Field("applyLevel").SetValue(applyLevel);
+            Traverse.Create(effectForm).Field("levelType").SetValue(levelType);
+            Traverse.Create(effectForm).Field("applyAbilityBonus").SetValue(applyAbilityBonus);
+
+            HealingForm healingForm = new HealingForm();
+            healingForm.BonusHealing = bonusHitPoints;
+            healingForm.DieType = dieType;
+            healingForm.DiceNumber = diceNumber;
+
+            Traverse.Create(effectForm).Field("healingForm").SetValue(healingForm);
+            effect.EffectForms.Add(effectForm);
+
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+
+            return effect;
+        }
+
+        public static EffectDescription BuildEffectDescriptionReviveForm(RuleDefinitions.RangeType rangeType, int rangeParameter,
+            RuleDefinitions.TargetType targetType, int targetParameter,
+            RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect,
+            int secondsSinceDeath)
+        {
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(RuleDefinitions.Side.Ally);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
+            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
+            Traverse.Create(effect).Field("targetType").SetValue(targetType);
+            Traverse.Create(effect).Field("targetParameter").SetValue(targetParameter);
+            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(true);
+            Traverse.Create(effect).Field("durationType").SetValue(durationType);
+            Traverse.Create(effect).Field("durationParameter").SetValue(durationParameter);
+            Traverse.Create(effect).Field("endOfEffect").SetValue(endOfEffect);
+
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.Revive;
+            Traverse.Create(effectForm).Field("createdByCharacter").SetValue(true);
+
+            ReviveForm reviveForm = new ReviveForm();
+            Traverse.Create(reviveForm).Field("maxSecondsSinceDeath").SetValue(secondsSinceDeath);
+
+            Traverse.Create(effectForm).Field("reviveForm").SetValue(reviveForm);
+            effect.EffectForms.Add(effectForm);
+
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+
+            return effect;
+        }
+
+        public static EffectDescription BuildEffectDescriptionSummonForm(RuleDefinitions.RangeType rangeType, int rangeParameter,
+            RuleDefinitions.TargetType targetType, int targetParameter,
+            RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect,
+            ItemDefinition item, int number)
+        {
+            EffectDescription effect = new EffectDescription();
+            Traverse.Create(effect).Field("targetSide").SetValue(RuleDefinitions.Side.Ally);
+            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
+            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
+            Traverse.Create(effect).Field("targetType").SetValue(targetType);
+            Traverse.Create(effect).Field("targetParameter").SetValue(targetParameter);
+            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(true);
+            Traverse.Create(effect).Field("durationType").SetValue(durationType);
+            Traverse.Create(effect).Field("durationParameter").SetValue(durationParameter);
+            Traverse.Create(effect).Field("endOfEffect").SetValue(endOfEffect);
+
+            EffectForm effectForm = new EffectForm();
+            effectForm.FormType = EffectForm.EffectFormType.Summon;
+            Traverse.Create(effectForm).Field("createdByCharacter").SetValue(true);
+
+            SummonForm summonForm = new SummonForm();
+            Traverse.Create(summonForm).Field("summonType").SetValue(SummonForm.Type.InventoryItem);
+            Traverse.Create(summonForm).Field("itemDefinition").SetValue(item);
+            Traverse.Create(summonForm).Field("number").SetValue(number);
+
+            Traverse.Create(effectForm).Field("summonForm").SetValue(summonForm);
+            effect.EffectForms.Add(effectForm);
+
+            EffectAdvancement effectAdvancement = new EffectAdvancement();
+            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
+            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+
+            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+
+            return effect;
         }
 
         public static FeatureDefinitionBonusCantrips BuildBonusCantrips(List<SpellDefinition> cantrips, string name, GuiPresentation guiPresentation)

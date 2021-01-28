@@ -96,6 +96,7 @@
     <Compile Include="BuilderHelpers\CastSpellBuilder.cs" />
     <Compile Include="BuilderHelpers\FeatBuilder.cs" />
     <Compile Include="BuilderHelpers\GuidHelper.cs" />
+    <Compile Include="BuilderHelpers\ItemBuilder.cs" />
     <Compile Include="BuilderHelpers\LocalizationHelper.cs" />
     <Compile Include="BuilderHelpers\RaceBuilder.cs" />
     <Compile Include="BuilderHelpers\ClassBuilder.cs" />

@@ -789,6 +789,20 @@ namespace SolastaModApi
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(autopreparedspell);
             return autopreparedspell;
         }
-    }
 
+        public static FeatureDefinitionDieRollModifier BuildDieRollModifier(RuleDefinitions.RollContext context, int rerollCount, int minRerollValue, string consoleLocalizationKey, string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionDieRollModifier dieRollModifier = ScriptableObject.CreateInstance<FeatureDefinitionDieRollModifier>();
+            Traverse.Create(dieRollModifier).Field("validityContext").SetValue(context);
+            Traverse.Create(dieRollModifier).Field("rerollLocalizationKey").SetValue(consoleLocalizationKey);
+            Traverse.Create(dieRollModifier).Field("rerollCount").SetValue(rerollCount);
+            Traverse.Create(dieRollModifier).Field("minRerollValue").SetValue(minRerollValue);
+            Traverse.Create(dieRollModifier).Field("name").SetValue(name);
+            dieRollModifier.name = name;
+            Traverse.Create(dieRollModifier).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(dieRollModifier).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(dieRollModifier);
+            return dieRollModifier;
+        }
+    }
 }

@@ -132,11 +132,26 @@ namespace SolastaModApi
             MyClass.FeatureUnlocks.Add(new FeatureUnlockByLevel(feature, level));
         }
 
-        public void AddToDB()
+        public FeatureDefinitionSubclassChoice BuildSubclassChoice(int level, string subclassSuffix, string name, GuiPresentation guiPresentation)
+        {
+            FeatureDefinitionSubclassChoice subclassChoice = ScriptableObject.CreateInstance<FeatureDefinitionSubclassChoice>();
+
+            Traverse.Create(subclassChoice).Field("subclassSuffix").SetValue(subclassSuffix);
+            Traverse.Create(subclassChoice).Field("name").SetValue(name);
+            subclassChoice.name = name;
+            Traverse.Create(subclassChoice).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(subclassChoice).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(subclassChoice);
+            AddFeatureAtLevel(subclassChoice, level);
+            return subclassChoice;
+        }
+
+        public CharacterClassDefinition AddToDB()
         {
             Database<CharacterClassDefinition> CharacterClassDatabase = DatabaseRepository.GetDatabase<CharacterClassDefinition>();
             // add new class to db
             CharacterClassDatabase.Add(MyClass);
+            return MyClass;
         }
     }
 }

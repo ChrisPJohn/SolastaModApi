@@ -20,6 +20,7 @@ namespace SolastaModApi
         public CastSpellBuilder()
         {
             CastSpell = ScriptableObject.CreateInstance<FeatureDefinitionCastSpell>();
+            Traverse.Create(CastSpell).Field("restrictedSchools").SetValue(new List<string>());
         }
 
         public void SetName(string name)
@@ -81,10 +82,6 @@ namespace SolastaModApi
 
         public void AddRestrictedSchool(SchoolOfMagicDefinition school)
         {
-            if (CastSpell.RestrictedSchools == null)
-            {
-                Traverse.Create(CastSpell).Field("restrictedSchools").SetValue(new List<string>());
-            }
             CastSpell.RestrictedSchools.Add(school.Name);
         }
 
@@ -282,7 +279,7 @@ namespace SolastaModApi
                     {
                         FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
                         slotsForLevel.Level = level;
-                        slotsForLevel.Slots = SlotsByCasterLevel[(level - startingLevel + 1) / 2 + 1];
+                        slotsForLevel.Slots = SlotsByCasterLevel[(level - startingLevel) / 2 + 1];
                         CastSpell.SlotsPerLevels.Add(slotsForLevel);
                     }
                     break;

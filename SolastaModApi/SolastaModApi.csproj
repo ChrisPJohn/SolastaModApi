@@ -94,6 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderHelpers\CastSpellBuilder.cs" />
+    <Compile Include="BuilderHelpers\EffectDescriptionBuilder.cs" />
+    <Compile Include="BuilderHelpers\EffectProxyDefinitionBuilder.cs" />
     <Compile Include="BuilderHelpers\FeatBuilder.cs" />
     <Compile Include="BuilderHelpers\GuidHelper.cs" />
     <Compile Include="BuilderHelpers\ItemBuilder.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="BuilderHelpers\FeatureBuilder.cs" />
     <Compile Include="BuilderHelpers\GuiPresentationBuilder.cs" />
     <Compile Include="BuilderHelpers\RestActivityBuilder.cs" />
+    <Compile Include="BuilderHelpers\SpellBuilder.cs" />
     <Compile Include="BuilderHelpers\SubClassBuilder.cs" />
     <Compile Include="DatabaseHelper\DatabaseHelper.cs" />
     <Compile Include="Main.cs" />

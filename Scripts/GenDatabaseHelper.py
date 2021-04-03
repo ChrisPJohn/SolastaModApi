@@ -60,10 +60,8 @@ def write_subclass(file, name, asset_list, indent = 0):
     write_line(file, "}", indent)
 def write_getter(file, asset, indent = 0):
     member_name = asset.member_name()
-    cast = ""
-    if asset.database_type != asset.asset_type:
-        cast = f"({asset.asset_type})"
-    write_line(file, f"public static {asset.asset_type} {member_name} => {cast}DatabaseRepository.GetDatabase<{asset.database_type}>().TryGetElement(\"{asset.name}\", \"{asset.guid}\");", indent)
+    if asset.database_type == asset.asset_type:
+        write_line(file, f"public static {asset.asset_type} {member_name} => DatabaseRepository.GetDatabase<{asset.database_type}>().TryGetElement(\"{asset.name}\", \"{asset.guid}\");", indent)
 def gen_test_script():
     path = os.path.join(solution_dir, "SolastaModApi", "DatabaseHelper", "DatabaseHelper.cs")
     with open(path, "w", encoding="utf8") as file:

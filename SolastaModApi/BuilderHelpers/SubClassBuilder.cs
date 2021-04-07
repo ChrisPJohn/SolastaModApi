@@ -14,12 +14,12 @@ namespace SolastaModApi
             MyClass = ScriptableObject.CreateInstance<CharacterSubclassDefinition>();
         }
 
-        public void SetName(string name)
+        public void SetName(string name, string guid)
         {
 
             Traverse.Create(MyClass).Field("name").SetValue(name);
             MyClass.name = name;
-            Traverse.Create(MyClass).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            Traverse.Create(MyClass).Field("guid").SetValue(guid);
         }
 
         public void SetGuiPresentation(GuiPresentation gui)

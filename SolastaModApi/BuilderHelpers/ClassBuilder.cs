@@ -90,11 +90,11 @@ namespace SolastaModApi
             Traverse.Create(MyClass).Field("requiresDeity").SetValue(true);
         }
 
-        public void SetName(string name)
+        public void SetName(string name, string guid)
         {
             Traverse.Create(MyClass).Field("name").SetValue(name);
             MyClass.name = name;
-            Traverse.Create(MyClass).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            Traverse.Create(MyClass).Field("guid").SetValue(guid);
         }
 
         public void SetGuiPresentation(GuiPresentation gui)
@@ -137,7 +137,7 @@ namespace SolastaModApi
             MyClass.FeatureUnlocks.Add(new FeatureUnlockByLevel(feature, level));
         }
 
-        public FeatureDefinitionSubclassChoice BuildSubclassChoice(int level, string subclassSuffix, bool requireDeity, string name, GuiPresentation guiPresentation)
+        public FeatureDefinitionSubclassChoice BuildSubclassChoice(int level, string subclassSuffix, bool requireDeity, string name, GuiPresentation guiPresentation, string guid)
         {
             FeatureDefinitionSubclassChoice subclassChoice = ScriptableObject.CreateInstance<FeatureDefinitionSubclassChoice>();
             Traverse.Create(subclassChoice).Field("filterByDeity").SetValue(requireDeity);
@@ -145,7 +145,7 @@ namespace SolastaModApi
             Traverse.Create(subclassChoice).Field("name").SetValue(name);
             subclassChoice.name = name;
             Traverse.Create(subclassChoice).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(subclassChoice).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            Traverse.Create(subclassChoice).Field("guid").SetValue(guid);
 
             DatabaseRepository.GetDatabase<FeatureDefinition>().Add(subclassChoice);
             AddFeatureAtLevel(subclassChoice, level);

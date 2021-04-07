@@ -8,7 +8,7 @@ namespace SolastaModApi
     class FeatBuilder
     {
         private FeatDefinition Feat;
-        public FeatBuilder(List<FeatureDefinition> features, string name, GuiPresentation guiPresentation)
+        public FeatBuilder(List<FeatureDefinition> features, string name, GuiPresentation guiPresentation, string guid)
         {
             Feat = ScriptableObject.CreateInstance<FeatDefinition>();
             Traverse.Create(Feat).Field("knownFeatsPrerequisite").SetValue(new List<string>());
@@ -19,7 +19,7 @@ namespace SolastaModApi
             Traverse.Create(Feat).Field("name").SetValue(name);
             Feat.name = name;
             Traverse.Create(Feat).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(Feat).Field("guid").SetValue(GuidHelper.Create(Main.ModGuidNamespace, name).ToString());
+            Traverse.Create(Feat).Field("guid").SetValue(guid);
         }
 
         public void AddAbilityScorePrereq(string abilityScore, int value)

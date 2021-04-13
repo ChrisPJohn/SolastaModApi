@@ -3,7 +3,7 @@ using static CharacterClassDefinition;
 
 namespace SolastaModApi
 {
-    class EquipmentOptionsBuilder
+    pubic class EquipmentOptionsBuilder
     {
         public static HeroEquipmentOption Option(ItemDefinition itemType, string optionType, int number)
         {

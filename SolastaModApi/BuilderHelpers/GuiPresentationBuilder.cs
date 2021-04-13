@@ -4,7 +4,7 @@ using UnityEngine.AddressableAssets;
 
 namespace SolastaModApi
 {
-    class GuiPresentationBuilder
+    public class GuiPresentationBuilder
     {
         GuiPresentation guiPresentation;
 

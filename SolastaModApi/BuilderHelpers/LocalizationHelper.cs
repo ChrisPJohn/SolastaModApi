@@ -2,7 +2,7 @@
 
 namespace SolastaModApi
 {
-    class LocalizationHelper
+    public class LocalizationHelper
     {
 
         public static string AddString(string key, string translation)

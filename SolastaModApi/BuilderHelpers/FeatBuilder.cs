@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SolastaModApi
 {
-    class FeatBuilder
+    public class FeatBuilder
     {
         private FeatDefinition Feat;
         public FeatBuilder(List<FeatureDefinition> features, string name, GuiPresentation guiPresentation, string guid)

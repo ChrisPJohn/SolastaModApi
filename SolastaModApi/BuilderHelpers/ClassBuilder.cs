@@ -8,7 +8,7 @@ using static CharacterClassDefinition;
 
 namespace SolastaModApi
 {
-    class ClassBuilder
+    public class ClassBuilder
     {
         CharacterClassDefinition MyClass;
 

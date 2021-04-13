@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SolastaModApi
 {
-    class SubClassBuilder
+    public class SubClassBuilder
     {
 
         CharacterSubclassDefinition MyClass;

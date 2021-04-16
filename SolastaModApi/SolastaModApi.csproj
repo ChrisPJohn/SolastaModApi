@@ -21,7 +21,7 @@
 	</Target>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Install|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release Install|AnyCPU'">
-		<OutputPath>$(SolastaInstallDir)\Mods\SolastaSaveByLocation\</OutputPath>
+		<OutputPath>$(SolastaInstallDir)\Mods\SolastaModApi\</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 	</PropertyGroup>

@@ -5,7 +5,7 @@ A mod to consolidate helpers, builders, etc
 # How to Compile
 
 1. Install Visual Studio 2019
-2. Edit SolastaModTemplate.csproj and set your game folder on line 5
+2. Ensure the SolastaInstallDir environment variable is configured to point to your Solasta_COTM install directory.
 3. Use "InstallDebug" to have it installed directly to your Mods folder
 
 # How to Install

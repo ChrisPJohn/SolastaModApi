@@ -22,7 +22,5 @@ namespace SolastaModApi
             Traverse.Create(itemOption).Field("defaultChoice").SetValue(defaultChoice);
             return itemOption;
         }
-
-
     }
 }

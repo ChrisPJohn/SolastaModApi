@@ -7,58 +7,59 @@ namespace SolastaModApi
 {
     public class FeatBuilder
     {
-        private FeatDefinition Feat;
+        private readonly FeatDefinition feat;
+
         public FeatBuilder(List<FeatureDefinition> features, string name, GuiPresentation guiPresentation, string guid)
         {
-            Feat = ScriptableObject.CreateInstance<FeatDefinition>();
-            Traverse.Create(Feat).Field("knownFeatsPrerequisite").SetValue(new List<string>());
-            Traverse.Create(Feat).Field("compatibleRacesPrerequisite").SetValue(new List<string>());
-            Traverse.Create(Feat).Field("compatibleClassesPrerequisite").SetValue(new List<string>());
+            feat = ScriptableObject.CreateInstance<FeatDefinition>();
+            Traverse.Create(feat).Field("knownFeatsPrerequisite").SetValue(new List<string>());
+            Traverse.Create(feat).Field("compatibleRacesPrerequisite").SetValue(new List<string>());
+            Traverse.Create(feat).Field("compatibleClassesPrerequisite").SetValue(new List<string>());
 
-            Traverse.Create(Feat).Field("features").SetValue(features);
-            Traverse.Create(Feat).Field("name").SetValue(name);
-            Feat.name = name;
-            Traverse.Create(Feat).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(Feat).Field("guid").SetValue(guid);
+            Traverse.Create(feat).Field("features").SetValue(features);
+            Traverse.Create(feat).Field("name").SetValue(name);
+            feat.name = name;
+            Traverse.Create(feat).Field("guiPresentation").SetValue(guiPresentation);
+            Traverse.Create(feat).Field("guid").SetValue(guid);
         }
 
         public void AddAbilityScorePrereq(string abilityScore, int value)
         {
-            Traverse.Create(Feat).Field("minimalAbilityScorePrerequisite").SetValue(true);
-            Traverse.Create(Feat).Field("minimalAbilityScoreName").SetValue(abilityScore);
-            Traverse.Create(Feat).Field("minimalAbilityScoreValue").SetValue(value);
+            Traverse.Create(feat).Field("minimalAbilityScorePrerequisite").SetValue(true);
+            Traverse.Create(feat).Field("minimalAbilityScoreName").SetValue(abilityScore);
+            Traverse.Create(feat).Field("minimalAbilityScoreValue").SetValue(value);
         }
 
         public void AddSpellcasterPrereq()
         {
-            Traverse.Create(Feat).Field("mustCastSpellsPrerequisite").SetValue(true);
+            Traverse.Create(feat).Field("mustCastSpellsPrerequisite").SetValue(true);
         }
 
         public void AddClassPrereq(List<string> classes)
         {
-            Traverse.Create(Feat).Field("compatibleClassesPrerequisite").SetValue(classes);
+            Traverse.Create(feat).Field("compatibleClassesPrerequisite").SetValue(classes);
         }
 
         public void AddRacePrereq(List<string> races)
         {
-            Traverse.Create(Feat).Field("compatibleRacesPrerequisite").SetValue(races);
+            Traverse.Create(feat).Field("compatibleRacesPrerequisite").SetValue(races);
         }
 
         public void AddFeatPrereq(List<string> feats)
         {
-            Traverse.Create(Feat).Field("knownFeatsPrerequisite").SetValue(feats);
+            Traverse.Create(feat).Field("knownFeatsPrerequisite").SetValue(feats);
         }
 
         public void AddArmorProficiencyPrereq(ArmorCategoryDefinition category)
         {
-            Traverse.Create(Feat).Field("armorProficiencyPrerequisite").SetValue(true);
-            Traverse.Create(Feat).Field("armorProficiencyCategory").SetValue(category.Name);
+            Traverse.Create(feat).Field("armorProficiencyPrerequisite").SetValue(true);
+            Traverse.Create(feat).Field("armorProficiencyCategory").SetValue(category.Name);
         }
 
         public FeatDefinition BuildFeat()
         {
-            DatabaseRepository.GetDatabase<FeatDefinition>().Add(Feat);
-            return Feat;
+            DatabaseRepository.GetDatabase<FeatDefinition>().Add(feat);
+            return feat;
         }
     }
 }

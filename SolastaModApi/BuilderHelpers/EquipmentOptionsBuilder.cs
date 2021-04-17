@@ -3,7 +3,7 @@ using static CharacterClassDefinition;
 
 namespace SolastaModApi
 {
-    public class EquipmentOptionsBuilder
+    public static class EquipmentOptionsBuilder
     {
         public static HeroEquipmentOption Option(ItemDefinition itemType, string optionType, int number)
         {
@@ -22,7 +22,5 @@ namespace SolastaModApi
             Traverse.Create(itemOption).Field("defaultChoice").SetValue(defaultChoice);
             return itemOption;
         }
-
-
     }
 }

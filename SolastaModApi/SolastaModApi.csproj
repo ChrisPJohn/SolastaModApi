@@ -94,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderHelpers\ClassBuilder.cs" />
+    <Compile Include="BuilderHelpers\EffectDescriptionBuilder.cs" />
+    <Compile Include="BuilderHelpers\EffectFormBuilder.cs" />
+    <Compile Include="BuilderHelpers\EffectProxyDefinitionBuilder.cs" />
     <Compile Include="BuilderHelpers\EquipmentOptionsBuilder.cs" />
     <Compile Include="BuilderHelpers\FeatBuilder.cs" />
     <Compile Include="BuilderHelpers\GuidHelper.cs" />

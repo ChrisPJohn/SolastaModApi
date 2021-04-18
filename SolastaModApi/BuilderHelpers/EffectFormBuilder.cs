@@ -139,7 +139,6 @@ namespace SolastaModApi.BuilderHelpers
             Traverse.Create(effectForm).Field("healingForm").SetValue(healingForm);
         }
 
-
         public void SetItemPropertyForm(List<FeatureUnlockByLevel> featureBySlotLevel, RuleDefinitions.ItemPropertyUsage usageLimitation, int useAmount)
         {
             effectForm.FormType = EffectForm.EffectFormType.ItemProperty;
@@ -149,7 +148,6 @@ namespace SolastaModApi.BuilderHelpers
             Traverse.Create(itemForm).Field("featureBySlotLevel").SetValue(featureBySlotLevel);
             Traverse.Create(effectForm).Field("itemPropertyForm").SetValue(itemForm);
         }
-
 
         public void SetLightSourceForm(RuleDefinitions.LightSourceType lightSourceType, int brightRange, int dimAdditionalRange,
             Color color, AssetReference graphicsPrefabReference)

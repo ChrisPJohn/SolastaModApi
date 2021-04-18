@@ -6,13 +6,15 @@ namespace SolastaModApi
 {
     public class GuiPresentationBuilder
     {
-        GuiPresentation guiPresentation;
+        private readonly GuiPresentation guiPresentation;
 
         public GuiPresentationBuilder(string description, string title)
         {
-            guiPresentation = new GuiPresentation();
-            guiPresentation.Description = description;
-            guiPresentation.Title = title;
+            guiPresentation = new GuiPresentation
+            {
+                Description = description,
+                Title = title
+            };
 
             Traverse.Create(guiPresentation).Field("spriteReference").SetValue(new AssetReferenceSprite(""));
         }

@@ -5,7 +5,7 @@ namespace SolastaModApi
 {
     public class EffectDescriptionBuilder
     {
-        EffectDescription effect;
+        private readonly EffectDescription effect;
 
         public EffectDescriptionBuilder()
         {

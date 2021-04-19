@@ -8,7 +8,7 @@ namespace SolastaModApi.BuilderHelpers
 {
     public class EffectFormBuilder
     {
-        EffectForm effectForm;
+        private readonly EffectForm effectForm;
 
         public EffectFormBuilder()
         {

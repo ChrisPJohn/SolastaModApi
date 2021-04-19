@@ -9,7 +9,7 @@ namespace SolastaModApi
 {
 	public class EffectProxyDefinitionBuilder
 	{
-		EffectProxyDefinition effectProxy;
+		private readonly EffectProxyDefinition effectProxy;
 
 		public EffectProxyDefinitionBuilder()
         {

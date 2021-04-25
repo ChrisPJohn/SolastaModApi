@@ -2,7 +2,7 @@
 	"Id": "SolastaModApi",
 	"DisplayName": "SolastaModApi",
 	"Author": "spacehamster",
-	"Version": "0.1.0",
+	"Version": "0.1.1",
 	"ManagerVersion": "0.22.13",
 	"AssemblyName": "SolastaModApi.dll",
 	"EntryMethod": "SolastaModApi.Main.Load"

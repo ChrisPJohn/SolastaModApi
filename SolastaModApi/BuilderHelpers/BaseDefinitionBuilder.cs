@@ -1,9 +1,10 @@
 ﻿using SolastaModApi.Diagnostics;
 using SolastaModApi.Infrastructure;
 using SolastaTesting.SolastaModApi;
+using System;
 using UnityEngine;
 
-namespace SolastaModApi.BuilderHelpers
+namespace SolastaModApi
 {
     /// <summary>
     ///     Base class builder for all classes derived from BaseDefinition
@@ -18,10 +19,23 @@ namespace SolastaModApi.BuilderHelpers
         /// <param name="guid"></param>
         protected BaseDefinitionBuilder(string name, string guid)
         {
+            Preconditions.IsNotNullOrWhiteSpace(name, nameof(name));
+            Preconditions.IsNotNullOrWhiteSpace(guid, nameof(guid));
+
             Definition = ScriptableObject.CreateInstance<T>();
 
             Definition.name = name;
             Definition.SetField("guid", guid);
+        }
+
+        /// <summary>
+        /// Create a new one
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="guidNamespace"></param>
+        protected BaseDefinitionBuilder(string name, Guid guidNamespace) :
+            this(name, GuidHelper.Create(guidNamespace, name).ToString("N"))
+        {
         }
 
         /// <summary>
@@ -32,10 +46,24 @@ namespace SolastaModApi.BuilderHelpers
         /// <param name="guid"></param>
         protected BaseDefinitionBuilder(T original, string name, string guid)
         {
-            Definition = Object.Instantiate(original);
+            Preconditions.IsNotNullOrWhiteSpace(name, nameof(name));
+            Preconditions.IsNotNullOrWhiteSpace(guid, nameof(guid));
+
+            Definition = UnityEngine.Object.Instantiate(original);
 
             Definition.name = name;
             Definition.SetField("guid", guid);
+        }
+
+        /// <summary>
+        /// Create clone and rename
+        /// </summary>
+        /// <param name="original"></param>
+        /// <param name="name"></param>
+        /// <param name="guidNamespace"></param>
+        protected BaseDefinitionBuilder(T original, string name, Guid guidNamespace) :
+            this(original, name, GuidHelper.Create(guidNamespace, name).ToString("N"))
+        {
         }
 
         /// <summary>
@@ -74,11 +102,6 @@ namespace SolastaModApi.BuilderHelpers
             }
 
             return Definition;
-        }
-
-        public void SetGuiPresentation(GuiPresentation guiPresentation)
-        {
-            Definition.SetField("guiPresentation", guiPresentation);
         }
 
         protected T Definition { get; }

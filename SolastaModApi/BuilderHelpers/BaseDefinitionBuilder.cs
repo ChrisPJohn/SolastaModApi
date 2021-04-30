@@ -90,11 +90,31 @@ namespace SolastaModApi
 
         public T AddToDB(bool assertIfDuplicate = true)
         {
-            var fd = Definition as FeatureDefinition;
-
-            if (fd != null)
+            if(Definition is RecordTableDefinition)
             {
-                AddToDB(fd, assertIfDuplicate);
+                AddToDB(Definition as RecordTableDefinition, assertIfDuplicate);
+            }
+            else if (Definition is FeatureDefinitionAffinity)
+            {
+                AddToDB(Definition as FeatureDefinitionAffinity, assertIfDuplicate);
+                AddToDB(Definition as FeatureDefinition, assertIfDuplicate);
+            }
+            else if (Definition is FeatureDefinition)
+            {
+                AddToDB(Definition as FeatureDefinition, assertIfDuplicate);
+            }
+            else if(Definition is FurnitureBlueprint)
+            {
+                AddToDB(Definition as FurnitureBlueprint, assertIfDuplicate);
+                AddToDB(Definition as BaseBlueprint, assertIfDuplicate);
+            }
+            else if(Definition is BaseBlueprint)
+            {
+                AddToDB(Definition as BaseBlueprint, assertIfDuplicate);
+            }
+            else if(Definition is EditableGraphDefinition)
+            {
+                AddToDB(Definition as EditableGraphDefinition, assertIfDuplicate);
             }
             else
             {

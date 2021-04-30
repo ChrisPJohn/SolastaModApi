@@ -77,6 +77,10 @@ namespace SolastaModApi
 
         private static void AddToDB<TDb>(TDb definition, bool assertIfDuplicate = true) where TDb : BaseDefinition
         {
+            Preconditions.IsNotNull(definition, nameof(definition));
+            Preconditions.IsNotNullOrWhiteSpace(definition.Name, "definition.Name");
+            Preconditions.IsNotNullOrWhiteSpace(definition.GUID, "definition.GUID");
+
             var db = DatabaseRepository.GetDatabase<TDb>();
 
             Assert.IsNotNull(db, $"Database '{typeof(TDb).Name}' not found.");

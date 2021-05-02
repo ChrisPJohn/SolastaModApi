@@ -2,6 +2,11 @@ using SolastaModApi.Infrastructure;
 
 namespace SolastaModApi
 {
+    /// <summary>
+    /// This helper extensions class was automatically generated against Solasta 0.5.24.
+    /// It's not guaranteed to work against any other version of Solasta.
+    /// If you find an issue please report at https://github.com/SolastaMods/SolastaModApi/issues.
+    /// </summary>
     public static class BaseDefinitionExtensions
     {
         public static T SetCachedName<T>(this T entity, string value)

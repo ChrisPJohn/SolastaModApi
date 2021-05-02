@@ -6,6 +6,11 @@ using static AnimationDefinitions;
 
 namespace SolastaModApi
 {
+    /// <summary>
+    /// This helper extensions class was automatically generated against Solasta 0.5.24.
+    /// It's not guaranteed to work against any other version of Solasta.
+    /// If you find an issue please report at https://github.com/SolastaMods/SolastaModApi/issues.
+    /// </summary>
     public static class CharacterClassDefinitionExtensions
     {
         public static T SetClassAnimationId<T>(this T entity, ClassAnimationId value)

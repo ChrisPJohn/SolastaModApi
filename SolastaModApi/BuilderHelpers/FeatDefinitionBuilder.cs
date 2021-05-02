@@ -6,7 +6,7 @@ namespace SolastaModApi
 {
     public class FeatDefinitionBuilder : BaseDefinitionBuilder<FeatDefinition>
     {
-        private void InitialsePrerequisiteCollectionFields()
+        private void InitializePrerequisiteCollectionFields()
         {
             Definition.SetField("knownFeatsPrerequisite", new List<string>());
             Definition.SetField("compatibleRacesPrerequisite", new List<string>());
@@ -15,7 +15,7 @@ namespace SolastaModApi
 
         public FeatDefinitionBuilder(string name, string guid, List<FeatureDefinition> features, GuiPresentation guiPresentation) : base(name, guid)
         {
-            InitialsePrerequisiteCollectionFields();
+            InitializePrerequisiteCollectionFields();
 
             Definition.SetField("features", features);
             Definition.SetGuiPresentation(guiPresentation);
@@ -23,12 +23,12 @@ namespace SolastaModApi
 
         public FeatDefinitionBuilder(string name, string guid) : base(name, guid)
         {
-            InitialsePrerequisiteCollectionFields();
+            InitializePrerequisiteCollectionFields();
         }
 
         public FeatDefinitionBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
-            InitialsePrerequisiteCollectionFields();
+            InitializePrerequisiteCollectionFields();
         }
 
         public void SetAbilityScorePrerequisite(string abilityScore, int value)

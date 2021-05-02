@@ -1,6 +1,4 @@
-﻿using HarmonyLib;
-using TA.AI;
-using UnityEngine;
+﻿using TA.AI;
 using UnityEngine.AddressableAssets;
 using System.Collections.Generic;
 using static CharacterClassDefinition;
@@ -114,33 +112,31 @@ namespace SolastaModApi
 
         public CharacterClassDefinitionBuilder AddEquipmentRow(List<HeroEquipmentOption> equipmentList)
         {
-            HeroEquipmentRow equipmentRow = new HeroEquipmentRow();
-            HeroEquipmentColumn equipmentColumn = new HeroEquipmentColumn();
-            foreach (HeroEquipmentOption option in equipmentList)
-            {
-                equipmentColumn.EquipmentOptions.Add(option);
-            }
+            var equipmentColumn = new HeroEquipmentColumn();
+            equipmentColumn.EquipmentOptions.AddRange(equipmentList);
+
+            var equipmentRow = new HeroEquipmentRow();
             equipmentRow.EquipmentColumns.Add(equipmentColumn);
+
             Definition.EquipmentRows.Add(equipmentRow);
+
             return this;
         }
 
         public CharacterClassDefinitionBuilder AddEquipmentRow(List<HeroEquipmentOption> equipmentListA, List<HeroEquipmentOption> equipmentListB)
         {
-            HeroEquipmentRow equipmentRow = new HeroEquipmentRow();
-            HeroEquipmentColumn equipmentColumnA = new HeroEquipmentColumn();
-            foreach (HeroEquipmentOption option in equipmentListA)
-            {
-                equipmentColumnA.EquipmentOptions.Add(option);
-            }
+            var equipmentColumnA = new HeroEquipmentColumn();
+            equipmentColumnA.EquipmentOptions.AddRange(equipmentListA);
+
+            var equipmentColumnB = new HeroEquipmentColumn();
+            equipmentColumnB.EquipmentOptions.AddRange(equipmentListB);
+
+            var equipmentRow = new HeroEquipmentRow();
             equipmentRow.EquipmentColumns.Add(equipmentColumnA);
-            HeroEquipmentColumn equipmentColumnB = new HeroEquipmentColumn();
-            foreach (HeroEquipmentOption option in equipmentListB)
-            {
-                equipmentColumnB.EquipmentOptions.Add(option);
-            }
             equipmentRow.EquipmentColumns.Add(equipmentColumnB);
+
             Definition.EquipmentRows.Add(equipmentRow);
+            
             return this;
         }
 
@@ -150,20 +146,19 @@ namespace SolastaModApi
             return this;
         }
 
+        // TODO: change 'string guid' to GUID guidNamespace?
         public FeatureDefinitionSubclassChoice BuildSubclassChoice(int level, string subclassSuffix, bool requireDeity, string name, GuiPresentation guiPresentation, string guid)
         {
-            // TODO: create FeatureDefinitionSubclassChoiceBuilder derived from BaseDefinitionBuilder
+            var builder = new FeatureDefinitionSubclassChoiceBuilder(name, guid);
 
-            FeatureDefinitionSubclassChoice subclassChoice = ScriptableObject.CreateInstance<FeatureDefinitionSubclassChoice>();
-            Traverse.Create(subclassChoice).Field("filterByDeity").SetValue(requireDeity);
-            Traverse.Create(subclassChoice).Field("subclassSuffix").SetValue(subclassSuffix);
-            Traverse.Create(subclassChoice).Field("name").SetValue(name);
-            subclassChoice.name = name;
-            Traverse.Create(subclassChoice).Field("guiPresentation").SetValue(guiPresentation);
-            Traverse.Create(subclassChoice).Field("guid").SetValue(guid);
+            var subclassChoice = builder
+                .SetSubclassSuffix(subclassSuffix)
+                .SetFilterByDeity(requireDeity)
+                .SetGuiPresentation(guiPresentation)
+                .AddToDB();
 
-            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(subclassChoice);
             AddFeatureAtLevel(subclassChoice, level);
+
             return subclassChoice;
         }
     }

@@ -2,6 +2,7 @@
 
 namespace SolastaModApi
 {
+    [Obsolete("Use CharacterClassDefinitionBuilder")]
     public class ClassBuilder : CharacterClassDefinitionBuilder
     {
         // The only change is that the ctor requires name and guid

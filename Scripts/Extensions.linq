@@ -186,7 +186,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 			.NamespaceDeclaration(ParseName("SolastaModApi"))
 			.AddMembers(cd);
 
-		var path = Path.Combine(outputPath, "{t.Name}Extensions.cs");
+		var path = Path.Combine(outputPath, $"{t.Name}Extensions.cs");
 
 		var code = sf.AddMembers(ns)
 			.NormalizeWhitespace()

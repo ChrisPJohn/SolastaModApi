@@ -1,5 +1,4 @@
 <Query Kind="Program">
-  <Reference>D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM\Solasta_Data\Managed\Assembly-CSharp.dll</Reference>
   <NuGetReference>Microsoft.CodeAnalysis.CSharp</NuGetReference>
   <Namespace>Microsoft.CodeAnalysis</Namespace>
   <Namespace>Microsoft.CodeAnalysis.CSharp</Namespace>
@@ -9,29 +8,62 @@
 
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-const string pattern = @"^\<(?<name>.*)\>k__BackingField$";
+const string pattern = @"^(\<(?<name>.*)\>k__BackingField)|(m_(?<name>.*))$";
 static readonly Regex NameRegex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled);
 
-// Change this for your repo
+// Where you want the files to be written to
 const string outputPath = @"C:\Users\passp\Source\Repos\SolastaModApi.Dev-Extensions\SolastaModApi\Extensions";
+
+// The path that contains Solasta_Data\Managed
+
+// You can use this if you have configured the SolastaInstallDir environment variable
+//readonly string installDir = Environment.GetEnvironmentVariable("SolastaInstallDir");
+
+// Or point at specific version - e.g. 0.5.42
+readonly string installDir = @"D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM_0_5_42";
 
 void Main()
 {
-	// You can do this
-	//var installDir = Environment.GetEnvironmentVariable("SolastaInstallDir");
+	var assemblyDir = Path.Combine(installDir, @"Solasta_Data\Managed");
+	
+	Directory.SetCurrentDirectory(assemblyDir);
+	
+	var assembly = Assembly.LoadFrom(Path.Combine(assemblyDir, @"Assembly-CSharp.dll"));
 
-	// Or point at specific version 0.5.42
-	var installDir = @"D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM_0_5_42";
-
-	var assembly = Assembly.LoadFile(Path.Combine(installDir, @"Solasta_Data\Managed\Assembly-CSharp.dll"));
-
-	var types = GetDerivedTypes(assembly, typeof(BaseDefinition)).Select(a => a.type)
-		.Concat(GetDerivedTypes(assembly, typeof(RulesetEntity)).Select(a => a.type))
-		.Concat(GetDerivedTypes(assembly, typeof(GuiWrapper)).Select(a => a.type))
+	var exclusions = new List<string>{"FunctorParametersDescription", "TextFragmentStyleDescription"};
+	
+	var types = 
+		Enumerable.Empty<Type>()	
+		// Get all types derived from and including BaseDefinition 
+		.Concat(GetDerivedTypes(assembly, "BaseDefinition").Select(a => a.type))
+		// Get all types derived from and including RulesetEntity 
+		.Concat(GetDerivedTypes(assembly, "RulesetEntity").Select(a => a.type))
+		// Get all types derived from and including GuiWrapper 
+		.Concat(GetDerivedTypes(assembly, "GuiWrapper").Select(a => a.type))
+		// Get all types ending in Description and all derived from types ending in Description
 		.Concat(GetTypesEndingIn(assembly, "Description"))
+		// Get all types ending in Parameters and all derived from types ending in Parameters
 		.Concat(GetTypesEndingIn(assembly, "Parameters"))
-		.Concat(GetTypes(assembly, "GuiPresentation", "BaseDefinition"));
+		// Get all types ending in Bone and all derived from types ending in Bone
+		.Concat(GetTypesEndingIn(assembly, "Bone"))
+		// Get specific types
+		.Concat(GetTypes(assembly, "GuiPresentation"))
+		// Eliminate duplicates
+		.GroupBy(t => t.FullName)
+		.Select(g => g.First())
+		// Order by name
+		.OrderBy(g => g.FullName)
+		// Exclusions for now
+		.Where(g => !exclusions.Contains(g.Name))
+		.ToList()
+		;
 		
+	types.Count().Dump("Total types");
+	
+	types.ForEach(t => t.FullName.Dump());
+	
+	// TODO: delete everything from output path?
+	
 	// set to true to create files, otherwise false for testing
 	bool createTheFiles = true;
 	
@@ -39,6 +71,22 @@ void Main()
 	{	
 		CreateExtensions(t, createTheFiles);
 	}
+}
+
+IEnumerable<(Type type, Type baseType)> GetDerivedTypes(Assembly assembly, string baseType)
+{
+	var types = assembly.GetTypes().ToList();
+	
+	var type = types.SingleOrDefault(t => t.Name == baseType);
+	
+	if(type == null)
+	{
+		return Enumerable.Empty<(Type type, Type baseType)>();
+	}
+
+	return Enumerable
+		.Repeat((type, (Type)null), 1)
+		.Concat(GetDerivedTypes(assembly, type));
 }
 
 IEnumerable<(Type type, Type baseType)> GetDerivedTypes(Assembly assembly, Type baseType)
@@ -54,10 +102,12 @@ IEnumerable<(Type type, Type baseType)> GetDerivedTypes(Assembly assembly, Type 
 
 IEnumerable<Type> GetTypesEndingIn(Assembly assembly, string suffix)
 {
-	return assembly.GetTypes()
+	var typesEndingIn = assembly.GetTypes()
 		.Where(t => t.Name?.EndsWith(suffix, StringComparison.OrdinalIgnoreCase) ?? false)
 		.OrderBy(t => t.Name)
 		.ToList();
+		
+	return typesEndingIn.Concat(typesEndingIn.SelectMany(t => GetDerivedTypes(assembly, t).Select(d => d.type)));
 }
 
 IEnumerable<Type> GetTypes(Assembly assembly, params string[] typeNames)
@@ -77,6 +127,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 			GetUsingSyntax("SolastaModApi.Infrastructure"),
 			GetUsingSyntax("AK.Wwise"),
 			GetUsingSyntax("UnityEngine"),
+			GetUsingSyntax("UnityEngine.UI"),
 			GetUsingSyntax("UnityEngine.AddressableAssets"),
 			GetUsingSyntax("System"),
 			GetUsingSyntax("System.Text"),

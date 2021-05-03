@@ -48,16 +48,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="UnityEngine.InputLegacyModule">
+		<Reference Include="UnityEngine">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.UI.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.CoreModule.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
-		<Reference Include="UnityEngine.CoreModule">
+		<Reference Include="UnityEngine.Addressables">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Unity.Addressables.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.Postprocessing.Runtime">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Unity.Postprocessing.Runtime.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 	</ItemGroup>

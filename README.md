@@ -72,11 +72,11 @@ public class CharacterSubclassDefinitionBuilder : BaseDefinitionBuilder<Characte
 
   public CharacterSubclassDefinitionBuilder AddPersonality(PersonalityFlagDefinition personalityType, int weight)
   {
-    // NOTE: there's no PersonalityFlagExtensions helper (yet) so using SetField here
-    var flag = new PersonalityFlagOccurence();
-    flag.SetField("weight", weight);
-    flag.SetField("personalityFlag", personalityType.Name);
-    
+    var personalityFlag = new PersonalityFlagOccurence();
+
+    personalityFlag.SetWeight(weight);
+    personalityFlag.SetPersonalityFlag(personalityType.Name);
+
     Definition.PersonalityFlagOccurences.Add(flag);
     return this;
   }

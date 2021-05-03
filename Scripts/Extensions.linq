@@ -28,7 +28,7 @@ void Main()
 	
 	var assembly = Assembly.LoadFrom(Path.Combine(assemblyDir, @"Assembly-CSharp.dll"));
 
-	var exclusions = new List<string>{"FunctorParametersDescription", "TextFragmentStyleDescription"};
+	var exclusions = new List<string>{"FunctorParametersDescription", "TextFragmentStyleDescription", "TrianglePool"};
 	
 	var types = 
 		Enumerable.Empty<Type>()	
@@ -46,6 +46,8 @@ void Main()
 		.Concat(GetTypesEndingIn(assembly, "Bone"))
 		// Get all types ending in Presentation and all derived from types ending in Presentation
 		.Concat(GetTypesEndingIn(assembly, "Presentation"))
+		.Concat(GetTypesEndingIn(assembly, "Occurence"))
+		.Concat(GetTypesEndingIn(assembly, "Pool"))
 		// Eliminate duplicates
 		.GroupBy(t => t.FullName)
 		.Select(g => g.First())
@@ -131,6 +133,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 			GetUsingSyntax("System.Text"),
 			GetUsingSyntax("TA.AI"),
 			GetUsingSyntax("TA"),
+			GetUsingSyntax("TriangleNet"),
 			GetUsingSyntax("System.Collections.Generic"),
 			GetUsingSyntax("UnityEngine.Rendering.PostProcessing"),
 			GetUsingSyntax("static ActionDefinitions"),

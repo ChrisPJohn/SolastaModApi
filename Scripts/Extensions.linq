@@ -12,11 +12,11 @@ const string pattern = @"^(\<(?<name>.*)\>k__BackingField)|(m_(?<name>.*))$";
 static readonly Regex NameRegex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled);
 
 // Where you want the files to be written to
-const string outputPath = @"C:\Users\passp\Source\Repos\SolastaModApi.Dev-Extensions\SolastaModApi\Extensions";
+const string outputPath = @"C:\Users\passp\Source\Repos\SolastaModApi\SolastaModApi\Extensions";
 
 // The path that contains Solasta_Data\Managed
 
-// You can use this if you have configured the SolastaInstallDir environment variable
+// You can do this if you have configured the SolastaInstallDir environment variable
 //readonly string installDir = Environment.GetEnvironmentVariable("SolastaInstallDir");
 
 // Or point at specific version - e.g. 0.5.42
@@ -46,8 +46,8 @@ void Main()
 		.Concat(GetTypesEndingIn(assembly, "Parameters"))
 		// Get all types ending in Bone and all derived from types ending in Bone
 		.Concat(GetTypesEndingIn(assembly, "Bone"))
-		// Get specific types
-		.Concat(GetTypes(assembly, "GuiPresentation"))
+		// Get all types ending in Presentation and all derived from types ending in Presentation
+		.Concat(GetTypesEndingIn(assembly, "Presentation"))
 		// Eliminate duplicates
 		.GroupBy(t => t.FullName)
 		.Select(g => g.First())
@@ -276,6 +276,8 @@ void CreateExtensions(Type t, bool createFiles = false)
 
 		if (match.Success)
 		{
+			f.Name.Dump("regex match");
+			
 			return Capitalize(match.Groups["name"].Value);
 		}
 		else

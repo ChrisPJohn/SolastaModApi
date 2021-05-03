@@ -26,8 +26,6 @@ void Main()
 {
 	var assemblyDir = Path.Combine(installDir, @"Solasta_Data\Managed");
 	
-	Directory.SetCurrentDirectory(assemblyDir);
-	
 	var assembly = Assembly.LoadFrom(Path.Combine(assemblyDir, @"Assembly-CSharp.dll"));
 
 	var exclusions = new List<string>{"FunctorParametersDescription", "TextFragmentStyleDescription"};

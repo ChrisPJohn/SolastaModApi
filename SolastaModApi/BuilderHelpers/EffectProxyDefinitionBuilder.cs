@@ -1,105 +1,113 @@
 ﻿
 
-using HarmonyLib;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
 
 namespace SolastaModApi
 {
-	public class EffectProxyDefinitionBuilder
+	public class EffectProxyDefinitionBuilder : BaseDefinitionBuilder<EffectProxyDefinition>
 	{
-		private readonly EffectProxyDefinition effectProxy;
-
-		public EffectProxyDefinitionBuilder()
-        {
-			effectProxy = ScriptableObject.CreateInstance<EffectProxyDefinition>();
-			Traverse.Create(effectProxy).Field("additionalFeatures").SetValue(new List<FeatureDefinition>());
-		}
-
-		public void SetName(string name, string guid)
-        {
-			Traverse.Create(effectProxy).Field("name").SetValue(name);
-			effectProxy.name = name;
-			Traverse.Create(effectProxy).Field("guid").SetValue(guid);
-		}
-
-		public void SetGuiPresentation(GuiPresentation gui)
+		public EffectProxyDefinitionBuilder(string name, string guid) : base(name, guid)
 		{
-			Traverse.Create(effectProxy).Field("guiPresentation").SetValue(gui);
+			InitializeFields();
 		}
 
-		public void SetAttack(bool canAttack, RuleDefinitions.ProxyAttackMethod attackMethod,
+		public EffectProxyDefinitionBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
+		{
+			InitializeFields();
+		}
+
+		private void InitializeFields()
+        {
+			Definition.SetField("additionalFeatures", new List<FeatureDefinition>());
+		}
+
+		public EffectProxyDefinitionBuilder SetGuiPresentation(GuiPresentation gui)
+		{
+			Definition.SetGuiPresentation(gui);
+			return this;
+		}
+
+		public EffectProxyDefinitionBuilder SetAttack(bool canAttack, RuleDefinitions.ProxyAttackMethod attackMethod,
 			RuleDefinitions.DieType damageDie, string damageType)
         {
-			Traverse.Create(effectProxy).Field("canAttack").SetValue(canAttack);
-			Traverse.Create(effectProxy).Field("attackMethod").SetValue(attackMethod);
-			Traverse.Create(effectProxy).Field("damageDie").SetValue(damageDie);
-			Traverse.Create(effectProxy).Field("damageType").SetValue(damageType);
+			Definition.SetCanAttack(canAttack);
+			Definition.SetAttackMethod(attackMethod);
+			Definition.SetDamageDie(damageDie);
+			Definition.SetDamageType(damageType);
+			return this;
 		}
 
-		public void SetLightSource(LightSourceForm lightSourceForm)
+		public EffectProxyDefinitionBuilder SetLightSource(LightSourceForm lightSourceForm)
         {
-			Traverse.Create(effectProxy).Field("addLightSource").SetValue(true);
-			Traverse.Create(effectProxy).Field("lightSourceForm").SetValue(lightSourceForm);
+			Definition.SetAddLightSource(true);
+			Definition.SetLightSourceForm(lightSourceForm);
+			return this;
 		}
 
-		public void SetPortrait(AssetReferenceSprite portraitSpriteReference)
+		public EffectProxyDefinitionBuilder SetPortrait(AssetReferenceSprite portraitSpriteReference)
         {
-			Traverse.Create(effectProxy).Field("hasPortrait").SetValue(true);
-			Traverse.Create(effectProxy).Field("portraitSpriteReference").SetValue(portraitSpriteReference);
+			Definition.SetHasPortrait(true);
+			Definition.SetPortraitSpriteReference(portraitSpriteReference);
+			return this;
 		}
 
-		public void AddAdditionalFeature(FeatureDefinition feature)
+		public EffectProxyDefinitionBuilder AddAdditionalFeature(FeatureDefinition feature)
         {
-			effectProxy.AdditionalFeatures.Add(feature);
+			Definition.AdditionalFeatures.Add(feature);
+			return this;
         }
 
-		public void SetShowWorldLocationFeedbacks()
+		public EffectProxyDefinitionBuilder SetShowWorldLocationFeedbacks()
         {
-			Traverse.Create(effectProxy).Field("showWorldLocationFeedbacks").SetValue(true);
+			Definition.SetShowWorldLocationFeedbacks(true);
+			return this;
 		}
 
-		public void SetAttackParticle(AssetReference attackParticle)
+		public EffectProxyDefinitionBuilder SetAttackParticle(AssetReference attackParticle)
         {
-			Traverse.Create(effectProxy).Field("attackParticle").SetValue(attackParticle);
+			Definition.SetAttackParticle(attackParticle);
+			return this;
 		}
 
-		public void SetAttackImpactParticle(AssetReference attackImpactParticle)
+		public EffectProxyDefinitionBuilder SetAttackImpactParticle(AssetReference attackImpactParticle)
 		{
-			Traverse.Create(effectProxy).Field("attackImpactParticle").SetValue(attackImpactParticle);
+			Definition.SetAttackImpactParticle(attackImpactParticle);
+			return this;
 		}
 
-		public void SetSoundEffectOnHitDescription(SoundEffectOnHitDescription soundEffectOnHitDescription)
+		public EffectProxyDefinitionBuilder SetSoundEffectOnHitDescription(SoundEffectOnHitDescription soundEffectOnHitDescription)
 		{
-			Traverse.Create(effectProxy).Field("soundEffectOnHitDescription").SetValue(soundEffectOnHitDescription);
+			Definition.SetSoundEffectOnHitDescription(soundEffectOnHitDescription);
+			return this;
 		}
 
-		public void SetCanMove()
+		public EffectProxyDefinitionBuilder SetCanMove()
         {
-			Traverse.Create(effectProxy).Field("canMove").SetValue(true);
+			Definition.SetCanMove(true);
+			return this;
 		}
 
-		public void SetImpactsPlacement()
+		public EffectProxyDefinitionBuilder SetImpactsPlacement()
 		{
-			Traverse.Create(effectProxy).Field("impactsPlacement").SetValue(true);
+			Definition.SetImpactsPlacement(true);
+			return this;
 		}
 
-		public void SetModelScale(float modelScale)
+		public EffectProxyDefinitionBuilder SetModelScale(float modelScale)
 		{
-			Traverse.Create(effectProxy).Field("modelScale").SetValue(modelScale);
+			Definition.SetModelScale(modelScale);
+			return this;
 		}
 
-		public void SetPresentationInformation(bool hasPresentation, AssetReference prefabReference, bool isEmptyPresentation)
+		public EffectProxyDefinitionBuilder SetPresentationInformation(bool hasPresentation, AssetReference prefabReference, bool isEmptyPresentation)
 		{
-			Traverse.Create(effectProxy).Field("hasPresentation").SetValue(hasPresentation);
-			Traverse.Create(effectProxy).Field("prefabReference").SetValue(prefabReference);
-			Traverse.Create(effectProxy).Field("isEmptyPresentation").SetValue(isEmptyPresentation);
-		}
-
-		public EffectProxyDefinition Build() { 
-			DatabaseRepository.GetDatabase<EffectProxyDefinition>().Add(effectProxy);
-			return effectProxy;
+			Definition.SetHasPresentation(hasPresentation);
+			Definition.SetPrefabReference(prefabReference);
+			Definition.SetIsEmptyPresentation(isEmptyPresentation);
+			return this;
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TA.AI;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using SolastaModApi.Infrastructure;
 
 namespace SolastaModApi.BuilderHelpers
 {
@@ -15,115 +16,127 @@ namespace SolastaModApi.BuilderHelpers
             effectForm = new EffectForm();
         }
 
-        public void HasSavingThrow(RuleDefinitions.EffectSavingThrowType savingThrowAffinity)
+        public EffectFormBuilder HasSavingThrow(RuleDefinitions.EffectSavingThrowType savingThrowAffinity)
         {
             effectForm.HasSavingThrow = true;
             effectForm.SavingThrowAffinity = savingThrowAffinity;
+            return this;
         }
 
-        public void CanSaveToCancel(RuleDefinitions.TurnOccurenceType saveOccurence)
+        public EffectFormBuilder CanSaveToCancel(RuleDefinitions.TurnOccurenceType saveOccurence)
         {
             effectForm.CanSaveToCancel = true;
             effectForm.SaveOccurence = saveOccurence;
+            return this;
         }
 
-        public void CreatedByCharacter()
+        public EffectFormBuilder CreatedByCharacter()
         {
-            Traverse.Create(effectForm).Field("createdByCharacter").SetValue(true);
+            effectForm.SetField("createdByCharacter", true);
+            return this;
         }
 
-        public void CreatedByCondition()
+        public EffectFormBuilder CreatedByCondition()
         {
-            Traverse.Create(effectForm).Field("createdByCondition").SetValue(true);
+            effectForm.SetField("createdByCondition", true);
+            return this;
         }
 
-        public void ApplyAbilityBonus()
+        public EffectFormBuilder ApplyAbilityBonus()
         {
             effectForm.ApplyAbilityBonus = true;
+            return this;
         }
 
-        public void SetLevelAdvancement(EffectForm.LevelApplianceType applyLevel,
+        public EffectFormBuilder SetLevelAdvancement(EffectForm.LevelApplianceType applyLevel,
             RuleDefinitions.LevelSourceType levelType, int levelMultiplier)
         {
-            Traverse.Create(effectForm).Field("applyLevel").SetValue(applyLevel);
-            Traverse.Create(effectForm).Field("levelType").SetValue(levelType);
-            Traverse.Create(effectForm).Field("levelMultiplier").SetValue(levelMultiplier);
+            effectForm.SetField("applyLevel", applyLevel);
+            effectForm.SetField("levelType", levelType);
+            effectForm.SetField("levelMultiplier", levelMultiplier);
+            return this;
         }
 
-        public void SetAlterationForm(AlterationForm.Type alterationType)
+        public EffectFormBuilder SetAlterationForm(AlterationForm.Type alterationType)
         {
             effectForm.FormType = EffectForm.EffectFormType.Alteration;
             AlterationForm alterationForm= new AlterationForm();
-            Traverse.Create(alterationForm).Field("alterationType").SetValue(alterationType);
-            Traverse.Create(effectForm).Field("alterationForm").SetValue(alterationForm);
+            alterationForm.SetField("alterationType", alterationType);
+            effectForm.SetField("alterationForm", alterationForm);
+            return this;
         }
 
-        public void SetAlterationAbilityScore(string abilityScore, int valueIncrease, int maximumIncrease)
+        public EffectFormBuilder SetAlterationAbilityScore(string abilityScore, int valueIncrease, int maximumIncrease)
         {
             effectForm.FormType = EffectForm.EffectFormType.Alteration;
             AlterationForm alterationForm = new AlterationForm();
-            Traverse.Create(alterationForm).Field("alterationType").SetValue(AlterationForm.Type.AbilityScoreIncrease);
-            Traverse.Create(alterationForm).Field("abilityScore").SetValue(abilityScore);
-            Traverse.Create(alterationForm).Field("valueIncrease").SetValue(valueIncrease);
-            Traverse.Create(alterationForm).Field("maximumIncrease").SetValue(maximumIncrease);
-            Traverse.Create(effectForm).Field("alterationForm").SetValue(alterationForm);
+            alterationForm.SetField("alterationType", AlterationForm.Type.AbilityScoreIncrease);
+            alterationForm.SetField("abilityScore", abilityScore);
+            alterationForm.SetField("valueIncrease", valueIncrease);
+            alterationForm.SetField("maximumIncrease", maximumIncrease);
+            effectForm.SetField("alterationForm", alterationForm);
+            return this;
         }
 
-        public void SetConditionForm(ConditionDefinition condition, ConditionForm.ConditionOperation operation, bool applyToSelf, bool forceOnSelf, List<ConditionDefinition> detrimentalConditions)
+        public EffectFormBuilder SetConditionForm(ConditionDefinition condition, ConditionForm.ConditionOperation operation, bool applyToSelf, bool forceOnSelf, List<ConditionDefinition> detrimentalConditions)
         {
             effectForm.FormType = EffectForm.EffectFormType.Condition;
             ConditionForm conditionForm = new ConditionForm();
-            Traverse.Create(conditionForm).Field("operation").SetValue(operation);
-            Traverse.Create(conditionForm).Field("conditionDefinition").SetValue(condition);
-            Traverse.Create(conditionForm).Field("conditionDefinitionName").SetValue(condition.Name);
-            Traverse.Create(conditionForm).Field("applyToSelf").SetValue(applyToSelf);
-            Traverse.Create(conditionForm).Field("forceOnSelf").SetValue(forceOnSelf);
-            Traverse.Create(conditionForm).Field("detrimentalConditions").SetValue(detrimentalConditions);
-            Traverse.Create(effectForm).Field("conditionForm").SetValue(conditionForm);
+            conditionForm.SetField("operation", operation);
+            conditionForm.SetField("conditionDefinition", condition);
+            conditionForm.SetField("conditionDefinitionName", condition.Name);
+            conditionForm.SetField("applyToSelf", applyToSelf);
+            conditionForm.SetField("forceOnSelf", forceOnSelf);
+            conditionForm.SetField("detrimentalConditions", detrimentalConditions);
+            effectForm.SetField("conditionForm", conditionForm);
+            return this;
         }
 
-        public void SetCounterForm(CounterForm.CounterType type, int automaticSpellLevel, int checkBaseDC, bool addSpellCastingAbility, bool addProficiencyBonus)
+        public EffectFormBuilder SetCounterForm(CounterForm.CounterType type, int automaticSpellLevel, int checkBaseDC, bool addSpellCastingAbility, bool addProficiencyBonus)
         {
             effectForm.FormType = EffectForm.EffectFormType.Counter;
             CounterForm counterForm = new CounterForm();
-            Traverse.Create(counterForm).Field("type").SetValue(type);
-            Traverse.Create(counterForm).Field("automaticSpellLevel").SetValue(automaticSpellLevel);
-            Traverse.Create(counterForm).Field("checkBaseDC").SetValue(checkBaseDC);
-            Traverse.Create(counterForm).Field("addSpellCastingAbility").SetValue(addSpellCastingAbility);
-            Traverse.Create(counterForm).Field("addProficiencyBonus").SetValue(addProficiencyBonus);
-            Traverse.Create(effectForm).Field("counterForm").SetValue(counterForm);
+            counterForm.SetField("type", type);
+            counterForm.SetField("automaticSpellLevel", automaticSpellLevel);
+            counterForm.SetField("checkBaseDC", checkBaseDC);
+            counterForm.SetField("addSpellCastingAbility", addSpellCastingAbility);
+            counterForm.SetField("addProficiencyBonus", addProficiencyBonus);
+            effectForm.SetField("counterForm", counterForm);
+            return this;
         }
 
-        public void SetDamageForm(bool versatile, RuleDefinitions.DieType versatileDieType, string damageType, int bonusDamage,
+        public EffectFormBuilder SetDamageForm(bool versatile, RuleDefinitions.DieType versatileDieType, string damageType, int bonusDamage,
             RuleDefinitions.DieType dieType, int diceNumber, RuleDefinitions.HealFromInflictedDamage healFromInflictedDamage,
             List<RuleDefinitions.TrendInfo> damageBonusTrends)
         {
             effectForm.FormType = EffectForm.EffectFormType.Damage;
             DamageForm damageForm = new DamageForm();
-            Traverse.Create(damageForm).Field("versatile").SetValue(versatile);
+            damageForm.SetField("versatile", versatile);
             damageForm.VersatileDieType = versatileDieType;
             damageForm.BonusDamage = bonusDamage;
             damageForm.DamageType = damageType;
             damageForm.DiceNumber = diceNumber;
             damageForm.DieType = dieType;
-            Traverse.Create(damageForm).Field("healFromInflictedDamage").SetValue(healFromInflictedDamage);
-            Traverse.Create(damageForm).Field("damageBonusTrends").SetValue(damageBonusTrends);
-            Traverse.Create(effectForm).Field("damageForm").SetValue(damageForm);
+            damageForm.SetField("healFromInflictedDamage", healFromInflictedDamage);
+            damageForm.SetField("damageBonusTrends", damageBonusTrends);
+            effectForm.SetField("damageForm", damageForm);
+            return this;
         }
 
-        public void SetDivinationForm(DivinationForm.Type divinationType, List<CharacterFamilyDefinition> creatureFamilies,
+        public EffectFormBuilder SetDivinationForm(DivinationForm.Type divinationType, List<CharacterFamilyDefinition> creatureFamilies,
             List<string> revealedTags, int rangeCells)
         {
             effectForm.FormType = EffectForm.EffectFormType.Divination;
             DivinationForm divinationForm = new DivinationForm();
-            Traverse.Create(divinationForm).Field("divinationType").SetValue(divinationType);
-            Traverse.Create(divinationForm).Field("creatureFamilies").SetValue(creatureFamilies);
-            Traverse.Create(divinationForm).Field("revealedTags").SetValue(revealedTags);
-            Traverse.Create(divinationForm).Field("rangeCells").SetValue(rangeCells);
-            Traverse.Create(effectForm).Field("divinationForm ").SetValue(divinationForm);
+            divinationForm.SetField("divinationType", divinationType);
+            divinationForm.SetField("creatureFamilies", creatureFamilies);
+            divinationForm.SetField("revealedTags", revealedTags);
+            divinationForm.SetField("rangeCells", rangeCells);
+            effectForm.SetField("divinationForm ", divinationForm);
+            return this;
         }
 
-        public void SetHealingForm(RuleDefinitions.HealingComputation healingComputation,
+        public EffectFormBuilder SetHealingForm(RuleDefinitions.HealingComputation healingComputation,
             int bonusHitPoints, RuleDefinitions.DieType dieType, int diceNumber, bool variablePool,
             RuleDefinitions.HealingCap healingCap)
         {
@@ -136,95 +149,104 @@ namespace SolastaModApi.BuilderHelpers
             healingForm.DiceNumber = diceNumber;
             healingForm.VariablePool = variablePool;
             healingForm.HealingCap = healingCap;
-            Traverse.Create(effectForm).Field("healingForm").SetValue(healingForm);
+            effectForm.SetField("healingForm", healingForm);
+            return this;
         }
 
-        public void SetItemPropertyForm(List<FeatureUnlockByLevel> featureBySlotLevel, RuleDefinitions.ItemPropertyUsage usageLimitation, int useAmount)
+        public EffectFormBuilder SetItemPropertyForm(List<FeatureUnlockByLevel> featureBySlotLevel, RuleDefinitions.ItemPropertyUsage usageLimitation, int useAmount)
         {
             effectForm.FormType = EffectForm.EffectFormType.ItemProperty;
             ItemPropertyForm itemForm = new ItemPropertyForm();
-            Traverse.Create(itemForm).Field("usageLimitation").SetValue(usageLimitation);
-            Traverse.Create(itemForm).Field("useAmount").SetValue(useAmount);
-            Traverse.Create(itemForm).Field("featureBySlotLevel").SetValue(featureBySlotLevel);
-            Traverse.Create(effectForm).Field("itemPropertyForm").SetValue(itemForm);
+            itemForm.SetField("usageLimitation", usageLimitation);
+            itemForm.SetField("useAmount", useAmount);
+            itemForm.SetField("featureBySlotLevel", featureBySlotLevel);
+            effectForm.SetField("itemPropertyForm", itemForm);
+            return this;
         }
 
-        public void SetLightSourceForm(RuleDefinitions.LightSourceType lightSourceType, int brightRange, int dimAdditionalRange,
+        public EffectFormBuilder SetLightSourceForm(RuleDefinitions.LightSourceType lightSourceType, int brightRange, int dimAdditionalRange,
             Color color, AssetReference graphicsPrefabReference)
         {
             effectForm.FormType = EffectForm.EffectFormType.LightSource;
             LightSourceForm lightSourceForm = new LightSourceForm();
-            Traverse.Create(lightSourceForm).Field("lightSourceType").SetValue(lightSourceType);
-            Traverse.Create(lightSourceForm).Field("brightRange").SetValue(brightRange);
-            Traverse.Create(lightSourceForm).Field("dimAdditionalRange").SetValue(dimAdditionalRange);
-            Traverse.Create(lightSourceForm).Field("color").SetValue(color);
-            Traverse.Create(lightSourceForm).Field("graphicsPrefabReference").SetValue(graphicsPrefabReference);
-            Traverse.Create(effectForm).Field("lightSourceForm").SetValue(lightSourceForm);
+            lightSourceForm.SetField("lightSourceType", lightSourceType);
+            lightSourceForm.SetField("brightRange", brightRange);
+            lightSourceForm.SetField("dimAdditionalRange", dimAdditionalRange);
+            lightSourceForm.SetField("color", color);
+            lightSourceForm.SetField("graphicsPrefabReference", graphicsPrefabReference);
+            effectForm.SetField("lightSourceForm", lightSourceForm);
+            return this;
         }
 
-        public void SetMotionForm(MotionForm.MotionType motionType, int motionDistance)
+        public EffectFormBuilder SetMotionForm(MotionForm.MotionType motionType, int motionDistance)
         {
             effectForm.FormType = EffectForm.EffectFormType.Motion;
             MotionForm motionForm = new MotionForm();
-            Traverse.Create(motionForm).Field("type").SetValue(motionType);
-            Traverse.Create(motionForm).Field("distance").SetValue(motionDistance);
-            Traverse.Create(effectForm).Field("motionForm").SetValue(motionForm);
+            motionForm.SetField("type", motionType);
+            motionForm.SetField("distance", motionDistance);
+            effectForm.SetField("motionForm", motionForm);
+            return this;
         }
 
-        public void SetReviveForm(int secondsSinceDeath, RuleDefinitions.ReviveHitPoints reviveHitPoints,
+        public EffectFormBuilder SetReviveForm(int secondsSinceDeath, RuleDefinitions.ReviveHitPoints reviveHitPoints,
             List<ConditionDefinition> removedConditions)
         {
             effectForm.FormType = EffectForm.EffectFormType.Revive;
             ReviveForm reviveForm = new ReviveForm();
-            Traverse.Create(reviveForm).Field("maxSecondsSinceDeath").SetValue(secondsSinceDeath);
-            Traverse.Create(reviveForm).Field("reviveHitPoints").SetValue(reviveHitPoints);
-            Traverse.Create(reviveForm).Field("removedConditions").SetValue(removedConditions);
+            reviveForm.SetField("maxSecondsSinceDeath", secondsSinceDeath);
+            reviveForm.SetField("reviveHitPoints", reviveHitPoints);
+            reviveForm.SetField("removedConditions", removedConditions);
 
-            Traverse.Create(effectForm).Field("reviveForm").SetValue(reviveForm);
+            effectForm.SetField("reviveForm", reviveForm);
+            return this;
         }
 
-        public void SetSpellForm(int maxSlotLevel)
+        public EffectFormBuilder SetSpellForm(int maxSlotLevel)
         {
             effectForm.FormType = EffectForm.EffectFormType.SpellSlots;
             SpellSlotsForm spellSlotsForm = new SpellSlotsForm();
-            Traverse.Create(spellSlotsForm).Field("type").SetValue(SpellSlotsForm.EffectType.RecoverHalfLevelUp);
-            Traverse.Create(spellSlotsForm).Field("maxSlotLevel").SetValue(maxSlotLevel);
-            Traverse.Create(effectForm).Field("spellSlotsForm").SetValue(spellSlotsForm);
+            spellSlotsForm.SetField("type", SpellSlotsForm.EffectType.RecoverHalfLevelUp);
+            spellSlotsForm.SetField("maxSlotLevel", maxSlotLevel);
+            effectForm.SetField("spellSlotsForm", spellSlotsForm);
+            return this;
         }
 
-        public void SetSummonForm(SummonForm.Type summonType, ItemDefinition item, int number, string monsterDefinitionName, ConditionDefinition conditionDefinition,
+        public EffectFormBuilder SetSummonForm(SummonForm.Type summonType, ItemDefinition item, int number, string monsterDefinitionName, ConditionDefinition conditionDefinition,
             bool persistOnConcentrationLoss, DecisionPackageDefinition decisionPackage, EffectProxyDefinition effectProxyDefinition)
         {
             effectForm.FormType = EffectForm.EffectFormType.Summon;
             SummonForm summonForm = new SummonForm();
-            Traverse.Create(summonForm).Field("summonType").SetValue(summonType);
-            Traverse.Create(summonForm).Field("itemDefinition").SetValue(item);
-            Traverse.Create(summonForm).Field("number").SetValue(number);
-            Traverse.Create(summonForm).Field("monsterDefinitionName").SetValue(monsterDefinitionName);
-            Traverse.Create(summonForm).Field("conditionDefinition").SetValue(conditionDefinition);
-            Traverse.Create(summonForm).Field("persistOnConcentrationLoss").SetValue(persistOnConcentrationLoss);
-            Traverse.Create(summonForm).Field("decisionPackage").SetValue(decisionPackage);
-            Traverse.Create(summonForm).Field("effectProxyDefinitionName").SetValue(effectProxyDefinition.Name);
-            Traverse.Create(effectForm).Field("summonForm").SetValue(summonForm);
+            summonForm.SetField("summonType", summonType);
+            summonForm.SetField("itemDefinition", item);
+            summonForm.SetField("number", number);
+            summonForm.SetField("monsterDefinitionName", monsterDefinitionName);
+            summonForm.SetField("conditionDefinition", conditionDefinition);
+            summonForm.SetField("persistOnConcentrationLoss", persistOnConcentrationLoss);
+            summonForm.SetField("decisionPackage", decisionPackage);
+            summonForm.SetField("effectProxyDefinitionName", effectProxyDefinition.Name);
+            effectForm.SetField("summonForm", summonForm);
+            return this;
         }
 
-        public void SetTempHPForm(int bonusHitPoints, RuleDefinitions.DieType dieType, int diceNumber)
+        public EffectFormBuilder SetTempHPForm(int bonusHitPoints, RuleDefinitions.DieType dieType, int diceNumber)
         {
             effectForm.FormType = EffectForm.EffectFormType.TemporaryHitPoints;
             TemporaryHitPointsForm tempHPForm = new TemporaryHitPointsForm();
             tempHPForm.BonusHitPoints = bonusHitPoints;
             tempHPForm.DieType = dieType;
             tempHPForm.DiceNumber = diceNumber;
-            Traverse.Create(effectForm).Field("temporaryHitPointsForm").SetValue(tempHPForm);
+            effectForm.SetField("temporaryHitPointsForm", tempHPForm);
+            return this;
         }
 
-        public void SetTopologyForm(TopologyForm.Type changeType, bool impactsFlyingCharacters)
+        public EffectFormBuilder SetTopologyForm(TopologyForm.Type changeType, bool impactsFlyingCharacters)
         {
             effectForm.FormType = EffectForm.EffectFormType.Topology;
             TopologyForm topologyForm = new TopologyForm();
-            Traverse.Create(topologyForm).Field("changeType").SetValue(changeType);
-            Traverse.Create(topologyForm).Field("impactsFlyingCharacters").SetValue(impactsFlyingCharacters);
-            Traverse.Create(effectForm).Field("topologyForm").SetValue(topologyForm);
+            topologyForm.SetField("changeType", changeType);
+            topologyForm.SetField("impactsFlyingCharacters", impactsFlyingCharacters);
+            effectForm.SetField("topologyForm", topologyForm);
+            return this;
         }
 
         public EffectForm Build()

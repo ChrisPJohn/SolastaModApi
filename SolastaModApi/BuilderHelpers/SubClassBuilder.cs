@@ -1,51 +1,16 @@
-﻿
-using HarmonyLib;
-using UnityEngine;
+﻿using System;
 
 namespace SolastaModApi
 {
-    class SubClassBuilder
+    [Obsolete("Use CharacterSubclassDefinitionBuilder")]
+    public class SubClassBuilder : CharacterSubclassDefinitionBuilder
     {
-
-        CharacterSubclassDefinition MyClass;
-
-        public SubClassBuilder()
+        public SubClassBuilder(string name, string guid) : base(name, guid)
         {
-            MyClass = ScriptableObject.CreateInstance<CharacterSubclassDefinition>();
         }
 
-        public void SetName(string name, string guid)
+        public SubClassBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
-
-            Traverse.Create(MyClass).Field("name").SetValue(name);
-            MyClass.name = name;
-            Traverse.Create(MyClass).Field("guid").SetValue(guid);
-        }
-
-        public void SetGuiPresentation(GuiPresentation gui)
-        {
-            Traverse.Create(MyClass).Field("guiPresentation").SetValue(gui);
-        }
-
-        public void AddPersonality(PersonalityFlagDefinition personalityType, int weight)
-        {
-            PersonalityFlagOccurence personality = new PersonalityFlagOccurence();
-            Traverse.Create(personality).Field("weight").SetValue(weight);
-            Traverse.Create(personality).Field("personalityFlag").SetValue(personalityType.Name);
-            MyClass.PersonalityFlagOccurences.Add(personality);
-        }
-
-        public void AddFeatureAtLevel(FeatureDefinition feature, int level)
-        {
-            MyClass.FeatureUnlocks.Add(new FeatureUnlockByLevel(feature, level));
-        }
-
-        public CharacterSubclassDefinition AddToDB()
-        {
-            Database<CharacterSubclassDefinition> CharacterSubClassDatabase = DatabaseRepository.GetDatabase<CharacterSubclassDefinition>();
-            // add new class to db
-            CharacterSubClassDatabase.Add(MyClass);
-            return MyClass;
         }
     }
 }

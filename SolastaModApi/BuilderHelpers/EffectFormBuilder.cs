@@ -60,7 +60,7 @@ namespace SolastaModApi.BuilderHelpers
         public EffectFormBuilder SetAlterationForm(AlterationForm.Type alterationType)
         {
             effectForm.FormType = EffectForm.EffectFormType.Alteration;
-            AlterationForm alterationForm= new AlterationForm();
+            AlterationForm alterationForm = new AlterationForm();
             alterationForm.SetField("alterationType", alterationType);
             effectForm.SetField("alterationForm", alterationForm);
             return this;
@@ -141,7 +141,7 @@ namespace SolastaModApi.BuilderHelpers
             RuleDefinitions.HealingCap healingCap)
         {
             effectForm.FormType = EffectForm.EffectFormType.Healing;
-            
+
             HealingForm healingForm = new HealingForm();
             healingForm.HealingComputation = healingComputation;
             healingForm.BonusHealing = bonusHitPoints;

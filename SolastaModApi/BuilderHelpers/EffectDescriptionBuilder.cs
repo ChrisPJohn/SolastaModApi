@@ -214,7 +214,7 @@ namespace SolastaModApi
             effect.SetVelocityType(velocityType);
             return this;
         }
-        
+
         public EffectDescriptionBuilder AddRestrictedCreatureFamilies(CharacterFamilyDefinition family)
         {
             effect.RestrictedCreatureFamilies.Add(family.Name);

@@ -32,6 +32,7 @@ void Main()
 	
 	var types = 
 		Enumerable.Empty<Type>()	
+		
 		// Get all types derived from and including BaseDefinition 
 		.Concat(GetDerivedTypes(assembly, "BaseDefinition").Select(a => a.type))
 		// Get all types derived from and including RulesetEntity 
@@ -48,6 +49,11 @@ void Main()
 		.Concat(GetTypesEndingIn(assembly, "Presentation"))
 		.Concat(GetTypesEndingIn(assembly, "Occurence"))
 		.Concat(GetTypesEndingIn(assembly, "Pool"))
+		.Concat(GetTypesEndingIn(assembly, "Advancement"))
+		.Concat(GetTypesEndingIn(assembly, "ByTag"))
+		.Concat(GetTypesEndingIn(assembly, "Form", true))
+		
+		//.Concat(GetTypes(assembly, "EffectDescription"))
 		// Eliminate duplicates
 		.GroupBy(t => t.FullName)
 		.Select(g => g.First())
@@ -65,7 +71,7 @@ void Main()
 	// TODO: delete everything from output path?
 	
 	// set to true to create files, otherwise false for testing
-	bool createTheFiles = true;
+	bool createTheFiles = false;
 	
 	foreach (var t in types)
 	{	
@@ -100,10 +106,10 @@ IEnumerable<(Type type, Type baseType)> GetDerivedTypes(Assembly assembly, Type 
 	return types.Concat(types.SelectMany(t => GetDerivedTypes(assembly, t.type)));
 }
 
-IEnumerable<Type> GetTypesEndingIn(Assembly assembly, string suffix)
+IEnumerable<Type> GetTypesEndingIn(Assembly assembly, string suffix, bool caseSensitive=true)
 {
 	var typesEndingIn = assembly.GetTypes()
-		.Where(t => t.Name?.EndsWith(suffix, StringComparison.OrdinalIgnoreCase) ?? false)
+		.Where(t => t.Name?.EndsWith(suffix, caseSensitive ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase) ?? false)
 		.OrderBy(t => t.Name)
 		.ToList();
 		
@@ -187,11 +193,13 @@ void CreateExtensions(Type t, bool createFiles = false)
 		.Select(pp => pp.Type)
 		.ToHashSet(StringComparer.OrdinalIgnoreCase);
 
-	var privateFieldsThatNeedReader = privateFields
-		.Where(f => !f.FieldType.IsGenericType)
-		.Where(f => !readablePublicPropertiesByName.Contains(f.Name))
-		.Where(f => !readablePublicPropertiesByType.Contains(f.Type));
+	//var privateFieldsThatNeedReader = privateFields
+	//	.Where(f => !f.FieldType.IsGenericType)
+	//	.Where(f => !readablePublicPropertiesByName.Contains(f.Name));
+		//.Where(f => !readablePublicPropertiesByType.Contains(f.Type));
 
+		// issue here that .Where(f => !writeablePublicPropertiesByType.Contains(f.Type))
+		// excludes properties with simple types
 	var privateFieldsThatNeedWriter = privateFields
 		.Where(f => !f.FieldType.IsGenericType)
 		.Where(f => !writeablePublicPropertiesByName.Contains(f.Name))

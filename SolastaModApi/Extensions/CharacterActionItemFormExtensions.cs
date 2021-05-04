@@ -12,6 +12,13 @@ namespace SolastaModApi
     /// </summary>
     public static class CharacterActionItemFormExtensions
     {
+        public static T SetActionActivated<T>(this T entity, CharacterActionItemForm.ActionActivatedHandler value)
+            where T : CharacterActionItemForm
+        {
+            entity.SetField("<ActionActivated>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetAdditionalImages<T>(this T entity, Image[] value)
             where T : CharacterActionItemForm
         {
@@ -163,6 +170,20 @@ namespace SolastaModApi
             where T : CharacterActionItemForm
         {
             entity.SetField("limitedUseImage", value);
+            return entity;
+        }
+
+        public static T SetPointerEnter<T>(this T entity, CharacterActionItemForm.PointerEnterHandler value)
+            where T : CharacterActionItemForm
+        {
+            entity.SetField("<PointerEnter>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetPointerExit<T>(this T entity, CharacterActionItemForm.PointerExitHandler value)
+            where T : CharacterActionItemForm
+        {
+            entity.SetField("<PointerExit>k__BackingField", value);
             return entity;
         }
 

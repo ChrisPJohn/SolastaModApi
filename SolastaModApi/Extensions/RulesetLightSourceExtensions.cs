@@ -12,6 +12,13 @@ namespace SolastaModApi
     /// </summary>
     public static class RulesetLightSourceExtensions
     {
+        public static T SetAssetGUID<T>(this T entity, string value)
+            where T : RulesetLightSource
+        {
+            entity.SetField("assetGUID", value);
+            return entity;
+        }
+
         public static T SetBrightRange<T>(this T entity, float value)
             where T : RulesetLightSource
         {
@@ -40,10 +47,45 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetIsSpot<T>(this T entity, bool value)
+            where T : RulesetLightSource
+        {
+            entity.SetField("isSpot", value);
+            return entity;
+        }
+
+        public static T SetLightSourceDayCycleActiveChanged<T>(this T entity, RulesetLightSource.LightSourceDayCycleActiveChangedHandler value)
+            where T : RulesetLightSource
+        {
+            entity.SetField("<LightSourceDayCycleActiveChanged>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetLightSourceExtinguished<T>(this T entity, RulesetLightSource.LightSourceExtinguishedHandler value)
+            where T : RulesetLightSource
+        {
+            entity.SetField("<LightSourceExtinguished>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetLightSourceObscurationChanged<T>(this T entity, RulesetLightSource.LightSourceObscurationChangedHandler value)
+            where T : RulesetLightSource
+        {
+            entity.SetField("<LightSourceObscurationChanged>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetLightSourceType<T>(this T entity, LightSourceType value)
             where T : RulesetLightSource
         {
             entity.SetField("lightSourceType", value);
+            return entity;
+        }
+
+        public static T SetSourceName<T>(this T entity, string value)
+            where T : RulesetLightSource
+        {
+            entity.SetField("sourceName", value);
             return entity;
         }
 
@@ -79,6 +121,13 @@ namespace SolastaModApi
             where T : RulesetLightSource
         {
             entity.SetField("targetItemGuid", value);
+            return entity;
+        }
+
+        public static T SetUseSpecificLocationPosition<T>(this T entity, bool value)
+            where T : RulesetLightSource
+        {
+            entity.SetField("useSpecificLocationPosition", value);
             return entity;
         }
     }

@@ -30,6 +30,27 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetIsActingLegendarily<T>(this T entity, bool value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("<IsActingLegendarily>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetLegendaryActionUsed<T>(this T entity, RulesetCharacterMonster.LegendaryActionUsedHandler value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("<LegendaryActionUsed>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetLegendaryResistanceUsed<T>(this T entity, RulesetCharacterMonster.LegendaryResistanceUsedHandler value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("<LegendaryResistanceUsed>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetMonsterDefinition<T>(this T entity, MonsterDefinition value)
             where T : RulesetCharacterMonster
         {
@@ -41,6 +62,13 @@ namespace SolastaModApi
             where T : RulesetCharacterMonster
         {
             entity.SetField("morphotypeAssetPrefix", value);
+            return entity;
+        }
+
+        public static T SetPrivateSeed<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("privateSeed", value);
             return entity;
         }
 

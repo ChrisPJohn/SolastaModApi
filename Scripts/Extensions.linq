@@ -28,7 +28,11 @@ void Main()
 	
 	var assembly = Assembly.LoadFrom(Path.Combine(assemblyDir, @"Assembly-CSharp.dll"));
 
-	var exclusions = new List<string>{"FunctorParametersDescription", "TextFragmentStyleDescription", "TrianglePool"};
+	var exclusions = new List<string>{
+		"FunctorParametersDescription", 
+		"TextFragmentStyleDescription", 
+		"TrianglePool",
+		"FadingRendererParameters"};
 	
 	var types = 
 		Enumerable.Empty<Type>()	
@@ -71,7 +75,7 @@ void Main()
 	// TODO: delete everything from output path?
 	
 	// set to true to create files, otherwise false for testing
-	bool createTheFiles = false;
+	bool createTheFiles = true;
 	
 	foreach (var t in types)
 	{	
@@ -189,21 +193,18 @@ void CreateExtensions(Type t, bool createFiles = false)
 		.Select(pp => pp.Name)
 		.ToHashSet(StringComparer.OrdinalIgnoreCase);
 
-	var writeablePublicPropertiesByType = writeablePublicProperties
-		.Select(pp => pp.Type)
-		.ToHashSet(StringComparer.OrdinalIgnoreCase);
+	//var writeablePublicPropertiesByType = writeablePublicProperties
+	//	.Select(pp => pp.Type)
+	//	.ToHashSet(StringComparer.OrdinalIgnoreCase);
 
 	//var privateFieldsThatNeedReader = privateFields
 	//	.Where(f => !f.FieldType.IsGenericType)
 	//	.Where(f => !readablePublicPropertiesByName.Contains(f.Name));
 		//.Where(f => !readablePublicPropertiesByType.Contains(f.Type));
 
-		// issue here that .Where(f => !writeablePublicPropertiesByType.Contains(f.Type))
-		// excludes properties with simple types
 	var privateFieldsThatNeedWriter = privateFields
 		.Where(f => !f.FieldType.IsGenericType)
-		.Where(f => !writeablePublicPropertiesByName.Contains(f.Name))
-		.Where(f => !writeablePublicPropertiesByType.Contains(f.Type));
+		.Where(f => !writeablePublicPropertiesByName.Contains(f.Name));
 
 	// TODO: add get methods where type of public getter is different from private field.
 

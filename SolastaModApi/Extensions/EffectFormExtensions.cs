@@ -31,6 +31,20 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetCreatedByCharacter<T>(this T entity, bool value)
+            where T : EffectForm
+        {
+            entity.SetField("createdByCharacter", value);
+            return entity;
+        }
+
+        public static T SetCreatedByCondition<T>(this T entity, bool value)
+            where T : EffectForm
+        {
+            entity.SetField("createdByCondition", value);
+            return entity;
+        }
+
         public static T SetDivinationForm<T>(this T entity, DivinationForm value)
             where T : EffectForm
         {
@@ -77,6 +91,13 @@ namespace SolastaModApi
             where T : EffectForm
         {
             entity.SetField("motionForm", value);
+            return entity;
+        }
+
+        public static T SetOverrideSavingThrowInfo<T>(this T entity, OverrideSavingThrowInfo value)
+            where T : EffectForm
+        {
+            entity.SetField("<OverrideSavingThrowInfo>k__BackingField", value);
             return entity;
         }
 

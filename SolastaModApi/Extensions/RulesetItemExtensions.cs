@@ -15,5 +15,19 @@ namespace SolastaModApi
             entity.SetField("gains", value);
             return entity;
         }
+
+        public static T SetItemDurationRefreshed<T>(this T entity, RulesetItem.ItemDurationRefreshedHandler value)
+            where T : RulesetItem
+        {
+            entity.SetField("<ItemDurationRefreshed>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetItemPropertyRemoved<T>(this T entity, RulesetItem.ItemPropertyRemovedHandler value)
+            where T : RulesetItem
+        {
+            entity.SetField("<ItemPropertyRemoved>k__BackingField", value);
+            return entity;
+        }
     }
 }

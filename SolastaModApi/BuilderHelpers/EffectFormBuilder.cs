@@ -32,13 +32,13 @@ namespace SolastaModApi.BuilderHelpers
 
         public EffectFormBuilder CreatedByCharacter()
         {
-            effectForm.SetField("createdByCharacter", true);
+            effectForm.SetCreatedByCharacter(true);
             return this;
         }
 
         public EffectFormBuilder CreatedByCondition()
         {
-            effectForm.SetField("createdByCondition", true);
+            effectForm.SetCreatedByCondition(true);
             return this;
         }
 
@@ -51,9 +51,9 @@ namespace SolastaModApi.BuilderHelpers
         public EffectFormBuilder SetLevelAdvancement(EffectForm.LevelApplianceType applyLevel,
             RuleDefinitions.LevelSourceType levelType, int levelMultiplier)
         {
-            effectForm.SetField("applyLevel", applyLevel);
-            effectForm.SetField("levelType", levelType);
-            effectForm.SetField("levelMultiplier", levelMultiplier);
+            effectForm.SetApplyLevel(applyLevel);
+            effectForm.SetLevelType(levelType);
+            effectForm.SetLevelMultiplier(levelMultiplier);
             return this;
         }
 
@@ -61,8 +61,8 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Alteration;
             AlterationForm alterationForm = new AlterationForm();
-            alterationForm.SetField("alterationType", alterationType);
-            effectForm.SetField("alterationForm", alterationForm);
+            alterationForm.SetAlterationType(alterationType);
+            effectForm.SetAlterationForm(alterationForm);
             return this;
         }
 
@@ -70,11 +70,11 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Alteration;
             AlterationForm alterationForm = new AlterationForm();
-            alterationForm.SetField("alterationType", AlterationForm.Type.AbilityScoreIncrease);
-            alterationForm.SetField("abilityScore", abilityScore);
-            alterationForm.SetField("valueIncrease", valueIncrease);
-            alterationForm.SetField("maximumIncrease", maximumIncrease);
-            effectForm.SetField("alterationForm", alterationForm);
+            alterationForm.SetAlterationType(AlterationForm.Type.AbilityScoreIncrease);
+            alterationForm.SetAbilityScore(abilityScore);
+            alterationForm.SetValueIncrease(valueIncrease);
+            alterationForm.SetMaximumIncrease(maximumIncrease);
+            effectForm.SetAlterationForm(alterationForm);
             return this;
         }
 
@@ -82,13 +82,13 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Condition;
             ConditionForm conditionForm = new ConditionForm();
-            conditionForm.SetField("operation", operation);
-            conditionForm.SetField("conditionDefinition", condition);
-            conditionForm.SetField("conditionDefinitionName", condition.Name);
-            conditionForm.SetField("applyToSelf", applyToSelf);
-            conditionForm.SetField("forceOnSelf", forceOnSelf);
+            conditionForm.Operation = operation;
+            conditionForm.ConditionDefinition = condition;
+            conditionForm.SetConditionDefinitionName(condition.Name);
+            conditionForm.SetApplyToSelf(applyToSelf);
+            conditionForm.SetForceOnSelf(forceOnSelf);
             conditionForm.SetField("detrimentalConditions", detrimentalConditions);
-            effectForm.SetField("conditionForm", conditionForm);
+            effectForm.ConditionForm = conditionForm;
             return this;
         }
 
@@ -96,12 +96,12 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Counter;
             CounterForm counterForm = new CounterForm();
-            counterForm.SetField("type", type);
-            counterForm.SetField("automaticSpellLevel", automaticSpellLevel);
-            counterForm.SetField("checkBaseDC", checkBaseDC);
-            counterForm.SetField("addSpellCastingAbility", addSpellCastingAbility);
-            counterForm.SetField("addProficiencyBonus", addProficiencyBonus);
-            effectForm.SetField("counterForm", counterForm);
+            counterForm.SetType(type);
+            counterForm.SetAutomaticSpellLevel(automaticSpellLevel);
+            counterForm.SetCheckBaseDC(checkBaseDC);
+            counterForm.SetAddSpellCastingAbility(addSpellCastingAbility);
+            counterForm.SetAddProficiencyBonus(addProficiencyBonus);
+            effectForm.SetCounterForm(counterForm);
             return this;
         }
 
@@ -111,15 +111,15 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Damage;
             DamageForm damageForm = new DamageForm();
-            damageForm.SetField("versatile", versatile);
+            damageForm.SetVersatile(versatile);
             damageForm.VersatileDieType = versatileDieType;
             damageForm.BonusDamage = bonusDamage;
             damageForm.DamageType = damageType;
             damageForm.DiceNumber = diceNumber;
             damageForm.DieType = dieType;
-            damageForm.SetField("healFromInflictedDamage", healFromInflictedDamage);
+            damageForm.SetHealFromInflictedDamage(healFromInflictedDamage);
             damageForm.SetField("damageBonusTrends", damageBonusTrends);
-            effectForm.SetField("damageForm", damageForm);
+            effectForm.DamageForm = damageForm;
             return this;
         }
 
@@ -128,11 +128,11 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Divination;
             DivinationForm divinationForm = new DivinationForm();
-            divinationForm.SetField("divinationType", divinationType);
-            divinationForm.SetField("creatureFamilies", creatureFamilies);
+            divinationForm.SetDivinationType(divinationType);
+            divinationForm.SetField("creatureFamilies" , creatureFamilies);
             divinationForm.SetField("revealedTags", revealedTags);
-            divinationForm.SetField("rangeCells", rangeCells);
-            effectForm.SetField("divinationForm ", divinationForm);
+            divinationForm.SetRangeCells(rangeCells);
+            effectForm.SetDivinationForm (divinationForm);
             return this;
         }
 
@@ -149,7 +149,7 @@ namespace SolastaModApi.BuilderHelpers
             healingForm.DiceNumber = diceNumber;
             healingForm.VariablePool = variablePool;
             healingForm.HealingCap = healingCap;
-            effectForm.SetField("healingForm", healingForm);
+            effectForm.SetHealingForm(healingForm);
             return this;
         }
 
@@ -157,10 +157,10 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.ItemProperty;
             ItemPropertyForm itemForm = new ItemPropertyForm();
-            itemForm.SetField("usageLimitation", usageLimitation);
-            itemForm.SetField("useAmount", useAmount);
+            itemForm.SetUsageLimitation(usageLimitation);
+            itemForm.SetUseAmount(useAmount);
             itemForm.SetField("featureBySlotLevel", featureBySlotLevel);
-            effectForm.SetField("itemPropertyForm", itemForm);
+            effectForm.SetItemPropertyForm(itemForm);
             return this;
         }
 
@@ -169,12 +169,12 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.LightSource;
             LightSourceForm lightSourceForm = new LightSourceForm();
-            lightSourceForm.SetField("lightSourceType", lightSourceType);
-            lightSourceForm.SetField("brightRange", brightRange);
-            lightSourceForm.SetField("dimAdditionalRange", dimAdditionalRange);
-            lightSourceForm.SetField("color", color);
-            lightSourceForm.SetField("graphicsPrefabReference", graphicsPrefabReference);
-            effectForm.SetField("lightSourceForm", lightSourceForm);
+            lightSourceForm.SetLightSourceType(lightSourceType);
+            lightSourceForm.SetBrightRange(brightRange);
+            lightSourceForm.SetDimAdditionalRange(dimAdditionalRange);
+            lightSourceForm.SetColor(color);
+            lightSourceForm.SetGraphicsPrefabReference(graphicsPrefabReference);
+            effectForm.SetLightSourceForm(lightSourceForm);
             return this;
         }
 
@@ -182,9 +182,9 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Motion;
             MotionForm motionForm = new MotionForm();
-            motionForm.SetField("type", motionType);
-            motionForm.SetField("distance", motionDistance);
-            effectForm.SetField("motionForm", motionForm);
+            motionForm.SetType(motionType);
+            motionForm.SetDistance(motionDistance);
+            effectForm.SetMotionForm(motionForm);
             return this;
         }
 
@@ -193,11 +193,11 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Revive;
             ReviveForm reviveForm = new ReviveForm();
-            reviveForm.SetField("maxSecondsSinceDeath", secondsSinceDeath);
-            reviveForm.SetField("reviveHitPoints", reviveHitPoints);
+            reviveForm.SetMaxSecondsSinceDeath(secondsSinceDeath);
+            reviveForm.SetReviveHitPoints(reviveHitPoints);
             reviveForm.SetField("removedConditions", removedConditions);
 
-            effectForm.SetField("reviveForm", reviveForm);
+            effectForm.SetReviveForm(reviveForm);
             return this;
         }
 
@@ -205,9 +205,9 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.SpellSlots;
             SpellSlotsForm spellSlotsForm = new SpellSlotsForm();
-            spellSlotsForm.SetField("type", SpellSlotsForm.EffectType.RecoverHalfLevelUp);
-            spellSlotsForm.SetField("maxSlotLevel", maxSlotLevel);
-            effectForm.SetField("spellSlotsForm", spellSlotsForm);
+            spellSlotsForm.SetType(SpellSlotsForm.EffectType.RecoverHalfLevelUp);
+            spellSlotsForm.SetMaxSlotLevel(maxSlotLevel);
+            effectForm.SetSpellSlotsForm(spellSlotsForm);
             return this;
         }
 
@@ -216,15 +216,15 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Summon;
             SummonForm summonForm = new SummonForm();
-            summonForm.SetField("summonType", summonType);
-            summonForm.SetField("itemDefinition", item);
-            summonForm.SetField("number", number);
-            summonForm.SetField("monsterDefinitionName", monsterDefinitionName);
-            summonForm.SetField("conditionDefinition", conditionDefinition);
-            summonForm.SetField("persistOnConcentrationLoss", persistOnConcentrationLoss);
-            summonForm.SetField("decisionPackage", decisionPackage);
-            summonForm.SetField("effectProxyDefinitionName", effectProxyDefinition.Name);
-            effectForm.SetField("summonForm", summonForm);
+            summonForm.SetSummonType(summonType);
+            summonForm.SetItemDefinition(item);
+            summonForm.SetNumber(number);
+            summonForm.SetMonsterDefinitionName(monsterDefinitionName);
+            summonForm.SetConditionDefinition(conditionDefinition);
+            summonForm.SetPersistOnConcentrationLoss(persistOnConcentrationLoss);
+            summonForm.SetDecisionPackage(decisionPackage);
+            summonForm.SetEffectProxyDefinitionName(effectProxyDefinition.Name);
+            effectForm.SetSummonForm(summonForm);
             return this;
         }
 
@@ -235,7 +235,7 @@ namespace SolastaModApi.BuilderHelpers
             tempHPForm.BonusHitPoints = bonusHitPoints;
             tempHPForm.DieType = dieType;
             tempHPForm.DiceNumber = diceNumber;
-            effectForm.SetField("temporaryHitPointsForm", tempHPForm);
+            effectForm.SetTemporaryHitPointsForm(tempHPForm);
             return this;
         }
 
@@ -243,9 +243,9 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Topology;
             TopologyForm topologyForm = new TopologyForm();
-            topologyForm.SetField("changeType", changeType);
-            topologyForm.SetField("impactsFlyingCharacters", impactsFlyingCharacters);
-            effectForm.SetField("topologyForm", topologyForm);
+            topologyForm.SetChangeType(changeType);
+            topologyForm.SetImpactsFlyingCharacters(impactsFlyingCharacters);
+            effectForm.SetTopologyForm(topologyForm);
             return this;
         }
 

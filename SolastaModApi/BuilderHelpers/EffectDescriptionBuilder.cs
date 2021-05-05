@@ -12,7 +12,7 @@ namespace SolastaModApi
             effect = new EffectDescription();
 
             EffectAdvancement effectAdvancement = new EffectAdvancement();
-            effectAdvancement.SetField("incrementMultiplier", 1);
+            effectAdvancement.SetIncrementMultiplier(1);
             effect.SetEffectAdvancement(effectAdvancement);
 
             EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
@@ -21,7 +21,7 @@ namespace SolastaModApi
 
         public EffectDescriptionBuilder SetCreatedByCharacter()
         {
-            effect.SetField("createdByCharacter", true);
+            effect.SetCreatedByCharacter(true);
             return this;
         }
 
@@ -53,17 +53,17 @@ namespace SolastaModApi
             int additionalTargetCellsPerIncrement, int additionalItemBonus, RuleDefinitions.AdvancementDuration alteredDuration)
         {
             EffectAdvancement effectAdvancement = new EffectAdvancement();
-            effectAdvancement.SetField("effectIncrementMethod", effectIncrementMethod);
-            effectAdvancement.SetField("incrementMultiplier", incrementMultiplier);
-            effectAdvancement.SetField("additionalTargetsPerIncrement", additionalTargetsPerIncrement);
-            effectAdvancement.SetField("additionalDicePerIncrement", additionalDicePerIncrement);
-            effectAdvancement.SetField("additionalSpellLevelPerIncrement", additionalSpellLevelPerIncrement);
-            effectAdvancement.SetField("additionalSummonsPerIncrement", additionalSummonsPerIncrement);
-            effectAdvancement.SetField("additionalHPPerIncrement", additionalHPPerIncrement);
-            effectAdvancement.SetField("additionalTempHPPerIncrement", additionalTempHPPerIncrement);
-            effectAdvancement.SetField("additionalTargetCellsPerIncrement", additionalTargetCellsPerIncrement);
-            effectAdvancement.SetField("additionalItemBonus", additionalItemBonus);
-            effectAdvancement.SetField("alteredDuration", alteredDuration);
+            effectAdvancement.SetEffectIncrementMethod(effectIncrementMethod);
+            effectAdvancement.SetIncrementMultiplier(incrementMultiplier);
+            effectAdvancement.SetAdditionalTargetsPerIncrement(additionalTargetsPerIncrement);
+            effectAdvancement.SetAdditionalDicePerIncrement(additionalDicePerIncrement);
+            effectAdvancement.SetAdditionalSpellLevelPerIncrement(additionalSpellLevelPerIncrement);
+            effectAdvancement.SetAdditionalSummonsPerIncrement(additionalSummonsPerIncrement);
+            effectAdvancement.SetAdditionalHPPerIncrement(additionalHPPerIncrement);
+            effectAdvancement.SetAdditionalTempHPPerIncrement(additionalTempHPPerIncrement);
+            effectAdvancement.SetAdditionalTargetCellsPerIncrement(additionalTargetCellsPerIncrement);
+            effectAdvancement.SetAdditionalItemBonus(additionalItemBonus);
+            effectAdvancement.SetAlteredDuration(alteredDuration);
             effect.SetEffectAdvancement(effectAdvancement);
             return this;
         }
@@ -72,10 +72,10 @@ namespace SolastaModApi
         {
             effect.SetTargetSide(targetSide);
             effect.SetRangeType(rangeType);
-            effect.SetField("rangeParameter", rangeParameter);
+            effect.SetRangeParameter(rangeParameter);
             effect.SetTargetType(targetType);
-            effect.SetField("targetParameter", targetParameter);
-            effect.SetField("targetParameter2", targetParameter2);
+            effect.SetTargetParameter(targetParameter);
+            effect.SetTargetParameter2(targetParameter2);
             effect.SetItemSelectionType(itemSelectionType);
             return this;
         }
@@ -83,19 +83,19 @@ namespace SolastaModApi
         public EffectDescriptionBuilder NoVisibilityRequiredToTarget()
         {
 
-            effect.SetField("requiresVisibilityForPosition", false);
+            effect.SetRequiresVisibilityForPosition(false);
             return this;
         }
 
         public EffectDescriptionBuilder HalfDamageOnMiss()
         {
-            effect.SetField("halfDamageOnAMiss", true);
+            effect.SetHalfDamageOnAMiss(true);
             return this;
         }
 
         public EffectDescriptionBuilder OptionalAdditionalAlly()
         {
-            effect.SetField("inviteOptionalAlly", true);
+            effect.SetInviteOptionalAlly(true);
             return this;
         }
 
@@ -103,28 +103,28 @@ namespace SolastaModApi
         {
             HitAffinityByTag hitAffinity = new HitAffinityByTag();
 
-            hitAffinity.SetField("tag", tag);
-            hitAffinity.SetField("advantageType", advantageType);
+            hitAffinity.SetTag(tag);
+            hitAffinity.SetAdvantageType(advantageType);
             effect.HitAffinitiesByTargetTag.Add(hitAffinity);
             return this;
         }
 
         public EffectDescriptionBuilder ExcludeCaster()
         {
-            effect.SetField("targetExcludeCaster", true);
+            effect.SetTargetExcludeCaster(true);
             return this;
         }
 
         public EffectDescriptionBuilder MustPlaceNotOnCharacter()
         {
-            effect.SetField("canBePlacedOnCharacter", false);
+            effect.SetCanBePlacedOnCharacter(false);
             return this;
         }
 
         public EffectDescriptionBuilder SetTargetProximityData(bool requiresTargetProximity, int targetProximityDistance)
         {
-            effect.SetField("requiresTargetProximity", requiresTargetProximity);
-            effect.SetField("targetProximityDistance", targetProximityDistance);
+            effect.SetRequiresTargetProximity(requiresTargetProximity);
+            effect.SetTargetProximityDistance(targetProximityDistance);
             return this;
         }
 
@@ -133,7 +133,7 @@ namespace SolastaModApi
         {
             effect.SetTargetFilteringMethod(targetFilteringMethod);
             effect.SetTargetFilteringTag(targetFilteringTag);
-            effect.SetField("poolFilterDiceNumber", poolFilterDiceNumber);
+            effect.SetPoolFilterDiceNumber(poolFilterDiceNumber);
             effect.SetPoolFilterDieType(poolFilterDieType);
             return this;
         }
@@ -141,7 +141,7 @@ namespace SolastaModApi
         public EffectDescriptionBuilder SetBorderData(RuleDefinitions.EmissiveBorder emissiveBorder, int emissiveParameter)
         {
             effect.SetEmissiveBorder(emissiveBorder);
-            effect.SetField("emissiveParameter", emissiveParameter);
+            effect.SetEmissiveParameter(emissiveParameter);
             return this;
         }
 
@@ -153,7 +153,7 @@ namespace SolastaModApi
 
         public EffectDescriptionBuilder SetRetargetData(bool retargetAfterDeath, ActionDefinitions.ActionType retargetActionType)
         {
-            effect.SetField("retargetAfterDeath", retargetAfterDeath);
+            effect.SetRetargetAfterDeath(retargetAfterDeath);
             effect.SetRetargetActionType(retargetActionType);
             return this;
         }
@@ -167,14 +167,14 @@ namespace SolastaModApi
         public EffectDescriptionBuilder SetRequiredCondition(ConditionDefinition targetConditionAsset)
         {
             effect.SetTargetConditionAsset(targetConditionAsset);
-            effect.SetField("targetConditionName", targetConditionAsset.Name);
+            effect.SetTargetConditionName(targetConditionAsset.Name);
             return this;
         }
 
         public EffectDescriptionBuilder SetDurationData(RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect)
         {
             effect.SetDurationType(durationType);
-            effect.SetField("durationParameter", durationParameter);
+            effect.SetDurationParameter(durationParameter);
             effect.SetEndOfEffect(endOfEffect);
             return this;
         }
@@ -183,34 +183,34 @@ namespace SolastaModApi
             RuleDefinitions.EffectDifficultyClassComputation difficultyClassComputation, string savingThrowDifficultyAbility,
             int fixedSavingThrowDifficultyClass, bool advantageForEnemies, List<SaveAffinityBySenseDescription> savingThrowAffinitiesBySense)
         {
-            effect.SetField("hasSavingThrow", hasSavingThrow);
-            effect.SetField("disableSavingThrowOnAllies", disableSavingThrowOnAllies);
-            effect.SetField("savingThrowAbility", savingThrowAbility);
-            effect.SetField("ignoreCover", ignoreCover);
+            effect.HasSavingThrow = hasSavingThrow;
+            effect.SetDisableSavingThrowOnAllies(disableSavingThrowOnAllies);
+            effect.SavingThrowAbility = savingThrowAbility;
+            effect.SetIgnoreCover(ignoreCover);
             effect.SetDifficultyClassComputation(difficultyClassComputation);
-            effect.SetField("savingThrowDifficultyAbility", savingThrowDifficultyAbility);
-            effect.SetField("fixedSavingThrowDifficultyClass", fixedSavingThrowDifficultyClass);
-            effect.SetField("advantageForEnemies", advantageForEnemies);
+            effect.SetSavingThrowDifficultyAbility(savingThrowDifficultyAbility);
+            effect.FixedSavingThrowDifficultyClass = fixedSavingThrowDifficultyClass;
+            effect.SetAdvantageForEnemies(advantageForEnemies);
             effect.SetField("savingThrowAffinitiesBySense", savingThrowAffinitiesBySense);
             return this;
         }
 
         public EffectDescriptionBuilder RequireShoveToHit()
         {
-            effect.SetField("hasShoveRoll", true);
+            effect.SetHasShoveRoll(true);
             return this;
         }
 
         public EffectDescriptionBuilder CanBeDispersed()
         {
-            effect.SetField("canBeDispersed", true);
+            effect.SetCanBeDispersed(true);
             return this;
         }
 
         public EffectDescriptionBuilder SetVelocity(int velocityCellsPerRound, RuleDefinitions.VelocityType velocityType)
         {
-            effect.SetField("hasVelocity", true);
-            effect.SetField("velocityCellsPerRound", velocityCellsPerRound);
+            effect.SetHasVelocity(true);
+            effect.SetVelocityCellsPerRound(velocityCellsPerRound);
             effect.SetVelocityType(velocityType);
             return this;
         }
@@ -235,8 +235,8 @@ namespace SolastaModApi
 
         public EffectDescriptionBuilder SetEffectPool(int effectPoolAmount)
         {
-            effect.SetField("hasLimitedEffectPool", true);
-            effect.SetField("effectPoolAmount", effectPoolAmount);
+            effect.SetHasLimitedEffectPool(true);
+            effect.SetEffectPoolAmount(effectPoolAmount);
             return this;
         }
 
@@ -249,7 +249,7 @@ namespace SolastaModApi
 
         public EffectDescriptionBuilder SetOffsetImpactTime(float offsetImpactTimeBasedOnDistanceFactor, float offsetImpactTimePerTarget)
         {
-            effect.SetField("offsetImpactTimeBasedOnDistance", true);
+            effect.SetOffsetImpactTimeBasedOnDistance(true);
             effect.SetOffsetImpactTimeBasedOnDistanceFactor(offsetImpactTimeBasedOnDistanceFactor);
             effect.SetOffsetImpactTimePerTarget(offsetImpactTimePerTarget);
             return this;

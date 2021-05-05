@@ -38,5 +38,12 @@ namespace SolastaModApi
             entity.SetField("spriteReference", value);
             return entity;
         }
+
+        public static T SetSymbolChar<T>(this T entity, string value)
+            where T : GuiPresentation
+        {
+            entity.SetField("symbolChar", value);
+            return entity;
+        }
     }
 }

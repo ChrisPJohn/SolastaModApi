@@ -9,6 +9,20 @@ namespace SolastaModApi
     /// </summary>
     public static class RulesetCharacterEffectProxyExtensions
     {
+        public static T SetAdditionalPersonalLightSourceAdded<T>(this T entity, RulesetCharacterEffectProxy.AdditionalPersonalLightSourceAddedHandler value)
+            where T : RulesetCharacterEffectProxy
+        {
+            entity.SetField("<AdditionalPersonalLightSourceAdded>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetAdditionalPersonalLightSourceRemoved<T>(this T entity, RulesetCharacterEffectProxy.AdditionalPersonalLightSourceRemovedHandler value)
+            where T : RulesetCharacterEffectProxy
+        {
+            entity.SetField("<AdditionalPersonalLightSourceRemoved>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetControllerGuid<T>(this T entity, ulong value)
             where T : RulesetCharacterEffectProxy
         {
@@ -34,6 +48,13 @@ namespace SolastaModApi
             where T : RulesetCharacterEffectProxy
         {
             entity.SetField("effectProxyDefinition", value);
+            return entity;
+        }
+
+        public static T SetOnEffectProxyDestroying<T>(this T entity, RulesetCharacterEffectProxy.OnEffectProxyDestroyingHandler value)
+            where T : RulesetCharacterEffectProxy
+        {
+            entity.SetField("<OnEffectProxyDestroying>k__BackingField", value);
             return entity;
         }
 

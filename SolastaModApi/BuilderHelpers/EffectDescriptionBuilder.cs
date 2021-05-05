@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+﻿using SolastaModApi.Infrastructure;
 using System.Collections.Generic;
 
 namespace SolastaModApi
@@ -12,222 +12,253 @@ namespace SolastaModApi
             effect = new EffectDescription();
 
             EffectAdvancement effectAdvancement = new EffectAdvancement();
-            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(1);
-            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+            effectAdvancement.SetIncrementMultiplier(1);
+            effect.SetEffectAdvancement(effectAdvancement);
 
             EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
-            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParams);
+            effect.SetEffectParticleParameters(particleParams);
         }
 
-        public void SetCreatedByCharacter()
+        public EffectDescriptionBuilder SetCreatedByCharacter()
         {
-            Traverse.Create(effect).Field("createdByCharacter").SetValue(true);
+            effect.SetCreatedByCharacter(true);
+            return this;
         }
 
-        public void SetParticleEffectParams(EffectParticleParameters particleParameters)
+        public EffectDescriptionBuilder SetParticleEffectParams(EffectParticleParameters particleParameters)
         {
-            Traverse.Create(effect).Field("effectParticleParameters").SetValue(particleParameters);
+            effect.SetEffectParticleParameters(particleParameters);
+            return this;
         }
 
-        public void SetEffectAIParamters(EffectAIParameters effectAIParameters)
+        public EffectDescriptionBuilder SetEffectAIParamters(EffectAIParameters effectAIParameters)
         {
-            Traverse.Create(effect).Field("effectAIParameters").SetValue(effectAIParameters);
+            effect.SetEffectAIParameters(effectAIParameters);
+            return this;
         }
 
-        public void SetEffectAIParameters(float aoeScoreMultiplier, int cooldownForCaster, int cooldownForBattle, bool dynamicCooldown)
+        public EffectDescriptionBuilder SetEffectAIParameters(float aoeScoreMultiplier, int cooldownForCaster, int cooldownForBattle, bool dynamicCooldown)
         {
             EffectAIParameters aiParams = new EffectAIParameters();
-            Traverse.Create(aiParams).Field("aoeScoreMultiplier").SetValue(aoeScoreMultiplier);
-            Traverse.Create(aiParams).Field("cooldownForCaster").SetValue(cooldownForCaster);
-            Traverse.Create(aiParams).Field("cooldownForBattle").SetValue(cooldownForBattle);
-            Traverse.Create(aiParams).Field("dynamicCooldown").SetValue(dynamicCooldown);
-            Traverse.Create(effect).Field("effectAIParameters").SetValue(aiParams);
+            aiParams.SetAoeScoreMultiplier(aoeScoreMultiplier);
+            aiParams.SetCooldownForCaster(cooldownForCaster);
+            aiParams.SetCooldownForBattle(cooldownForBattle);
+            aiParams.SetDynamicCooldown(dynamicCooldown);
+            effect.SetEffectAIParameters(aiParams);
+            return this;
         }
 
-        public void SetEffectAdvancement(RuleDefinitions.EffectIncrementMethod effectIncrementMethod, int incrementMultiplier, int additionalTargetsPerIncrement,
+        public EffectDescriptionBuilder SetEffectAdvancement(RuleDefinitions.EffectIncrementMethod effectIncrementMethod, int incrementMultiplier, int additionalTargetsPerIncrement,
             int additionalDicePerIncrement, int additionalSpellLevelPerIncrement, int additionalSummonsPerIncrement, int additionalHPPerIncrement, int additionalTempHPPerIncrement,
             int additionalTargetCellsPerIncrement, int additionalItemBonus, RuleDefinitions.AdvancementDuration alteredDuration)
         {
             EffectAdvancement effectAdvancement = new EffectAdvancement();
-
-            Traverse.Create(effectAdvancement).Field("effectIncrementMethod").SetValue(effectIncrementMethod);
-            Traverse.Create(effectAdvancement).Field("incrementMultiplier").SetValue(incrementMultiplier);
-            Traverse.Create(effectAdvancement).Field("additionalTargetsPerIncrement").SetValue(additionalTargetsPerIncrement);
-            Traverse.Create(effectAdvancement).Field("additionalDicePerIncrement").SetValue(additionalDicePerIncrement);
-            Traverse.Create(effectAdvancement).Field("additionalSpellLevelPerIncrement").SetValue(additionalSpellLevelPerIncrement);
-            Traverse.Create(effectAdvancement).Field("additionalSummonsPerIncrement").SetValue(additionalSummonsPerIncrement);
-            Traverse.Create(effectAdvancement).Field("additionalHPPerIncrement").SetValue(additionalHPPerIncrement);
-            Traverse.Create(effectAdvancement).Field("additionalTempHPPerIncrement").SetValue(additionalTempHPPerIncrement);
-            Traverse.Create(effectAdvancement).Field("additionalTargetCellsPerIncrement").SetValue(additionalTargetCellsPerIncrement);
-            Traverse.Create(effectAdvancement).Field("additionalItemBonus").SetValue(additionalItemBonus);
-            Traverse.Create(effectAdvancement).Field("alteredDuration").SetValue(alteredDuration);
-
-            Traverse.Create(effect).Field("effectAdvancement").SetValue(effectAdvancement);
+            effectAdvancement.SetEffectIncrementMethod(effectIncrementMethod);
+            effectAdvancement.SetIncrementMultiplier(incrementMultiplier);
+            effectAdvancement.SetAdditionalTargetsPerIncrement(additionalTargetsPerIncrement);
+            effectAdvancement.SetAdditionalDicePerIncrement(additionalDicePerIncrement);
+            effectAdvancement.SetAdditionalSpellLevelPerIncrement(additionalSpellLevelPerIncrement);
+            effectAdvancement.SetAdditionalSummonsPerIncrement(additionalSummonsPerIncrement);
+            effectAdvancement.SetAdditionalHPPerIncrement(additionalHPPerIncrement);
+            effectAdvancement.SetAdditionalTempHPPerIncrement(additionalTempHPPerIncrement);
+            effectAdvancement.SetAdditionalTargetCellsPerIncrement(additionalTargetCellsPerIncrement);
+            effectAdvancement.SetAdditionalItemBonus(additionalItemBonus);
+            effectAdvancement.SetAlteredDuration(alteredDuration);
+            effect.SetEffectAdvancement(effectAdvancement);
+            return this;
         }
 
-        public void SetTargetingData(RuleDefinitions.Side targetSide, RuleDefinitions.RangeType rangeType, int rangeParameter, RuleDefinitions.TargetType targetType, int targetParameter, int targetParameter2, ActionDefinitions.ItemSelectionType itemSelectionType)
+        public EffectDescriptionBuilder SetTargetingData(RuleDefinitions.Side targetSide, RuleDefinitions.RangeType rangeType, int rangeParameter, RuleDefinitions.TargetType targetType, int targetParameter, int targetParameter2, ActionDefinitions.ItemSelectionType itemSelectionType)
         {
-            Traverse.Create(effect).Field("targetSide").SetValue(targetSide);
-            Traverse.Create(effect).Field("rangeType").SetValue(rangeType);
-            Traverse.Create(effect).Field("rangeParameter").SetValue(rangeParameter);
-            Traverse.Create(effect).Field("targetType").SetValue(targetType);
-            Traverse.Create(effect).Field("targetParameter").SetValue(targetParameter);
-            Traverse.Create(effect).Field("targetParameter2").SetValue(targetParameter2);
-            Traverse.Create(effect).Field("itemSelectionType").SetValue(itemSelectionType);
+            effect.SetTargetSide(targetSide);
+            effect.SetRangeType(rangeType);
+            effect.SetRangeParameter(rangeParameter);
+            effect.SetTargetType(targetType);
+            effect.SetTargetParameter(targetParameter);
+            effect.SetTargetParameter2(targetParameter2);
+            effect.SetItemSelectionType(itemSelectionType);
+            return this;
         }
 
-        public void NoVisibilityRequiredToTarget()
+        public EffectDescriptionBuilder NoVisibilityRequiredToTarget()
         {
-            Traverse.Create(effect).Field("requiresVisibilityForPosition").SetValue(false);
+
+            effect.SetRequiresVisibilityForPosition(false);
+            return this;
         }
 
-        public void HalfDamageOnMiss()
+        public EffectDescriptionBuilder HalfDamageOnMiss()
         {
-            Traverse.Create(effect).Field("halfDamageOnAMiss").SetValue(true);
+            effect.SetHalfDamageOnAMiss(true);
+            return this;
         }
 
-        public void OptionalAdditionalAlly()
+        public EffectDescriptionBuilder OptionalAdditionalAlly()
         {
-            Traverse.Create(effect).Field("inviteOptionalAlly").SetValue(true);
+            effect.SetInviteOptionalAlly(true);
+            return this;
         }
 
-        public void AddHitAffinity(string tag, RuleDefinitions.AdvantageType advantageType)
+        public EffectDescriptionBuilder AddHitAffinity(string tag, RuleDefinitions.AdvantageType advantageType)
         {
             HitAffinityByTag hitAffinity = new HitAffinityByTag();
-            Traverse.Create(hitAffinity).Field("tag").SetValue(tag);
-            Traverse.Create(hitAffinity).Field("advantageType").SetValue(advantageType);
+
+            hitAffinity.SetTag(tag);
+            hitAffinity.SetAdvantageType(advantageType);
             effect.HitAffinitiesByTargetTag.Add(hitAffinity);
+            return this;
         }
 
-        public void ExcludeCaster()
+        public EffectDescriptionBuilder ExcludeCaster()
         {
-            Traverse.Create(effect).Field("targetExcludeCaster").SetValue(true);
+            effect.SetTargetExcludeCaster(true);
+            return this;
         }
 
-        public void MustPlaceNotOnCharacter()
+        public EffectDescriptionBuilder MustPlaceNotOnCharacter()
         {
-            Traverse.Create(effect).Field("canBePlacedOnCharacter").SetValue(false);
+            effect.SetCanBePlacedOnCharacter(false);
+            return this;
         }
 
-        public void SetTargetProximityData(bool requiresTargetProximity, int targetProximityDistance)
+        public EffectDescriptionBuilder SetTargetProximityData(bool requiresTargetProximity, int targetProximityDistance)
         {
-            Traverse.Create(effect).Field("requiresTargetProximity").SetValue(requiresTargetProximity);
-            Traverse.Create(effect).Field("targetProximityDistance").SetValue(targetProximityDistance);
+            effect.SetRequiresTargetProximity(requiresTargetProximity);
+            effect.SetTargetProximityDistance(targetProximityDistance);
+            return this;
         }
 
-        public void SetTargetFiltering(RuleDefinitions.TargetFilteringMethod targetFilteringMethod, RuleDefinitions.TargetFilteringTag targetFilteringTag,
+        public EffectDescriptionBuilder SetTargetFiltering(RuleDefinitions.TargetFilteringMethod targetFilteringMethod, RuleDefinitions.TargetFilteringTag targetFilteringTag,
             int poolFilterDiceNumber, RuleDefinitions.DieType poolFilterDieType)
         {
-            Traverse.Create(effect).Field("targetFilteringMethod").SetValue(targetFilteringMethod);
-            Traverse.Create(effect).Field("targetFilteringTag").SetValue(targetFilteringTag);
-            Traverse.Create(effect).Field("poolFilterDiceNumber").SetValue(poolFilterDiceNumber);
-            Traverse.Create(effect).Field("poolFilterDieType").SetValue(poolFilterDieType);
+            effect.SetTargetFilteringMethod(targetFilteringMethod);
+            effect.SetTargetFilteringTag(targetFilteringTag);
+            effect.SetPoolFilterDiceNumber(poolFilterDiceNumber);
+            effect.SetPoolFilterDieType(poolFilterDieType);
+            return this;
         }
 
-        public void SetBorderData(RuleDefinitions.EmissiveBorder emissiveBorder, int emissiveParameter)
+        public EffectDescriptionBuilder SetBorderData(RuleDefinitions.EmissiveBorder emissiveBorder, int emissiveParameter)
         {
-            Traverse.Create(effect).Field("emissiveBorder").SetValue(emissiveBorder);
-            Traverse.Create(effect).Field("emissiveParameter").SetValue(emissiveParameter);
+            effect.SetEmissiveBorder(emissiveBorder);
+            effect.SetEmissiveParameter(emissiveParameter);
+            return this;
         }
 
-        public void SetRecurrentEffect(RuleDefinitions.RecurrentEffect recurrentEffect)
+        public EffectDescriptionBuilder SetRecurrentEffect(RuleDefinitions.RecurrentEffect recurrentEffect)
         {
-            Traverse.Create(effect).Field("recurrentEffect").SetValue(recurrentEffect);
+            effect.SetRecurrentEffect(recurrentEffect);
+            return this;
         }
 
-        public void SetRetargetData(bool retargetAfterDeath, ActionDefinitions.ActionType retargetActionType)
+        public EffectDescriptionBuilder SetRetargetData(bool retargetAfterDeath, ActionDefinitions.ActionType retargetActionType)
         {
-            Traverse.Create(effect).Field("retargetAfterDeath").SetValue(retargetAfterDeath);
-            Traverse.Create(effect).Field("retargetActionType").SetValue(retargetActionType);
+            effect.SetRetargetAfterDeath(retargetAfterDeath);
+            effect.SetRetargetActionType(retargetActionType);
+            return this;
         }
 
-        public void SetTrapRange(RuleDefinitions.TrapRangeType trapRangeType)
+        public EffectDescriptionBuilder SetTrapRange(RuleDefinitions.TrapRangeType trapRangeType)
         {
-            Traverse.Create(effect).Field("trapRangeType").SetValue(trapRangeType);
+            effect.SetTrapRangeType(trapRangeType);
+            return this;
         }
 
-        public void SetRequiredCondition(ConditionDefinition targetConditionAsset)
+        public EffectDescriptionBuilder SetRequiredCondition(ConditionDefinition targetConditionAsset)
         {
-            Traverse.Create(effect).Field("targetConditionAsset").SetValue(targetConditionAsset);
-            Traverse.Create(effect).Field("targetConditionName").SetValue(targetConditionAsset.Name);
+            effect.SetTargetConditionAsset(targetConditionAsset);
+            effect.SetTargetConditionName(targetConditionAsset.Name);
+            return this;
         }
 
-        public void SetDurationData(RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect)
+        public EffectDescriptionBuilder SetDurationData(RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect)
         {
-            Traverse.Create(effect).Field("durationType").SetValue(durationType);
-            Traverse.Create(effect).Field("durationParameter").SetValue(durationParameter);
-            Traverse.Create(effect).Field("endOfEffect").SetValue(endOfEffect);
+            effect.SetDurationType(durationType);
+            effect.SetDurationParameter(durationParameter);
+            effect.SetEndOfEffect(endOfEffect);
+            return this;
         }
 
-        public void SetSavingThrowData(bool hasSavingThrow, bool disableSavingThrowOnAllies, string savingThrowAbility, bool ignoreCover,
+        public EffectDescriptionBuilder SetSavingThrowData(bool hasSavingThrow, bool disableSavingThrowOnAllies, string savingThrowAbility, bool ignoreCover,
             RuleDefinitions.EffectDifficultyClassComputation difficultyClassComputation, string savingThrowDifficultyAbility,
             int fixedSavingThrowDifficultyClass, bool advantageForEnemies, List<SaveAffinityBySenseDescription> savingThrowAffinitiesBySense)
         {
-            Traverse.Create(effect).Field("hasSavingThrow").SetValue(hasSavingThrow);
-            Traverse.Create(effect).Field("disableSavingThrowOnAllies").SetValue(disableSavingThrowOnAllies);
-            Traverse.Create(effect).Field("savingThrowAbility").SetValue(savingThrowAbility);
-            Traverse.Create(effect).Field("ignoreCover").SetValue(ignoreCover);
-            Traverse.Create(effect).Field("difficultyClassComputation").SetValue(difficultyClassComputation);
-            Traverse.Create(effect).Field("savingThrowDifficultyAbility").SetValue(savingThrowDifficultyAbility);
-            Traverse.Create(effect).Field("fixedSavingThrowDifficultyClass").SetValue(fixedSavingThrowDifficultyClass);
-            Traverse.Create(effect).Field("advantageForEnemies").SetValue(advantageForEnemies);
-            Traverse.Create(effect).Field("savingThrowAffinitiesBySense").SetValue(savingThrowAffinitiesBySense);
+            effect.HasSavingThrow = hasSavingThrow;
+            effect.SetDisableSavingThrowOnAllies(disableSavingThrowOnAllies);
+            effect.SavingThrowAbility = savingThrowAbility;
+            effect.SetIgnoreCover(ignoreCover);
+            effect.SetDifficultyClassComputation(difficultyClassComputation);
+            effect.SetSavingThrowDifficultyAbility(savingThrowDifficultyAbility);
+            effect.FixedSavingThrowDifficultyClass = fixedSavingThrowDifficultyClass;
+            effect.SetAdvantageForEnemies(advantageForEnemies);
+            effect.SetField("savingThrowAffinitiesBySense", savingThrowAffinitiesBySense);
+            return this;
         }
 
-        public void RequireShoveToHit()
+        public EffectDescriptionBuilder RequireShoveToHit()
         {
-            Traverse.Create(effect).Field("hasShoveRoll").SetValue(true);
+            effect.SetHasShoveRoll(true);
+            return this;
         }
 
-        public void CanBeDispersed()
+        public EffectDescriptionBuilder CanBeDispersed()
         {
-            Traverse.Create(effect).Field("canBeDispersed").SetValue(true);
+            effect.SetCanBeDispersed(true);
+            return this;
         }
 
-        public void SetVelocity(int velocityCellsPerRound, RuleDefinitions.VelocityType velocityType)
+        public EffectDescriptionBuilder SetVelocity(int velocityCellsPerRound, RuleDefinitions.VelocityType velocityType)
         {
-            Traverse.Create(effect).Field("hasVelocity").SetValue(true);
-            Traverse.Create(effect).Field("velocityCellsPerRound").SetValue(velocityCellsPerRound);
-            Traverse.Create(effect).Field("velocityType").SetValue(velocityType);
+            effect.SetHasVelocity(true);
+            effect.SetVelocityCellsPerRound(velocityCellsPerRound);
+            effect.SetVelocityType(velocityType);
+            return this;
         }
-        
-        public void AddRestrictedCreatureFamilies(CharacterFamilyDefinition family)
+
+        public EffectDescriptionBuilder AddRestrictedCreatureFamilies(CharacterFamilyDefinition family)
         {
             effect.RestrictedCreatureFamilies.Add(family.Name);
+            return this;
         }
 
-        public void AddImmuneCreatureFamilies(CharacterFamilyDefinition family)
+        public EffectDescriptionBuilder AddImmuneCreatureFamilies(CharacterFamilyDefinition family)
         {
             effect.ImmuneCreatureFamilies.Add(family.Name);
+            return this;
         }
 
-        public void AddRestrictedCharacterSize(RuleDefinitions.CreatureSize size)
+        public EffectDescriptionBuilder AddRestrictedCharacterSize(RuleDefinitions.CreatureSize size)
         {
             effect.RestrictedCharacterSizes.Add(size);
+            return this;
         }
 
-        public void SetEffectPool(int effectPoolAmount)
+        public EffectDescriptionBuilder SetEffectPool(int effectPoolAmount)
         {
-            Traverse.Create(effect).Field("hasLimitedEffectPool").SetValue(true);
-            Traverse.Create(effect).Field("effectPoolAmount").SetValue(effectPoolAmount);
+            effect.SetHasLimitedEffectPool(true);
+            effect.SetEffectPoolAmount(effectPoolAmount);
+            return this;
         }
 
-        public void SetSpeed(RuleDefinitions.SpeedType speedType, float speedParameter)
+        public EffectDescriptionBuilder SetSpeed(RuleDefinitions.SpeedType speedType, float speedParameter)
         {
-            Traverse.Create(effect).Field("speedType").SetValue(speedType);
-            Traverse.Create(effect).Field("speedParameter").SetValue(speedParameter);
+            effect.SetSpeedType(speedType);
+            effect.SetSpeedParameter(speedParameter);
+            return this;
         }
 
-        public void SetOffsetImpactTime(float offsetImpactTimeBasedOnDistanceFactor, float offsetImpactTimePerTarget)
+        public EffectDescriptionBuilder SetOffsetImpactTime(float offsetImpactTimeBasedOnDistanceFactor, float offsetImpactTimePerTarget)
         {
-            Traverse.Create(effect).Field("offsetImpactTimeBasedOnDistance").SetValue(true);
-            Traverse.Create(effect).Field("offsetImpactTimeBasedOnDistanceFactor").SetValue(offsetImpactTimeBasedOnDistanceFactor);
-            Traverse.Create(effect).Field("offsetImpactTimePerTarget").SetValue(offsetImpactTimePerTarget);
+            effect.SetOffsetImpactTimeBasedOnDistance(true);
+            effect.SetOffsetImpactTimeBasedOnDistanceFactor(offsetImpactTimeBasedOnDistanceFactor);
+            effect.SetOffsetImpactTimePerTarget(offsetImpactTimePerTarget);
+            return this;
         }
 
-        public void AddEffectForm(EffectForm effectForm)
+        public EffectDescriptionBuilder AddEffectForm(EffectForm effectForm)
         {
             effect.EffectForms.Add(effectForm);
+            return this;
         }
 
         public EffectDescription Build()

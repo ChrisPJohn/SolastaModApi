@@ -11,10 +11,52 @@ namespace SolastaModApi
     /// </summary>
     public static class EffectDescriptionExtensions
     {
+        public static T SetAdvantageForEnemies<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("advantageForEnemies", value);
+            return entity;
+        }
+
+        public static T SetCanBeDispersed<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("canBeDispersed", value);
+            return entity;
+        }
+
+        public static T SetCanBePlacedOnCharacter<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("canBePlacedOnCharacter", value);
+            return entity;
+        }
+
+        public static T SetCreatedByCharacter<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("createdByCharacter", value);
+            return entity;
+        }
+
         public static T SetDifficultyClassComputation<T>(this T entity, EffectDifficultyClassComputation value)
             where T : EffectDescription
         {
             entity.SetField("difficultyClassComputation", value);
+            return entity;
+        }
+
+        public static T SetDisableSavingThrowOnAllies<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("disableSavingThrowOnAllies", value);
+            return entity;
+        }
+
+        public static T SetDurationParameter<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("durationParameter", value);
             return entity;
         }
 
@@ -46,10 +88,24 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetEffectPoolAmount<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("effectPoolAmount", value);
+            return entity;
+        }
+
         public static T SetEmissiveBorder<T>(this T entity, EmissiveBorder value)
             where T : EffectDescription
         {
             entity.SetField("emissiveBorder", value);
+            return entity;
+        }
+
+        public static T SetEmissiveParameter<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("emissiveParameter", value);
             return entity;
         }
 
@@ -60,10 +116,59 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetHalfDamageOnAMiss<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("halfDamageOnAMiss", value);
+            return entity;
+        }
+
+        public static T SetHasLimitedEffectPool<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("hasLimitedEffectPool", value);
+            return entity;
+        }
+
+        public static T SetHasShoveRoll<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("hasShoveRoll", value);
+            return entity;
+        }
+
+        public static T SetHasVelocity<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("hasVelocity", value);
+            return entity;
+        }
+
+        public static T SetIgnoreCover<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("ignoreCover", value);
+            return entity;
+        }
+
+        public static T SetInviteOptionalAlly<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("inviteOptionalAlly", value);
+            return entity;
+        }
+
         public static T SetItemSelectionType<T>(this T entity, ItemSelectionType value)
             where T : EffectDescription
         {
             entity.SetField("itemSelectionType", value);
+            return entity;
+        }
+
+        public static T SetOffsetImpactTimeBasedOnDistance<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("offsetImpactTimeBasedOnDistance", value);
             return entity;
         }
 
@@ -81,10 +186,24 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetPoolFilterDiceNumber<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("poolFilterDiceNumber", value);
+            return entity;
+        }
+
         public static T SetPoolFilterDieType<T>(this T entity, DieType value)
             where T : EffectDescription
         {
             entity.SetField("poolFilterDieType", value);
+            return entity;
+        }
+
+        public static T SetRangeParameter<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("rangeParameter", value);
             return entity;
         }
 
@@ -102,10 +221,38 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetRequiresTargetProximity<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("requiresTargetProximity", value);
+            return entity;
+        }
+
+        public static T SetRequiresVisibilityForPosition<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("requiresVisibilityForPosition", value);
+            return entity;
+        }
+
         public static T SetRetargetActionType<T>(this T entity, ActionType value)
             where T : EffectDescription
         {
             entity.SetField("retargetActionType", value);
+            return entity;
+        }
+
+        public static T SetRetargetAfterDeath<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("retargetAfterDeath", value);
+            return entity;
+        }
+
+        public static T SetSavingThrowDifficultyAbility<T>(this T entity, string value)
+            where T : EffectDescription
+        {
+            entity.SetField("savingThrowDifficultyAbility", value);
             return entity;
         }
 
@@ -130,6 +277,20 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetTargetConditionName<T>(this T entity, string value)
+            where T : EffectDescription
+        {
+            entity.SetField("targetConditionName", value);
+            return entity;
+        }
+
+        public static T SetTargetExcludeCaster<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.SetField("targetExcludeCaster", value);
+            return entity;
+        }
+
         public static T SetTargetFilteringMethod<T>(this T entity, TargetFilteringMethod value)
             where T : EffectDescription
         {
@@ -141,6 +302,27 @@ namespace SolastaModApi
             where T : EffectDescription
         {
             entity.SetField("targetFilteringTag", value);
+            return entity;
+        }
+
+        public static T SetTargetParameter<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("targetParameter", value);
+            return entity;
+        }
+
+        public static T SetTargetParameter2<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("targetParameter2", value);
+            return entity;
+        }
+
+        public static T SetTargetProximityDistance<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("targetProximityDistance", value);
             return entity;
         }
 
@@ -162,6 +344,13 @@ namespace SolastaModApi
             where T : EffectDescription
         {
             entity.SetField("trapRangeType", value);
+            return entity;
+        }
+
+        public static T SetVelocityCellsPerRound<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.SetField("velocityCellsPerRound", value);
             return entity;
         }
 

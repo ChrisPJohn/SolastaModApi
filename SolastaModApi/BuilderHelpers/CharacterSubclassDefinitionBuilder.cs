@@ -1,5 +1,4 @@
-﻿using SolastaModApi.Infrastructure;
-using System;
+﻿using System;
 
 namespace SolastaModApi
 {

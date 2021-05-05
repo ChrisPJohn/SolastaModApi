@@ -17,10 +17,24 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetRemainingRounds<T>(this T entity, int value)
+            where T : RulesetItemProperty
+        {
+            entity.SetField("<RemainingRounds>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetTargetItemGuid<T>(this T entity, ulong value)
             where T : RulesetItemProperty
         {
             entity.SetField("targetItemGuid", value);
+            return entity;
+        }
+
+        public static T SetUnicityTag<T>(this T entity, string value)
+            where T : RulesetItemProperty
+        {
+            entity.SetField("unicityTag", value);
             return entity;
         }
 

@@ -18,6 +18,20 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetBattleEventCounter<T>(this T entity, int value)
+            where T : GadgetFlowDescription
+        {
+            entity.SetField("battleEventCounter", value);
+            return entity;
+        }
+
+        public static T SetBattleEventMaxOccurences<T>(this T entity, int value)
+            where T : GadgetFlowDescription
+        {
+            entity.SetField("battleEventMaxOccurences", value);
+            return entity;
+        }
+
         public static T SetBoolParameter1<T>(this T entity, bool value)
             where T : GadgetFlowDescription
         {
@@ -74,6 +88,13 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetIntParameter1<T>(this T entity, int value)
+            where T : GadgetFlowDescription
+        {
+            entity.SetField("intParameter1", value);
+            return entity;
+        }
+
         public static T SetListenerType<T>(this T entity, string value)
             where T : GadgetFlowDescription
         {
@@ -92,6 +113,13 @@ namespace SolastaModApi
             where T : GadgetFlowDescription
         {
             entity.SetField("orientation", value);
+            return entity;
+        }
+
+        public static T SetOutcomeNumber<T>(this T entity, int value)
+            where T : GadgetFlowDescription
+        {
+            entity.SetField("outcomeNumber", value);
             return entity;
         }
 

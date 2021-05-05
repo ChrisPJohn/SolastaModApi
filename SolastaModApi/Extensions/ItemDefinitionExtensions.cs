@@ -10,6 +10,13 @@ namespace SolastaModApi
     /// </summary>
     public static class ItemDefinitionExtensions
     {
+        public static T SetActiveOnGround<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("activeOnGround", value);
+            return entity;
+        }
+
         public static T SetAmmunitionDescription<T>(this T entity, AmmunitionDescription value)
             where T : ItemDefinition
         {
@@ -21,6 +28,13 @@ namespace SolastaModApi
             where T : ItemDefinition
         {
             entity.SetField("armorDefinition", value);
+            return entity;
+        }
+
+        public static T SetCanBeStacked<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("canBeStacked", value);
             return entity;
         }
 
@@ -73,10 +87,24 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetForceEquip<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("forceEquip", value);
+            return entity;
+        }
+
         public static T SetForceEquipSlot<T>(this T entity, string value)
             where T : ItemDefinition
         {
             entity.SetField("forceEquipSlot", value);
+            return entity;
+        }
+
+        public static T SetInDungeonEditor<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("inDungeonEditor", value);
             return entity;
         }
 
@@ -101,10 +129,31 @@ namespace SolastaModApi
             return entity;
         }
 
+        public static T SetMagical<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("magical", value);
+            return entity;
+        }
+
         public static T SetMerchantCategory<T>(this T entity, string value)
             where T : ItemDefinition
         {
             entity.SetField("merchantCategory", value);
+            return entity;
+        }
+
+        public static T SetRequiresAttunement<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("requiresAttunement", value);
+            return entity;
+        }
+
+        public static T SetRequiresIdentification<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("requiresIdentification", value);
             return entity;
         }
 

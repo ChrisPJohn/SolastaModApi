@@ -9,10 +9,24 @@ namespace SolastaModApi
     /// </summary>
     public static class RulesetEntityExtensions
     {
+        public static T SetDescriptionChanged<T>(this T entity, EntityDescription.DescriptionChangedHandler value)
+            where T : RulesetEntity
+        {
+            entity.SetField("<DescriptionChanged>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetEntityDescription<T>(this T entity, EntityDescription value)
             where T : RulesetEntity
         {
             entity.SetField("entityDescription", value);
+            return entity;
+        }
+
+        public static T SetEntityImplementation<T>(this T entity, IEntityImplementation value)
+            where T : RulesetEntity
+        {
+            entity.SetField("<EntityImplementation>k__BackingField", value);
             return entity;
         }
 

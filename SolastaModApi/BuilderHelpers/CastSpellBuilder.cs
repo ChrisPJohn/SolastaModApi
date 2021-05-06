@@ -1,14 +1,12 @@
-﻿
-
-using HarmonyLib;
+﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using SolastaModApi.Infrastructure;
 
 namespace SolastaModApi
 {
-    public class CastSpellBuilder
+    public class CastSpellBuilder : BaseDefinitionBuilder<FeatureDefinitionCastSpell>
     {
-        private readonly FeatureDefinitionCastSpell castSpell;
 
         public enum CasterProgression
         {
@@ -17,122 +15,138 @@ namespace SolastaModApi
             THIRD_CASTER,
         }
 
-        public CastSpellBuilder()
+        public CastSpellBuilder(string name, string guid) : base(name, guid)
         {
-            castSpell = ScriptableObject.CreateInstance<FeatureDefinitionCastSpell>();
-            Traverse.Create(castSpell).Field("restrictedSchools").SetValue(new List<string>());
+            InitializeFields();
+        }
+
+        public CastSpellBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
+        {
+            InitializeFields();
+        }
+
+        private void InitializeFields()
+        {
+            Definition.SetField("restrictedSchools", new List<string>());
 
             SetKnownCantripsZero();
             SetKnownZero();
             SetScribedZero();
         }
 
-        public void SetName(string name, string guid)
+        public CastSpellBuilder SetGuiPresentation(GuiPresentation gui)
         {
-            Traverse.Create(castSpell).Field("name").SetValue(name);
-            castSpell.name = name;
-            Traverse.Create(castSpell).Field("guid").SetValue(guid);
+            Definition.SetGuiPresentation(gui);
+            return this;
         }
 
-        public void SetGuiPresentation(GuiPresentation gui)
+        public CastSpellBuilder SetSpellCastingOrigin(FeatureDefinitionCastSpell.CastingOrigin origin)
         {
-            Traverse.Create(castSpell).Field("guiPresentation").SetValue(gui);
+            Definition.SetSpellCastingOrigin(origin);
+            return this;
         }
 
-        public void SetSpellCastingOrigin(FeatureDefinitionCastSpell.CastingOrigin origin)
+        public CastSpellBuilder SetSpellCastingAbility(string attribute)
         {
-            Traverse.Create(castSpell).Field("spellCastingOrigin").SetValue(origin);
+            Definition.SetSpellcastingAbility(attribute);
+            return this;
         }
 
-        public void SetSpellCastingAbility(string attribute)
+        public CastSpellBuilder SetStaticParameters(int dcValue, int toHitValue)
         {
-            Traverse.Create(castSpell).Field("spellcastingAbility").SetValue(attribute);
+            Definition.SetSpellcastingParametersComputation(RuleDefinitions.SpellcastingParametersComputation.Static);
+            Definition.SetStaticDCValue(dcValue);
+            Definition.SetStaticToHitValue(toHitValue);
+            return this;
         }
 
-        public void SetStaticParameters(int dcValue, int toHitValue)
+        public CastSpellBuilder SetSpellList(SpellListDefinition spellList)
         {
-            Traverse.Create(castSpell).Field("spellcastingParametersComputation").SetValue(RuleDefinitions.SpellcastingParametersComputation.Static);
-            Traverse.Create(castSpell).Field("staticDCValue").SetValue(dcValue);
-            Traverse.Create(castSpell).Field("staticToHitValue").SetValue(toHitValue);
+            Definition.SetSpellListDefinition(spellList);
+            return this;
         }
 
-        public void SetSpellList(SpellListDefinition spellList)
+        public CastSpellBuilder SetSpellKnowledge(RuleDefinitions.SpellKnowledge knowledge)
         {
-            Traverse.Create(castSpell).Field("spellListDefinition").SetValue(spellList);
+            Definition.SetSpellKnowledge(knowledge);
+            return this;
         }
 
-        public void SetSpellKnowledge(RuleDefinitions.SpellKnowledge knowledge)
+        public CastSpellBuilder SetSpellReadyness(RuleDefinitions.SpellReadyness readyness)
         {
-            Traverse.Create(castSpell).Field("spellKnowledge").SetValue(knowledge);
+            Definition.SetSpellReadyness(readyness);
+            return this;
         }
 
-        public void SetSpellReadyness(RuleDefinitions.SpellReadyness readyness)
+        public CastSpellBuilder SetSpellPreparationCount(RuleDefinitions.SpellPreparationCount prepCount)
         {
-            Traverse.Create(castSpell).Field("spellReadyness").SetValue(readyness);
+            Definition.SetSpellPreparationCount(prepCount);
+            return this;
         }
 
-        public void SetSpellPreparationCount(RuleDefinitions.SpellPreparationCount prepCount)
+        public CastSpellBuilder SetSlotsRecharge(RuleDefinitions.RechargeRate slotRecharge)
         {
-            Traverse.Create(castSpell).Field("spellPreparationCount").SetValue(prepCount);
+            Definition.SetSlotsRecharge(slotRecharge);
+            return this;
         }
 
-        public void SetSlotsRecharge(RuleDefinitions.RechargeRate slotRecharge)
+        public CastSpellBuilder SetSpellCastingLevel(int level)
         {
-            Traverse.Create(castSpell).Field("slotsRecharge").SetValue(slotRecharge);
+            Definition.SetSpellCastingLevel(level);
+            return this;
         }
 
-        public void SetCanUseScrolls(bool scrolls)
+        public CastSpellBuilder AddRestrictedSchool(SchoolOfMagicDefinition school)
         {
-            Traverse.Create(castSpell).Field("canUseScrolls").SetValue(scrolls);
+            Definition.RestrictedSchools.Add(school.Name);
+            return this;
         }
 
-        public void SetSpellCastingLevel(int level)
+        public CastSpellBuilder SetKnownCantrips(List<int> cantripsCount)
         {
-            Traverse.Create(castSpell).Field("spellCastingLevel").SetValue(level);
+            Definition.KnownCantrips.Clear();
+            Definition.KnownCantrips.AddRange(cantripsCount);
+            return this;
         }
 
-        public void AddRestrictedSchool(SchoolOfMagicDefinition school)
+        public CastSpellBuilder SetKnown(List<int> spellsCount)
         {
-            castSpell.RestrictedSchools.Add(school.Name);
+            Definition.KnownSpells.Clear();
+            Definition.KnownSpells.AddRange(spellsCount);
+            return this;
         }
 
-        public void SetKnownCantrips(List<int> cantripsCount)
+        public CastSpellBuilder SetScribed(List<int> scribedCount)
         {
-            Traverse.Create(castSpell).Field("knownCantrips").SetValue(cantripsCount);
+            Definition.ScribedSpells.Clear();
+            Definition.ScribedSpells.AddRange(scribedCount);
+            return this;
         }
 
-        public void SetKnown(List<int> spellsCount)
+        public CastSpellBuilder SetSlotsPerLevel(List<FeatureDefinitionCastSpell.SlotsByLevelDuplet> slotsPerLevels)
         {
-            Traverse.Create(castSpell).Field("knownSpells").SetValue(spellsCount);
-        }
-
-        public void SetScribed(List<int> scribedCount)
-        {
-            Traverse.Create(castSpell).Field("scribedSpells").SetValue(scribedCount);
-        }
-
-        public void SetSlotsPerLevel(List<FeatureDefinitionCastSpell.SlotsByLevelDuplet> slotsPerLevels)
-        {
-            Traverse.Create(castSpell).Field("slotsPerLevels").SetValue(slotsPerLevels);
+            Definition.SlotsPerLevels.Clear();
+            Definition.SlotsPerLevels.AddRange(slotsPerLevels);
+            return this;
         }
 
         private void SetKnownCantripsZero()
         {
-            castSpell.KnownCantrips.Clear();
+            Definition.KnownCantrips.Clear();
             for (int level = 1; level < 21; level++)
             {
-                castSpell.KnownCantrips.Add(0);
+                Definition.KnownCantrips.Add(0);
             }
         }
 
-        public void SetKnownCantrips(int startingAmount, int startingLevel, CasterProgression progression)
+        public CastSpellBuilder SetKnownCantrips(int startingAmount, int startingLevel, CasterProgression progression)
         {
-            castSpell.KnownCantrips.Clear();
+            Definition.KnownCantrips.Clear();
             int level = 1;
             int numCantrips = 0;
             for (; level < startingLevel; level++)
             {
-                castSpell.KnownCantrips.Add(numCantrips);
+                Definition.KnownCantrips.Add(numCantrips);
             }
             numCantrips = startingAmount;
             switch (progression)
@@ -140,114 +154,116 @@ namespace SolastaModApi
                 case CasterProgression.FULL_CASTER:
                     for (; level < 4; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     numCantrips++;
                     for (; level < 10; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     numCantrips++;
                     for (; level < 21; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     break;
                 case CasterProgression.HALF_CASTER:
                     for (; level < 10; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     numCantrips++;
                     for (; level < 14; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     numCantrips++;
                     for (; level < 21; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     break;
                 case CasterProgression.THIRD_CASTER:
                     for (; level < 10; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     numCantrips++;
                     for (; level < 21; level++)
                     {
-                        castSpell.KnownCantrips.Add(numCantrips);
+                        Definition.KnownCantrips.Add(numCantrips);
                     }
                     break;
             }
+            return this;
         }
 
         private void SetScribedZero()
         {
-            castSpell.ScribedSpells.Clear();
+            Definition.ScribedSpells.Clear();
             for (int level = 1; level < 21; level++)
             {
-                castSpell.ScribedSpells.Add(0);
+                Definition.ScribedSpells.Add(0);
             }
         }
 
-        public void SetScribedSpells(int startingLevel, int initialAmount, int perLevelAfterFirst)
+        public CastSpellBuilder SetScribedSpells(int startingLevel, int initialAmount, int perLevelAfterFirst)
         {
-            castSpell.ScribedSpells.Clear();
+            Definition.ScribedSpells.Clear();
             int level = 1;
             for (; level < startingLevel; level++)
             {
-                castSpell.ScribedSpells.Add(0);
+                Definition.ScribedSpells.Add(0);
             }
-            castSpell.ScribedSpells.Add(initialAmount);
+            Definition.ScribedSpells.Add(initialAmount);
             level++;
             for (; level < 21; level++)
             {
-                castSpell.ScribedSpells.Add(perLevelAfterFirst);
+                Definition.ScribedSpells.Add(perLevelAfterFirst);
             }
+            return this;
         }
 
         private void SetKnownZero()
         {
-            castSpell.KnownSpells.Clear();
+            Definition.KnownSpells.Clear();
             for (int level = 1; level < 21; level++)
             {
-                castSpell.KnownSpells.Add(0);
+                Definition.KnownSpells.Add(0);
             }
         }
 
         private int[] BonusSpellsKnownByCasterLevel = new int[] { 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 13, 13 };
         private int[] BonusSpellsKnownThirdCaster = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4 };
 
-        public void SetKnownSpells(int startingAmount, int startingLevel, CasterProgression progression)
+        public CastSpellBuilder SetKnownSpells(int startingAmount, int startingLevel, CasterProgression progression)
         {
-            castSpell.KnownSpells.Clear();
+            Definition.KnownSpells.Clear();
             int level = 1;
             for (; level < startingLevel; level++)
             {
-                castSpell.KnownSpells.Add(0);
+                Definition.KnownSpells.Add(0);
             }
             switch (progression)
             {
                 case CasterProgression.FULL_CASTER:
                     for (; level < 21; level++)
                     {
-                        castSpell.KnownSpells.Add(startingAmount + BonusSpellsKnownByCasterLevel[level]);
+                        Definition.KnownSpells.Add(startingAmount + BonusSpellsKnownByCasterLevel[level]);
                     }
                     break;
                 case CasterProgression.HALF_CASTER:
                     for (; level < 21; level++)
                     {
                         // +1 here because half casters effectively round up the spells known
-                        castSpell.KnownSpells.Add(startingAmount + BonusSpellsKnownByCasterLevel[(level + 1) / 2]);
+                        Definition.KnownSpells.Add(startingAmount + BonusSpellsKnownByCasterLevel[(level + 1) / 2]);
                     }
                     break;
                 case CasterProgression.THIRD_CASTER:
                     for (; level < 21; level++)
                     {
 
-                        castSpell.KnownSpells.Add(startingAmount +
+                        Definition.KnownSpells.Add(startingAmount +
                             // +2 here because third casters effectively "round up" for spells known
                             BonusSpellsKnownByCasterLevel[(level + 2) / 3] +
                             // Third casters also just learn spells faster
@@ -255,6 +271,7 @@ namespace SolastaModApi
                     }
                     break;
             }
+            return this;
         }
 
         private List<int>[] SlotsByCasterLevel = new List<int>[]
@@ -281,7 +298,7 @@ namespace SolastaModApi
             new List<int>() {4,3,3,3,3 },
             new List<int>() {4,3,3,3,3 },
         };
-        public void SetSlotsPerLevel(int startingLevel, CasterProgression progression)
+        public CastSpellBuilder SetSlotsPerLevel(int startingLevel, CasterProgression progression)
         {
             int level = 1;
             for (; level < startingLevel; level++)
@@ -289,7 +306,7 @@ namespace SolastaModApi
                 FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
                 slotsForLevel.Level = level;
                 slotsForLevel.Slots = SlotsByCasterLevel[0];
-                castSpell.SlotsPerLevels.Add(slotsForLevel);
+                Definition.SlotsPerLevels.Add(slotsForLevel);
             }
             switch (progression)
             {
@@ -299,7 +316,7 @@ namespace SolastaModApi
                         FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
                         slotsForLevel.Level = level;
                         slotsForLevel.Slots = SlotsByCasterLevel[level - startingLevel + 1];
-                        castSpell.SlotsPerLevels.Add(slotsForLevel);
+                        Definition.SlotsPerLevels.Add(slotsForLevel);
                     }
                     break;
                 case CasterProgression.HALF_CASTER:
@@ -308,7 +325,7 @@ namespace SolastaModApi
                         FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
                         slotsForLevel.Level = level;
                         slotsForLevel.Slots = SlotsByCasterLevel[(level - startingLevel) / 2 + 1];
-                        castSpell.SlotsPerLevels.Add(slotsForLevel);
+                        Definition.SlotsPerLevels.Add(slotsForLevel);
                     }
                     break;
                 case CasterProgression.THIRD_CASTER:
@@ -317,16 +334,11 @@ namespace SolastaModApi
                         FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
                         slotsForLevel.Level = level;
                         slotsForLevel.Slots = SlotsByCasterLevel[(level - startingLevel + 2) / 3 + 1];
-                        castSpell.SlotsPerLevels.Add(slotsForLevel);
+                        Definition.SlotsPerLevels.Add(slotsForLevel);
                     }
                     break;
             }
-        }
-
-        public FeatureDefinitionCastSpell AddToDB()
-        {
-            DatabaseRepository.GetDatabase<FeatureDefinition>().Add(castSpell);
-            return castSpell;
+            return this;
         }
     }
 }

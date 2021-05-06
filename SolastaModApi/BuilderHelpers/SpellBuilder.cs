@@ -1,111 +1,122 @@
-﻿using HarmonyLib;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
+using SolastaModApi.Infrastructure;
 
 namespace SolastaModApi
 {
-	public class SpellBuilder
-	{
-		private readonly SpellDefinition spell;
-
-		public SpellBuilder()
+    public class SpellBuilder : BaseDefinitionBuilder<SpellDefinition>
+    {
+        public SpellBuilder(string name, string guid) : base(name, guid)
         {
-			spell = ScriptableObject.CreateInstance<SpellDefinition>();
-			Traverse.Create(spell).Field("implemented").SetValue(true);
-		}
+            InitializeFields();
+        }
 
-		public void SetName(string name, string guid)
+        public SpellBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
-			Traverse.Create(spell).Field("name").SetValue(name);
-			spell.name = name;
-			Traverse.Create(spell).Field("guid").SetValue(guid);
-		}
+            InitializeFields();
+        }
 
-		public void SetSpellLevel(int spellLevel)
+        private void InitializeFields()
         {
-			Traverse.Create(spell).Field("spellLevel").SetValue(spellLevel);
-		}
+            Definition.SetImplemented(true);
+        }
 
-		public void SetSchoolOfMagic(SchoolOfMagicDefinition school)
+
+        public SpellBuilder SetSpellLevel(int spellLevel)
         {
-			Traverse.Create(spell).Field("schoolOfMagic").SetValue(school.Name);
-		}
+            Definition.SetSpellLevel(spellLevel);
+            return this;
+        }
 
-		public void SetSubspells(List<SpellDefinition> subspells)
+        public SpellBuilder SetSchoolOfMagic(SchoolOfMagicDefinition school)
         {
-			Traverse.Create(spell).Field("spellsBundle").SetValue(true);
-			Traverse.Create(spell).Field("subspellsList").SetValue(subspells);
-		}
+            Definition.SetSchoolOfMagic(school.Name);
+            return this;
+        }
 
-		public void SetCastingTime(RuleDefinitions.ActivationTime castingTime)
+        public SpellBuilder SetSubspells(List<SpellDefinition> subspells)
         {
-			Traverse.Create(spell).Field("castingTime").SetValue(castingTime);
-		}
+            Definition.SetSpellsBundle(true);
+            Definition.SetField("subspellsList", subspells);
+            return this;
+        }
 
-		public void SetRitualCasting(RuleDefinitions.ActivationTime ritualCastingTime)
+        public SpellBuilder SetCastingTime(RuleDefinitions.ActivationTime castingTime)
         {
-			Traverse.Create(spell).Field("ritual").SetValue(true);
-			Traverse.Create(spell).Field("ritualCastingTime").SetValue(ritualCastingTime);
-		}
+            Definition.SetCastingTime(castingTime);
+            return this;
+        }
 
-		public void SetConcetration()
+        public SpellBuilder SetRitualCasting(RuleDefinitions.ActivationTime ritualCastingTime)
         {
-			Traverse.Create(spell).Field("requiresConcentration").SetValue(true);
-		}
+            Definition.SetRitual(true);
+            Definition.SetRitualCastingTime(ritualCastingTime);
+            return this;
+        }
 
-		public void SetUnique()
+        public SpellBuilder SetConcetration()
         {
-			Traverse.Create(spell).Field("uniqueInstance").SetValue(true);
-		}
+            Definition.SetRequiresConcentration(true);
+            return this;
+        }
 
-		public void SetVerboseComponent(bool verboseComponent)
+        public SpellBuilder SetUnique()
         {
-			Traverse.Create(spell).Field("verboseComponent").SetValue(verboseComponent);
-		}
+            Definition.SetUniqueInstance(true);
+            return this;
+        }
 
-		public void SetSomaticComponent(bool somaticComponent)
+        public SpellBuilder SetVerboseComponent(bool verboseComponent)
         {
-			Traverse.Create(spell).Field("somaticComponent").SetValue(somaticComponent);
-		}
+            Definition.SetVerboseComponent(verboseComponent);
+            return this;
+        }
 
-		public void SetMaterialComponent(RuleDefinitions.MaterialComponentType materialComponentType)
+        public SpellBuilder SetSomaticComponent(bool somaticComponent)
         {
-			Traverse.Create(spell).Field("materialComponentType").SetValue(materialComponentType);
-		}
+            Definition.SetSomaticComponent(somaticComponent);
+            return this;
+        }
 
-		public void SetSpecificMaterialComponent(string specificMaterialComponentTag,
-			int specificMaterialComponentCostGp, bool specificMaterialComponentConsumed)
-		{
-			Traverse.Create(spell).Field("materialComponentType").SetValue(RuleDefinitions.MaterialComponentType.Specific);
-			Traverse.Create(spell).Field("specificMaterialComponentTag").SetValue(specificMaterialComponentTag);
-			Traverse.Create(spell).Field("specificMaterialComponentCostGp").SetValue(specificMaterialComponentCostGp);
-			Traverse.Create(spell).Field("specificMaterialComponentConsumed").SetValue(specificMaterialComponentConsumed);
-		}
-
-		public void SetEffectDescription(EffectDescription effectDescription)
+        public SpellBuilder SetMaterialComponent(RuleDefinitions.MaterialComponentType materialComponentType)
         {
-			Traverse.Create(spell).Field("effectDescription").SetValue(effectDescription);
-		}
+            Definition.SetMaterialComponentType(materialComponentType);
+            return this;
+        }
 
-		public void SetAiParameters(SpellAIParameters aiParameters)
-		{
-			Traverse.Create(spell).Field("aiParameters").SetValue(aiParameters);
-		}
-
-		public void SetConcentrationAction(ActionDefinitions.ActionParameter concentrationAction)
+        public SpellBuilder SetSpecificMaterialComponent(string specificMaterialComponentTag,
+            int specificMaterialComponentCostGp, bool specificMaterialComponentConsumed)
         {
-			Traverse.Create(spell).Field("concentrationAction").SetValue(concentrationAction);
-		}
+            Definition.SetMaterialComponentType(RuleDefinitions.MaterialComponentType.Specific);
+            Definition.SetSpecificMaterialComponentTag(specificMaterialComponentTag);
+            Definition.SetSpecificMaterialComponentCostGp(specificMaterialComponentCostGp);
+            Definition.SetSpecificMaterialComponentConsumed(specificMaterialComponentConsumed);
+            return this;
+        }
 
-		public void SetGuiPresentation(GuiPresentation gui)
-		{
-			Traverse.Create(spell).Field("guiPresentation").SetValue(gui);
-		}
+        public SpellBuilder SetEffectDescription(EffectDescription effectDescription)
+        {
+            Definition.SetEffectDescription(effectDescription);
+            return this;
+        }
 
-		public SpellDefinition Build()
-		{
-			DatabaseRepository.GetDatabase<SpellDefinition>().Add(spell);
-			return spell;
-		}
-	}
+        public SpellBuilder SetAiParameters(SpellAIParameters aiParameters)
+        {
+            Definition.SetAiParameters(aiParameters);
+            return this;
+        }
+
+        public SpellBuilder SetConcentrationAction(ActionDefinitions.ActionParameter concentrationAction)
+        {
+            Definition.SetConcentrationAction(concentrationAction);
+            return this;
+        }
+
+        public SpellBuilder SetGuiPresentation(GuiPresentation gui)
+        {
+            Definition.SetGuiPresentation(gui);
+            return this;
+        }
+
+    }
 }

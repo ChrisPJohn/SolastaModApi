@@ -33,9 +33,9 @@ namespace SolastaModApi
 		public static Guid Create(Guid namespaceId, string name, int version)
 		{
 			if (name == null)
-				throw new ArgumentNullException("name");
+				throw new ArgumentNullException(nameof(name));
 			if (version != 3 && version != 5)
-				throw new ArgumentOutOfRangeException("version", "version must be either 3 or 5.");
+				throw new ArgumentOutOfRangeException(nameof(version), "version must be either 3 or 5.");
 
 			// convert the name to a sequence of octets (as defined by the standard or conventions of its namespace) (step 3)
 			// ASSUME: UTF-8 encoding is always appropriate
@@ -45,7 +45,7 @@ namespace SolastaModApi
 			byte[] namespaceBytes = namespaceId.ToByteArray();
 			SwapByteOrder(namespaceBytes);
 
-			// comput the hash of the name space ID concatenated with the name (step 4)
+			// compute the hash of the name space ID concatenated with the name (step 4)
 			byte[] hash;
 			using (HashAlgorithm algorithm = version == 3 ? (HashAlgorithm)MD5.Create() : SHA1.Create())
 			{

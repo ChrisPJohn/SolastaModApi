@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TA.AI;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -81,9 +80,11 @@ namespace SolastaModApi.BuilderHelpers
         public EffectFormBuilder SetConditionForm(ConditionDefinition condition, ConditionForm.ConditionOperation operation, bool applyToSelf, bool forceOnSelf, List<ConditionDefinition> detrimentalConditions)
         {
             effectForm.FormType = EffectForm.EffectFormType.Condition;
-            ConditionForm conditionForm = new ConditionForm();
-            conditionForm.Operation = operation;
-            conditionForm.ConditionDefinition = condition;
+            ConditionForm conditionForm = new ConditionForm
+            {
+                Operation = operation,
+                ConditionDefinition = condition
+            };
             conditionForm.SetConditionDefinitionName(condition.Name);
             conditionForm.SetApplyToSelf(applyToSelf);
             conditionForm.SetForceOnSelf(forceOnSelf);
@@ -142,13 +143,15 @@ namespace SolastaModApi.BuilderHelpers
         {
             effectForm.FormType = EffectForm.EffectFormType.Healing;
 
-            HealingForm healingForm = new HealingForm();
-            healingForm.HealingComputation = healingComputation;
-            healingForm.BonusHealing = bonusHitPoints;
-            healingForm.DieType = dieType;
-            healingForm.DiceNumber = diceNumber;
-            healingForm.VariablePool = variablePool;
-            healingForm.HealingCap = healingCap;
+            HealingForm healingForm = new HealingForm
+            {
+                HealingComputation = healingComputation,
+                BonusHealing = bonusHitPoints,
+                DieType = dieType,
+                DiceNumber = diceNumber,
+                VariablePool = variablePool,
+                HealingCap = healingCap
+            };
             effectForm.SetHealingForm(healingForm);
             return this;
         }
@@ -231,10 +234,12 @@ namespace SolastaModApi.BuilderHelpers
         public EffectFormBuilder SetTempHPForm(int bonusHitPoints, RuleDefinitions.DieType dieType, int diceNumber)
         {
             effectForm.FormType = EffectForm.EffectFormType.TemporaryHitPoints;
-            TemporaryHitPointsForm tempHPForm = new TemporaryHitPointsForm();
-            tempHPForm.BonusHitPoints = bonusHitPoints;
-            tempHPForm.DieType = dieType;
-            tempHPForm.DiceNumber = diceNumber;
+            TemporaryHitPointsForm tempHPForm = new TemporaryHitPointsForm
+            {
+                BonusHitPoints = bonusHitPoints,
+                DieType = dieType,
+                DiceNumber = diceNumber
+            };
             effectForm.SetTemporaryHitPointsForm(tempHPForm);
             return this;
         }

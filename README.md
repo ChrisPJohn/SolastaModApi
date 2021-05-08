@@ -37,7 +37,7 @@ var description = new ArmorDescription()
 
 Note: Here we created `ArmorDescription` with `new` since it's a simple type. It's recommended to create objects derived from `UnityEngine.ScriptableObject` with `ScriptableObject.CreateInstance<T>()`.
 
-###Helpers
+##Helpers
 There are other helpers.  Most notably `object.SetField(field-name, value)` extension method implements and replaces `Traverse.Create(object).Field(field-name).SetValue(value)`. Unfortunately`Traverse.Create(object).Field(field-name).SetValue(value)` always 'succeeds' even if 'field-name' doesn't exist.
 `SetField` will detect this and throw an error.
 

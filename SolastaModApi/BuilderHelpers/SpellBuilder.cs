@@ -34,7 +34,7 @@ namespace SolastaModApi
             return this;
         }
 
-        public SpellBuilder SetSubspells(List<SpellDefinition> subspells)
+        public SpellBuilder SetSubSpells(List<SpellDefinition> subspells)
         {
             Definition.SetSpellsBundle(true);
             Definition.SetField("subspellsList", subspells);
@@ -54,7 +54,7 @@ namespace SolastaModApi
             return this;
         }
 
-        public SpellBuilder SetConcetration()
+        public SpellBuilder SetConcentration()
         {
             Definition.SetRequiresConcentration(true);
             return this;

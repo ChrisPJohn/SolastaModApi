@@ -25,13 +25,13 @@ namespace SolastaModApi
             return this;
         }
 
-        public EffectDescriptionBuilder SetParticleEffectParams(EffectParticleParameters particleParameters)
+        public EffectDescriptionBuilder SetParticleEffectParameters(EffectParticleParameters particleParameters)
         {
             effect.SetEffectParticleParameters(particleParameters);
             return this;
         }
 
-        public EffectDescriptionBuilder SetEffectAIParamters(EffectAIParameters effectAIParameters)
+        public EffectDescriptionBuilder SetEffectAIParameters(EffectAIParameters effectAIParameters)
         {
             effect.SetEffectAIParameters(effectAIParameters);
             return this;

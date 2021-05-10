@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using SolastaTesting.SolastaModApi;
 using System;
 
 namespace SolastaModApi.Infrastructure

@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using System;
 
-namespace SolastaTesting.SolastaModApi
+namespace SolastaModApi.Infrastructure
 {
     public static class Assert
     {

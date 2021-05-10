@@ -1,4 +1,4 @@
-﻿using SolastaTesting.SolastaModApi;
+﻿using SolastaModApi.Infrastructure;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
@@ -24,7 +24,7 @@ namespace SolastaModApi.Diagnostics
     /// SomeType.SomeMethod: This is a message
     /// SomeType.SomeMethod: Exit
     /// </summary>
-    public class MethodLogger : SetResetToken
+    public class MethodLogger : SetResetDisposable
     {
         private readonly string methodName;
 

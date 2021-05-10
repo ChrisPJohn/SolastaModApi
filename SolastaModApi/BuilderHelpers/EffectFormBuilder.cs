@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using SolastaModApi.Extensions;
+using SolastaModApi.Infrastructure;
+using System.Collections.Generic;
 using TA.AI;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using SolastaModApi.Infrastructure;
 
 namespace SolastaModApi.BuilderHelpers
 {
@@ -130,10 +131,10 @@ namespace SolastaModApi.BuilderHelpers
             effectForm.FormType = EffectForm.EffectFormType.Divination;
             DivinationForm divinationForm = new DivinationForm();
             divinationForm.SetDivinationType(divinationType);
-            divinationForm.SetField("creatureFamilies" , creatureFamilies);
+            divinationForm.SetField("creatureFamilies", creatureFamilies);
             divinationForm.SetField("revealedTags", revealedTags);
             divinationForm.SetRangeCells(rangeCells);
-            effectForm.SetDivinationForm (divinationForm);
+            effectForm.SetDivinationForm(divinationForm);
             return this;
         }
 

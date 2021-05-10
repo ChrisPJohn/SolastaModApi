@@ -4,10 +4,10 @@ using System.Text;
 
 namespace SolastaModApi
 {
-	/// <summary>
-	/// Helper methods for working with <see cref="Guid"/>.
-	/// </summary>
-	public static class GuidHelper
+    /// <summary>
+    /// Helper methods for working with <see cref="Guid"/>.
+    /// </summary>
+    public static class GuidHelper
 	{
 		/// <summary>
 		/// Creates a name-based UUID using the algorithm from RFC 4122 §4.3.

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SolastaModApi.Extensions;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace SolastaModApi

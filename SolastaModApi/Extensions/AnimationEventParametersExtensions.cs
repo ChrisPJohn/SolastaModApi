@@ -1,8 +1,8 @@
-using SolastaModApi.Infrastructure;
 using AK.Wwise;
+using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
 
-namespace SolastaModApi
+namespace SolastaModApi.Extensions
 {
     /// <summary>
     /// This helper extensions class was automatically generated against Solasta 0.5.24.

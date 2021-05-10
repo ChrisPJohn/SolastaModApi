@@ -1,9 +1,9 @@
 using SolastaModApi.Infrastructure;
-using UnityEngine.AddressableAssets;
 using TA.AI;
+using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
 
-namespace SolastaModApi
+namespace SolastaModApi.Extensions
 {
     /// <summary>
     /// This helper extensions class was automatically generated against Solasta 0.5.24.

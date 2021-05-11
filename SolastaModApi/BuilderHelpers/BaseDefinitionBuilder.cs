@@ -1,6 +1,5 @@
 ﻿using SolastaModApi.Diagnostics;
 using SolastaModApi.Infrastructure;
-using SolastaTesting.SolastaModApi;
 using System;
 using UnityEngine;
 

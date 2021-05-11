@@ -1,14 +1,13 @@
 ﻿using JetBrains.Annotations;
-using SolastaModApi.Infrastructure;
 using System;
 
-namespace SolastaTesting.SolastaModApi
+namespace SolastaModApi.Infrastructure
 {
-    public class SetResetToken : Disposable
+    public class SetResetDisposable : Disposable
     {
         private Action _reset;
 
-        public SetResetToken([NotNull] Action set, [NotNull] Action reset)
+        public SetResetDisposable([NotNull] Action set, [NotNull] Action reset)
         {
             Preconditions.IsNotNull(set, nameof(set));
             Preconditions.IsNotNull(reset, nameof(reset));

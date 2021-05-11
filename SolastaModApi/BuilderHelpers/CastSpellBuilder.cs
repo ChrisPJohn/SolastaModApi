@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using SolastaModApi.Diagnostics;
+﻿using SolastaModApi.Diagnostics;
+using SolastaModApi.Extensions;
 using SolastaModApi.Infrastructure;
+using System;
+using System.Collections.Generic;
 
 namespace SolastaModApi
 {

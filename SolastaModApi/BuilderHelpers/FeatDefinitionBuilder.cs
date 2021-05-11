@@ -1,4 +1,5 @@
-﻿using SolastaModApi.Infrastructure;
+﻿using SolastaModApi.Extensions;
+using SolastaModApi.Infrastructure;
 using System;
 using System.Collections.Generic;
 

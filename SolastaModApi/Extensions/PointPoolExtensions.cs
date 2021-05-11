@@ -1,6 +1,6 @@
 using SolastaModApi.Infrastructure;
 
-namespace SolastaModApi
+namespace SolastaModApi.Extensions
 {
     /// <summary>
     /// This helper extensions class was automatically generated against Solasta 0.5.24.

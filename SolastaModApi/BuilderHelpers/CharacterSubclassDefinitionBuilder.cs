@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SolastaModApi.Extensions;
+using System;
 
 namespace SolastaModApi
 {

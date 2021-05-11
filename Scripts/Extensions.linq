@@ -244,7 +244,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 
 		// namespace
 		var ns = SyntaxFactory
-			.NamespaceDeclaration(ParseName("SolastaModApi"))
+			.NamespaceDeclaration(ParseName("SolastaModApi.Extensions"))
 			.AddMembers(cd);
 
 		var path = Path.Combine(outputPath, $"{t.Name}Extensions.cs");

@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine;
 using UnityEngine.UI;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(TooltipFeatureCharacterDescription))]
     public static class TooltipFeatureCharacterDescriptionExtensions
     {
         public static T SetActionLabel<T>(this T entity, GuiLabel value)

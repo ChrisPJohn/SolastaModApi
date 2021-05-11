@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
+using static RuleDefinitions;
 using static BaseBlueprint;
 
 namespace SolastaModApi.Extensions
@@ -9,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(PrefabByEnvironmentDescription))]
     public static class PrefabByEnvironmentDescriptionExtensions
     {
         public static T SetEnvironment<T>(this T entity, string value)

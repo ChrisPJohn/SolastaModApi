@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using TA.AI;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -8,6 +9,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(WeightedDecisionDescription))]
     public static class WeightedDecisionDescriptionExtensions
     {
         public static T SetCooldown<T>(this T entity, int value)
@@ -17,7 +19,7 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetDecisionDefinition<T>(this T entity, DecisionDefinition value)
+        public static T SetDecision<T>(this T entity, DecisionDefinition value)
             where T : WeightedDecisionDescription
         {
             entity.SetField("decision", value);

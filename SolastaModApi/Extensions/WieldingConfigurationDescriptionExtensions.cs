@@ -8,6 +8,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(WieldingConfigurationDescription))]
     public static class WieldingConfigurationDescriptionExtensions
     {
         public static T SetAnimationTag<T>(this T entity, string value)

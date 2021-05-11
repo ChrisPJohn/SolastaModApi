@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using System.Text;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -8,6 +9,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(GuiQuest))]
     public static class GuiQuestExtensions
     {
         public static T SetGameQuest<T>(this T entity, GameQuest value)

@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(GuiPresentation))]
     public static class GuiPresentationExtensions
     {
         public static T SetColor<T>(this T entity, Color value)

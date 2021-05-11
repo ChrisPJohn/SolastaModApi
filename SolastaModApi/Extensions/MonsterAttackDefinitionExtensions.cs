@@ -1,8 +1,8 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
 using static ActionDefinitions;
-using static AnimationDefinitions;
 using static RuleDefinitions;
+using static AnimationDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -11,6 +11,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(MonsterAttackDefinition))]
     public static class MonsterAttackDefinitionExtensions
     {
         public static T SetActionType<T>(this T entity, ActionType value)

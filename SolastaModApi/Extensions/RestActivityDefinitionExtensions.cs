@@ -8,6 +8,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(RestActivityDefinition))]
     public static class RestActivityDefinitionExtensions
     {
         public static T SetCondition<T>(this T entity, RestActivityDefinition.ActivityCondition value)

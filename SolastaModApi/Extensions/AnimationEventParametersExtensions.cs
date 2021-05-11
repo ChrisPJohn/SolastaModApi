@@ -1,6 +1,6 @@
-using AK.Wwise;
 using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,9 +9,10 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(AnimationEventParameters))]
     public static class AnimationEventParametersExtensions
     {
-        public static T SetAudioEvent<T>(this T entity, Event value)
+        public static T SetAudioEvent<T>(this T entity, AK.Wwise.Event value)
             where T : AnimationEventParameters
         {
             entity.SetField("audioEvent", value);

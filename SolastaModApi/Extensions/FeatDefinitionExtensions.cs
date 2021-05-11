@@ -1,4 +1,5 @@
 using SolastaModApi.Infrastructure;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -7,6 +8,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(FeatDefinition))]
     public static class FeatDefinitionExtensions
     {
         public static T SetArmorProficiencyCategory<T>(this T entity, string value)

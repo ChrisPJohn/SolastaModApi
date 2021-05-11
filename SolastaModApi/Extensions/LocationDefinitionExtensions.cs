@@ -1,6 +1,7 @@
-using AK.Wwise;
 using SolastaModApi.Infrastructure;
+using AK.Wwise;
 using UnityEngine.AddressableAssets;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(LocationDefinition))]
     public static class LocationDefinitionExtensions
     {
         public static T SetAlwaysHidden<T>(this T entity, bool value)

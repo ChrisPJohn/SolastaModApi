@@ -1,9 +1,9 @@
 using SolastaModApi.Infrastructure;
-using TA.AI;
 using UnityEngine.AddressableAssets;
+using TA.AI;
 using static ActionDefinitions;
-using static BestiaryDefinitions;
 using static RuleDefinitions;
+using static BestiaryDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -12,6 +12,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(MonsterDefinition))]
     public static class MonsterDefinitionExtensions
     {
         public static T SetAbilityScores<T>(this T entity, int[] value)

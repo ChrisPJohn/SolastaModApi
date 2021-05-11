@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using static ActionDefinitions;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -8,6 +9,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(GuiCharacterAction))]
     public static class GuiCharacterActionExtensions
     {
         public static T SetActingCharacter<T>(this T entity, GameLocationCharacter value)

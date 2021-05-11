@@ -8,6 +8,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(WealthPileDescription))]
     public static class WealthPileDescriptionExtensions
     {
         public static T SetBonuses<T>(this T entity, int[] value)

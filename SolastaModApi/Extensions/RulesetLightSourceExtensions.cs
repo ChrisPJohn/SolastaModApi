@@ -1,6 +1,6 @@
 using SolastaModApi.Infrastructure;
-using TA;
 using UnityEngine;
+using TA;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
@@ -10,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(RulesetLightSource))]
     public static class RulesetLightSourceExtensions
     {
         public static T SetAssetGUID<T>(this T entity, string value)

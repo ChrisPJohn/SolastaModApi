@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(CameraModeManualParameters))]
     public static class CameraModeManualParametersExtensions
     {
         public static T SetBoundsSource<T>(this T entity, CameraController.CameraBoundsSource value)

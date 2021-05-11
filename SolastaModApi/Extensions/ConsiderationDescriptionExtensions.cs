@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
-using TA.AI;
 using UnityEngine;
+using TA.AI;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(ConsiderationDescription))]
     public static class ConsiderationDescriptionExtensions
     {
         public static T SetBoolParameter<T>(this T entity, bool value)

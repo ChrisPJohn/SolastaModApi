@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(MonsterPresentation))]
     public static class MonsterPresentationExtensions
     {
         public static T SetAttachedParticlesReference<T>(this T entity, AssetReference value)

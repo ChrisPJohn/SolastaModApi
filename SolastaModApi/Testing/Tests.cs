@@ -123,6 +123,14 @@ namespace SolastaModApi.Testing
                     var solastaAssembly = Assembly.GetAssembly(typeof(ActionDefinition));
                     var solastaAiAssembly = Assembly.GetAssembly(typeof(DecisionDefinition));
 
+                    var ctor = typeof(DecisionDefinition).GetConstructor(Array.Empty<Type>());
+
+                    if (solastaAiAssembly.CreateInstance("TA.AI.DecisionDefinition") != null)
+                    {
+                        logger.Log("Created TA.AI.DecisionDefinition");
+                    }
+
+
                     var types = modAssembly
                         .GetTypes()
                         .Where(t => t.Namespace == "SolastaModApi.Extensions")
@@ -130,18 +138,18 @@ namespace SolastaModApi.Testing
                         .Select(t => (typeName: t.Name.Remove(t.Name.Length - 10), extensionName: t.FullName))
                         .ToList();
 
-                    foreach (var t in types)
+                    foreach (var (typeName, extensionName) in types)
                     {
                         try
                         {
-                            var instance = solastaAssembly.CreateInstance(t.typeName);
+                            var instance = solastaAssembly.CreateInstance(typeName);
 
                             if (instance == null)
                             {
-                                instance = solastaAiAssembly.CreateInstance(t.typeName);
+                                instance = solastaAiAssembly.CreateInstance(typeName);
 
                                 if (instance == null)
-                                    logger.Log($"Unable to create {t.typeName}");
+                                    logger.Log($"Unable to create {typeName}");
                                 else
                                 {
                                     // TODO: enumerate all set methods on extension class and call them.
@@ -151,7 +159,7 @@ namespace SolastaModApi.Testing
                         catch (Exception ex)
                         {
                             // types without default constructor can't be created and cause exception
-                            logger.Log($"{t.typeName}: {ex.Message}");
+                            logger.Log($"{typeName}: {ex.Message}");
                         }
                     }
                 }

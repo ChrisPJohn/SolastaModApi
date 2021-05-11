@@ -8,6 +8,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(StockUnitDescription))]
     public static class StockUnitDescriptionExtensions
     {
         public static T SetFactionStatus<T>(this T entity, string value)

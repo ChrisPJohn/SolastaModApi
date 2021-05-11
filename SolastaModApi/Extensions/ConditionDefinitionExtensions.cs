@@ -1,6 +1,6 @@
 using SolastaModApi.Infrastructure;
-using TA.AI;
 using UnityEngine.AddressableAssets;
+using TA.AI;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
@@ -10,6 +10,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(ConditionDefinition))]
     public static class ConditionDefinitionExtensions
     {
         public static T SetAdditionalCondition<T>(this T entity, ConditionDefinition value)

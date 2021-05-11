@@ -8,6 +8,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(FeatureDefinitionPower))]
     public static class FeatureDefinitionPowerExtensions
     {
         public static T SetAbilityScore<T>(this T entity, string value)

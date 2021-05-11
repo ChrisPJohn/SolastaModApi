@@ -9,6 +9,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(EffectProxyDefinition))]
     public static class EffectProxyDefinitionExtensions
     {
         public static T SetAddLightSource<T>(this T entity, bool value)

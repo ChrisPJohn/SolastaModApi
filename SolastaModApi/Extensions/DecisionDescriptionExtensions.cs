@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using TA.AI;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -8,6 +9,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(DecisionDescription))]
     public static class DecisionDescriptionExtensions
     {
         public static T SetActivityType<T>(this T entity, string value)

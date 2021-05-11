@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
-using TA;
 using UnityEngine;
+using TA;
+using static RuleDefinitions;
 using static MorphotypeElementDefinition;
 
 namespace SolastaModApi.Extensions
@@ -10,6 +11,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(MorphotypeElementDefinition))]
     public static class MorphotypeElementDefinitionExtensions
     {
         public static T SetCategory<T>(this T entity, ElementCategory value)

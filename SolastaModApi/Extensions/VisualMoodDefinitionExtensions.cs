@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine.Rendering.PostProcessing;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -8,6 +9,7 @@ namespace SolastaModApi.Extensions
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(VisualMoodDefinition))]
     public static class VisualMoodDefinitionExtensions
     {
         public static VisualMoodDefinition SetGlobalPostProcessProfile(this VisualMoodDefinition entity, PostProcessProfile value)

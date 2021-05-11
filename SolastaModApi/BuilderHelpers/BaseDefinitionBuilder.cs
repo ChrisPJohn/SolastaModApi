@@ -9,8 +9,8 @@ namespace SolastaModApi
     /// <summary>
     ///     Base class builder for all classes derived from BaseDefinition
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public abstract class BaseDefinitionBuilder<T> where T : BaseDefinition
+    /// <typeparam name="TDefinition"></typeparam>
+    public abstract class BaseDefinitionBuilder<TDefinition> where TDefinition : BaseDefinition
     {
         /// <summary>
         /// Create a new one
@@ -22,7 +22,7 @@ namespace SolastaModApi
             Preconditions.IsNotNullOrWhiteSpace(name, nameof(name));
             Preconditions.IsNotNullOrWhiteSpace(guid, nameof(guid));
 
-            Definition = ScriptableObject.CreateInstance<T>();
+            Definition = ScriptableObject.CreateInstance<TDefinition>();
 
             Definition.name = name;
             Definition.SetField("guid", guid);
@@ -44,7 +44,7 @@ namespace SolastaModApi
         /// <param name="original"></param>
         /// <param name="name"></param>
         /// <param name="guid"></param>
-        protected BaseDefinitionBuilder(T original, string name, string guid)
+        protected BaseDefinitionBuilder(TDefinition original, string name, string guid)
         {
             Preconditions.IsNotNullOrWhiteSpace(name, nameof(name));
             Preconditions.IsNotNullOrWhiteSpace(guid, nameof(guid));
@@ -61,7 +61,7 @@ namespace SolastaModApi
         /// <param name="original"></param>
         /// <param name="name"></param>
         /// <param name="guidNamespace"></param>
-        protected BaseDefinitionBuilder(T original, string name, Guid guidNamespace) :
+        protected BaseDefinitionBuilder(TDefinition original, string name, Guid guidNamespace) :
             this(original, name, GuidHelper.Create(guidNamespace, name).ToString("N"))
         {
         }
@@ -70,24 +70,24 @@ namespace SolastaModApi
         /// Take ownership
         /// </summary>
         /// <param name="original"></param>
-        protected BaseDefinitionBuilder(T original)
+        protected BaseDefinitionBuilder(TDefinition original)
         {
             Definition = original;
         }
 
-        private static void AddToDB<TDb>(TDb definition, bool assertIfDuplicate = true) where TDb : BaseDefinition
+        private static void AddToDB<TDatabase>(TDatabase definition, bool assertIfDuplicate = true) where TDatabase : BaseDefinition
         {
             Preconditions.IsNotNull(definition, nameof(definition));
             Preconditions.IsNotNullOrWhiteSpace(definition.Name, "definition.Name");
             Preconditions.IsNotNullOrWhiteSpace(definition.GUID, "definition.GUID");
 
-            var db = DatabaseRepository.GetDatabase<TDb>();
+            var db = DatabaseRepository.GetDatabase<TDatabase>();
 
-            Assert.IsNotNull(db, $"Database '{typeof(TDb).Name}' not found.");
+            Assert.IsNotNull(db, $"Database '{typeof(TDatabase).Name}' not found.");
 
             if (assertIfDuplicate && (db.HasElement(definition.name) || db.HasElementByGuid(definition.GUID)))
                 throw new SolastaModApiException(
-                    $"The definition with name '{definition.name}' already exists in database '{typeof(TDb)}'");
+                    $"The definition with name '{definition.name}' already exists in database '{typeof(TDatabase).Name}'");
 
             db.Add(definition);
         }
@@ -97,18 +97,18 @@ namespace SolastaModApi
         /// FeatureDefinitionAbilityCheckAffinity is a FeatureDefinitionAffinity is a FeatureDefinition
         /// so an instance of FeatureDefinitionAbilityCheckAffinity should be added to these three databases.
         /// </summary>
-        /// <typeparam name="TDb"></typeparam>
+        /// <typeparam name="TDatabase"></typeparam>
         /// <param name="assertIfDuplicate"></param>
-        private void AddToDBIfMatch<TDb>(bool assertIfDuplicate = true)
-            where TDb : BaseDefinition
+        private void AddToDBIfMatch<TDatabase>(bool assertIfDuplicate = true)
+            where TDatabase : BaseDefinition
         {
-            if(Definition is TDb)
+            if(Definition is TDatabase)
             {
-                AddToDB(Definition as TDb, assertIfDuplicate);
+                AddToDB(Definition as TDatabase, assertIfDuplicate);
             }
         }
 
-        public T AddToDB(bool assertIfDuplicate = true)
+        public TDefinition AddToDB(bool assertIfDuplicate = true)
         {
             if (Definition is RecordTableDefinition)
             {
@@ -193,6 +193,6 @@ namespace SolastaModApi
             return Definition;
         }
 
-        protected T Definition { get; }
+        protected TDefinition Definition { get; }
     }
 }

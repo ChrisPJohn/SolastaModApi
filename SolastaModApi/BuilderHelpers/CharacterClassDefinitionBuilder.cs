@@ -1,9 +1,9 @@
 using SolastaModApi.Extensions;
-using UnityEngine.AddressableAssets;
-using System.Collections.Generic;
-using static CharacterClassDefinition;
 using System;
+using System.Collections.Generic;
 using TA.AI;
+using UnityEngine.AddressableAssets;
+using static CharacterClassDefinition;
 
 namespace SolastaModApi
 {

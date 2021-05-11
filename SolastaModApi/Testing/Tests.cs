@@ -1,6 +1,9 @@
 ﻿using HarmonyLib;
 using SolastaModApi.Diagnostics;
 using System;
+using System.Linq;
+using System.Reflection;
+using TA.AI;
 using UnityEngine;
 using UnityModManagerNet;
 
@@ -13,7 +16,7 @@ namespace SolastaModApi.Testing
 
         internal static void OnGUI(UnityModManager.ModEntry _)
         {
-            if (GUILayout.Button("Test"))
+            if (GUILayout.Button("Basic test"))
             {
                 Test();
             }
@@ -29,7 +32,7 @@ namespace SolastaModApi.Testing
             }
         }
 
-        static void Test()
+        private static void Test()
         {
             // Test Repository.Get works as expected and confirm that definitions are stored in multiple 'databases'.
             using (var logger = new MethodLogger(nameof(Main)))
@@ -80,7 +83,7 @@ namespace SolastaModApi.Testing
             }
         }
 
-        static void CheckDatabaseDefinitions()
+        private static void CheckDatabaseDefinitions()
         {
             using (var logger = new MethodLogger(nameof(Main)))
             {
@@ -102,7 +105,7 @@ namespace SolastaModApi.Testing
             }
         }
 
-        static void CheckExtensions()
+        private static void CheckExtensions()
         {
             using (var logger = new MethodLogger(nameof(Main)))
             {
@@ -114,8 +117,43 @@ namespace SolastaModApi.Testing
 
                 try
                 {
-                    // TODO: enumerate all classes and all set methods
-                    // check they all work without throwing
+                    var modAssembly = Assembly.GetExecutingAssembly();
+
+                    // This may not work for all referenced types
+                    var solastaAssembly = Assembly.GetAssembly(typeof(ActionDefinition));
+                    var solastaAiAssembly = Assembly.GetAssembly(typeof(DecisionDefinition));
+
+                    var types = modAssembly
+                        .GetTypes()
+                        .Where(t => t.Namespace == "SolastaModApi.Extensions")
+                        .Where(t => t.Name.EndsWith("Extensions"))
+                        .Select(t => (typeName: t.Name.Remove(t.Name.Length - 10), extensionName: t.FullName))
+                        .ToList();
+
+                    foreach (var t in types)
+                    {
+                        try
+                        {
+                            var instance = solastaAssembly.CreateInstance(t.typeName);
+
+                            if (instance == null)
+                            {
+                                instance = solastaAiAssembly.CreateInstance(t.typeName);
+
+                                if (instance == null)
+                                    logger.Log($"Unable to create {t.typeName}");
+                                else
+                                {
+                                    // TODO: enumerate all set methods on extension class and call them.
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // types without default constructor can't be created and cause exception
+                            logger.Log($"{t.typeName}: {ex.Message}");
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {

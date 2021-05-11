@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using SolastaModApi.Diagnostics;
+using SolastaModApi.Infrastructure;
 using System;
 using System.Linq;
 using System.Reflection;
-using TA.AI;
 using UnityEngine;
 using UnityModManagerNet;
 
@@ -95,6 +95,8 @@ namespace SolastaModApi.Testing
 
                 try
                 {
+                    logger.Log("Database definition tests: TODO.");
+
                     // TODO: enumerate all classes and all properties and get the definition
                     // check it's not null and doesn't throw an exception
                 }
@@ -117,51 +119,113 @@ namespace SolastaModApi.Testing
 
                 try
                 {
-                    var modAssembly = Assembly.GetExecutingAssembly();
-
-                    // This may not work for all referenced types
-                    var solastaAssembly = Assembly.GetAssembly(typeof(ActionDefinition));
-                    var solastaAiAssembly = Assembly.GetAssembly(typeof(DecisionDefinition));
-
-                    var ctor = typeof(DecisionDefinition).GetConstructor(Array.Empty<Type>());
-
-                    if (solastaAiAssembly.CreateInstance("TA.AI.DecisionDefinition") != null)
-                    {
-                        logger.Log("Created TA.AI.DecisionDefinition");
-                    }
-
-
-                    var types = modAssembly
+                    var extensions = Assembly
+                        .GetExecutingAssembly()
                         .GetTypes()
                         .Where(t => t.Namespace == "SolastaModApi.Extensions")
                         .Where(t => t.Name.EndsWith("Extensions"))
-                        .Select(t => (typeName: t.Name.Remove(t.Name.Length - 10), extensionName: t.FullName))
+                        .Where(t => t.CustomAttributes.Any(a => a.AttributeType == typeof(TargetTypeAttribute)))
+                        .Select(t => new
+                        {
+                            Type = t,
+                            t.GetCustomAttributes<TargetTypeAttribute>().First().TargetType
+                        })
                         .ToList();
 
-                    foreach (var (typeName, extensionName) in types)
+                    int totalMethodsCalled = 0;
+
+                    foreach (var extension in extensions)
                     {
                         try
                         {
-                            var instance = solastaAssembly.CreateInstance(typeName);
+                            var ctor = extension.TargetType.GetConstructor(Array.Empty<Type>());
 
-                            if (instance == null)
+                            if (ctor == null)
                             {
-                                instance = solastaAiAssembly.CreateInstance(typeName);
+                                logger.Log($"WARN: skipping type {extension.TargetType.Name}.  No default constructor.");
+                                // TODO: create instances of types required for none default constructors, is it worth it?
+                            }
+                            else if (extension.TargetType.IsAbstract)
+                            {
+                                logger.Log($"WARN: skipping type {extension.TargetType.Name}. Abstract type.");
+                                // TODO: find and create descendant concrete type for use in tests
+                            }
+                            else
+                            {
+                                var instance = extension.TargetType.IsSubclassOf(typeof(ScriptableObject))
+                                    ? ScriptableObject.CreateInstance(extension.TargetType.FullName)
+                                    : ctor.Invoke(Array.Empty<object>());
 
                                 if (instance == null)
-                                    logger.Log($"Unable to create {typeName}");
+                                {
+                                    logger.Log($"ERROR: unable to create {extension.TargetType.Name} - Unknown reason.");
+                                }
                                 else
                                 {
-                                    // TODO: enumerate all set methods on extension class and call them.
+                                    var setters = extension.Type
+                                        .GetMethods(BindingFlags.Static | BindingFlags.Public)
+                                        .Where(m => m.Name.StartsWith("Set"));
+
+                                    int methodsCalled = 0;
+
+                                    foreach (var setter in setters)
+                                    {
+                                        try
+                                        {
+                                            var parms = setter.GetParameters();
+
+                                            if (parms.Length == 2)
+                                            {
+                                                if (setter.IsGenericMethod)
+                                                {
+                                                    setter
+                                                        .MakeGenericMethod(extension.TargetType)
+                                                        .Invoke(null, new object[] { instance, GetDefaultValue() });
+                                                }
+                                                else
+                                                {
+                                                    // sealed type extensions aren't generic
+                                                    setter
+                                                        .Invoke(null, new object[] { instance, GetDefaultValue() });
+                                                }
+
+                                                methodsCalled++;
+
+                                                object GetDefaultValue()
+                                                {
+                                                    var valueParm = parms[1];
+
+                                                    return valueParm.ParameterType.IsValueType
+                                                        ? Activator.CreateInstance(valueParm.ParameterType)
+                                                        : null;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                logger.Log($"Skipping method '{extension.TargetType.Name}.{setter.Name}', doesn't have 2 params.");
+                                            }
+                                        }
+                                        catch(Exception ex1)
+                                        {
+                                            logger.Log($"Error calling method '{extension.TargetType.Name}.{setter.Name}': {ex1.Message}.");
+                                        }
+                                    }
+
+                                    //logger.Log($"'{extension.TargetType.Name}' - successfully called {methodsCalled} extension methods.");
+
+                                    totalMethodsCalled += methodsCalled;
                                 }
                             }
                         }
                         catch (Exception ex)
                         {
-                            // types without default constructor can't be created and cause exception
-                            logger.Log($"{typeName}: {ex.Message}");
+                            logger.Log($"ERROR: testing '{extension.TargetType.Name}': {ex.Message}");
                         }
+
                     }
+
+                    logger.Log("");
+                    logger.Log($"'Successfully called grand total of '{totalMethodsCalled}' extension methods.");
                 }
                 catch (Exception ex)
                 {

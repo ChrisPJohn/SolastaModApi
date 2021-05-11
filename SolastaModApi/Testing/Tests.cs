@@ -18,7 +18,7 @@ namespace SolastaModApi.Testing
         {
             if (GUILayout.Button("Basic test"))
             {
-                Test();
+                BasicTests();
             }
 
             if (GUILayout.Button("Check database definitions"))
@@ -32,10 +32,10 @@ namespace SolastaModApi.Testing
             }
         }
 
-        private static void Test()
+        private static void BasicTests()
         {
             // Test Repository.Get works as expected and confirm that definitions are stored in multiple 'databases'.
-            using (var logger = new MethodLogger(nameof(Main)))
+            using (var logger = new MethodLogger(nameof(Tests)))
             {
                 if (!DatabaseReady)
                 {
@@ -73,7 +73,16 @@ namespace SolastaModApi.Testing
                     logger.Log($"A4=A5={ReferenceEquals(a4, a5)}, A5=A6={ReferenceEquals(a5, a6)}");
                     logger.Log($"A4-type={a4.GetType().FullName}");
 
-                    // TODO: test adding our own definition and retrieving it.
+                    // test adding our own definition and retrieving it.
+                    //var modNamespace = Guid.NewGuid();  // bang - app crash
+                    //var modNamespace = new Guid("62565155-4d2e-4d72-a651-f8b0749f22a1"); // bang - app crash
+                    var modNamespace = "any-old-string-will-do"; // ok :)
+                    const string testDefinitionName = "test";
+                    var builder = new CharacterSubclassDefinitionBuilder(testDefinitionName, modNamespace);
+                    var c1 = builder.AddToDB();
+                    var c2 = Repository.Get<CharacterSubclassDefinition>(testDefinitionName, modNamespace);
+                    logger.Log($"C1=C2={ReferenceEquals(c1, c2)}");
+
                     // Ideally need to test RecordTableDefinition, FeatureDefinition, BaseBlueprint, EditableGraphDefinition
                 }
                 catch (Exception ex)
@@ -85,7 +94,7 @@ namespace SolastaModApi.Testing
 
         private static void CheckDatabaseDefinitions()
         {
-            using (var logger = new MethodLogger(nameof(Main)))
+            using (var logger = new MethodLogger(nameof(Tests)))
             {
                 if (!DatabaseReady)
                 {
@@ -95,10 +104,49 @@ namespace SolastaModApi.Testing
 
                 try
                 {
-                    logger.Log("Database definition tests: TODO.");
+                    var dbHelperTypes = Assembly
+                        .GetExecutingAssembly()
+                        .GetTypes()
+                        .Where(t => t.Namespace == "SolastaModApi").ToList()
+                        .Where(t => t.FullName.StartsWith("SolastaModApi.DatabaseHelper"))
+                        .Where(t => t.MemberType == MemberTypes.NestedType)
+                        .OrderBy(t => t.Name);
 
-                    // TODO: enumerate all classes and all properties and get the definition
-                    // check it's not null and doesn't throw an exception
+                    int totalGettersSucceeded = 0;
+
+                    foreach (var dbHelperType in dbHelperTypes)
+                    {
+                        var propertyGetters = dbHelperType
+                            .GetProperties(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetProperty);
+
+                        int gettersSucceeded = 0;
+
+                        foreach (var getter in propertyGetters)
+                        {
+                            try
+                            {
+                                var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
+
+                                if(result == null)
+                                {
+                                    logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
+                                }
+                                else
+                                {
+                                    gettersSucceeded++;
+                                }
+                               
+                            }
+                            catch(Exception ex)
+                            {
+                                logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
+                            }
+                        }
+
+                        totalGettersSucceeded += gettersSucceeded;
+                    }
+
+                    logger.Log($"Successfully invoked grand total of {totalGettersSucceeded} db helper properties.");
                 }
                 catch (Exception ex)
                 {
@@ -109,7 +157,7 @@ namespace SolastaModApi.Testing
 
         private static void CheckExtensions()
         {
-            using (var logger = new MethodLogger(nameof(Main)))
+            using (var logger = new MethodLogger(nameof(Tests)))
             {
                 if (!DatabaseReady)
                 {
@@ -130,9 +178,10 @@ namespace SolastaModApi.Testing
                             Type = t,
                             t.GetCustomAttributes<TargetTypeAttribute>().First().TargetType
                         })
+                        .OrderBy(t => t.Type.Name)
                         .ToList();
 
-                    int totalMethodsCalled = 0;
+                    int totalMethodsSucceeded = 0;
 
                     foreach (var extension in extensions)
                     {
@@ -166,7 +215,7 @@ namespace SolastaModApi.Testing
                                         .GetMethods(BindingFlags.Static | BindingFlags.Public)
                                         .Where(m => m.Name.StartsWith("Set"));
 
-                                    int methodsCalled = 0;
+                                    int methodsSucceeded = 0;
 
                                     foreach (var setter in setters)
                                     {
@@ -189,7 +238,7 @@ namespace SolastaModApi.Testing
                                                         .Invoke(null, new object[] { instance, GetDefaultValue() });
                                                 }
 
-                                                methodsCalled++;
+                                                methodsSucceeded++;
 
                                                 object GetDefaultValue()
                                                 {
@@ -211,9 +260,10 @@ namespace SolastaModApi.Testing
                                         }
                                     }
 
+                                    // Removed this because it too chatty.
                                     //logger.Log($"'{extension.TargetType.Name}' - successfully called {methodsCalled} extension methods.");
 
-                                    totalMethodsCalled += methodsCalled;
+                                    totalMethodsSucceeded += methodsSucceeded;
                                 }
                             }
                         }
@@ -224,8 +274,8 @@ namespace SolastaModApi.Testing
 
                     }
 
-                    logger.Log("");
-                    logger.Log($"'Successfully called grand total of '{totalMethodsCalled}' extension methods.");
+                    logger.Log("---------------------------");
+                    logger.Log($"Successfully called grand total of {totalMethodsSucceeded} extension setter methods.");
                 }
                 catch (Exception ex)
                 {

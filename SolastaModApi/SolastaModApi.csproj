@@ -60,6 +60,10 @@
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.UIModule.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
+		<Reference Include="UnityEngine.IMGUIModule">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.IMGUIModule.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.CoreModule.dll'))</HintPath>
 			<Private>false</Private>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HarmonyLib;
+using SolastaModApi.Testing;
+using System;
 using System.Diagnostics;
 using UnityModManagerNet;
 
@@ -15,7 +17,22 @@ namespace SolastaModApi
 
         internal static bool Load(UnityModManager.ModEntry modEntry)
         {
-            Logger = modEntry.Logger;
+            try
+            {
+                Logger = modEntry.Logger;
+#if DEBUG
+                modEntry.OnGUI = Tests.OnGUI;
+
+                var harmony = new Harmony(modEntry.Info.Id);
+                harmony.PatchAll();
+#endif
+            }
+            catch (Exception ex)
+            {
+                Error(ex);
+                throw;
+            }
+
             return true;
         }
     }

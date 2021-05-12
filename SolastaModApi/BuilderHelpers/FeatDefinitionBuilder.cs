@@ -1,6 +1,5 @@
 ﻿using SolastaModApi.Extensions;
 using SolastaModApi.Infrastructure;
-using System;
 using System.Collections.Generic;
 
 namespace SolastaModApi
@@ -23,11 +22,6 @@ namespace SolastaModApi
         }
 
         public FeatDefinitionBuilder(string name, string guid) : base(name, guid)
-        {
-            InitializePrerequisiteCollectionFields();
-        }
-
-        public FeatDefinitionBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
             InitializePrerequisiteCollectionFields();
         }

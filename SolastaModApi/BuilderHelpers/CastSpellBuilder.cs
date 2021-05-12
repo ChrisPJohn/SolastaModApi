@@ -1,7 +1,6 @@
 ﻿using SolastaModApi.Diagnostics;
 using SolastaModApi.Extensions;
 using SolastaModApi.Infrastructure;
-using System;
 using System.Collections.Generic;
 
 namespace SolastaModApi
@@ -16,11 +15,6 @@ namespace SolastaModApi
         }
 
         public CastSpellBuilder(string name, string guid) : base(name, guid)
-        {
-            InitializeFields();
-        }
-
-        public CastSpellBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
             InitializeFields();
         }
@@ -308,9 +302,11 @@ namespace SolastaModApi
             int level = 1;
             for (; level < startingLevel; level++)
             {
-                FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
-                slotsForLevel.Level = level;
-                slotsForLevel.Slots = SlotsByCasterLevel[0];
+                FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet
+                {
+                    Level = level,
+                    Slots = SlotsByCasterLevel[0]
+                };
                 Definition.SlotsPerLevels.Add(slotsForLevel);
             }
             switch (progression)
@@ -318,27 +314,33 @@ namespace SolastaModApi
                 case CasterProgression.FULL_CASTER:
                     for (; level < 21; level++)
                     {
-                        FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
-                        slotsForLevel.Level = level;
-                        slotsForLevel.Slots = SlotsByCasterLevel[level - startingLevel + 1];
+                        FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet
+                        {
+                            Level = level,
+                            Slots = SlotsByCasterLevel[level - startingLevel + 1]
+                        };
                         Definition.SlotsPerLevels.Add(slotsForLevel);
                     }
                     break;
                 case CasterProgression.HALF_CASTER:
                     for (; level < 21; level++)
                     {
-                        FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
-                        slotsForLevel.Level = level;
-                        slotsForLevel.Slots = SlotsByCasterLevel[(level - startingLevel) / 2 + 1];
+                        FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet
+                        {
+                            Level = level,
+                            Slots = SlotsByCasterLevel[(level - startingLevel) / 2 + 1]
+                        };
                         Definition.SlotsPerLevels.Add(slotsForLevel);
                     }
                     break;
                 case CasterProgression.THIRD_CASTER:
                     for (; level < 21; level++)
                     {
-                        FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet();
-                        slotsForLevel.Level = level;
-                        slotsForLevel.Slots = SlotsByCasterLevel[(level - startingLevel + 2) / 3 + 1];
+                        FeatureDefinitionCastSpell.SlotsByLevelDuplet slotsForLevel = new FeatureDefinitionCastSpell.SlotsByLevelDuplet
+                        {
+                            Level = level,
+                            Slots = SlotsByCasterLevel[(level - startingLevel + 2) / 3 + 1]
+                        };
                         Definition.SlotsPerLevels.Add(slotsForLevel);
                     }
                     break;

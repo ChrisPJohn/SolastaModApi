@@ -1,14 +1,9 @@
 ﻿using SolastaModApi.Extensions;
-using System;
 
 namespace SolastaModApi
 {
     public class FeatureDefinitionSubclassChoiceBuilder : BaseDefinitionBuilder<FeatureDefinitionSubclassChoice>
     {
-        public FeatureDefinitionSubclassChoiceBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
-        {
-        }
-
         public FeatureDefinitionSubclassChoiceBuilder(string name, string guid) : base(name, guid)
         {
         }

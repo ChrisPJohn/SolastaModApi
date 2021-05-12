@@ -1,5 +1,4 @@
 using SolastaModApi.Extensions;
-using System;
 using System.Collections.Generic;
 using TA.AI;
 using UnityEngine.AddressableAssets;
@@ -13,10 +12,6 @@ namespace SolastaModApi
     public class CharacterClassDefinitionBuilder : BaseDefinitionBuilder<CharacterClassDefinition>
     {
         public CharacterClassDefinitionBuilder(string name, string guid) : base(name, guid)
-        {
-        }
-
-        public CharacterClassDefinitionBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
         }
 
@@ -144,23 +139,10 @@ namespace SolastaModApi
             return this;
         }
 
-        public FeatureDefinitionSubclassChoice BuildSubclassChoice(int level, string subclassSuffix, bool requireDeity, string name, GuiPresentation guiPresentation, Guid modGuidNamespace)
-        {
-            var builder = new FeatureDefinitionSubclassChoiceBuilder(name, modGuidNamespace);
-
-            return BuildSubclassChoice(builder, level, subclassSuffix, requireDeity, guiPresentation);
-        }
-
         public FeatureDefinitionSubclassChoice BuildSubclassChoice(int level, string subclassSuffix, bool requireDeity, string name, GuiPresentation guiPresentation, string guid)
         {
             var builder = new FeatureDefinitionSubclassChoiceBuilder(name, guid);
 
-            return BuildSubclassChoice(builder, level, subclassSuffix, requireDeity, guiPresentation);
-        }
-
-        private FeatureDefinitionSubclassChoice BuildSubclassChoice(FeatureDefinitionSubclassChoiceBuilder builder, 
-            int level, string subclassSuffix, bool requireDeity, GuiPresentation guiPresentation)
-        {
             var subclassChoice = builder
                 .SetSubclassSuffix(subclassSuffix)
                 .SetFilterByDeity(requireDeity)

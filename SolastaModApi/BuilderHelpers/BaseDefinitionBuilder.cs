@@ -1,6 +1,5 @@
 ﻿using SolastaModApi.Diagnostics;
 using SolastaModApi.Infrastructure;
-using System;
 using UnityEngine;
 
 namespace SolastaModApi
@@ -28,16 +27,6 @@ namespace SolastaModApi
         }
 
         /// <summary>
-        /// Create a new one
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="guidNamespace"></param>
-        protected BaseDefinitionBuilder(string name, Guid guidNamespace) :
-            this(name, GuidHelper.Create(guidNamespace, name).ToString("N"))
-        {
-        }
-
-        /// <summary>
         /// Create clone and rename
         /// </summary>
         /// <param name="original"></param>
@@ -52,17 +41,6 @@ namespace SolastaModApi
 
             Definition.name = name;
             Definition.SetField("guid", guid);
-        }
-
-        /// <summary>
-        /// Create clone and rename
-        /// </summary>
-        /// <param name="original"></param>
-        /// <param name="name"></param>
-        /// <param name="guidNamespace"></param>
-        protected BaseDefinitionBuilder(TDefinition original, string name, Guid guidNamespace) :
-            this(original, name, GuidHelper.Create(guidNamespace, name).ToString("N"))
-        {
         }
 
         /// <summary>
@@ -84,9 +62,20 @@ namespace SolastaModApi
 
             Assert.IsNotNull(db, $"Database '{typeof(TDatabase).Name}' not found.");
 
-            if (assertIfDuplicate && (db.HasElement(definition.name) || db.HasElementByGuid(definition.GUID)))
-                throw new SolastaModApiException(
-                    $"The definition with name '{definition.name}' already exists in database '{typeof(TDatabase).Name}'");
+            if (assertIfDuplicate)
+            {
+                if (db.HasElement(definition.name))
+                {
+                    throw new SolastaModApiException(
+                        $"The definition with name '{definition.name}' already exists in database '{typeof(TDatabase).Name}' by name.");
+                }
+
+                if (db.HasElementByGuid(definition.GUID))
+                {
+                    throw new SolastaModApiException(
+                        $"The definition with name '{definition.name}' and guid '{definition.GUID}' already exists in database '{typeof(TDatabase).Name}' by GUID.");
+                }
+            }
 
             db.Add(definition);
         }

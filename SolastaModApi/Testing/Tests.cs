@@ -57,11 +57,12 @@ namespace SolastaModApi.Testing
 
                     // Get the belt of dwarvenkind in various ways
                     const string affinityName = "AbilityCheckAffinityBeltOfDwarvenkind";
-                    const string affinityGuid = "54af4a8560ae55444a52f5aea3370b48";
+                    const string affinityGuidString = "54af4a8560ae55444a52f5aea3370b48";
+                    var affinityGuid = new Guid(affinityGuidString);
 
-                    var a1 = Repository.Get<FeatureDefinitionAbilityCheckAffinity>(affinityName, affinityGuid);
-                    var a2 = Repository.Get<FeatureDefinitionAffinity>(affinityName, affinityGuid);
-                    var a3 = Repository.Get<FeatureDefinition>(affinityName, affinityGuid);
+                    var a1 = Repository.Get<FeatureDefinitionAbilityCheckAffinity>(affinityName, affinityGuidString);
+                    var a2 = Repository.Get<FeatureDefinitionAffinity>(affinityName, affinityGuidString);
+                    var a3 = Repository.Get<FeatureDefinition>(affinityName, affinityGuidString);
 
                     logger.Log($"A1=A2={ReferenceEquals(a1, a2)}, A2=A3={ReferenceEquals(a2, a3)}");
                     logger.Log($"A1-type={a1.GetType().FullName}");
@@ -73,15 +74,15 @@ namespace SolastaModApi.Testing
                     logger.Log($"A4=A5={ReferenceEquals(a4, a5)}, A5=A6={ReferenceEquals(a5, a6)}");
                     logger.Log($"A4-type={a4.GetType().FullName}");
 
-                    // test adding our own definition and retrieving it.
-                    //var modNamespace = Guid.NewGuid();  // bang - app crash
-                    //var modNamespace = new Guid("62565155-4d2e-4d72-a651-f8b0749f22a1"); // bang - app crash
-                    var modNamespace = "any-old-string-will-do"; // ok :)
+                    // Test adding our own definition and retrieving it.
+                    var modNamespaceString = "62565155-4d2e-4d72-a651-f8b0749f22a1";
+                    var modNamespaceGuid = new Guid("62565155-4d2e-4d72-a651-f8b0749f22a1"); 
                     const string testDefinitionName = "test";
-                    var builder = new CharacterSubclassDefinitionBuilder(testDefinitionName, modNamespace);
+                    var builder = new CharacterSubclassDefinitionBuilder(testDefinitionName, modNamespaceGuid);
                     var c1 = builder.AddToDB();
-                    var c2 = Repository.Get<CharacterSubclassDefinition>(testDefinitionName, modNamespace);
-                    logger.Log($"C1=C2={ReferenceEquals(c1, c2)}");
+                    var c2 = Repository.Get<CharacterSubclassDefinition>(testDefinitionName, modNamespaceGuid);
+                    var c3 = Repository.Get<CharacterSubclassDefinition>(testDefinitionName, modNamespaceString);
+                    logger.Log($"C1=C2={ReferenceEquals(c1, c2)}, C1=C3={ReferenceEquals(c1, c3)}");
 
                     // Ideally need to test RecordTableDefinition, FeatureDefinition, BaseBlueprint, EditableGraphDefinition
                 }

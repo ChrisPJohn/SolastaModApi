@@ -72,7 +72,7 @@ namespace SolastaModApi
             where TDatabase : BaseDefinition
             where TDefinition : BaseDefinition
         {
-            return Get<TDatabase, TDefinition>(name, GuidHelper.Create(guidNamespace, name), throwIfNotFound);
+            return Get<TDatabase, TDefinition>(name, GuidHelper.Create(guidNamespace, name).ToString("N"), throwIfNotFound);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace SolastaModApi
         public static TDefinition Get<TDefinition>(string name, Guid guidNamespace, bool throwIfNotFound = false) 
             where TDefinition : BaseDefinition
         {
-            return Get<TDefinition>(name, GuidHelper.Create(guidNamespace, name), throwIfNotFound);
+            return Get<TDefinition>(name, GuidHelper.Create(guidNamespace, name).ToString("N"), throwIfNotFound);
         }
 
         /// <summary>

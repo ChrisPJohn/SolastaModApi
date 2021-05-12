@@ -277,7 +277,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 		// hack until I work out how to do this with Roslyn - it's so much easier like this :)
 		string withComment = 
 			"    /// <summary>" + Environment.NewLine +
-			"    /// This helper extensions class was automatically generated against Solasta 0.5.24." + Environment.NewLine +
+			"    /// This helper extensions class was automatically generated against Solasta 0.5.42." + Environment.NewLine +
 			"    /// Not guaranteed to work against any other version of Solasta." + Environment.NewLine +
 			"    /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues." + Environment.NewLine +
 			"    /// </summary>" + Environment.NewLine + 

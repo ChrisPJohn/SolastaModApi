@@ -20,7 +20,7 @@ const string outputPath = @"C:\Users\passp\Source\Repos\SolastaModApi\SolastaMod
 //readonly string installDir = Environment.GetEnvironmentVariable("SolastaInstallDir");
 
 // Or point at specific version - e.g. 0.5.42
-readonly string installDir = @"D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM_0_5_42";
+readonly string installDir = @"D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM"; //_0_5_42";
 
 void Main()
 {
@@ -164,9 +164,27 @@ void CreateExtensions(Type t, bool createFiles = false)
 			);
 
 	var cd = ClassDeclaration($"{t.Name}Extensions")
-		.AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword));
+		.AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
+		.AddAttributeLists(GetALS(t.Name));
 		//.WithLeadingTrivia(GetClassComment($"{t.Name}Extensions"));
 
+	AttributeListSyntax GetALS(string typeName)
+	{
+		return SyntaxFactory.AttributeList( 
+			new SeparatedSyntaxList<AttributeSyntax>().Add(
+				Attribute(
+					IdentifierName("TargetType"),
+					AttributeArgumentList(
+						new SeparatedSyntaxList<AttributeArgumentSyntax>().Add(
+							AttributeArgument(
+								ParseExpression($"typeof({typeName})"))
+							)
+						)
+					)
+				)
+			);
+	}
+	
 	var privateFields = t
 		.GetFields(BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.NonPublic)
 		.Select(f => new { f.Name, FieldInfo = f, f.FieldType, Type = SimplifyType(f.FieldType) });
@@ -218,8 +236,11 @@ void CreateExtensions(Type t, bool createFiles = false)
 					return MethodDeclaration(ParseTypeName($"{t.Name}"), $"Set{GetPropertyNameForField(f.FieldInfo)}")
 					   .AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
 					   .AddParameterListParameters(
-							   Parameter(Identifier("entity")).WithType(ParseTypeName($"{t.Name}")).AddModifiers(Token(SyntaxKind.ThisKeyword)),
-							Parameter(Identifier("value")).WithType(ParseTypeName(SimplifyType(f.FieldType)))
+							Parameter(Identifier("entity"))
+								.WithType(ParseTypeName($"{t.Name}"))
+								.AddModifiers(Token(SyntaxKind.ThisKeyword)),
+							Parameter(Identifier("value"))
+								.WithType(ParseTypeName(SimplifyType(f.FieldType)))
 						)
 						.WithBody(Block(ParseStatement($"entity.SetField(\"{f.Name}\", value);"), ParseStatement("return entity;")));
 				}
@@ -256,13 +277,13 @@ void CreateExtensions(Type t, bool createFiles = false)
 		// hack until I work out how to do this with Roslyn - it's so much easier like this :)
 		string withComment = 
 			"    /// <summary>" + Environment.NewLine +
-			"    /// This helper extensions class was automatically generated against Solasta 0.5.24." + Environment.NewLine +
+			"    /// This helper extensions class was automatically generated against Solasta 0.5.42." + Environment.NewLine +
 			"    /// Not guaranteed to work against any other version of Solasta." + Environment.NewLine +
 			"    /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues." + Environment.NewLine +
 			"    /// </summary>" + Environment.NewLine + 
-			"    public static class";
+			"    [TargetType";
 
-		code = code.Replace("    public static class", withComment);
+		code = code.Replace("    [TargetType", withComment);
 
 		code.Dump();
 
@@ -276,8 +297,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 	
 	SeparatedSyntaxList<TypeParameterConstraintSyntax> GetSL(string name)
 	{
-		var list = SeparatedList<TypeParameterConstraintSyntax>();
-		return list.Add(TypeConstraint(ParseTypeName($"{name}")));
+		return SeparatedList<TypeParameterConstraintSyntax>().Add(TypeConstraint(ParseTypeName($"{name}")));
 	}
 	
 	string GetPropertyNameForField(FieldInfo f)
@@ -317,7 +337,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 	{
 		if (t.IsGenericType)
 		{
-			var name = t.Name.Replace("`1", "").Replace("`2", "");
+			var name = t.FullName.Replace("`1", "").Replace("`2", "");
 			return $"{name}<{string.Join(",", t.GenericTypeArguments.Select(ft1 => SimplifyName(ft1)))}>";
 		}
 
@@ -331,7 +351,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 			return t.FullName.Replace("+", ".");
 		}
 
-		return t.Name;
+		return t.FullName;
 	}
 	
 	SyntaxTriviaList GetClassComment(string v)

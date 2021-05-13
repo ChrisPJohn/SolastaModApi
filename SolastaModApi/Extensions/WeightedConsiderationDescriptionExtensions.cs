@@ -1,16 +1,18 @@
 using SolastaModApi.Infrastructure;
 using TA.AI;
+using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.24.
+    /// This helper extensions class was automatically generated against Solasta 0.5.42.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
+    [TargetType(typeof(WeightedConsiderationDescription))]
     public static class WeightedConsiderationDescriptionExtensions
     {
-        public static T SetConsiderationDefinition<T>(this T entity, ConsiderationDefinition value)
+        public static T SetConsideration<T>(this T entity, ConsiderationDefinition value)
             where T : WeightedConsiderationDescription
         {
             entity.SetField("consideration", value);

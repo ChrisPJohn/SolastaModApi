@@ -1,15 +1,10 @@
 ﻿using SolastaModApi.Extensions;
-using System;
 
 namespace SolastaModApi
 {
     public class CharacterSubclassDefinitionBuilder : BaseDefinitionBuilder<CharacterSubclassDefinition>
     {
         public CharacterSubclassDefinitionBuilder(string name, string guid) : base(name, guid)
-        {
-        }
-
-        public CharacterSubclassDefinitionBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
         }
 

@@ -1,6 +1,5 @@
 ﻿using SolastaModApi.Extensions;
 using SolastaModApi.Infrastructure;
-using System;
 using System.Collections.Generic;
 
 namespace SolastaModApi
@@ -12,16 +11,10 @@ namespace SolastaModApi
             InitializeFields();
         }
 
-        public SpellBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
-        {
-            InitializeFields();
-        }
-
         private void InitializeFields()
         {
             Definition.SetImplemented(true);
         }
-
 
         public SpellBuilder SetSpellLevel(int spellLevel)
         {

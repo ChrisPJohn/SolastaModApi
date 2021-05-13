@@ -9,9 +9,5 @@ namespace SolastaModApi
         public ClassBuilder(string name, string guid) : base(name, guid)
         {
         }
-
-        public ClassBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
-        {
-        }
     }
 }

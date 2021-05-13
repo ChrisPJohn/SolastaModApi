@@ -1,6 +1,5 @@
 ﻿using SolastaModApi.Extensions;
 using SolastaModApi.Infrastructure;
-using System;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 
@@ -9,11 +8,6 @@ namespace SolastaModApi
     public class EffectProxyDefinitionBuilder : BaseDefinitionBuilder<EffectProxyDefinition>
     {
         public EffectProxyDefinitionBuilder(string name, string guid) : base(name, guid)
-        {
-            InitializeFields();
-        }
-
-        public EffectProxyDefinitionBuilder(string name, Guid guidNamespace) : base(name, guidNamespace)
         {
             InitializeFields();
         }

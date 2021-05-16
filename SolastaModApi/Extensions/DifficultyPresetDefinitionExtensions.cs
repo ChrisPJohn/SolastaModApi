@@ -4,7 +4,7 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
+    /// This helper extensions class was automatically generated against Solasta 1.0.12.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
@@ -36,6 +36,13 @@ namespace SolastaModApi.Extensions
             where T : DifficultyPresetDefinition
         {
             entity.SetField("aiUsesPowerfulMovesMoreOften", value);
+            return entity;
+        }
+
+        public static T SetAllowAttuningUnknownItems<T>(this T entity, bool value)
+            where T : DifficultyPresetDefinition
+        {
+            entity.SetField("allowAttuningUnknownItems", value);
             return entity;
         }
 
@@ -232,6 +239,13 @@ namespace SolastaModApi.Extensions
             where T : DifficultyPresetDefinition
         {
             entity.SetField("somaticComponent", value);
+            return entity;
+        }
+
+        public static T SetSpellbookPagesConstraint<T>(this T entity, bool value)
+            where T : DifficultyPresetDefinition
+        {
+            entity.SetField("spellbookPagesConstraint", value);
             return entity;
         }
 

@@ -4,7 +4,7 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
+    /// This helper extensions class was automatically generated against Solasta 1.0.12.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
@@ -32,6 +32,27 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetAttackHitComputation<T>(this T entity, PowerAttackHitComputation value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("attackHitComputation", value);
+            return entity;
+        }
+
+        public static T SetCanUseInDialog<T>(this T entity, bool value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("canUseInDialog", value);
+            return entity;
+        }
+
+        public static T SetCastingSuccessComputation<T>(this T entity, CastingSuccessComputation value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("castingSuccessComputation", value);
+            return entity;
+        }
+
         public static T SetCostPerUse<T>(this T entity, int value)
             where T : FeatureDefinitionPower
         {
@@ -53,10 +74,31 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetFixedAttackHit<T>(this T entity, int value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("fixedAttackHit", value);
+            return entity;
+        }
+
         public static T SetFixedUsesPerRecharge<T>(this T entity, int value)
             where T : FeatureDefinitionPower
         {
             entity.SetField("fixedUsesPerRecharge", value);
+            return entity;
+        }
+
+        public static T SetHasCastingFailure<T>(this T entity, bool value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("hasCastingFailure", value);
+            return entity;
+        }
+
+        public static T SetOverriddenPower<T>(this T entity, FeatureDefinitionPower value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("overriddenPower", value);
             return entity;
         }
 

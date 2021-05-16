@@ -8,7 +8,7 @@ using static BestiaryDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
+    /// This helper extensions class was automatically generated against Solasta 1.0.12.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
@@ -26,6 +26,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("alignment", value);
+            return entity;
+        }
+
+        public static T SetAlwaysHideStats<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("alwaysHideStats", value);
             return entity;
         }
 
@@ -134,6 +141,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetForceNoFlyAnimation<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("forceNoFlyAnimation", value);
+            return entity;
+        }
+
         public static T SetForcePersistentBody<T>(this T entity, bool value)
             where T : MonsterDefinition
         {
@@ -145,6 +159,20 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("fullyControlledWhenAllied", value);
+            return entity;
+        }
+
+        public static T SetGroupAttacks<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("groupAttacks", value);
+            return entity;
+        }
+
+        public static T SetHasLookAt<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("hasLookAt", value);
             return entity;
         }
 
@@ -236,6 +264,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("monsterPresentation", value);
+            return entity;
+        }
+
+        public static T SetNoExperienceGain<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("noExperienceGain", value);
             return entity;
         }
 

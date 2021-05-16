@@ -6,7 +6,7 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
+    /// This helper extensions class was automatically generated against Solasta 1.0.12.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
@@ -76,6 +76,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetHasPrefabVariants<T>(this T entity, bool value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("hasPrefabVariants", value);
+            return entity;
+        }
+
         public static T SetHasUniqueName<T>(this T entity, bool value)
             where T : MonsterPresentation
         {
@@ -101,6 +108,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterPresentation
         {
             entity.SetField("malePrefabReference", value);
+            return entity;
+        }
+
+        public static T SetMonsterPresentationDefinitions<T>(this T entity, MonsterPresentationDefinition[] value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("monsterPresentationDefinitions", value);
             return entity;
         }
 

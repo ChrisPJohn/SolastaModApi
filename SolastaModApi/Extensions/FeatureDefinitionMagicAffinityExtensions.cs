@@ -4,7 +4,7 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
+    /// This helper extensions class was automatically generated against Solasta 1.0.12.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
@@ -22,6 +22,13 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionMagicAffinity
         {
             entity.SetField("canFailSpellcasting", value);
+            return entity;
+        }
+
+        public static T SetCantripRetribution<T>(this T entity, bool value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("cantripRetribution", value);
             return entity;
         }
 
@@ -74,17 +81,17 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetMaxPreparedSpellsModifier<T>(this T entity, int value)
-            where T : FeatureDefinitionMagicAffinity
-        {
-            entity.SetField("maxPreparedSpellsModifier", value);
-            return entity;
-        }
-
         public static T SetOverConcentrationThreshold<T>(this T entity, int value)
             where T : FeatureDefinitionMagicAffinity
         {
             entity.SetField("overConcentrationThreshold", value);
+            return entity;
+        }
+
+        public static T SetPreparedSpellModifier<T>(this T entity, PreparedSpellsModifier value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("preparedSpellModifier", value);
             return entity;
         }
 

@@ -47,21 +47,6 @@ string PluralizeNormalizeClassName(string name)
 	if(name.StartsWith("TA.AI."))
 		name = name.Replace("TA.AI.", "");
 	
-	//if(name.EndsWith("Category"))
-	//	return name.Replace("Category", "Categories");
-	//	
-	//if(name.EndsWith("Index"))
-	//	return name.Replace("Index", "Indices");
-	//	
-	//if(name.EndsWith("Affinity"))
-	//	return name.Replace("Affinity", "Affinities");
-	//	
-	//if(name.EndsWith("Proficiencys"))
-	//	return name.Replace("Proficiencys", "Proficiencies");
-		
-	//if(!name.EndsWith('s'))
-	//	return name + "s";
-	
 	return name + "Set";
 }
 

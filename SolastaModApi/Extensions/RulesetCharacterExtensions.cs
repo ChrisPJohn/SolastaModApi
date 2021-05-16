@@ -4,7 +4,7 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
+    /// This helper extensions class was automatically generated against Solasta 1.0.12.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
@@ -123,6 +123,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetCheatInfiniteActionResources<T>(this T entity, bool value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<CheatInfiniteActionResources>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetCheatIsInvisible<T>(this T entity, bool value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<CheatIsInvisible>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetConcentratedSpell<T>(this T entity, RulesetEffectSpell value)
             where T : RulesetCharacter
         {
@@ -162,13 +176,6 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacter
         {
             entity.SetField("<ContestCheckRolled>k__BackingField", value);
-            return entity;
-        }
-
-        public static T SetControlledEffectProxy<T>(this T entity, RulesetCharacterEffectProxy value)
-            where T : RulesetCharacter
-        {
-            entity.SetField("controlledEffectProxy", value);
             return entity;
         }
 
@@ -295,6 +302,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacter
         {
             entity.SetField("impairedSight", value);
+            return entity;
+        }
+
+        public static T SetIndomitableResistanceUsed<T>(this T entity, RulesetCharacter.IndomitableResistanceUsedHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<IndomitableResistanceUsed>k__BackingField", value);
             return entity;
         }
 
@@ -522,6 +536,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetPowerFailureChecked<T>(this T entity, RulesetCharacter.PowerFailureCheckedHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<PowerFailureChecked>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetPowerRecharged<T>(this T entity, RulesetCharacter.PowerRechargedHandler value)
             where T : RulesetCharacter
         {
@@ -606,10 +627,24 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSpellCounterAttack<T>(this T entity, RulesetCharacter.SpellCounterAttackHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<SpellCounterAttack>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetSpellIdentified<T>(this T entity, RulesetCharacter.SpellIdentifiedHandler value)
             where T : RulesetCharacter
         {
             entity.SetField("<SpellIdentified>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetSpellMissingComponent<T>(this T entity, RulesetCharacter.SpellMissingComponentHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<SpellMissingComponent>k__BackingField", value);
             return entity;
         }
 

@@ -1,26 +1,26 @@
 using SolastaModApi.Infrastructure;
-using UnityEngine;
+using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
+    /// This helper extensions class was automatically generated against Solasta 1.0.12.
     /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EnvironmentDefinition))]
     public static class EnvironmentDefinitionExtensions
     {
-        public static EnvironmentDefinition SetDimensions(this EnvironmentDefinition entity, Vector2Int value)
+        public static EnvironmentDefinition SetOutdoor(this EnvironmentDefinition entity, bool value)
         {
-            entity.SetField("dimensions", value);
+            entity.SetField("outdoor", value);
             return entity;
         }
 
-        public static EnvironmentDefinition SetHasFixedDimensions(this EnvironmentDefinition entity, bool value)
+        public static EnvironmentDefinition SetSceneReferenceOverride(this EnvironmentDefinition entity, AssetReference value)
         {
-            entity.SetField("hasFixedDimensions", value);
+            entity.SetField("sceneReferenceOverride", value);
             return entity;
         }
     }

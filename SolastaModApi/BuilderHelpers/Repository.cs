@@ -69,55 +69,54 @@ namespace SolastaModApi
             return definition;
         }
 
-    /// <summary>
-    /// Normal usage.  Specify the definition type, the name and a specific guid.
-    /// If the definition exists by name that is returned.  
-    /// If the definition doesn't exist by name but does by guid, then that is returned.
-    /// </summary>
-    public static TDefinition Get<TDefinition>(string name, string guid, bool throwIfNotFound = false)
-        where TDefinition : BaseDefinition
-    {
-        // We need to declare an instance of TDefinition so we can filter by type.
-        var t = default(TDefinition);
+        /// <summary>
+        /// Normal usage.  Specify the definition type, the name and a specific guid.
+        /// If the definition exists by name that is returned.  
+        /// If the definition doesn't exist by name but does by guid, then that is returned.
+        /// </summary>
+        public static TDefinition Get<TDefinition>(string name, string guid, bool throwIfNotFound = false)
+            where TDefinition : BaseDefinition
+        {
+            // We need to declare an instance of TDefinition so we can filter by type.
+            var t = default(TDefinition);
 
-        // now direct to the correct database
-        if (t is RecordTableDefinition)
-        {
-            return Get<RecordTableDefinition, TDefinition>(name, guid, throwIfNotFound);
-        }
-        else if (t is FeatureDefinition)
-        {
-            return Get<FeatureDefinition, TDefinition>(name, guid, throwIfNotFound);
-        }
-        else if (t is BaseBlueprint)
-        {
-            return Get<BaseBlueprint, TDefinition>(name, guid, throwIfNotFound);
-        }
-        else if (t is EditableGraphDefinition)
-        {
-            return Get<EditableGraphDefinition, TDefinition>(name, guid, throwIfNotFound);
+            // now direct to the correct database
+            if (t is RecordTableDefinition)
+            {
+                return Get<RecordTableDefinition, TDefinition>(name, guid, throwIfNotFound);
+            }
+            else if (t is FeatureDefinition)
+            {
+                return Get<FeatureDefinition, TDefinition>(name, guid, throwIfNotFound);
+            }
+            else if (t is BaseBlueprint)
+            {
+                return Get<BaseBlueprint, TDefinition>(name, guid, throwIfNotFound);
+            }
+            else if (t is EditableGraphDefinition)
+            {
+                return Get<EditableGraphDefinition, TDefinition>(name, guid, throwIfNotFound);
+            }
+
+            return Get<TDefinition, TDefinition>(name, guid, throwIfNotFound);
         }
 
-        return Get<TDefinition, TDefinition>(name, guid, throwIfNotFound);
+        /// <summary>
+        /// Get definition by name.  
+        /// </summary>
+        public static TDefinition GetByName<TDefinition>(string name, bool throwIfNotFound = false)
+            where TDefinition : BaseDefinition
+        {
+            return Get<TDefinition>(name, null, throwIfNotFound);
+        }
+
+        /// <summary>
+        /// Get definition by Guid.  This is the recommended method to use.
+        /// </summary>
+        public static TDefinition GetByGuid<TDefinition>(string guid, bool throwIfNotFound = false)
+            where TDefinition : BaseDefinition
+        {
+            return Get<TDefinition>(null, guid, throwIfNotFound);
+        }
     }
-
-    /// <summary>
-    /// Get definition by name.  
-    /// </summary>
-    public static TDefinition GetByName<TDefinition>(string name, bool throwIfNotFound = false)
-        where TDefinition : BaseDefinition
-    {
-        return Get<TDefinition>(name, null, throwIfNotFound);
-    }
-
-    /// <summary>
-    /// Get definition by Guid.  This is the recommended method to use.
-    /// </summary>
-    public static TDefinition GetByGuid<TDefinition>(string guid, bool throwIfNotFound = false)
-        where TDefinition : BaseDefinition
-    {
-        return Get<TDefinition>(null, guid, throwIfNotFound);
-    }
-
-}
 }

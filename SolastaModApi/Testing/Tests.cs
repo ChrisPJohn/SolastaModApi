@@ -84,11 +84,13 @@ namespace SolastaModApi.Testing
 
                     CharacterSubclassDefinition c1 = Repository.GetByGuid<CharacterSubclassDefinition>(testDefinitionGuid);
 
-                    if (c1 != null)
+                    if (c1 == null)
                     {
                         var builder = new CharacterSubclassDefinitionBuilder(testDefinitionName, testDefinitionGuid);
                         c1 = builder.AddToDB();
                     }
+
+                    logger.Log($"C1 created={c1 != null}");
 
                     var c2 = Repository.GetByName<CharacterSubclassDefinition>(testDefinitionName);
                     var c3 = Repository.GetByGuid<CharacterSubclassDefinition>(testDefinitionGuid);

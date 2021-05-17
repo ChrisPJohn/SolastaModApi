@@ -26,6 +26,11 @@ namespace SolastaModApi.Testing
                 CheckDatabaseDefinitions();
             }
 
+            if (GUILayout.Button("Check database definitions 2"))
+            {
+                CheckDatabaseDefinitions2();
+            }
+
             if (GUILayout.Button("Check extensions"))
             {
                 CheckExtensions();
@@ -123,6 +128,68 @@ namespace SolastaModApi.Testing
                         .Where(t => t.Namespace == "SolastaModApi").ToList()
                         .Where(t => t.FullName.StartsWith("SolastaModApi.DatabaseHelper"))
                         .Where(t => t.MemberType == MemberTypes.NestedType)
+                        .OrderBy(t => t.Name);
+
+                    int totalGettersSucceeded = 0;
+
+                    foreach (var dbHelperType in dbHelperTypes)
+                    {
+                        var propertyGetters = dbHelperType
+                            .GetProperties(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetProperty);
+
+                        int gettersSucceeded = 0;
+
+                        foreach (var getter in propertyGetters)
+                        {
+                            try
+                            {
+                                var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
+
+                                if(result == null)
+                                {
+                                    logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
+                                }
+                                else
+                                {
+                                    gettersSucceeded++;
+                                }
+                               
+                            }
+                            catch(Exception ex)
+                            {
+                                logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
+                            }
+                        }
+
+                        totalGettersSucceeded += gettersSucceeded;
+                    }
+
+                    logger.Log($"Successfully invoked grand total of {totalGettersSucceeded} db helper properties.");
+                }
+                catch (Exception ex)
+                {
+                    logger.Log(ex.Message);
+                }
+            }
+        }
+
+        private static void CheckDatabaseDefinitions2()
+        {
+            using (var logger = new MethodLogger(nameof(Tests)))
+            {
+                if (!DatabaseReady)
+                {
+                    logger.Log("Database not ready.");
+                    return;
+                }
+
+                try
+                {
+                    var dbHelperTypes = Assembly
+                        .GetExecutingAssembly()
+                        .GetTypes()
+                        .Where(t => t.Namespace == "SolastaModApi.DatabaseHelpers").ToList()
+                        .Where(t => t.Name.EndsWith("Set"))
                         .OrderBy(t => t.Name);
 
                     int totalGettersSucceeded = 0;

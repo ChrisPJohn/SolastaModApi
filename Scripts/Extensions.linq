@@ -279,7 +279,6 @@ void CreateExtensions(Type t, bool createFiles = false)
 		string withComment = 
 			"    /// <summary>" + Environment.NewLine +
 			"    /// This helper extensions class was automatically generated." + Environment.NewLine +
-			"    /// Not guaranteed to work against any other version of Solasta." + Environment.NewLine +
 			"    /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues." + Environment.NewLine +
 			"    /// </summary>" + Environment.NewLine + 
 			"    [TargetType";

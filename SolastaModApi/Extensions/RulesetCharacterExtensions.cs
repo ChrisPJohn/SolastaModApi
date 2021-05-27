@@ -5,7 +5,6 @@ namespace SolastaModApi.Extensions
 {
     /// <summary>
     /// This helper extensions class was automatically generated.
-    /// Not guaranteed to work against any other version of Solasta.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetCharacter))]
@@ -120,20 +119,6 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacter
         {
             entity.SetField("<CharmedCharacterRemovedFromBattle>k__BackingField", value);
-            return entity;
-        }
-
-        public static T SetCheatInfiniteActionResources<T>(this T entity, bool value)
-            where T : RulesetCharacter
-        {
-            entity.SetField("<CheatInfiniteActionResources>k__BackingField", value);
-            return entity;
-        }
-
-        public static T SetCheatIsInvisible<T>(this T entity, bool value)
-            where T : RulesetCharacter
-        {
-            entity.SetField("<CheatIsInvisible>k__BackingField", value);
             return entity;
         }
 

@@ -1,17 +1,24 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
+using static ActionDefinitions;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectProxyDefinition))]
     public static class EffectProxyDefinitionExtensions
     {
+        public static T SetActionId<T>(this T entity, Id value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("actionId", value);
+            return entity;
+        }
+
         public static T SetAddLightSource<T>(this T entity, bool value)
             where T : EffectProxyDefinition
         {
@@ -135,6 +142,20 @@ namespace SolastaModApi.Extensions
             where T : EffectProxyDefinition
         {
             entity.SetField("soundEffectOnHitDescription", value);
+            return entity;
+        }
+
+        public static T SetStartEvent<T>(this T entity, AK.Wwise.Event value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("startEvent", value);
+            return entity;
+        }
+
+        public static T SetStopEvent<T>(this T entity, AK.Wwise.Event value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("stopEvent", value);
             return entity;
         }
     }

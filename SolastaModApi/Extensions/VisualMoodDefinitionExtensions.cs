@@ -5,8 +5,7 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(VisualMoodDefinition))]
@@ -15,6 +14,12 @@ namespace SolastaModApi.Extensions
         public static VisualMoodDefinition SetGlobalPostProcessProfile(this VisualMoodDefinition entity, PostProcessProfile value)
         {
             entity.SetField("globalPostProcessProfile", value);
+            return entity;
+        }
+
+        public static VisualMoodDefinition SetOutdoor(this VisualMoodDefinition entity, bool value)
+        {
+            entity.SetField("outdoor", value);
             return entity;
         }
 

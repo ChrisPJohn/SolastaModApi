@@ -5,8 +5,7 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiCharacter))]
@@ -23,6 +22,69 @@ namespace SolastaModApi.Extensions
             where T : GuiCharacter
         {
             entity.SetField("gameLocationCharacter", value);
+            return entity;
+        }
+
+        public static T SetHealthGaugeDirty<T>(this T entity, bool value)
+            where T : GuiCharacter
+        {
+            entity.SetField("healthGaugeDirty", value);
+            return entity;
+        }
+
+        public static T SetHealthLabelDirty<T>(this T entity, bool value)
+            where T : GuiCharacter
+        {
+            entity.SetField("healthLabelDirty", value);
+            return entity;
+        }
+
+        public static T SetLastCharacterLevel<T>(this T entity, int value)
+            where T : GuiCharacter
+        {
+            entity.SetField("lastCharacterLevel", value);
+            return entity;
+        }
+
+        public static T SetLastCurrentHitPoints<T>(this T entity, int value)
+            where T : GuiCharacter
+        {
+            entity.SetField("lastCurrentHitPoints", value);
+            return entity;
+        }
+
+        public static T SetLastLevelAndClassAndSubclass<T>(this T entity, string value)
+            where T : GuiCharacter
+        {
+            entity.SetField("lastLevelAndClassAndSubclass", value);
+            return entity;
+        }
+
+        public static T SetLastMainClassDefinition<T>(this T entity, CharacterClassDefinition value)
+            where T : GuiCharacter
+        {
+            entity.SetField("lastMainClassDefinition", value);
+            return entity;
+        }
+
+        public static T SetLastMaxHitPoints<T>(this T entity, int value)
+            where T : GuiCharacter
+        {
+            entity.SetField("lastMaxHitPoints", value);
+            return entity;
+        }
+
+        public static T SetLastSubClassDefinition<T>(this T entity, CharacterSubclassDefinition value)
+            where T : GuiCharacter
+        {
+            entity.SetField("lastSubClassDefinition", value);
+            return entity;
+        }
+
+        public static T SetLastTemporaryHitPoints<T>(this T entity, int value)
+            where T : GuiCharacter
+        {
+            entity.SetField("lastTemporaryHitPoints", value);
             return entity;
         }
 

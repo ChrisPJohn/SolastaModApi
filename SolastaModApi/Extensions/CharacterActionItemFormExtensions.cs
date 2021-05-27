@@ -1,14 +1,12 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine;
 using UnityEngine.UI;
-using static ActionDefinitions;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterActionItemForm))]
@@ -186,13 +184,6 @@ namespace SolastaModApi.Extensions
             where T : CharacterActionItemForm
         {
             entity.SetField("<PointerExit>k__BackingField", value);
-            return entity;
-        }
-
-        public static T SetScope<T>(this T entity, ActionScope value)
-            where T : CharacterActionItemForm
-        {
-            entity.SetField("scope", value);
             return entity;
         }
 

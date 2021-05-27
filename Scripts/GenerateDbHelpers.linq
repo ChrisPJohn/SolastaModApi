@@ -27,7 +27,17 @@ void Main()
 
 		foreach(var asset in db.OrderBy(a => a.Name))
 		{
-			sb.Append($"       public static {asset.Type} {NormalizePropertyName(asset.Name)} => RepositoryHelpers.GetElement<{db.Key}, {asset.Type}>(\"{asset.Name}\", \"{asset.Guid}\");");
+			if(string.IsNullOrWhiteSpace(asset.Guid))
+			{
+				$"asset {asset.Name} has no guid".Dump();
+				
+				sb.Append($"       public static {asset.Type} {NormalizePropertyName(asset.Name)} => Repository.GetByName<{asset.Type}>(\"{asset.Name}\");");
+			}
+			else
+			{
+				sb.Append($"       public static {asset.Type} {NormalizePropertyName(asset.Name)} => Repository.GetByGuid<{asset.Type}>(\"{asset.Guid}\");");
+			}
+
 			sb.AppendLine();
 		}
 
@@ -46,21 +56,6 @@ string PluralizeNormalizeClassName(string name)
 {
 	if(name.StartsWith("TA.AI."))
 		name = name.Replace("TA.AI.", "");
-	
-	//if(name.EndsWith("Category"))
-	//	return name.Replace("Category", "Categories");
-	//	
-	//if(name.EndsWith("Index"))
-	//	return name.Replace("Index", "Indices");
-	//	
-	//if(name.EndsWith("Affinity"))
-	//	return name.Replace("Affinity", "Affinities");
-	//	
-	//if(name.EndsWith("Proficiencys"))
-	//	return name.Replace("Proficiencys", "Proficiencies");
-		
-	//if(!name.EndsWith('s'))
-	//	return name + "s";
 	
 	return name + "Set";
 }

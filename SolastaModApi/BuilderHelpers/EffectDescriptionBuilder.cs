@@ -16,7 +16,9 @@ namespace SolastaModApi
             effectAdvancement.SetIncrementMultiplier(1);
             effect.SetEffectAdvancement(effectAdvancement);
 
-            EffectParticleParameters particleParams = new EffectParticleParameters(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            var particleParams = new EffectParticleParameters();
+            particleParams.Copy(DatabaseHelper.SpellDefinitions.MagicWeapon.EffectDescription.EffectParticleParameters);
+            
             effect.SetEffectParticleParameters(particleParams);
         }
 
@@ -174,8 +176,8 @@ namespace SolastaModApi
 
         public EffectDescriptionBuilder SetDurationData(RuleDefinitions.DurationType durationType, int durationParameter, RuleDefinitions.TurnOccurenceType endOfEffect)
         {
-            effect.SetDurationType(durationType);
-            effect.SetDurationParameter(durationParameter);
+            effect.DurationType = durationType;
+            effect.DurationParameter = durationParameter;
             effect.SetEndOfEffect(endOfEffect);
             return this;
         }
@@ -187,11 +189,11 @@ namespace SolastaModApi
             effect.HasSavingThrow = hasSavingThrow;
             effect.SetDisableSavingThrowOnAllies(disableSavingThrowOnAllies);
             effect.SavingThrowAbility = savingThrowAbility;
-            effect.SetIgnoreCover(ignoreCover);
+            effect.IgnoreCover = ignoreCover;
             effect.SetDifficultyClassComputation(difficultyClassComputation);
             effect.SetSavingThrowDifficultyAbility(savingThrowDifficultyAbility);
             effect.FixedSavingThrowDifficultyClass = fixedSavingThrowDifficultyClass;
-            effect.SetAdvantageForEnemies(advantageForEnemies);
+            effect.AdvantageForEnemies = advantageForEnemies;
             effect.SetField("savingThrowAffinitiesBySense", savingThrowAffinitiesBySense);
             return this;
         }

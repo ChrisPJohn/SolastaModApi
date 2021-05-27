@@ -1,11 +1,11 @@
 using SolastaModApi.Infrastructure;
 using static RuleDefinitions;
+using static Gui;
 
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterTemplateDefinition))]
@@ -190,6 +190,13 @@ namespace SolastaModApi.Extensions
             where T : CharacterTemplateDefinition
         {
             entity.SetField("originMorphotype", value);
+            return entity;
+        }
+
+        public static T SetPronoun<T>(this T entity, LocalizationSpeakerGender value)
+            where T : CharacterTemplateDefinition
+        {
+            entity.SetField("pronoun", value);
             return entity;
         }
 

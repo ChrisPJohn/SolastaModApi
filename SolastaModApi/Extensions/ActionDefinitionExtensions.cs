@@ -1,12 +1,12 @@
 using SolastaModApi.Infrastructure;
+using UnityEngine.AddressableAssets;
 using static ActionDefinitions;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ActionDefinition))]
@@ -117,6 +117,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetParticlePrefab<T>(this T entity, AssetReference value)
+            where T : ActionDefinition
+        {
+            entity.SetField("particlePrefab", value);
+            return entity;
+        }
+
         public static T SetPreventsSerialization<T>(this T entity, bool value)
             where T : ActionDefinition
         {
@@ -135,6 +142,13 @@ namespace SolastaModApi.Extensions
             where T : ActionDefinition
         {
             entity.SetField("requiresAuthorization", value);
+            return entity;
+        }
+
+        public static T SetSoundEvent<T>(this T entity, AK.Wwise.Event value)
+            where T : ActionDefinition
+        {
+            entity.SetField("soundEvent", value);
             return entity;
         }
 

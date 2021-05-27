@@ -1,21 +1,21 @@
 using SolastaModApi.Infrastructure;
 using static ActionDefinitions;
 using static RuleDefinitions;
+using static AnimationDefinitions;
 
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectDescription))]
     public static class EffectDescriptionExtensions
     {
-        public static T SetAdvantageForEnemies<T>(this T entity, bool value)
+        public static T SetAnimationMagicEffect<T>(this T entity, AnimationMagicEffect value)
             where T : EffectDescription
         {
-            entity.SetField("advantageForEnemies", value);
+            entity.SetField("animationMagicEffect", value);
             return entity;
         }
 
@@ -51,20 +51,6 @@ namespace SolastaModApi.Extensions
             where T : EffectDescription
         {
             entity.SetField("disableSavingThrowOnAllies", value);
-            return entity;
-        }
-
-        public static T SetDurationParameter<T>(this T entity, int value)
-            where T : EffectDescription
-        {
-            entity.SetField("durationParameter", value);
-            return entity;
-        }
-
-        public static T SetDurationType<T>(this T entity, DurationType value)
-            where T : EffectDescription
-        {
-            entity.SetField("durationType", value);
             return entity;
         }
 
@@ -142,13 +128,6 @@ namespace SolastaModApi.Extensions
             where T : EffectDescription
         {
             entity.SetField("hasVelocity", value);
-            return entity;
-        }
-
-        public static T SetIgnoreCover<T>(this T entity, bool value)
-            where T : EffectDescription
-        {
-            entity.SetField("ignoreCover", value);
             return entity;
         }
 

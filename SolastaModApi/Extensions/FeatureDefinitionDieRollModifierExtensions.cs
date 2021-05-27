@@ -4,13 +4,19 @@ using static RuleDefinitions;
 namespace SolastaModApi.Extensions
 {
     /// <summary>
-    /// This helper extensions class was automatically generated against Solasta 0.5.42.
-    /// Not guaranteed to work against any other version of Solasta.
+    /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionDieRollModifier))]
     public static class FeatureDefinitionDieRollModifierExtensions
     {
+        public static T SetForcedMinimalHalfDamageOnDice<T>(this T entity, bool value)
+            where T : FeatureDefinitionDieRollModifier
+        {
+            entity.SetField("forcedMinimalHalfDamageOnDice", value);
+            return entity;
+        }
+
         public static T SetMaxRollValue<T>(this T entity, int value)
             where T : FeatureDefinitionDieRollModifier
         {

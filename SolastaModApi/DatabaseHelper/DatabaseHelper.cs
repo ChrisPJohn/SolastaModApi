@@ -1778,6 +1778,7 @@ namespace SolastaModApi
             public static QuestTreeDefinition Aer_Elai_Final_Quest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Aer_Elai_Final_Quest", "923c8f6f356f1b34cbed452700978cdd");
             public static QuestTreeDefinition Aer_Elai_Final_Scenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Aer_Elai_Final_Scenario", "c9a4ce85585898f4eb459439c4f69976");
             public static QuestTreeDefinition Aer_Elai_Scenario_Flashback => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Aer_Elai_Scenario_Flashback", "34c1052990db1fb488a20cea9256cfd6");
+            public static QuestTreeDefinition ArwinMertonFirstScavenger02CompatibilityScenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("ArwinMertonFirstScavenger02CompatibilityScenario", "e1281ae0252da8b4d8fc6cf1b76a3024");
             public static QuestTreeDefinition ArwinMertonSwordCompatibilityScenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("ArwinMertonSwordCompatibilityScenario", "dbcc4ad0ae9051b4f85bfba09d1728ce");
             public static QuestTreeDefinition AuthorizeEncountersCompatibilityScenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("AuthorizeEncountersCompatibilityScenario", "6a385c5b8023b5e40a8715582be2b640");
             public static QuestTreeDefinition BitterrootTreasureCompatibilityScenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("BitterrootTreasureCompatibilityScenario", "f9f826d8d643728469d52575c7bdd4a2");
@@ -1817,6 +1818,8 @@ namespace SolastaModApi
             public static QuestTreeDefinition Campaign_COTM_Scenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Campaign_COTM_Scenario", "40d8071a51428d445b6077194eaf7942");
             public static QuestTreeDefinition Caravan_Quest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Caravan_Quest", "cc9d5ab426cd07e4f80c2059feec5857");
             public static QuestTreeDefinition CaravanReturnCompatibilityScenario_EA_0_5_41 => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("CaravanReturnCompatibilityScenario_EA_0.5.41", "97c0d3ff95b76bc4ba0ce7c205dc1a8c");
+            public static QuestTreeDefinition Compatibility_ChangeMerton => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Compatibility_ChangeMerton", "d1d8d21a676cb4f4bb54a2d510593d26");
+            public static QuestTreeDefinition Compatibility_Council04_Quest_Lost => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Compatibility_Council04_Quest_Lost", "5a92f5d25dfe68e479da5a3e80dbb8a6");
             public static QuestTreeDefinition Conjuration_Quest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Conjuration_Quest", "97bb8e162f882b843a353dc357d57ea4");
             public static QuestTreeDefinition Conjuration_Quest_Arena => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Conjuration_Quest_Arena", "644214e30a6d484499a5047086eddb9b");
             public static QuestTreeDefinition Conjuration_Quest_SuperEgo_Mansion_HelpServant => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Conjuration_Quest_SuperEgo_Mansion_HelpServant", "8b39cbe50ea7aae429d66ed02ef9f1ed");
@@ -1879,9 +1882,11 @@ namespace SolastaModApi
             public static QuestTreeDefinition Quest_Background_Sellsword_Scenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Quest_Background_Sellsword_Scenario", "b8fa9800099068c498e9ec6b1b20b2fa");
             public static QuestTreeDefinition Quest_Background_Spy => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Quest_Background_Spy", "894d126b10596ab42be4a7b3237032b4");
             public static QuestTreeDefinition Quest_Background_Spy_Scenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Quest_Background_Spy_Scenario", "0fc0e6e549dd822479a5f1081aafd4ed");
+            public static QuestTreeDefinition RodricHideoutEntranceCompatibilityScenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("RodricHideoutEntranceCompatibilityScenario", "def29e1b4bfd2a340987f794dbf413f3");
             public static QuestTreeDefinition ScavengerCompatibilityScenario_EA_0_4_0 => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("ScavengerCompatibilityScenario_EA_0.4.0", "b8eb90017694be944af07554dc427388");
             public static QuestTreeDefinition Secondary_KillRazan_Quest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Secondary_KillRazan_Quest", "568dc0243d24485499fa351a98f6241a");
             public static QuestTreeDefinition Secondary_KillRazan_Scenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Secondary_KillRazan_Scenario", "94517868a18141a43adf089eb43f29b5");
+            public static QuestTreeDefinition SuperEgoDragonCombatEndedCompatibilityScenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("SuperEgoDragonCombatEndedCompatibilityScenario", "7b3bf5a868d8e9c409af9a6b3cbb5206");
             public static QuestTreeDefinition Telema_SecondaryQuest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Telema_SecondaryQuest", "3f04303e07ff31c44a45934dd33886ef");
             public static QuestTreeDefinition TelemaLevel_Quest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("TelemaLevel_Quest", "43d35971d7b264b469f07a2e8d5fbb82");
             public static QuestTreeDefinition Temple_Of_Einar_Scenario_Act3 => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Temple_Of_Einar_Scenario_Act3", "dc3b6dfc9187d5e40be414f7d731ce3e");
@@ -3652,6 +3657,7 @@ namespace SolastaModApi
             public static ItemDefinition _100_GP_Emerald => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("100_GP_Emerald", "6443e653f20e0164bac3c82feeec49ae");
             public static ItemDefinition _100_GP_Pearl => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("100_GP_Pearl", "c3663c5d326ae1747aa410838f075c83");
             public static ItemDefinition _1000_GP_Diamond => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("1000_GP_Diamond", "b6dcb2b305ede8440bf70c35e774e736");
+            public static ItemDefinition _10000_Gold_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("10000_Gold_Coins", "097b7938cd432e84db51c26ca584d6db");
             public static ItemDefinition _10D6_Copper_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("10D6_Copper_Coins", "5ca16b606fd330c44b1ce6e4f6279245");
             public static ItemDefinition _10D6_Gold_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("10D6_Gold_Coins", "60c9aadda115a89458a471f81a96895e");
             public static ItemDefinition _10D6_Silver_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("10D6_Silver_Coins", "798433c2988a51c429cb71451cd69731");
@@ -6462,6 +6468,7 @@ namespace SolastaModApi
             public static SmartAttributeDefinition ItemCharges => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ItemCharges", "cacc877d0f6c245488a667910125a6e1");
             public static SmartAttributeDefinition ItemFunctionRemainingDuration => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ItemFunctionRemainingDuration", "69b302def058c5a4d88953b61f45731e");
             public static SmartAttributeDefinition ItemFunctionRemainingIterations => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ItemFunctionRemainingIterations", "d6bb17e5f45a23c49a9c7b4acc651235");
+            public static SmartAttributeDefinition ItemPropertyUses => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ItemPropertyUses", "72873dba2fcacc24f98722f5869cd71b");
             public static SmartAttributeDefinition ItemRemainingDuration => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ItemRemainingDuration", "8ab63643af345474fae5c0306b741e69");
             public static SmartAttributeDefinition ItemSpellbookPages => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ItemSpellbookPages", "db722956e6ffbed4387b207ce55521d6");
             public static SmartAttributeDefinition ItemStackCount => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ItemStackCount", "55148c91cdd4b6e4f8dab6e8ac352332");

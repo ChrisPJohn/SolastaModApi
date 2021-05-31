@@ -1,0 +1,10 @@
+{
+    "Releases":
+    [
+      {
+        "Id": "SolastaModApi",
+        "Version": "1.0.1",
+        "DownloadUrl": "https://github.com/SolastaMods/SolastaModApi/releases/download/V1.0.1/SolastaModApi.zip"
+      }
+    ]
+}

@@ -55,6 +55,11 @@ namespace SolastaModApi.Infrastructure
             return t.Field<V>(fieldName).Value;
         }
 
+        public static V GetField<V>(this object instance, string fieldName)
+        {
+            return instance.GetField<object, V>(fieldName);
+        }
+
         public static void SetProperty<T, V>(this T instance, string propertyName, V value)
         {
             Preconditions.IsNotNullOrWhiteSpace(propertyName, nameof(propertyName));

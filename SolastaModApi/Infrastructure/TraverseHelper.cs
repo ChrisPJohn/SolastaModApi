@@ -23,8 +23,9 @@ namespace SolastaModApi.Infrastructure
         /// Traverse will happily continue without error if you supply a field name that doesn't exist.
         /// SetField with throw an appropriate exception.
         /// </remarks>
-        public static void SetField<T, V>(this T instance, string fieldName, V value)
+        public static void SetField<T, V>(this T instance, string fieldName, V value) where T : class
         {
+            Preconditions.IsNotNull(instance, nameof(instance));
             Preconditions.IsNotNullOrWhiteSpace(fieldName, nameof(fieldName));
 
             var t = Traverse.Create(instance);
@@ -41,15 +42,16 @@ namespace SolastaModApi.Infrastructure
             // AccessTools.FieldRefAccess<T, V>(instance, fieldName) = value;
         }
 
-        public static V GetField<T, V>(this T instance, string fieldName)
+        public static V GetField<T, V>(this T instance, string fieldName) where T : class
         {
+            Preconditions.IsNotNull(instance, nameof(instance));
             Preconditions.IsNotNullOrWhiteSpace(fieldName, nameof(fieldName));
 
             var t = Traverse.Create(instance);
 
             if (FailOnMissingMember && !t.Field(fieldName).FieldExists())
             {
-                throw new MissingFieldException(typeof(T).Name, fieldName);
+                throw new MissingFieldException(instance.GetType().FullName, fieldName);
             }
 
             return t.Field<V>(fieldName).Value;

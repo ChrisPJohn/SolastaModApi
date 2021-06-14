@@ -80,6 +80,10 @@
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Unity.Postprocessing.Runtime.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.TextRenderingModule.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>

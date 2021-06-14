@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityModManagerNet;
+using ModKit;
 
 namespace SolastaModApi.Testing
 {
@@ -16,25 +17,12 @@ namespace SolastaModApi.Testing
 
         internal static void OnGUI(UnityModManager.ModEntry _)
         {
-            if (GUILayout.Button("Basic test"))
-            {
-                BasicTests();
-            }
-
-            if (GUILayout.Button("Check database definitions"))
-            {
-                CheckDatabaseDefinitions();
-            }
-
-            if (GUILayout.Button("Check database definitions 2"))
-            {
-                CheckDatabaseDefinitions2();
-            }
-
-            if (GUILayout.Button("Check extensions"))
-            {
-                CheckExtensions();
-            }
+            UI.HStack("Tests", 4,
+                () => { UI.ActionButton("Basic Tests", () => { BasicTests(); }); },
+                () => { UI.ActionButton("Database Definitions", () => { CheckDatabaseDefinitions(); }); },
+                () => { UI.ActionButton("Database Definitions 2", () => { CheckDatabaseDefinitions2(); }); },
+                () => { UI.ActionButton("Extensions", () => { CheckExtensions(); }); }
+            );
         }
 
         private static void BasicTests()

@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net472</TargetFramework>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
+		<AssemblyVersion>1.0.3.0</AssemblyVersion>
+		<FileVersion>1.0.3.0</FileVersion>
 		<Description></Description>
 		<PackageProjectUrl>https://github.com/SolastaMods/SolastaModApi</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SolastaMods/SolastaModApi</RepositoryUrl>

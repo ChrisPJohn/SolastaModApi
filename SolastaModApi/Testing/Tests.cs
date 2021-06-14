@@ -17,11 +17,10 @@ namespace SolastaModApi.Testing
 
         internal static void OnGUI(UnityModManager.ModEntry _)
         {
-            UI.HStack("Tests", 4,
-                () => { UI.ActionButton("Basic Tests", () => { BasicTests(); }); },
-                () => { UI.ActionButton("Database Definitions", () => { CheckDatabaseDefinitions(); }); },
-                () => { UI.ActionButton("Database Definitions 2", () => { CheckDatabaseDefinitions2(); }); },
-                () => { UI.ActionButton("Extensions", () => { CheckExtensions(); }); }
+            UI.HStack("Tests", 2,
+                () => { UI.ActionButton("Basic Tests", BasicTests); },
+                () => { UI.ActionButton("Database Definitions", CheckDatabaseDefinitions); },
+                () => { UI.ActionButton("Extensions", CheckExtensions); }
             );
         }
 
@@ -88,7 +87,7 @@ namespace SolastaModApi.Testing
                     var c2 = Repository.GetByName<CharacterSubclassDefinition>(testDefinitionName);
                     var c3 = Repository.GetByGuid<CharacterSubclassDefinition>(testDefinitionGuid);
                     logger.Log($"C1=C2={ReferenceEquals(c1, c2)}, C1=C3={ReferenceEquals(c1, c3)}");
-                    
+
                     // Ideally need to test RecordTableDefinition, FeatureDefinition, BaseBlueprint, EditableGraphDefinition
                 }
                 catch (Exception ex)
@@ -133,7 +132,7 @@ namespace SolastaModApi.Testing
                             {
                                 var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
 
-                                if(result == null)
+                                if (result == null)
                                 {
                                     logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
                                 }
@@ -141,9 +140,9 @@ namespace SolastaModApi.Testing
                                 {
                                     gettersSucceeded++;
                                 }
-                               
+
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
                                 logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
                             }
@@ -161,67 +160,69 @@ namespace SolastaModApi.Testing
             }
         }
 
-        private static void CheckDatabaseDefinitions2()
-        {
-            using (var logger = new MethodLogger(nameof(Tests)))
-            {
-                if (!DatabaseReady)
+        /*
+                private static void CheckDatabaseDefinitions2()
                 {
-                    logger.Log("Database not ready.");
-                    return;
-                }
-
-                try
-                {
-                    var dbHelperTypes = Assembly
-                        .GetExecutingAssembly()
-                        .GetTypes()
-                        .Where(t => t.Namespace == "SolastaModApi.DatabaseHelpers").ToList()
-                        .Where(t => t.Name.EndsWith("Set"))
-                        .OrderBy(t => t.Name);
-
-                    int totalGettersSucceeded = 0;
-
-                    foreach (var dbHelperType in dbHelperTypes)
+                    using (var logger = new MethodLogger(nameof(Tests)))
                     {
-                        var propertyGetters = dbHelperType
-                            .GetProperties(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetProperty);
-
-                        int gettersSucceeded = 0;
-
-                        foreach (var getter in propertyGetters)
+                        if (!DatabaseReady)
                         {
-                            try
-                            {
-                                var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
-
-                                if(result == null)
-                                {
-                                    logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
-                                }
-                                else
-                                {
-                                    gettersSucceeded++;
-                                }
-                               
-                            }
-                            catch(Exception ex)
-                            {
-                                logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
-                            }
+                            logger.Log("Database not ready.");
+                            return;
                         }
 
-                        totalGettersSucceeded += gettersSucceeded;
-                    }
+                        try
+                        {
+                            var dbHelperTypes = Assembly
+                                .GetExecutingAssembly()
+                                .GetTypes()
+                                .Where(t => t.Namespace == "SolastaModApi.DatabaseHelpers").ToList()
+                                .Where(t => t.Name.EndsWith("Set"))
+                                .OrderBy(t => t.Name);
 
-                    logger.Log($"Successfully invoked grand total of {totalGettersSucceeded} db helper properties.");
+                            int totalGettersSucceeded = 0;
+
+                            foreach (var dbHelperType in dbHelperTypes)
+                            {
+                                var propertyGetters = dbHelperType
+                                    .GetProperties(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetProperty);
+
+                                int gettersSucceeded = 0;
+
+                                foreach (var getter in propertyGetters)
+                                {
+                                    try
+                                    {
+                                        var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
+
+                                        if(result == null)
+                                        {
+                                            logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
+                                        }
+                                        else
+                                        {
+                                            gettersSucceeded++;
+                                        }
+
+                                    }
+                                    catch(Exception ex)
+                                    {
+                                        logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
+                                    }
+                                }
+
+                                totalGettersSucceeded += gettersSucceeded;
+                            }
+
+                            logger.Log($"Successfully invoked grand total of {totalGettersSucceeded} db helper properties.");
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.Log(ex.Message);
+                        }
+                    }
                 }
-                catch (Exception ex)
-                {
-                    logger.Log(ex.Message);
-                }
-            }
-        }
+        */
 
         private static void CheckExtensions()
         {
@@ -322,7 +323,7 @@ namespace SolastaModApi.Testing
                                                 logger.Log($"Skipping method '{extension.TargetType.Name}.{setter.Name}', doesn't have 2 params.");
                                             }
                                         }
-                                        catch(Exception ex1)
+                                        catch (Exception ex1)
                                         {
                                             logger.Log($"Error calling method '{extension.TargetType.Name}.{setter.Name}': {ex1.Message}.");
                                         }

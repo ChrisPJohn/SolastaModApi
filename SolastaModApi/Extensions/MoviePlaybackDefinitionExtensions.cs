@@ -16,5 +16,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("movieFilename", value);
             return entity;
         }
+
+        public static T SetTotalFallbackDuration<T>(this T entity, float value)
+            where T : MoviePlaybackDefinition
+        {
+            entity.SetField("totalFallbackDuration", value);
+            return entity;
+        }
     }
 }

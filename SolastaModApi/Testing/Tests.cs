@@ -20,7 +20,8 @@ namespace SolastaModApi.Testing
             UI.HStack("Tests", 2,
                 () => { UI.ActionButton("Basic Tests", BasicTests); },
                 () => { UI.ActionButton("Database Definitions", CheckDatabaseDefinitions); },
-                () => { UI.ActionButton("Extensions", CheckExtensions); }
+                () => { UI.ActionButton("Extensions", CheckExtensions); },
+                () => { UI.ActionButton("Helpers", CheckHelpers); }
             );
         }
 
@@ -350,6 +351,124 @@ namespace SolastaModApi.Testing
                 {
                     logger.Log(ex.Message);
                 }
+            }
+        }
+
+        private static void CheckHelpers()
+        {
+            var definition = ScriptableObject.CreateInstance<EffectProxyDefinition>();
+
+            // Lacking a standard unit testing framework, just cobble some stuff together.
+
+            int failures = 0;
+
+            if (!CheckSetFieldSucceeds(definition, "actionId", ActionDefinitions.Id.ActionSurge)) { failures++; }
+            if (!CheckSetFieldSucceeds(definition, "addLightSource", true)) { failures++; }
+
+            if (!CheckSetFieldThrows(definition, "addLightSource2", true)) { failures++; }
+            if (!CheckSetFieldThrows((EffectProxyDefinition)null, "addLightSource", true)) { failures++; }
+            if (!CheckSetFieldThrows(definition, "addLightSource", 5)) { failures++; }
+
+            Main.Log($"{failures} calls to SetField helpers failed");
+
+            failures = 0;
+
+            if (!CheckGetFieldSucceeds(definition, "addLightSource", true, false)) { failures++; }
+            if (!CheckGetFieldSucceeds(definition, "damageType", "d1", "d2")) { failures++; }
+            if (!CheckGetFieldThrows<EffectProxyDefinition, string>(definition, "damageType2")) { failures++; }
+            if (!CheckGetFieldThrows<EffectProxyDefinition, string>(null, "damageType2")) { failures++; }
+            if (!CheckGetFieldThrows<EffectProxyDefinition, bool>(definition, "damageType")) { failures++; }
+
+            Main.Log($"{failures} calls to GetField helpers failed");
+
+            bool CheckGetFieldSucceeds<T, V>(T entity, string fieldName, V v1, V v2)
+                where T : class
+                where V : IEquatable<V>
+            {
+                bool success = true;
+
+                try
+                {
+                    entity.SetField(fieldName, v1);
+
+                    if (!v1.Equals(entity.GetField<V>(fieldName)))
+                    {
+                        Main.Log($"GetField({fieldName}) failed.");
+                        success = false;
+                    }
+
+                    entity.SetField(fieldName, v2);
+
+                    if (!v2.Equals(entity.GetField<V>(fieldName)))
+                    {
+                        Main.Log($"GetField({fieldName}) failed.");
+                        success = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"GetField({fieldName}) failed. {ex.Message}.");
+                    success = false;
+                }
+
+                return success;
+            }
+
+            bool CheckGetFieldThrows<T, V>(T entity, string fieldName)
+                where T : class
+                where V : IEquatable<V>
+            {
+                bool success = false;
+
+                try
+                {
+                    entity.GetField<V>(fieldName);
+                    Main.Log($"GetField({fieldName}) failed. Did not throw exception.");
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"GetField({fieldName}) threw exception as expected. {ex.Message}.");
+                    success = true;
+                }
+
+                return success;
+            }
+
+            bool CheckSetFieldSucceeds<T, V>(T entity, string fieldName, V value) where T : class
+            {
+                bool success = false;
+
+                try
+                {
+                    entity.SetField(fieldName, value);
+
+                    success = true;
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"SetField({fieldName}) failed. {ex.Message}");
+                }
+
+                return success;
+            }
+
+            bool CheckSetFieldThrows<T, V>(T entity, string fieldName, V value) where T : class
+            {
+                bool success = false;
+
+                try
+                {
+                    entity.SetField(fieldName, value);
+
+                    Main.Log($"SetField({fieldName}) didn't throw.");
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"SetField({fieldName}) threw exception as expected. {ex.Message}.");
+                    success = true;
+                }
+
+                return success;
             }
         }
     }

@@ -17,11 +17,11 @@ namespace SolastaModApi.Testing
 
         internal static void OnGUI(UnityModManager.ModEntry _)
         {
-            UI.HStack("Tests", 4,
-                () => { UI.ActionButton("Basic Tests", () => { BasicTests(); }); },
-                () => { UI.ActionButton("Database Definitions", () => { CheckDatabaseDefinitions(); }); },
-                () => { UI.ActionButton("Database Definitions 2", () => { CheckDatabaseDefinitions2(); }); },
-                () => { UI.ActionButton("Extensions", () => { CheckExtensions(); }); }
+            UI.HStack("Tests", 2,
+                () => { UI.ActionButton("Basic Tests", BasicTests); },
+                () => { UI.ActionButton("Database Definitions", CheckDatabaseDefinitions); },
+                () => { UI.ActionButton("Extensions", CheckExtensions); },
+                () => { UI.ActionButton("Helpers", CheckHelpers); }
             );
         }
 
@@ -88,7 +88,7 @@ namespace SolastaModApi.Testing
                     var c2 = Repository.GetByName<CharacterSubclassDefinition>(testDefinitionName);
                     var c3 = Repository.GetByGuid<CharacterSubclassDefinition>(testDefinitionGuid);
                     logger.Log($"C1=C2={ReferenceEquals(c1, c2)}, C1=C3={ReferenceEquals(c1, c3)}");
-                    
+
                     // Ideally need to test RecordTableDefinition, FeatureDefinition, BaseBlueprint, EditableGraphDefinition
                 }
                 catch (Exception ex)
@@ -133,7 +133,7 @@ namespace SolastaModApi.Testing
                             {
                                 var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
 
-                                if(result == null)
+                                if (result == null)
                                 {
                                     logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
                                 }
@@ -141,9 +141,9 @@ namespace SolastaModApi.Testing
                                 {
                                     gettersSucceeded++;
                                 }
-                               
+
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
                                 logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
                             }
@@ -161,67 +161,69 @@ namespace SolastaModApi.Testing
             }
         }
 
-        private static void CheckDatabaseDefinitions2()
-        {
-            using (var logger = new MethodLogger(nameof(Tests)))
-            {
-                if (!DatabaseReady)
+        /*
+                private static void CheckDatabaseDefinitions2()
                 {
-                    logger.Log("Database not ready.");
-                    return;
-                }
-
-                try
-                {
-                    var dbHelperTypes = Assembly
-                        .GetExecutingAssembly()
-                        .GetTypes()
-                        .Where(t => t.Namespace == "SolastaModApi.DatabaseHelpers").ToList()
-                        .Where(t => t.Name.EndsWith("Set"))
-                        .OrderBy(t => t.Name);
-
-                    int totalGettersSucceeded = 0;
-
-                    foreach (var dbHelperType in dbHelperTypes)
+                    using (var logger = new MethodLogger(nameof(Tests)))
                     {
-                        var propertyGetters = dbHelperType
-                            .GetProperties(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetProperty);
-
-                        int gettersSucceeded = 0;
-
-                        foreach (var getter in propertyGetters)
+                        if (!DatabaseReady)
                         {
-                            try
-                            {
-                                var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
-
-                                if(result == null)
-                                {
-                                    logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
-                                }
-                                else
-                                {
-                                    gettersSucceeded++;
-                                }
-                               
-                            }
-                            catch(Exception ex)
-                            {
-                                logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
-                            }
+                            logger.Log("Database not ready.");
+                            return;
                         }
 
-                        totalGettersSucceeded += gettersSucceeded;
-                    }
+                        try
+                        {
+                            var dbHelperTypes = Assembly
+                                .GetExecutingAssembly()
+                                .GetTypes()
+                                .Where(t => t.Namespace == "SolastaModApi.DatabaseHelpers").ToList()
+                                .Where(t => t.Name.EndsWith("Set"))
+                                .OrderBy(t => t.Name);
 
-                    logger.Log($"Successfully invoked grand total of {totalGettersSucceeded} db helper properties.");
+                            int totalGettersSucceeded = 0;
+
+                            foreach (var dbHelperType in dbHelperTypes)
+                            {
+                                var propertyGetters = dbHelperType
+                                    .GetProperties(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetProperty);
+
+                                int gettersSucceeded = 0;
+
+                                foreach (var getter in propertyGetters)
+                                {
+                                    try
+                                    {
+                                        var result = getter.GetMethod.Invoke(null, Array.Empty<object>());
+
+                                        if(result == null)
+                                        {
+                                            logger.Log($"ERROR property '{dbHelperType.Name}.{getter.Name}' returned NULL.");
+                                        }
+                                        else
+                                        {
+                                            gettersSucceeded++;
+                                        }
+
+                                    }
+                                    catch(Exception ex)
+                                    {
+                                        logger.Log($"ERROR getting property '{dbHelperType.Name}.{getter.Name}': {ex.Message}.");
+                                    }
+                                }
+
+                                totalGettersSucceeded += gettersSucceeded;
+                            }
+
+                            logger.Log($"Successfully invoked grand total of {totalGettersSucceeded} db helper properties.");
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.Log(ex.Message);
+                        }
+                    }
                 }
-                catch (Exception ex)
-                {
-                    logger.Log(ex.Message);
-                }
-            }
-        }
+        */
 
         private static void CheckExtensions()
         {
@@ -322,7 +324,7 @@ namespace SolastaModApi.Testing
                                                 logger.Log($"Skipping method '{extension.TargetType.Name}.{setter.Name}', doesn't have 2 params.");
                                             }
                                         }
-                                        catch(Exception ex1)
+                                        catch (Exception ex1)
                                         {
                                             logger.Log($"Error calling method '{extension.TargetType.Name}.{setter.Name}': {ex1.Message}.");
                                         }
@@ -349,6 +351,124 @@ namespace SolastaModApi.Testing
                 {
                     logger.Log(ex.Message);
                 }
+            }
+        }
+
+        private static void CheckHelpers()
+        {
+            var definition = ScriptableObject.CreateInstance<EffectProxyDefinition>();
+
+            // Lacking a standard unit testing framework, just cobble some stuff together.
+
+            int failures = 0;
+
+            if (!CheckSetFieldSucceeds(definition, "actionId", ActionDefinitions.Id.ActionSurge)) { failures++; }
+            if (!CheckSetFieldSucceeds(definition, "addLightSource", true)) { failures++; }
+
+            if (!CheckSetFieldThrows(definition, "addLightSource2", true)) { failures++; }
+            if (!CheckSetFieldThrows((EffectProxyDefinition)null, "addLightSource", true)) { failures++; }
+            if (!CheckSetFieldThrows(definition, "addLightSource", 5)) { failures++; }
+
+            Main.Log($"{failures} calls to SetField helpers failed");
+
+            failures = 0;
+
+            if (!CheckGetFieldSucceeds(definition, "addLightSource", true, false)) { failures++; }
+            if (!CheckGetFieldSucceeds(definition, "damageType", "d1", "d2")) { failures++; }
+            if (!CheckGetFieldThrows<EffectProxyDefinition, string>(definition, "damageType2")) { failures++; }
+            if (!CheckGetFieldThrows<EffectProxyDefinition, string>(null, "damageType2")) { failures++; }
+            if (!CheckGetFieldThrows<EffectProxyDefinition, bool>(definition, "damageType")) { failures++; }
+
+            Main.Log($"{failures} calls to GetField helpers failed");
+
+            bool CheckGetFieldSucceeds<T, V>(T entity, string fieldName, V v1, V v2)
+                where T : class
+                where V : IEquatable<V>
+            {
+                bool success = true;
+
+                try
+                {
+                    entity.SetField(fieldName, v1);
+
+                    if (!v1.Equals(entity.GetField<V>(fieldName)))
+                    {
+                        Main.Log($"GetField({fieldName}) failed.");
+                        success = false;
+                    }
+
+                    entity.SetField(fieldName, v2);
+
+                    if (!v2.Equals(entity.GetField<V>(fieldName)))
+                    {
+                        Main.Log($"GetField({fieldName}) failed.");
+                        success = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"GetField({fieldName}) failed. {ex.Message}.");
+                    success = false;
+                }
+
+                return success;
+            }
+
+            bool CheckGetFieldThrows<T, V>(T entity, string fieldName)
+                where T : class
+                where V : IEquatable<V>
+            {
+                bool success = false;
+
+                try
+                {
+                    entity.GetField<V>(fieldName);
+                    Main.Log($"GetField({fieldName}) failed. Did not throw exception.");
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"GetField({fieldName}) threw exception as expected. {ex.Message}.");
+                    success = true;
+                }
+
+                return success;
+            }
+
+            bool CheckSetFieldSucceeds<T, V>(T entity, string fieldName, V value) where T : class
+            {
+                bool success = false;
+
+                try
+                {
+                    entity.SetField(fieldName, value);
+
+                    success = true;
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"SetField({fieldName}) failed. {ex.Message}");
+                }
+
+                return success;
+            }
+
+            bool CheckSetFieldThrows<T, V>(T entity, string fieldName, V value) where T : class
+            {
+                bool success = false;
+
+                try
+                {
+                    entity.SetField(fieldName, value);
+
+                    Main.Log($"SetField({fieldName}) didn't throw.");
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"SetField({fieldName}) threw exception as expected. {ex.Message}.");
+                    success = true;
+                }
+
+                return success;
             }
         }
     }

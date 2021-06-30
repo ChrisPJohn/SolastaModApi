@@ -354,6 +354,16 @@ namespace SolastaModApi.Testing
             }
         }
 
+        class TestObj
+        {
+            public TestObj(string testValue)
+            {
+                TestProp = testValue;
+            }
+
+            protected string TestProp { get; set; }
+        }
+
         private static void CheckHelpers()
         {
             var definition = ScriptableObject.CreateInstance<EffectProxyDefinition>();
@@ -371,7 +381,6 @@ namespace SolastaModApi.Testing
 
             Main.Log($"{failures} calls to SetField helpers failed");
 
-            failures = 0;
 
             if (!CheckGetFieldSucceeds(definition, "addLightSource", true, false)) { failures++; }
             if (!CheckGetFieldSucceeds(definition, "damageType", "d1", "d2")) { failures++; }
@@ -380,6 +389,13 @@ namespace SolastaModApi.Testing
             if (!CheckGetFieldThrows<EffectProxyDefinition, bool>(definition, "damageType")) { failures++; }
 
             Main.Log($"{failures} calls to GetField helpers failed");
+
+            var testObj = new TestObj("Test value");
+
+            failures = 0;
+            if(!CheckSetPropertySucceeds(testObj, "TestProp", "Test 1")) { failures++; }
+            if(!CheckGetPropertySucceeds(testObj, "TestProp", "Test 1", "Test 2")) { failures++; }
+            Main.Log($"{failures} calls to Get/SetProperty helpers failed");
 
             bool CheckGetFieldSucceeds<T, V>(T entity, string fieldName, V v1, V v2)
                 where T : class
@@ -466,6 +482,66 @@ namespace SolastaModApi.Testing
                 {
                     Main.Log($"SetField({fieldName}) threw exception as expected. {ex.Message}.");
                     success = true;
+                }
+
+                return success;
+            }
+
+            bool CheckGetPropertySucceeds<T, V>(T entity, string propertyName, V v1, V v2)
+                where T : class
+                where V : IEquatable<V>
+            {
+                bool success = true;
+
+                try
+                {
+                    entity.SetProperty(propertyName, v1);
+
+                    if (!v1.Equals(entity.GetProperty<V>(propertyName)))
+                    {
+                        Main.Log($"GetProperty({propertyName}) failed.");
+                        success = false;
+                    }
+
+                    entity.SetProperty(propertyName, v2);
+
+                    if (!v2.Equals(entity.GetProperty<V>(propertyName)))
+                    {
+                        Main.Log($"GetProperty({propertyName}) failed.");
+                        success = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"GetProperty({propertyName}) failed. {ex.Message}.");
+                    success = false;
+                }
+
+                return success;
+            }
+
+            bool CheckSetPropertySucceeds<T, V>(T entity, string PropertyName, V value) 
+                where T : class
+                where V : IEquatable<V>
+            {
+                bool success = false;
+
+                try
+                {
+                    entity.SetProperty(PropertyName, value);
+
+                    if (!entity.GetProperty<V>(PropertyName).Equals(value))
+                    {
+                        Main.Log($"SetProperty({PropertyName}) failed.  Values differ.");
+                    }
+                    else
+                    {
+                        success = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Main.Log($"SetProperty({PropertyName}) failed. {ex.Message}");
                 }
 
                 return success;

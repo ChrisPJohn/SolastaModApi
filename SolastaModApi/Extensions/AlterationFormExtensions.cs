@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(AlterationForm))]
-    public static class AlterationFormExtensions
+    public static partial class AlterationFormExtensions
     {
         public static T SetAbilityScore<T>(this T entity, string value)
             where T : AlterationForm

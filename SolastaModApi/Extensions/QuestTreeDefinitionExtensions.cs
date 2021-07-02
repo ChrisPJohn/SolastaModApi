@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(QuestTreeDefinition))]
-    public static class QuestTreeDefinitionExtensions
+    public static partial class QuestTreeDefinitionExtensions
     {
         public static T SetSerializeVersion<T>(this T entity, int value)
             where T : QuestTreeDefinition

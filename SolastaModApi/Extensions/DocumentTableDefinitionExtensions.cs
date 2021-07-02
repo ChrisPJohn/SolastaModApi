@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DocumentTableDefinition))]
-    public static class DocumentTableDefinitionExtensions
+    public static partial class DocumentTableDefinitionExtensions
     {
         public static T SetHeaderHeight<T>(this T entity, float value)
             where T : DocumentTableDefinition

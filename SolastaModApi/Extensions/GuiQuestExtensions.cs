@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiQuest))]
-    public static class GuiQuestExtensions
+    public static partial class GuiQuestExtensions
     {
         public static T SetGameQuest<T>(this T entity, GameQuest value)
             where T : GuiQuest

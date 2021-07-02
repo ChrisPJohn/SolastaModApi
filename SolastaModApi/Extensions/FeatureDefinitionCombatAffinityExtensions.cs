@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionCombatAffinity))]
-    public static class FeatureDefinitionCombatAffinityExtensions
+    public static partial class FeatureDefinitionCombatAffinityExtensions
     {
         public static T SetAttackOfOpportunityImmunity<T>(this T entity, bool value)
             where T : FeatureDefinitionCombatAffinity

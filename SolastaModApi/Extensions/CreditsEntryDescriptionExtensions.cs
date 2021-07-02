@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CreditsEntryDescription))]
-    public static class CreditsEntryDescriptionExtensions
+    public static partial class CreditsEntryDescriptionExtensions
     {
         public static T SetImageHeight<T>(this T entity, float value)
             where T : CreditsEntryDescription

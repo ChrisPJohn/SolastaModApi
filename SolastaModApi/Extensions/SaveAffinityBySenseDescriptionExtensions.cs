@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SaveAffinityBySenseDescription))]
-    public static class SaveAffinityBySenseDescriptionExtensions
+    public static partial class SaveAffinityBySenseDescriptionExtensions
     {
         public static T SetAdvantageType<T>(this T entity, AdvantageType value)
             where T : SaveAffinityBySenseDescription

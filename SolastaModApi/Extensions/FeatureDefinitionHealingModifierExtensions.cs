@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionHealingModifier))]
-    public static class FeatureDefinitionHealingModifierExtensions
+    public static partial class FeatureDefinitionHealingModifierExtensions
     {
         public static T SetAddLevel<T>(this T entity, LevelSourceType value)
             where T : FeatureDefinitionHealingModifier

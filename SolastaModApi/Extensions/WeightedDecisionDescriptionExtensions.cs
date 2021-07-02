@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(WeightedDecisionDescription))]
-    public static class WeightedDecisionDescriptionExtensions
+    public static partial class WeightedDecisionDescriptionExtensions
     {
         public static T SetCooldown<T>(this T entity, int value)
             where T : WeightedDecisionDescription

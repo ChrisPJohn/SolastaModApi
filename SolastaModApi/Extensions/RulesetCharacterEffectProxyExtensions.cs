@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetCharacterEffectProxy))]
-    public static class RulesetCharacterEffectProxyExtensions
+    public static partial class RulesetCharacterEffectProxyExtensions
     {
         public static T SetAdditionalPersonalLightSourceAdded<T>(this T entity, RulesetCharacterEffectProxy.AdditionalPersonalLightSourceAddedHandler value)
             where T : RulesetCharacterEffectProxy

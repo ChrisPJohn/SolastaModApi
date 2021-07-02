@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SpellAIParameters))]
-    public static class SpellAIParametersExtensions
+    public static partial class SpellAIParametersExtensions
     {
         public static T SetLearnPriority<T>(this T entity, AIDefinitions.AIPriority value)
             where T : SpellAIParameters

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetActor))]
-    public static class RulesetActorExtensions
+    public static partial class RulesetActorExtensions
     {
         public static T SetAbilityScoreIncreased<T>(this T entity, RulesetActor.AbilityScoreIncreasedHandler value)
             where T : RulesetActor

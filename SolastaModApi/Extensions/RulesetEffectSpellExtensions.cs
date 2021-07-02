@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetEffectSpell))]
-    public static class RulesetEffectSpellExtensions
+    public static partial class RulesetEffectSpellExtensions
     {
         public static T SetCaster<T>(this T entity, RulesetCharacter value)
             where T : RulesetEffectSpell

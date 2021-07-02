@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionSocialAffinity))]
-    public static class FeatureDefinitionSocialAffinityExtensions
+    public static partial class FeatureDefinitionSocialAffinityExtensions
     {
         public static T SetOrganizationType<T>(this T entity, string value)
             where T : FeatureDefinitionSocialAffinity

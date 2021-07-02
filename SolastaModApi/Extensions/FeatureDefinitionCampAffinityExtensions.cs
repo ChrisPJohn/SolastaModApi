@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionCampAffinity))]
-    public static class FeatureDefinitionCampAffinityExtensions
+    public static partial class FeatureDefinitionCampAffinityExtensions
     {
         public static T SetAwakeWhenCampAttacked<T>(this T entity, bool value)
             where T : FeatureDefinitionCampAffinity

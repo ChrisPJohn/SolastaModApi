@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(BehaviorModeDescription))]
-    public static class BehaviorModeDescriptionExtensions
+    public static partial class BehaviorModeDescriptionExtensions
     {
         public static T SetBehaviour<T>(this T entity, RandomBehaviour value)
             where T : BehaviorModeDescription

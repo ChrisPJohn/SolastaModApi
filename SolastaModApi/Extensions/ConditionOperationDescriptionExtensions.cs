@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ConditionOperationDescription))]
-    public static class ConditionOperationDescriptionExtensions
+    public static partial class ConditionOperationDescriptionExtensions
     {
         public static T SetCanSaveToCancel<T>(this T entity, bool value)
             where T : ConditionOperationDescription

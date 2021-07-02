@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiSpellDefinition))]
-    public static class GuiSpellDefinitionExtensions
+    public static partial class GuiSpellDefinitionExtensions
     {
         public static T SetSpellDefinition<T>(this T entity, SpellDefinition value)
             where T : GuiSpellDefinition

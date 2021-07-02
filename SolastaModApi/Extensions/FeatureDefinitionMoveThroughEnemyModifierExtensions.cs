@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionMoveThroughEnemyModifier))]
-    public static class FeatureDefinitionMoveThroughEnemyModifierExtensions
+    public static partial class FeatureDefinitionMoveThroughEnemyModifierExtensions
     {
         public static T SetMinSizeDifference<T>(this T entity, int value)
             where T : FeatureDefinitionMoveThroughEnemyModifier

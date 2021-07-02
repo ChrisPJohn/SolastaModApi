@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureAdvancedMagicParameters))]
-    public static class TooltipFeatureAdvancedMagicParametersExtensions
+    public static partial class TooltipFeatureAdvancedMagicParametersExtensions
     {
         public static T SetAdvancedImage<T>(this T entity, Image value)
             where T : TooltipFeatureAdvancedMagicParameters

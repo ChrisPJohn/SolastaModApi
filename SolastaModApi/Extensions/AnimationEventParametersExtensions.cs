@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(AnimationEventParameters))]
-    public static class AnimationEventParametersExtensions
+    public static partial class AnimationEventParametersExtensions
     {
         public static T SetAudioEvent<T>(this T entity, AK.Wwise.Event value)
             where T : AnimationEventParameters

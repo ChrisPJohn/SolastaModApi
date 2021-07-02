@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureRecipeParameters))]
-    public static class TooltipFeatureRecipeParametersExtensions
+    public static partial class TooltipFeatureRecipeParametersExtensions
     {
         public static T SetCraftingDCLabel<T>(this T entity, GuiLabel value)
             where T : TooltipFeatureRecipeParameters

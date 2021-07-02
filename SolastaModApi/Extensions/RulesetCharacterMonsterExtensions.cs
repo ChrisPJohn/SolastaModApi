@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetCharacterMonster))]
-    public static class RulesetCharacterMonsterExtensions
+    public static partial class RulesetCharacterMonsterExtensions
     {
         public static T SetBodyAssetPrefix<T>(this T entity, string value)
             where T : RulesetCharacterMonster

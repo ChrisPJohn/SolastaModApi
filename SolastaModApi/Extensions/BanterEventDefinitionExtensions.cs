@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(BanterEventDefinition))]
-    public static class BanterEventDefinitionExtensions
+    public static partial class BanterEventDefinitionExtensions
     {
         public static T SetCanUseWhileCautious<T>(this T entity, bool value)
             where T : BanterEventDefinition

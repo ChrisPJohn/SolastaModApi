@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterBackgroundDefinition))]
-    public static class CharacterBackgroundDefinitionExtensions
+    public static partial class CharacterBackgroundDefinitionExtensions
     {
         public static T SetBanterList<T>(this T entity, BanterList value)
             where T : CharacterBackgroundDefinition

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionDamageAffinity))]
-    public static class FeatureDefinitionDamageAffinityExtensions
+    public static partial class FeatureDefinitionDamageAffinityExtensions
     {
         public static T SetDamageAffinityType<T>(this T entity, DamageAffinityType value)
             where T : FeatureDefinitionDamageAffinity

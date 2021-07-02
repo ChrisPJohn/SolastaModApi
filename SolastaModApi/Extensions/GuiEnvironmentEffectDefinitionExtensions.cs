@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiEnvironmentEffectDefinition))]
-    public static class GuiEnvironmentEffectDefinitionExtensions
+    public static partial class GuiEnvironmentEffectDefinitionExtensions
     {
         public static T SetEnvironmentEffectDefinition<T>(this T entity, EnvironmentEffectDefinition value)
             where T : GuiEnvironmentEffectDefinition

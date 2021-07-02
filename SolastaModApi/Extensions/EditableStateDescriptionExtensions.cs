@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EditableStateDescription))]
-    public static class EditableStateDescriptionExtensions
+    public static partial class EditableStateDescriptionExtensions
     {
         public static T SetIndex<T>(this T entity, int value)
             where T : EditableStateDescription

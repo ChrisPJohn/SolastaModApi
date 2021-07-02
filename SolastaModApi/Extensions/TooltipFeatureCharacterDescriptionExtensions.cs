@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureCharacterDescription))]
-    public static class TooltipFeatureCharacterDescriptionExtensions
+    public static partial class TooltipFeatureCharacterDescriptionExtensions
     {
         public static T SetActionLabel<T>(this T entity, GuiLabel value)
             where T : TooltipFeatureCharacterDescription

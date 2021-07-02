@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(QuestOutcomeDescription))]
-    public static class QuestOutcomeDescriptionExtensions
+    public static partial class QuestOutcomeDescriptionExtensions
     {
         public static T SetValidatorDescription<T>(this T entity, QuestValidatorDescription value)
             where T : QuestOutcomeDescription

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MoviePlaybackDefinition))]
-    public static class MoviePlaybackDefinitionExtensions
+    public static partial class MoviePlaybackDefinitionExtensions
     {
         public static T SetMovieFilename<T>(this T entity, string value)
             where T : MoviePlaybackDefinition

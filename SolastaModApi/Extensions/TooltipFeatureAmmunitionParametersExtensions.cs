@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureAmmunitionParameters))]
-    public static class TooltipFeatureAmmunitionParametersExtensions
+    public static partial class TooltipFeatureAmmunitionParametersExtensions
     {
         public static T SetDescriptionLabel<T>(this T entity, GuiLabel value)
             where T : TooltipFeatureAmmunitionParameters

@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LocationDefinition))]
-    public static class LocationDefinitionExtensions
+    public static partial class LocationDefinitionExtensions
     {
         public static T SetAlwaysHidden<T>(this T entity, bool value)
             where T : LocationDefinition

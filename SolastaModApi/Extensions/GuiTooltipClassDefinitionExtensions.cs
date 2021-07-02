@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiTooltipClassDefinition))]
-    public static class GuiTooltipClassDefinitionExtensions
+    public static partial class GuiTooltipClassDefinitionExtensions
     {
         public static T SetPanelWidth<T>(this T entity, float value)
             where T : GuiTooltipClassDefinition

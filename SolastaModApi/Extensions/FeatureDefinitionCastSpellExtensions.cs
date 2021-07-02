@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionCastSpell))]
-    public static class FeatureDefinitionCastSpellExtensions
+    public static partial class FeatureDefinitionCastSpellExtensions
     {
         public static T SetSlotsRecharge<T>(this T entity, RechargeRate value)
             where T : FeatureDefinitionCastSpell

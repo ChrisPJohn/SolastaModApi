@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionTerrainTypeAffinity))]
-    public static class FeatureDefinitionTerrainTypeAffinityExtensions
+    public static partial class FeatureDefinitionTerrainTypeAffinityExtensions
     {
         public static T SetFoodYieldMultiplier<T>(this T entity, float value)
             where T : FeatureDefinitionTerrainTypeAffinity

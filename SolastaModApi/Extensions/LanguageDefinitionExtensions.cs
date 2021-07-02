@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LanguageDefinition))]
-    public static class LanguageDefinitionExtensions
+    public static partial class LanguageDefinitionExtensions
     {
         public static T SetPersonalityAdditiveBase<T>(this T entity, int value)
             where T : LanguageDefinition

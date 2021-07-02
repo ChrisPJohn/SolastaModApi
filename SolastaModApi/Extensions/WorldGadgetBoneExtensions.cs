@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(WorldGadgetBone))]
-    public static class WorldGadgetBoneExtensions
+    public static partial class WorldGadgetBoneExtensions
     {
         public static T SetBoneType<T>(this T entity, GadgetDefinitions.BoneType value)
             where T : WorldGadgetBone

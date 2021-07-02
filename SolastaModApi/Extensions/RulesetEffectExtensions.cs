@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetEffect))]
-    public static class RulesetEffectExtensions
+    public static partial class RulesetEffectExtensions
     {
         public static T SetConditionTrackingStarted<T>(this T entity, RulesetEffect.ConditionTrackingStartedHandler value)
             where T : RulesetEffect

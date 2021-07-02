@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterFamilyDefinition))]
-    public static class CharacterFamilyDefinitionExtensions
+    public static partial class CharacterFamilyDefinitionExtensions
     {
         public static T SetExtraplanar<T>(this T entity, bool value)
             where T : CharacterFamilyDefinition

@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DieStyleDefinition))]
-    public static class DieStyleDefinitionExtensions
+    public static partial class DieStyleDefinitionExtensions
     {
         public static T SetD10MaterialReference<T>(this T entity, AssetReference value)
             where T : DieStyleDefinition

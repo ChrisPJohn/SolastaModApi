@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ConditionForm))]
-    public static class ConditionFormExtensions
+    public static partial class ConditionFormExtensions
     {
         public static T SetApplyToSelf<T>(this T entity, bool value)
             where T : ConditionForm

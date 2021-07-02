@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterOccurenceDescription))]
-    public static class MonsterOccurenceDescriptionExtensions
+    public static partial class MonsterOccurenceDescriptionExtensions
     {
         public static T SetCreatureSex<T>(this T entity, GadgetDefinitions.CreatureSex value)
             where T : MonsterOccurenceDescription

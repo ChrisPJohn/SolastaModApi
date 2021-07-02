@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CalendarDefinition))]
-    public static class CalendarDefinitionExtensions
+    public static partial class CalendarDefinitionExtensions
     {
         public static T SetDaysPerMonth<T>(this T entity, int value)
             where T : CalendarDefinition

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ItemPropertyForm))]
-    public static class ItemPropertyFormExtensions
+    public static partial class ItemPropertyFormExtensions
     {
         public static T SetUsageLimitation<T>(this T entity, ItemPropertyUsage value)
             where T : ItemPropertyForm

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SkillDefinition))]
-    public static class SkillDefinitionExtensions
+    public static partial class SkillDefinitionExtensions
     {
         public static T SetAbilityScore<T>(this T entity, string value)
             where T : SkillDefinition

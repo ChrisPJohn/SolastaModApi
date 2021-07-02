@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LootableContainerDefinition))]
-    public static class LootableContainerDefinitionExtensions
+    public static partial class LootableContainerDefinitionExtensions
     {
         public static T SetContentAlwaysKnown<T>(this T entity, bool value)
             where T : LootableContainerDefinition

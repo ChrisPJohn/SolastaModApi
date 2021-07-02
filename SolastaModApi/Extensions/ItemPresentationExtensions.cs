@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ItemPresentation))]
-    public static class ItemPresentationExtensions
+    public static partial class ItemPresentationExtensions
     {
         public static T SetArmorAddressableName<T>(this T entity, string value)
             where T : ItemPresentation

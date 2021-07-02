@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EncounterDefinition))]
-    public static class EncounterDefinitionExtensions
+    public static partial class EncounterDefinitionExtensions
     {
         public static T SetChallengeRating<T>(this T entity, int value)
             where T : EncounterDefinition

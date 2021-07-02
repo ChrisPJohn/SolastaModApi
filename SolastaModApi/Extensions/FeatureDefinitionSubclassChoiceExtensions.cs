@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionSubclassChoice))]
-    public static class FeatureDefinitionSubclassChoiceExtensions
+    public static partial class FeatureDefinitionSubclassChoiceExtensions
     {
         public static T SetFilterByDeity<T>(this T entity, bool value)
             where T : FeatureDefinitionSubclassChoice

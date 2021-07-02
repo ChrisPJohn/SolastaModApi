@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(WeightedConsiderationDescription))]
-    public static class WeightedConsiderationDescriptionExtensions
+    public static partial class WeightedConsiderationDescriptionExtensions
     {
         public static T SetConsideration<T>(this T entity, ConsiderationDefinition value)
             where T : WeightedConsiderationDescription

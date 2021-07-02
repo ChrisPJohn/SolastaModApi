@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DeviceFunctionDescription))]
-    public static class DeviceFunctionDescriptionExtensions
+    public static partial class DeviceFunctionDescriptionExtensions
     {
         public static T SetCanOverchargeSpell<T>(this T entity, bool value)
             where T : DeviceFunctionDescription

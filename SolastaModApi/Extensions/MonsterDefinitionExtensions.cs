@@ -12,7 +12,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterDefinition))]
-    public static class MonsterDefinitionExtensions
+    public static partial class MonsterDefinitionExtensions
     {
         public static T SetAbilityScores<T>(this T entity, int[] value)
             where T : MonsterDefinition

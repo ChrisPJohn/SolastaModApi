@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SoundEffectOnHitDescription))]
-    public static class SoundEffectOnHitDescriptionExtensions
+    public static partial class SoundEffectOnHitDescriptionExtensions
     {
         public static T SetSwitchOnHit<T>(this T entity, Switch value)
             where T : SoundEffectOnHitDescription

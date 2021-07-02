@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiActiveCondition))]
-    public static class GuiActiveConditionExtensions
+    public static partial class GuiActiveConditionExtensions
     {
         public static T SetActiveCondition<T>(this T entity, RulesetCondition value)
             where T : GuiActiveCondition

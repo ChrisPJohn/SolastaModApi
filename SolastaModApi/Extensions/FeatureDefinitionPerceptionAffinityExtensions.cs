@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionPerceptionAffinity))]
-    public static class FeatureDefinitionPerceptionAffinityExtensions
+    public static partial class FeatureDefinitionPerceptionAffinityExtensions
     {
         public static T SetCannotBeSurprised<T>(this T entity, bool value)
             where T : FeatureDefinitionPerceptionAffinity

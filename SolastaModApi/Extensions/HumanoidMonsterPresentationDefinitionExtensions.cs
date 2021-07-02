@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(HumanoidMonsterPresentationDefinition))]
-    public static class HumanoidMonsterPresentationDefinitionExtensions
+    public static partial class HumanoidMonsterPresentationDefinitionExtensions
     {
         public static T SetAgeMorphotypeValue<T>(this T entity, float value)
             where T : HumanoidMonsterPresentationDefinition

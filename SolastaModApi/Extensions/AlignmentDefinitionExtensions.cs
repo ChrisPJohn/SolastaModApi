@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(AlignmentDefinition))]
-    public static class AlignmentDefinitionExtensions
+    public static partial class AlignmentDefinitionExtensions
     {
         public static T SetGoodnessAxis<T>(this T entity, int value)
             where T : AlignmentDefinition

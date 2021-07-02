@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SlotTypeDefinition))]
-    public static class SlotTypeDefinitionExtensions
+    public static partial class SlotTypeDefinitionExtensions
     {
         public static T SetAlwaysLocked<T>(this T entity, bool value)
             where T : SlotTypeDefinition

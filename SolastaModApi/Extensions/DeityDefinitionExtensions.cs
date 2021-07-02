@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DeityDefinition))]
-    public static class DeityDefinitionExtensions
+    public static partial class DeityDefinitionExtensions
     {
         public static T SetAlignment<T>(this T entity, string value)
             where T : DeityDefinition

@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(VoiceDefinition))]
-    public static class VoiceDefinitionExtensions
+    public static partial class VoiceDefinitionExtensions
     {
         public static T SetAmplitude<T>(this T entity, float value)
             where T : VoiceDefinition

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MerchantDefinition))]
-    public static class MerchantDefinitionExtensions
+    public static partial class MerchantDefinitionExtensions
     {
         public static T SetBuyBackPercent<T>(this T entity, int value)
             where T : MerchantDefinition

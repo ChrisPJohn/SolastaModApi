@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SubtitleOccurenceDescription))]
-    public static class SubtitleOccurenceDescriptionExtensions
+    public static partial class SubtitleOccurenceDescriptionExtensions
     {
         public static T SetEndSecond<T>(this T entity, float value)
             where T : SubtitleOccurenceDescription

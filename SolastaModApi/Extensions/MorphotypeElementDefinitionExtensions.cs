@@ -11,7 +11,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MorphotypeElementDefinition))]
-    public static class MorphotypeElementDefinitionExtensions
+    public static partial class MorphotypeElementDefinitionExtensions
     {
         public static T SetCategory<T>(this T entity, ElementCategory value)
             where T : MorphotypeElementDefinition

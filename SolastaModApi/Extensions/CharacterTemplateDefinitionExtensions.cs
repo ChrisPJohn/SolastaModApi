@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterTemplateDefinition))]
-    public static class CharacterTemplateDefinitionExtensions
+    public static partial class CharacterTemplateDefinitionExtensions
     {
         public static T SetAbilityScores<T>(this T entity, int[] value)
             where T : CharacterTemplateDefinition

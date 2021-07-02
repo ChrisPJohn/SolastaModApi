@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionFactionChange))]
-    public static class FeatureDefinitionFactionChangeExtensions
+    public static partial class FeatureDefinitionFactionChangeExtensions
     {
         public static T SetChangeMode<T>(this T entity, FeatureDefinitionFactionChange.Mode value)
             where T : FeatureDefinitionFactionChange

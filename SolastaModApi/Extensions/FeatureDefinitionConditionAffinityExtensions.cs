@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionConditionAffinity))]
-    public static class FeatureDefinitionConditionAffinityExtensions
+    public static partial class FeatureDefinitionConditionAffinityExtensions
     {
         public static T SetConditionAffinityType<T>(this T entity, ConditionAffinityType value)
             where T : FeatureDefinitionConditionAffinity

@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiCharacterAction))]
-    public static class GuiCharacterActionExtensions
+    public static partial class GuiCharacterActionExtensions
     {
         public static T SetActingCharacter<T>(this T entity, GameLocationCharacter value)
             where T : GuiCharacterAction

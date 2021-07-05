@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EmbeddedGadgetDescription))]
-    public static class EmbeddedGadgetDescriptionExtensions
+    public static partial class EmbeddedGadgetDescriptionExtensions
     {
         public static T SetGadgetBlueprint<T>(this T entity, GadgetBlueprint value)
             where T : EmbeddedGadgetDescription

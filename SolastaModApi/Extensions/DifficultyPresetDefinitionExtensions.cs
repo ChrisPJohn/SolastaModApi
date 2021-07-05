@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DifficultyPresetDefinition))]
-    public static class DifficultyPresetDefinitionExtensions
+    public static partial class DifficultyPresetDefinitionExtensions
     {
         public static T SetAbilityCheckAllyModifier<T>(this T entity, int value)
             where T : DifficultyPresetDefinition

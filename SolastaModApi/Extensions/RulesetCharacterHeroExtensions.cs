@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetCharacterHero))]
-    public static class RulesetCharacterHeroExtensions
+    public static partial class RulesetCharacterHeroExtensions
     {
         public static T SetAlignmentDefinition<T>(this T entity, AlignmentDefinition value)
             where T : RulesetCharacterHero

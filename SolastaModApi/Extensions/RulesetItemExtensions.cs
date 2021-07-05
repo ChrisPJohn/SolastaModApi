@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetItem))]
-    public static class RulesetItemExtensions
+    public static partial class RulesetItemExtensions
     {
         public static T SetGains<T>(this T entity, int[] value)
             where T : RulesetItem

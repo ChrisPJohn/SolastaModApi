@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectDescription))]
-    public static class EffectDescriptionExtensions
+    public static partial class EffectDescriptionExtensions
     {
         public static T SetAnimationMagicEffect<T>(this T entity, AnimationMagicEffect value)
             where T : EffectDescription

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TravelEventDefinition))]
-    public static class TravelEventDefinitionExtensions
+    public static partial class TravelEventDefinitionExtensions
     {
         public static T SetCooldownValue<T>(this T entity, int value)
             where T : TravelEventDefinition

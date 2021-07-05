@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TutorialTableDefinition))]
-    public static class TutorialTableDefinitionExtensions
+    public static partial class TutorialTableDefinitionExtensions
     {
         public static T SetSectionLineHeight<T>(this T entity, float value)
             where T : TutorialTableDefinition

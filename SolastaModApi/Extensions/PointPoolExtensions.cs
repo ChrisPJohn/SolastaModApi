@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(PointPool))]
-    public static class PointPoolExtensions
+    public static partial class PointPoolExtensions
     {
         public static T SetUniqueChoices<T>(this T entity, bool value)
             where T : PointPool

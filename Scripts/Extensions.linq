@@ -165,7 +165,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 			);
 
 	var cd = ClassDeclaration($"{t.Name}Extensions")
-		.AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
+		.AddModifiers(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword), Token(SyntaxKind.PartialKeyword))
 		.AddAttributeLists(GetALS(t.Name));
 		//.WithLeadingTrivia(GetClassComment($"{t.Name}Extensions"));
 

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FactionRelicDescription))]
-    public static class FactionRelicDescriptionExtensions
+    public static partial class FactionRelicDescriptionExtensions
     {
         public static T SetLoreValue<T>(this T entity, int value)
             where T : FactionRelicDescription

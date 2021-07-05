@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiMonsterDefinition))]
-    public static class GuiMonsterDefinitionExtensions
+    public static partial class GuiMonsterDefinitionExtensions
     {
         public static T SetMonsterDefinition<T>(this T entity, MonsterDefinition value)
             where T : GuiMonsterDefinition

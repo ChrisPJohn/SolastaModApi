@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiEquipmentItem))]
-    public static class GuiEquipmentItemExtensions
+    public static partial class GuiEquipmentItemExtensions
     {
         public static T SetCompareason<T>(this T entity, bool value)
             where T : GuiEquipmentItem

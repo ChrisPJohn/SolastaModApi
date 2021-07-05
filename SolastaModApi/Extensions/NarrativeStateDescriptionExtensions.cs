@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(NarrativeStateDescription))]
-    public static class NarrativeStateDescriptionExtensions
+    public static partial class NarrativeStateDescriptionExtensions
     {
         public static T SetItemGainDescription<T>(this T entity, ItemGainDescription value)
             where T : NarrativeStateDescription

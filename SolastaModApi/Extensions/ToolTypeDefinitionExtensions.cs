@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ToolTypeDefinition))]
-    public static class ToolTypeDefinitionExtensions
+    public static partial class ToolTypeDefinitionExtensions
     {
         public static T SetHasParentCategory<T>(this T entity, bool value)
             where T : ToolTypeDefinition

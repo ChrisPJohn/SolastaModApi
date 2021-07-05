@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionAdditionalDamage))]
-    public static class FeatureDefinitionAdditionalDamageExtensions
+    public static partial class FeatureDefinitionAdditionalDamageExtensions
     {
         public static T SetAdditionalDamageType<T>(this T entity, AdditionalDamageType value)
             where T : FeatureDefinitionAdditionalDamage

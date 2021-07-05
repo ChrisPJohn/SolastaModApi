@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LegendaryActionDescription))]
-    public static class LegendaryActionDescriptionExtensions
+    public static partial class LegendaryActionDescriptionExtensions
     {
         public static T SetCanMove<T>(this T entity, bool value)
             where T : LegendaryActionDescription

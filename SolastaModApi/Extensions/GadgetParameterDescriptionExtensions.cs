@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GadgetParameterDescription))]
-    public static class GadgetParameterDescriptionExtensions
+    public static partial class GadgetParameterDescriptionExtensions
     {
         public static T SetBoolDefaultValue<T>(this T entity, bool value)
             where T : GadgetParameterDescription

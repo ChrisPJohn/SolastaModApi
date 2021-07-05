@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(IngredientLootDescription))]
-    public static class IngredientLootDescriptionExtensions
+    public static partial class IngredientLootDescriptionExtensions
     {
         public static T SetCheckDC<T>(this T entity, int value)
             where T : IngredientLootDescription

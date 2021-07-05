@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectForm))]
-    public static class EffectFormExtensions
+    public static partial class EffectFormExtensions
     {
         public static T SetAlterationForm<T>(this T entity, AlterationForm value)
             where T : EffectForm

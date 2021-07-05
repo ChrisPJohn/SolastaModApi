@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RecipeDefinition))]
-    public static class RecipeDefinitionExtensions
+    public static partial class RecipeDefinitionExtensions
     {
         public static T SetCraftedItem<T>(this T entity, ItemDefinition value)
             where T : RecipeDefinition

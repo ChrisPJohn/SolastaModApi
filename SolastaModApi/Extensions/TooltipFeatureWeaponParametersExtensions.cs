@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureWeaponParameters))]
-    public static class TooltipFeatureWeaponParametersExtensions
+    public static partial class TooltipFeatureWeaponParametersExtensions
     {
         public static T SetAttackModifiersTable<T>(this T entity, RectTransform value)
             where T : TooltipFeatureWeaponParameters

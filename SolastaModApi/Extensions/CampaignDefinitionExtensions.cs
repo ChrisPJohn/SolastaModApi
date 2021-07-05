@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CampaignDefinition))]
-    public static class CampaignDefinitionExtensions
+    public static partial class CampaignDefinitionExtensions
     {
         public static T SetCalendar<T>(this T entity, CalendarDefinition value)
             where T : CampaignDefinition

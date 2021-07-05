@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DocumentDescription))]
-    public static class DocumentDescriptionExtensions
+    public static partial class DocumentDescriptionExtensions
     {
         public static T SetDestroyAfterReading<T>(this T entity, bool value)
             where T : DocumentDescription

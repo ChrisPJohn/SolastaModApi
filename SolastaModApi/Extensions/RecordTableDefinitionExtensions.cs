@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RecordTableDefinition))]
-    public static class RecordTableDefinitionExtensions
+    public static partial class RecordTableDefinitionExtensions
     {
         public static T SetAreaWidth<T>(this T entity, float value)
             where T : RecordTableDefinition

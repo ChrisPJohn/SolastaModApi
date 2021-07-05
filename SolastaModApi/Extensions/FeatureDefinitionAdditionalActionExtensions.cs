@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionAdditionalAction))]
-    public static class FeatureDefinitionAdditionalActionExtensions
+    public static partial class FeatureDefinitionAdditionalActionExtensions
     {
         public static T SetActionType<T>(this T entity, ActionType value)
             where T : FeatureDefinitionAdditionalAction

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(BaseDefinition))]
-    public static class BaseDefinitionExtensions
+    public static partial class BaseDefinitionExtensions
     {
         public static T SetCachedName<T>(this T entity, string value)
             where T : BaseDefinition

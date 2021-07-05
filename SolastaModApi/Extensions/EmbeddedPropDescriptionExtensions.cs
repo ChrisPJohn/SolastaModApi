@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EmbeddedPropDescription))]
-    public static class EmbeddedPropDescriptionExtensions
+    public static partial class EmbeddedPropDescriptionExtensions
     {
         public static T SetOrientation<T>(this T entity, LocationDefinitions.Orientation value)
             where T : EmbeddedPropDescription

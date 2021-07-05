@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterRaceDefinition))]
-    public static class CharacterRaceDefinitionExtensions
+    public static partial class CharacterRaceDefinitionExtensions
     {
         public static T SetAudioRaceRTPCValue<T>(this T entity, float value)
             where T : CharacterRaceDefinition

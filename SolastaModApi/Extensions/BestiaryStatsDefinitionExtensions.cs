@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(BestiaryStatsDefinition))]
-    public static class BestiaryStatsDefinitionExtensions
+    public static partial class BestiaryStatsDefinitionExtensions
     {
         public static T SetLineHeight<T>(this T entity, float value)
             where T : BestiaryStatsDefinition

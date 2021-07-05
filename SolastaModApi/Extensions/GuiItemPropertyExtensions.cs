@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiItemProperty))]
-    public static class GuiItemPropertyExtensions
+    public static partial class GuiItemPropertyExtensions
     {
         public static T SetItemProperty<T>(this T entity, RulesetItemProperty value)
             where T : GuiItemProperty

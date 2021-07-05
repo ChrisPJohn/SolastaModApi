@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SpellListDefinition))]
-    public static class SpellListDefinitionExtensions
+    public static partial class SpellListDefinitionExtensions
     {
         public static T SetHasCantrips<T>(this T entity, bool value)
             where T : SpellListDefinition

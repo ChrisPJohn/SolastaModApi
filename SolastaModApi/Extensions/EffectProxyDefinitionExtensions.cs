@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectProxyDefinition))]
-    public static class EffectProxyDefinitionExtensions
+    public static partial class EffectProxyDefinitionExtensions
     {
         public static T SetActionId<T>(this T entity, Id value)
             where T : EffectProxyDefinition

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ArmorCategoryDefinition))]
-    public static class ArmorCategoryDefinitionExtensions
+    public static partial class ArmorCategoryDefinitionExtensions
     {
         public static T SetForbidsNegativeDexterityBonus<T>(this T entity, bool value)
             where T : ArmorCategoryDefinition

@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RacePresentation))]
-    public static class RacePresentationExtensions
+    public static partial class RacePresentationExtensions
     {
         public static T SetBodyAssetPrefix<T>(this T entity, string value)
             where T : RacePresentation

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DivinationForm))]
-    public static class DivinationFormExtensions
+    public static partial class DivinationFormExtensions
     {
         public static T SetDivinationType<T>(this T entity, DivinationForm.Type value)
             where T : DivinationForm

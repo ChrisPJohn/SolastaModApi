@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiFactionDefinition))]
-    public static class GuiFactionDefinitionExtensions
+    public static partial class GuiFactionDefinitionExtensions
     {
         public static T SetFactionDefinition<T>(this T entity, FactionDefinition value)
             where T : GuiFactionDefinition

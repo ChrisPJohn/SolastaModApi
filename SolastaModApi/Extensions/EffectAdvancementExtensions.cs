@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectAdvancement))]
-    public static class EffectAdvancementExtensions
+    public static partial class EffectAdvancementExtensions
     {
         public static T SetAdditionalDicePerIncrement<T>(this T entity, int value)
             where T : EffectAdvancement

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LocationPresentation))]
-    public static class LocationPresentationExtensions
+    public static partial class LocationPresentationExtensions
     {
         public static T SetExploredDescription<T>(this T entity, string value)
             where T : LocationPresentation

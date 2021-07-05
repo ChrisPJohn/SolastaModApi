@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SoundEffectDescription))]
-    public static class SoundEffectDescriptionExtensions
+    public static partial class SoundEffectDescriptionExtensions
     {
         public static T SetGuiPickBody<T>(this T entity, AK.Wwise.Event value)
             where T : SoundEffectDescription

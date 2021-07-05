@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(StageDefinition))]
-    public static class StageDefinitionExtensions
+    public static partial class StageDefinitionExtensions
     {
         public static T SetAddAudioCharacter<T>(this T entity, bool value)
             where T : StageDefinition

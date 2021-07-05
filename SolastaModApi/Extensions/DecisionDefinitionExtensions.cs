@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DecisionDefinition))]
-    public static class DecisionDefinitionExtensions
+    public static partial class DecisionDefinitionExtensions
     {
         public static T SetDecision<T>(this T entity, DecisionDescription value)
             where T : DecisionDefinition

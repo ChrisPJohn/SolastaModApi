@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SpellDefinition))]
-    public static class SpellDefinitionExtensions
+    public static partial class SpellDefinitionExtensions
     {
         public static T SetAiParameters<T>(this T entity, SpellAIParameters value)
             where T : SpellDefinition

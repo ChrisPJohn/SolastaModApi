@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeaturePowerParameters))]
-    public static class TooltipFeaturePowerParametersExtensions
+    public static partial class TooltipFeaturePowerParametersExtensions
     {
         public static T SetActivationTimeLabel<T>(this T entity, GuiLabel value)
             where T : TooltipFeaturePowerParameters

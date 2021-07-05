@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MerchantCategoryDefinition))]
-    public static class MerchantCategoryDefinitionExtensions
+    public static partial class MerchantCategoryDefinitionExtensions
     {
         public static T SetAssignableToItem<T>(this T entity, bool value)
             where T : MerchantCategoryDefinition

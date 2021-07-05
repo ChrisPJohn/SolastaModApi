@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionFactionAffinity))]
-    public static class FeatureDefinitionFactionAffinityExtensions
+    public static partial class FeatureDefinitionFactionAffinityExtensions
     {
         public static T SetOperation<T>(this T entity, FactionOperationDescription value)
             where T : FeatureDefinitionFactionAffinity

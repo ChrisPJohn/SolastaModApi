@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FightingStyleDefinition))]
-    public static class FightingStyleDefinitionExtensions
+    public static partial class FightingStyleDefinitionExtensions
     {
         public static T SetCondition<T>(this T entity, FightingStyleDefinition.TriggerCondition value)
             where T : FightingStyleDefinition

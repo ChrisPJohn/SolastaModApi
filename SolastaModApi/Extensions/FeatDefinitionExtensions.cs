@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatDefinition))]
-    public static class FeatDefinitionExtensions
+    public static partial class FeatDefinitionExtensions
     {
         public static T SetArmorProficiencyCategory<T>(this T entity, string value)
             where T : FeatDefinition

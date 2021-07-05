@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterActionItemForm))]
-    public static class CharacterActionItemFormExtensions
+    public static partial class CharacterActionItemFormExtensions
     {
         public static T SetActionActivated<T>(this T entity, CharacterActionItemForm.ActionActivatedHandler value)
             where T : CharacterActionItemForm

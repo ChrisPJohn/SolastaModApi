@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FocusItemDescription))]
-    public static class FocusItemDescriptionExtensions
+    public static partial class FocusItemDescriptionExtensions
     {
         public static T SetFocusType<T>(this T entity, EquipmentDefinitions.FocusType value)
             where T : FocusItemDescription

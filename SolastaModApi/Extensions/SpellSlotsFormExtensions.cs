@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SpellSlotsForm))]
-    public static class SpellSlotsFormExtensions
+    public static partial class SpellSlotsFormExtensions
     {
         public static T SetMaxSlotLevel<T>(this T entity, int value)
             where T : SpellSlotsForm

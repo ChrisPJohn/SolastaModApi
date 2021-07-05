@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionAutoPreparedSpells))]
-    public static class FeatureDefinitionAutoPreparedSpellsExtensions
+    public static partial class FeatureDefinitionAutoPreparedSpellsExtensions
     {
         public static T SetSpellcastingClass<T>(this T entity, CharacterClassDefinition value)
             where T : FeatureDefinitionAutoPreparedSpells

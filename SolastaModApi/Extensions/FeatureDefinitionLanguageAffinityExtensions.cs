@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionLanguageAffinity))]
-    public static class FeatureDefinitionLanguageAffinityExtensions
+    public static partial class FeatureDefinitionLanguageAffinityExtensions
     {
         public static T SetUniversalReader<T>(this T entity, bool value)
             where T : FeatureDefinitionLanguageAffinity

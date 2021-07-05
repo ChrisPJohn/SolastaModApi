@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiPowerDefinition))]
-    public static class GuiPowerDefinitionExtensions
+    public static partial class GuiPowerDefinitionExtensions
     {
         public static T SetPowerDefinition<T>(this T entity, FeatureDefinitionPower value)
             where T : GuiPowerDefinition

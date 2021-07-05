@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ItemDefinition))]
-    public static class ItemDefinitionExtensions
+    public static partial class ItemDefinitionExtensions
     {
         public static T SetActiveOnGround<T>(this T entity, bool value)
             where T : ItemDefinition

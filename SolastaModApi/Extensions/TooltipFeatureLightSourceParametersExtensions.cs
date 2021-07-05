@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureLightSourceParameters))]
-    public static class TooltipFeatureLightSourceParametersExtensions
+    public static partial class TooltipFeatureLightSourceParametersExtensions
     {
         public static T SetDescriptionLabel<T>(this T entity, GuiLabel value)
             where T : TooltipFeatureLightSourceParameters

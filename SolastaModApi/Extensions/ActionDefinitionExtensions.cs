@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ActionDefinition))]
-    public static class ActionDefinitionExtensions
+    public static partial class ActionDefinitionExtensions
     {
         public static T SetAbilityScore<T>(this T entity, string value)
             where T : ActionDefinition

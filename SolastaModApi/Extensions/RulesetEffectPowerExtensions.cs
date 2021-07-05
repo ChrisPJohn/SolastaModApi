@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetEffectPower))]
-    public static class RulesetEffectPowerExtensions
+    public static partial class RulesetEffectPowerExtensions
     {
         public static T SetOriginItem<T>(this T entity, RulesetItemDevice value)
             where T : RulesetEffectPower

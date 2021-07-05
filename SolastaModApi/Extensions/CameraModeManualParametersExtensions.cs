@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CameraModeManualParameters))]
-    public static class CameraModeManualParametersExtensions
+    public static partial class CameraModeManualParametersExtensions
     {
         public static T SetBoundsSource<T>(this T entity, CameraController.CameraBoundsSource value)
             where T : CameraModeManualParameters

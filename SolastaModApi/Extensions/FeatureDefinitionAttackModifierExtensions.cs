@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionAttackModifier))]
-    public static class FeatureDefinitionAttackModifierExtensions
+    public static partial class FeatureDefinitionAttackModifierExtensions
     {
         public static T SetAdditionalAttackTag<T>(this T entity, string value)
             where T : FeatureDefinitionAttackModifier

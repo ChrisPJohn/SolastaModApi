@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionMoveMode))]
-    public static class FeatureDefinitionMoveModeExtensions
+    public static partial class FeatureDefinitionMoveModeExtensions
     {
         public static T SetMoveMode<T>(this T entity, MoveMode value)
             where T : FeatureDefinitionMoveMode

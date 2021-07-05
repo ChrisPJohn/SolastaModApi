@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FoodDescription))]
-    public static class FoodDescriptionExtensions
+    public static partial class FoodDescriptionExtensions
     {
         public static T SetNutritiveCapacity<T>(this T entity, int value)
             where T : FoodDescription

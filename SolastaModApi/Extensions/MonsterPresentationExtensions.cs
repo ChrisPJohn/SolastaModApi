@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterPresentation))]
-    public static class MonsterPresentationExtensions
+    public static partial class MonsterPresentationExtensions
     {
         public static T SetAttachedParticlesReference<T>(this T entity, AssetReference value)
             where T : MonsterPresentation

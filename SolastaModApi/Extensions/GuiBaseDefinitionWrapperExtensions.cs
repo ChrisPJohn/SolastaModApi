@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiBaseDefinitionWrapper))]
-    public static class GuiBaseDefinitionWrapperExtensions
+    public static partial class GuiBaseDefinitionWrapperExtensions
     {
         public static T SetBaseDefinition<T>(this T entity, BaseDefinition value)
             where T : GuiBaseDefinitionWrapper

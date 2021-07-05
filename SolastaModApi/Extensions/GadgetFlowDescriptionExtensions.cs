@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GadgetFlowDescription))]
-    public static class GadgetFlowDescriptionExtensions
+    public static partial class GadgetFlowDescriptionExtensions
     {
         public static T SetAlterationType<T>(this T entity, AlterationForm.Type value)
             where T : GadgetFlowDescription

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LegalStepDefinition))]
-    public static class LegalStepDefinitionExtensions
+    public static partial class LegalStepDefinitionExtensions
     {
         public static T SetPreferenceKey<T>(this T entity, string value)
             where T : LegalStepDefinition

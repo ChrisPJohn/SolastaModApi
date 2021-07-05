@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(IngredientOccurenceDescription))]
-    public static class IngredientOccurenceDescriptionExtensions
+    public static partial class IngredientOccurenceDescriptionExtensions
     {
         public static T SetAmount<T>(this T entity, int value)
             where T : IngredientOccurenceDescription

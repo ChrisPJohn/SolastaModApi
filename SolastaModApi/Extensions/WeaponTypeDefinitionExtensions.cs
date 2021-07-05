@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(WeaponTypeDefinition))]
-    public static class WeaponTypeDefinitionExtensions
+    public static partial class WeaponTypeDefinitionExtensions
     {
         public static T SetAnimationTag<T>(this T entity, string value)
             where T : WeaponTypeDefinition

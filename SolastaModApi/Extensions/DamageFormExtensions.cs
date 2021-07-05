@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DamageForm))]
-    public static class DamageFormExtensions
+    public static partial class DamageFormExtensions
     {
         public static T SetHealFromInflictedDamage<T>(this T entity, HealFromInflictedDamage value)
             where T : DamageForm

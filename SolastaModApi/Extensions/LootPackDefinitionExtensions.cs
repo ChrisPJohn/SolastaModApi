@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LootPackDefinition))]
-    public static class LootPackDefinitionExtensions
+    public static partial class LootPackDefinitionExtensions
     {
         public static T SetInDungeonEditor<T>(this T entity, bool value)
             where T : LootPackDefinition

@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(PersonalityFlagDefinition))]
-    public static class PersonalityFlagDefinitionExtensions
+    public static partial class PersonalityFlagDefinitionExtensions
     {
         public static T SetAlignmentFlag<T>(this T entity, bool value)
             where T : PersonalityFlagDefinition

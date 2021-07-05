@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(KnowledgeLevelDefinition))]
-    public static class KnowledgeLevelDefinitionExtensions
+    public static partial class KnowledgeLevelDefinitionExtensions
     {
         public static T SetAccessFlags<T>(this T entity, int value)
             where T : KnowledgeLevelDefinition

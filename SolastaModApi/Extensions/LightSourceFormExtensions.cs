@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LightSourceForm))]
-    public static class LightSourceFormExtensions
+    public static partial class LightSourceFormExtensions
     {
         public static T SetBrightRange<T>(this T entity, int value)
             where T : LightSourceForm

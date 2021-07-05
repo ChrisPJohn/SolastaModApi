@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(PersonalityFlagOccurence))]
-    public static class PersonalityFlagOccurenceExtensions
+    public static partial class PersonalityFlagOccurenceExtensions
     {
         public static T SetPersonalityFlag<T>(this T entity, string value)
             where T : PersonalityFlagOccurence

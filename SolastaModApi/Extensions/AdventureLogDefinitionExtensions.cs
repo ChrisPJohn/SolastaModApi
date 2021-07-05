@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(AdventureLogDefinition))]
-    public static class AdventureLogDefinitionExtensions
+    public static partial class AdventureLogDefinitionExtensions
     {
         public static T SetBattleHeight<T>(this T entity, float value)
             where T : AdventureLogDefinition

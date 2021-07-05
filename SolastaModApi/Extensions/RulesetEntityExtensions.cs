@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetEntity))]
-    public static class RulesetEntityExtensions
+    public static partial class RulesetEntityExtensions
     {
         public static T SetDescriptionChanged<T>(this T entity, EntityDescription.DescriptionChangedHandler value)
             where T : RulesetEntity

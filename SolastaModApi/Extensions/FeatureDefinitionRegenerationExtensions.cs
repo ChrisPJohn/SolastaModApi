@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionRegeneration))]
-    public static class FeatureDefinitionRegenerationExtensions
+    public static partial class FeatureDefinitionRegenerationExtensions
     {
         public static T SetBonus<T>(this T entity, int value)
             where T : FeatureDefinitionRegeneration

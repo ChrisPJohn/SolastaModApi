@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionEquipmentAffinity))]
-    public static class FeatureDefinitionEquipmentAffinityExtensions
+    public static partial class FeatureDefinitionEquipmentAffinityExtensions
     {
         public static T SetAdditionalCarryingCapacity<T>(this T entity, float value)
             where T : FeatureDefinitionEquipmentAffinity

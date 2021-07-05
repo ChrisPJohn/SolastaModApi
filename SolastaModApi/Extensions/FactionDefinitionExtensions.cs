@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FactionDefinition))]
-    public static class FactionDefinitionExtensions
+    public static partial class FactionDefinitionExtensions
     {
         public static T SetBuiltIn<T>(this T entity, bool value)
             where T : FactionDefinition

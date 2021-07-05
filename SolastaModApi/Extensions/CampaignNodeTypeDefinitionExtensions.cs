@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CampaignNodeTypeDefinition))]
-    public static class CampaignNodeTypeDefinitionExtensions
+    public static partial class CampaignNodeTypeDefinitionExtensions
     {
         public static T SetGraphicsCampaignNodeReference<T>(this T entity, AssetReference value)
             where T : CampaignNodeTypeDefinition

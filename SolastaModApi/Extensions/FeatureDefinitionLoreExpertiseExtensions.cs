@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionLoreExpertise))]
-    public static class FeatureDefinitionLoreExpertiseExtensions
+    public static partial class FeatureDefinitionLoreExpertiseExtensions
     {
         public static T SetExpertiseType<T>(this T entity, FeatureDefinitionLoreExpertise.ExpertiseType value)
             where T : FeatureDefinitionLoreExpertise

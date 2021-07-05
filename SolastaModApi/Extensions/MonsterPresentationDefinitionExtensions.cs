@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterPresentationDefinition))]
-    public static class MonsterPresentationDefinitionExtensions
+    public static partial class MonsterPresentationDefinitionExtensions
     {
         public static T SetCustomMaterials<T>(this T entity, AssetReference[] value)
             where T : MonsterPresentationDefinition

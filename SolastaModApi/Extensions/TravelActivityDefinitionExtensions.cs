@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TravelActivityDefinition))]
-    public static class TravelActivityDefinitionExtensions
+    public static partial class TravelActivityDefinitionExtensions
     {
         public static T SetFatigueImpactPerHour<T>(this T entity, float value)
             where T : TravelActivityDefinition

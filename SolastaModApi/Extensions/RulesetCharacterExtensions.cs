@@ -122,6 +122,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetCheatInfiniteActionResources<T>(this T entity, bool value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<CheatInfiniteActionResources>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetCheatIsInvisible<T>(this T entity, bool value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<CheatIsInvisible>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetConcentratedSpell<T>(this T entity, RulesetEffectSpell value)
             where T : RulesetCharacter
         {
@@ -231,6 +245,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacter
         {
             entity.SetField("<DeathTimerTicked>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetDummy<T>(this T entity, string value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("dummy", value);
             return entity;
         }
 
@@ -472,6 +493,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMetamagicActivated<T>(this T entity, RulesetCharacter.MetamagicActivatedHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<MetamagicActivated>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetMinSizeDifferenceToGoThroughEnemy<T>(this T entity, int value)
             where T : RulesetCharacter
         {
@@ -584,6 +612,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSorceryPointsAltered<T>(this T entity, RulesetCharacter.SorceryPointsAlteredHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<SorceryPointsAltered>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetSpellCast<T>(this T entity, RulesetCharacter.SpellCastHandler value)
             where T : RulesetCharacter
         {
@@ -644,6 +679,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacter
         {
             entity.SetField("<SpellScribed>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetSpellSlotPreserved<T>(this T entity, RulesetCharacter.SpellSlotPreservedHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<SpellSlotPreserved>k__BackingField", value);
             return entity;
         }
 

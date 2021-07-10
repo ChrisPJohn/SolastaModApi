@@ -24,6 +24,27 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetFactionDamagingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionDamagingPenaltyOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionKillingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionKillingPenaltyOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionThievingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionThievingPenaltyOverride", value);
+            return entity;
+        }
+
         public static T SetHumanoidMonsterPresentationDefinition<T>(this T entity, HumanoidMonsterPresentationDefinition value)
             where T : RulesetCharacterMonster
         {

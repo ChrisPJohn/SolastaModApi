@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(FeatureDefinitionAutoPreparedSpells))]
     public static partial class FeatureDefinitionAutoPreparedSpellsExtensions
     {
+        public static T SetAutopreparedTag<T>(this T entity, string value)
+            where T : FeatureDefinitionAutoPreparedSpells
+        {
+            entity.SetField("autopreparedTag", value);
+            return entity;
+        }
+
         public static T SetSpellcastingClass<T>(this T entity, CharacterClassDefinition value)
             where T : FeatureDefinitionAutoPreparedSpells
         {

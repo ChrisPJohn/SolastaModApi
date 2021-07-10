@@ -33,6 +33,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetActiveEffectImpactParticleReference<T>(this T entity, AssetReference value)
+            where T : EffectParticleParameters
+        {
+            entity.SetField("activeEffectImpactParticleReference", value);
+            return entity;
+        }
+
         public static T SetActiveEffectSurfaceEndParticleReference<T>(this T entity, AssetReference value)
             where T : EffectParticleParameters
         {

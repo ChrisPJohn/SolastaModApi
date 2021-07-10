@@ -16,5 +16,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("indomitableSavingThrows", value);
             return entity;
         }
+
+        public static T SetPriorityAbilityScore<T>(this T entity, string value)
+            where T : FeatureDefinitionSavingThrowAffinity
+        {
+            entity.SetField("priorityAbilityScore", value);
+            return entity;
+        }
     }
 }

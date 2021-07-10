@@ -17,6 +17,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSorceryPointsGain<T>(this T entity, int value)
+            where T : SpellSlotsForm
+        {
+            entity.SetField("sorceryPointsGain", value);
+            return entity;
+        }
+
         public static T SetType<T>(this T entity, SpellSlotsForm.EffectType value)
             where T : SpellSlotsForm
         {

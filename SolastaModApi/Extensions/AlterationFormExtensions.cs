@@ -24,6 +24,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetFeastDurationHours<T>(this T entity, int value)
+            where T : AlterationForm
+        {
+            entity.SetField("feastDurationHours", value);
+            return entity;
+        }
+
         public static T SetMaximumIncrease<T>(this T entity, int value)
             where T : AlterationForm
         {

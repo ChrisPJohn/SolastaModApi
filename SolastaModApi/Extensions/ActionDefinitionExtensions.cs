@@ -159,6 +159,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetTargetParameter<T>(this T entity, int value)
+            where T : ActionDefinition
+        {
+            entity.SetField("targetParameter", value);
+            return entity;
+        }
+
+        public static T SetTargetType<T>(this T entity, TargetType value)
+            where T : ActionDefinition
+        {
+            entity.SetField("targetType", value);
+            return entity;
+        }
+
         public static T SetUsesPerTurn<T>(this T entity, int value)
             where T : ActionDefinition
         {

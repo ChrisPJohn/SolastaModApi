@@ -75,6 +75,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetHasPhantomDistortion<T>(this T entity, bool value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("hasPhantomDistortion", value);
+            return entity;
+        }
+
         public static T SetHasPrefabVariants<T>(this T entity, bool value)
             where T : MonsterPresentation
         {

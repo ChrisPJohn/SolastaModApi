@@ -73,10 +73,12 @@ namespace SolastaModApi
 
         public EffectDescriptionBuilder SetTargetingData(RuleDefinitions.Side targetSide, RuleDefinitions.RangeType rangeType, int rangeParameter, RuleDefinitions.TargetType targetType, int targetParameter, int targetParameter2, ActionDefinitions.ItemSelectionType itemSelectionType)
         {
-            effect.SetTargetSide(targetSide);
-            effect.SetRangeType(rangeType);
+            // TODO: fix this after 1.1.5 changes
+
+            //effect.SetTargetSide(targetSide);
+            //effect.SetRangeType(rangeType);
             effect.SetRangeParameter(rangeParameter);
-            effect.SetTargetType(targetType);
+            //effect.SetTargetType(targetType);
             effect.SetTargetParameter(targetParameter);
             effect.SetTargetParameter2(targetParameter2);
             effect.SetItemSelectionType(itemSelectionType);

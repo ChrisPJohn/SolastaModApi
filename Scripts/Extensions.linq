@@ -158,6 +158,7 @@ void CreateExtensions(Type t, bool createFiles = false)
 			GetUsingSyntax("static CharacterClassDefinition"),
 			GetUsingSyntax("static CreditsGroupDefinition"),
 			GetUsingSyntax("static CampaignDefinition"),
+			GetUsingSyntax("static GraphicsCharacterDefinitions"),
 			GetUsingSyntax("static GameCampaignDefinitions"),
 			GetUsingSyntax("static TooltipDefinitions"),
 			GetUsingSyntax("static BaseBlueprint"),

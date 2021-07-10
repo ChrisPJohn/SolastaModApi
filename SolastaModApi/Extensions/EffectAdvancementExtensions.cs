@@ -38,6 +38,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetAdditionalSubtargetsPerIncrement<T>(this T entity, int value)
+            where T : EffectAdvancement
+        {
+            entity.SetField("additionalSubtargetsPerIncrement", value);
+            return entity;
+        }
+
         public static T SetAdditionalSummonsPerIncrement<T>(this T entity, int value)
             where T : EffectAdvancement
         {

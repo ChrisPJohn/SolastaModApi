@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(RulesetEffect))]
     public static partial class RulesetEffectExtensions
     {
+        public static T SetApplied<T>(this T entity, RulesetEffect.RulesetActiveEffectAppliedHandler value)
+            where T : RulesetEffect
+        {
+            entity.SetField("<Applied>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetConditionTrackingStarted<T>(this T entity, RulesetEffect.ConditionTrackingStartedHandler value)
             where T : RulesetEffect
         {

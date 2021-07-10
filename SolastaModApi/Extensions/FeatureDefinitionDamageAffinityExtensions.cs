@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(FeatureDefinitionDamageAffinity))]
     public static partial class FeatureDefinitionDamageAffinityExtensions
     {
+        public static T SetAncestryDefinesDamageType<T>(this T entity, bool value)
+            where T : FeatureDefinitionDamageAffinity
+        {
+            entity.SetField("ancestryDefinesDamageType", value);
+            return entity;
+        }
+
         public static T SetDamageAffinityType<T>(this T entity, DamageAffinityType value)
             where T : FeatureDefinitionDamageAffinity
         {

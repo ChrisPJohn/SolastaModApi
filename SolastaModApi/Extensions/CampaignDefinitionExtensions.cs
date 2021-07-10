@@ -74,17 +74,24 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetMaxLevel<T>(this T entity, int value)
+        public static T SetLevelCap<T>(this T entity, int value)
             where T : CampaignDefinition
         {
-            entity.SetField("maxLevel", value);
+            entity.SetField("levelCap", value);
             return entity;
         }
 
-        public static T SetMinLevel<T>(this T entity, int value)
+        public static T SetMaxStartLevel<T>(this T entity, int value)
             where T : CampaignDefinition
         {
-            entity.SetField("minLevel", value);
+            entity.SetField("maxStartLevel", value);
+            return entity;
+        }
+
+        public static T SetMinStartLevel<T>(this T entity, int value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("minStartLevel", value);
             return entity;
         }
 

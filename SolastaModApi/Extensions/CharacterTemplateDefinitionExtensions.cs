@@ -88,6 +88,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetBodyDecorationColorMorphotype<T>(this T entity, string value)
+            where T : CharacterTemplateDefinition
+        {
+            entity.SetField("bodyDecorationColorMorphotype", value);
+            return entity;
+        }
+
         public static T SetBodyDecorationMorphotype<T>(this T entity, string value)
             where T : CharacterTemplateDefinition
         {
@@ -120,6 +127,13 @@ namespace SolastaModApi.Extensions
             where T : CharacterTemplateDefinition
         {
             entity.SetField("eyeColorMorphotype", value);
+            return entity;
+        }
+
+        public static T SetEyeMorphotype<T>(this T entity, string value)
+            where T : CharacterTemplateDefinition
+        {
+            entity.SetField("eyeMorphotype", value);
             return entity;
         }
 

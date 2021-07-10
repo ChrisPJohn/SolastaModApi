@@ -1,16 +1,11 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
 using UnityEngine;
-using UnityModManagerNet;
-using UnityEngine.UI;
 using HarmonyLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using ModKit.Utility;
-using GL = UnityEngine.GUILayout;
 
-namespace ModKit {
+namespace ModKit
+{
     public enum ToggleState {
         Off = 0,
         On = 1,
@@ -34,7 +29,7 @@ namespace ModKit {
         }
 
         static bool TogglePrivate(
-                String title,
+                string title,
                 ref bool value,
                 bool isEmpty,
                 bool disclosureStyle = false,
@@ -69,7 +64,7 @@ namespace ModKit {
         }
 
         public static bool Toggle(
-                String title,
+                string title,
                 ref bool value,
                 float width = 0,
                 params GUILayoutOption[] options) {
@@ -77,7 +72,7 @@ namespace ModKit {
         }
 
         public static bool ActionToggle(
-                String title,
+                string title,
                 Func<bool> get,
                 Action<bool> set,
                 float width = 0,
@@ -89,7 +84,7 @@ namespace ModKit {
             return value;
         }
         public static bool BitFieldToggle(
-                String title,
+                string title,
                 ref int bitfield,
                 int offset,
                 float width = 0,
@@ -101,12 +96,12 @@ namespace ModKit {
             if (bit != newBit) { bitfield ^= 1 << offset; }
             return bit != newBit;
         }
-        public static bool DisclosureToggle(String title, ref bool value, float width = 175, params Action[] actions) {
+        public static bool DisclosureToggle(string title, ref bool value, float width = 175, params Action[] actions) {
             bool changed = UI.TogglePrivate(title, ref value, false, true, width);
             UI.If(value, actions);
             return changed;
         }
-        public static bool DisclosureBitFieldToggle(String title, ref int bitfield, int offset, bool exclusive = true, float width = 175, params Action[] actions) {
+        public static bool DisclosureBitFieldToggle(string title, ref int bitfield, int offset, bool exclusive = true, float width = 175, params Action[] actions) {
             bool bit = ((1 << offset) & bitfield) != 0;
             bool newBit = bit;
             TogglePrivate(title, ref newBit, false, true, width);

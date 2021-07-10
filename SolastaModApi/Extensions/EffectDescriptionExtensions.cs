@@ -187,13 +187,6 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetRangeType<T>(this T entity, RangeType value)
-            where T : EffectDescription
-        {
-            entity.SetField("rangeType", value);
-            return entity;
-        }
-
         public static T SetRecurrentEffect<T>(this T entity, RecurrentEffect value)
             where T : EffectDescription
         {
@@ -303,20 +296,6 @@ namespace SolastaModApi.Extensions
             where T : EffectDescription
         {
             entity.SetField("targetProximityDistance", value);
-            return entity;
-        }
-
-        public static T SetTargetSide<T>(this T entity, Side value)
-            where T : EffectDescription
-        {
-            entity.SetField("targetSide", value);
-            return entity;
-        }
-
-        public static T SetTargetType<T>(this T entity, TargetType value)
-            where T : EffectDescription
-        {
-            entity.SetField("targetType", value);
             return entity;
         }
 

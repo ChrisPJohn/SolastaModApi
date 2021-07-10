@@ -9,6 +9,7 @@ namespace SolastaModApi
             public static ActionDefinition ActionSurge => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("ActionSurge", "eb25cf66be5d2a041a0c079be4a2befc");
             public static ActionDefinition AssignTargetBonus => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("AssignTargetBonus", "45582b785d90f194eb06b4ad092977d3");
             public static ActionDefinition AssignTargetMain => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("AssignTargetMain", "8842a815499687b40bec0bda84cdd6d5");
+            public static ActionDefinition AttackFree => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("AttackFree", "7177a5dc187c9124e8c0f28582745d22");
             public static ActionDefinition AttackMain => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("AttackMain", "8f42af261aae2db4dae3c0c3679781cf");
             public static ActionDefinition AttackOff => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("AttackOff", "c5f1e96e2948c7f40b09a34a31abffa3");
             public static ActionDefinition AttackOpportunity => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("AttackOpportunity", "46880a215a8dcc54c978e70fdb2fe76e");
@@ -39,6 +40,7 @@ namespace SolastaModApi
             public static ActionDefinition DropProne => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("DropProne", "bf067b0ef267b4d42a5fbcf874adbb58");
             public static ActionDefinition ExplorationMove => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("ExplorationMove", "507f48d5499d04148b204a52f42aea08");
             public static ActionDefinition Extinguish => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("Extinguish", "663eaad72eeba214c83324a596d3c54a");
+            public static ActionDefinition FastAim => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("FastAim", "216faec056df0e743ba00c43af7f9b8e");
             public static ActionDefinition FreeFall => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("FreeFall", "f70519799c39bb549b21c659a5166a4a");
             public static ActionDefinition GiantKiller => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("GiantKiller", "4cc78c81867fc2f4a9fcbb8e2cdef2fc");
             public static ActionDefinition HideBonus => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("HideBonus", "f1b9ae0cf54354e4e896e063207cfd11");
@@ -69,6 +71,8 @@ namespace SolastaModApi
             public static ActionDefinition StandUp => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("StandUp", "10471f0526aeb844d93906afed092ce1");
             public static ActionDefinition StartBattle => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("StartBattle", "aa997725a183c7a43b28f89cdb114340");
             public static ActionDefinition StepBack => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("StepBack", "be00590cc4702df4caf04a2b01cbd594");
+            public static ActionDefinition Sunbeam => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("Sunbeam", "421ca683115e84a41a742a37d3b53da5");
+            public static ActionDefinition SwiftRetaliation => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("SwiftRetaliation", "57dd9f83a824a594a89796675d1d9bd4");
             public static ActionDefinition TacticalMove => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("TacticalMove", "4c8a4b3393c5a054ebc8c3ef86b3549a");
             public static ActionDefinition TakeAim => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("TakeAim", "4143a2686ddd6c643abdd2afc997a321");
             public static ActionDefinition TriggerDefeat => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("TriggerDefeat", "5d29ea6c6560ba743bb396de57c1b0c2");
@@ -79,6 +83,8 @@ namespace SolastaModApi
             public static ActionDefinition UseItemMain => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("UseItemMain", "069fe00baa7673e4abb44c81bf21e03f");
             public static ActionDefinition UseLegendaryResistance => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("UseLegendaryResistance", "adcd744a2a1cbaa45ab449e1dcc9bf7f");
             public static ActionDefinition VampiricTouchIntelligence => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("VampiricTouchIntelligence", "ba3e94724688f2d44a37287cae37e694");
+            public static ActionDefinition Volley => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("Volley", "bf7bdddd94144594aaf8ff944db2a70b");
+            public static ActionDefinition WhirlwindAttack => DatabaseRepository.GetDatabase<ActionDefinition>().TryGetElement("WhirlwindAttack", "6cdc06d5a1458e341be5c3e8dee7f217");
         }
         public static class ActionTypeDefinitions
         {
@@ -141,6 +147,7 @@ namespace SolastaModApi
         }
         public static class BanterEventDefinitions
         {
+            public static BanterEventDefinition BanterEvent_Npc_ThiefDetected => DatabaseRepository.GetDatabase<BanterEventDefinition>().TryGetElement("BanterEvent_Npc_ThiefDetected", "5ad7497ca02226f4e800b2decb243fca");
             public static BanterEventDefinition BanterEventAlliedKnockedDown => DatabaseRepository.GetDatabase<BanterEventDefinition>().TryGetElement("BanterEventAlliedKnockedDown", "df572f5ce0125c14aa47dc16421351ab");
             public static BanterEventDefinition BanterEventBreakStealth => DatabaseRepository.GetDatabase<BanterEventDefinition>().TryGetElement("BanterEventBreakStealth", "49b25837932a0164a8dafe5bd4ca0811");
             public static BanterEventDefinition BanterEventCrawling => DatabaseRepository.GetDatabase<BanterEventDefinition>().TryGetElement("BanterEventCrawling", "87f1652049f7d3e42bb25a606bd815b7");
@@ -171,11 +178,34 @@ namespace SolastaModApi
             public static GadgetBlueprint Campfire => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Campfire", "80fd32d8bd8674f41bdf67ec986164dc");
             public static GadgetBlueprint Chest => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Chest", "f877658557b11d94d957210e3da15d2f");
             public static GadgetBlueprint DoubleDoor => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("DoubleDoor", "169bc08c4e6f95a41ab4d9cf23357c8f");
+            public static GadgetBlueprint DoubleThinDoor => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("DoubleThinDoor", "fb16e1b6e035454499d9047d56f10550");
             public static GadgetBlueprint Entrance => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Entrance", "5c4fd5650a76c9f41854ca440906b803");
             public static GadgetBlueprint Exit => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Exit", "44f3ca3b7a20c804e93c257be6b30aa9");
             public static GadgetBlueprint FallingChandelier => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("FallingChandelier", "bc3f3ec894aad134cbbdd44303698b6f");
             public static GadgetBlueprint FallingStalactite => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("FallingStalactite", "8b04f582397cff145ad1c46d9afed2e9");
+            public static GadgetBlueprint FallingTrunk => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("FallingTrunk", "6be4b3cb5cc00ff41aaae6ba52b196d5");
+            public static GadgetBlueprint Foliage => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Foliage", "12f822141b0f24a4cb608ff428bc219d");
             public static GadgetBlueprint Grate => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Grate", "089043ef7f69136438bc9914acfebb7b");
+            public static GadgetBlueprint GrateDoor => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("GrateDoor", "107a2ea6782fa56478b018cea34ed24c");
+            public static GadgetBlueprint Harvestable_AcidPuddle => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_AcidPuddle", "46ed3eba5ea903c4b91fabba2ef23fbb");
+            public static GadgetBlueprint Harvestable_AngryBush => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_AngryBush", "fe56036b0002c874cbe6d1f775ccb8d2");
+            public static GadgetBlueprint Harvestable_BadlandsBriar => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_BadlandsBriar", "28d36b97ae357744c99342f9bba4b3b9");
+            public static GadgetBlueprint Harvestable_BloodBush => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_BloodBush", "8cefb0a43992c7444841d7e444ba94e2");
+            public static GadgetBlueprint Harvestable_BrownPatch => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_BrownPatch", "6072d0d47b383bb40bfa256f83590961");
+            public static GadgetBlueprint Harvestable_DeepRoot => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_DeepRoot", "42e61d69708941a43911efe300bba5a0");
+            public static GadgetBlueprint Harvestable_DragonBramble => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_DragonBramble", "20ec7c2ea4cdb35419fdab1d37512d06");
+            public static GadgetBlueprint Harvestable_DwarvenThicket => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_DwarvenThicket", "001a6fb25562fa844a0986b7330c962b");
+            public static GadgetBlueprint Harvestable_GallivanThicket => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_GallivanThicket", "87615dea34c1d1046a6b0c4415a682dc");
+            public static GadgetBlueprint Harvestable_ImperialVine => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_ImperialVine", "85ab102afa40da840abc5a16ca7d5747");
+            public static GadgetBlueprint Harvestable_MagnesiumDeposit => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_MagnesiumDeposit", "9f042410660208346af3f82fcfb7bd95");
+            public static GadgetBlueprint Harvestable_MoonShruberry => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_MoonShruberry", "774637a91053191439a83001a1be2096");
+            public static GadgetBlueprint Harvestable_MossPatch => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_MossPatch", "f3caa0e5dcab22c429420d4a88dec1d3");
+            public static GadgetBlueprint Harvestable_OrchidBush => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_OrchidBush", "e1004d1260c94ed419527aca232d9e47");
+            public static GadgetBlueprint Harvestable_QueenVine => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_QueenVine", "29fb62deda6ce0f4098711741733225e");
+            public static GadgetBlueprint Harvestable_SerpentRock => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_SerpentRock", "e1fc0d5c6c27478468529f9a3828df51");
+            public static GadgetBlueprint Harvestable_SkarnRock => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_SkarnRock", "898a069886e5b374baee703f15e54744");
+            public static GadgetBlueprint Harvestable_StormBriar => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_StormBriar", "5a05153d255f81d4cbeeeb1e4ca209a9");
+            public static GadgetBlueprint Harvestable_TrollBramble => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("Harvestable_TrollBramble", "223532d2253aa01409402f3d41c19219");
             public static GadgetBlueprint HiddenDoor => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("HiddenDoor", "54ae061289ce44d4fb22f4b408a61432");
             public static GadgetBlueprint HiddenDoor_Small => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("HiddenDoor_Small", "96e80f085439b164aa89e9d4eeb2acde");
             public static GadgetBlueprint InteractiveTorch => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("InteractiveTorch", "7423a6e2f9cc6b94dbabb5f307b8a8d9");
@@ -193,6 +223,7 @@ namespace SolastaModApi
             public static GadgetBlueprint MonsterH => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("MonsterH", "07f76c0621f6ece42817fc95aa3c1c0e");
             public static GadgetBlueprint MonsterL => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("MonsterL", "ca4b85cb2124fb1468a3a2d9cda591bd");
             public static GadgetBlueprint MonsterM => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("MonsterM", "42ad1b22e55c4ff41baaeef30453e848");
+            public static GadgetBlueprint PoisonBulb => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("PoisonBulb", "32ce492bac1040441be2e8f0be04e189");
             public static GadgetBlueprint PrisonDoor => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("PrisonDoor", "b5ee54ff3bd79314e8ee3725e96bdc08");
             public static GadgetBlueprint PushBlock => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("PushBlock", "9d4e87b87483f8542aa797d741ace642");
             public static GadgetBlueprint TorchPike => DatabaseRepository.GetDatabase<GadgetBlueprint>().TryGetElement("TorchPike", "652482193f687c64ba743ee4ebb2c162");
@@ -207,6 +238,12 @@ namespace SolastaModApi
             public static PropBlueprint Altar_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Altar_A", "668295f4caa1154479f13c13a04d2680");
             public static PropBlueprint Altar_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Altar_B", "9d9fca3844cb9404990153119615e018");
             public static PropBlueprint Altar_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Altar_C", "a077a0846e3aceb439a9a0b45ed969ab");
+            public static PropBlueprint Altar_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Altar_D", "a82e2b9939b388c4f8d445d4fa0f980d");
+            public static PropBlueprint Altar_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Altar_E", "0dc75079f03dc67478c6eedf89f08dce");
+            public static PropBlueprint Arch_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Arch_A", "9662370c0dc7e144ab0b5e4fc742d3fe");
+            public static PropBlueprint Arch_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Arch_B", "f6ea72476f6f5454384c813ef3518275");
+            public static PropBlueprint Arch_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Arch_C", "ca850b5186e9d8c489c4130a2b16ab1c");
+            public static PropBlueprint Arch_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Arch_D", "92e6b14eba37b8b43906c5dde86788f4");
             public static PropBlueprint ArmorStand => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("ArmorStand", "29552d763cca1da44b4ab7fa03b72655");
             public static PropBlueprint Banner_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Banner_A", "1f29ad6763f964447941416cb256a736");
             public static PropBlueprint Banner_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Banner_B", "7ca2347f8616e9d459e866680fd9222b");
@@ -215,6 +252,9 @@ namespace SolastaModApi
             public static PropBlueprint Banner_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Banner_E", "ea1dbf4bb5009014bbe6e0d831ba25e4");
             public static PropBlueprint Banner_F => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Banner_F", "b7d1cc0756805334b989f2af9f661d20");
             public static PropBlueprint Banner_G => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Banner_G", "f053f2d195c50194bb4da5498ed548e2");
+            public static PropBlueprint Barrel_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Barrel_A", "fed8f690799eb5b46a74e620c7654f7f");
+            public static PropBlueprint Barrel_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Barrel_B", "4c94098b160ff214580e034189141d37");
+            public static PropBlueprint Barrel_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Barrel_C", "2436fe78eb69da1418b17562c560e48b");
             public static PropBlueprint Barrels => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Barrels", "227ec990ca4b48047b4e24291fa5271d");
             public static PropBlueprint BarrelStack => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("BarrelStack", "3b52ce1b151be0646ac2c7454f6c1855");
             public static PropBlueprint Basket_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Basket_A", "dec5657527beeed43848071acfc57521");
@@ -225,6 +265,8 @@ namespace SolastaModApi
             public static PropBlueprint Bedroll_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bedroll_B", "93263d81fae11fb4780d893aa6317c21");
             public static PropBlueprint Bedroll_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bedroll_C", "25572e77d7a2d1b4eb89a77bd2863d60");
             public static PropBlueprint Bedroll_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bedroll_D", "8f1d4424a55bfe044b107b9d2aa02541");
+            public static PropBlueprint Bedroll_Tent_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bedroll_Tent_A", "f33bb1660e8c2a04e8662cfec0a5c97f");
+            public static PropBlueprint Bedroll_Tent_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bedroll_Tent_B", "345b2a1959c62e041a893269b7878091");
             public static PropBlueprint Bench_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bench_A", "31f6b5d1febdc214eac2b3572b1e5860");
             public static PropBlueprint Bench_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bench_B", "f08036055494c4c429185602e7176f45");
             public static PropBlueprint Bench_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bench_C", "d416bc7357e34884e9b92acd2fccdedd");
@@ -244,19 +286,32 @@ namespace SolastaModApi
             public static PropBlueprint BookStack_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("BookStack_C", "51bea55de153f4f47a546e70cf8498aa");
             public static PropBlueprint Brasero_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Brasero_A", "346a5004b3198c24688f8489cf7ad971");
             public static PropBlueprint Brasero_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Brasero_B", "c1fe0dbb6ef48304ea128f1a4bf7fef6");
+            public static PropBlueprint Bridge_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bridge_A", "0031600df3b849e428160a43905b7ed5");
+            public static PropBlueprint Bridge_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bridge_B", "d1e17e3dab26d2a4daa5598b4e1fa8f9");
+            public static PropBlueprint Bridge_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bridge_C", "b312b9fab5c19464da6c1dde0d3f0e35");
+            public static PropBlueprint Bushes_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bushes_A", "65296858d025c0243ae298a6fdbe8d66");
+            public static PropBlueprint Bushes_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bushes_B", "223528cb62f98d3418b46a979330e468");
+            public static PropBlueprint Bushes_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Bushes_C", "d09d32d588200ae4bbd2b67d6791e836");
             public static PropBlueprint Cabinet_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cabinet_A", "7a393a8269188d14197109d6b82624ae");
             public static PropBlueprint Cabinet_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cabinet_B", "58b1fa239ee8e2d41ad4f310d4ae81cd");
             public static PropBlueprint Cabinet_Covered_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cabinet_Covered_A", "f350d04a9e35a9c438cf05305fa24f98");
             public static PropBlueprint Cabinet_Covered_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cabinet_Covered_B", "256c8ccbf08c5cf43933c9ea811f04d0");
             public static PropBlueprint Cage_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cage_A", "5a303be6e8baa124f98d8d2a9a3d16e1");
             public static PropBlueprint Cage_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cage_B", "18c2dc2e8c90d6045930152d3bc906f8");
-            public static PropBlueprint Candelabra => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Candelabra", "201ceba1ab486e846ae0a1e1d96e4e29");
-            public static PropBlueprint Candelabra_Covered => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Candelabra_Covered", "df3889ecdaa76b544b15b0684797819f");
+            public static PropBlueprint Candelabra_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Candelabra_A", "201ceba1ab486e846ae0a1e1d96e4e29");
+            public static PropBlueprint Candelabra_Covered_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Candelabra_Covered_A", "df3889ecdaa76b544b15b0684797819f");
+            public static PropBlueprint Caravan_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Caravan_A", "48c67302d1d49a0428018683166dcaeb");
+            public static PropBlueprint Caravan_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Caravan_B", "e68ab8861daa93c4aba29e1680e2007c");
             public static PropBlueprint Carpet_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Carpet_A", "e8d32ddad97c6254c995b013a087d226");
             public static PropBlueprint Carpet_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Carpet_B", "dd6ecc0d28fff6241b3b2e24460942d5");
             public static PropBlueprint Carpet_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Carpet_C", "a03e08afce0f3a54999c82c3bba07f94");
             public static PropBlueprint Cart_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cart_A", "4124d3e869d066b4f95ab79e68d4e685");
             public static PropBlueprint Cart_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cart_B", "03429fe1c5f20d04ea01836e8911109f");
+            public static PropBlueprint Cart_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cart_C", "765471b2f1e58a4479fc657d86d82d62");
+            public static PropBlueprint CaveEntrance_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("CaveEntrance_A", "ed1db8620b576454a942cf5089dc7098");
+            public static PropBlueprint CaveEntrance_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("CaveEntrance_B", "d5e850437e2e3fc46b8cd3d5f8bbb232");
+            public static PropBlueprint Cell_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cell_A", "ec131e933c8e869478d9103e79b830f8");
+            public static PropBlueprint Cell_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cell_B", "be4bb8a209527f64fb3d468a06886bfe");
             public static PropBlueprint Chain_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Chain_A", "dd2fe57b1044f644290197fb583cc420");
             public static PropBlueprint Chain_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Chain_B", "1ece4164319fe744ebe4686a5104a191");
             public static PropBlueprint Chair_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Chair_A", "39be6af6abbcdec47836107b2e1e280c");
@@ -265,8 +320,13 @@ namespace SolastaModApi
             public static PropBlueprint Cocoon_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cocoon_A", "597a9a410c0213a4f992c58a42ca8ab8");
             public static PropBlueprint Cocoon_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cocoon_B", "f6175b8a1fcb66e4fb7d2b0bab4af6d2");
             public static PropBlueprint Column_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Column_A", "5559a59b175a0ea46943169249babd82");
+            public static PropBlueprint Column_A_Destroyed => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Column_A_Destroyed", "81ab696e65ecbfc4595fd71ff34f4cd7");
+            public static PropBlueprint Column_A_Lowground => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Column_A_Lowground", "d60154d158ebed4458a2b2be164cc06f");
+            public static PropBlueprint Column_A_Lowground_Destroyed => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Column_A_Lowground_Destroyed", "d7600d59642c704448890399c96d598f");
             public static PropBlueprint Column_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Column_B", "3ac1a34a51ea2a74d837dc5a2b60c1b7");
             public static PropBlueprint Column_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Column_C", "697a2fb748aeddd45b074f8fbc4b65b2");
+            public static PropBlueprint Column_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Column_D", "74772a76d84a5a44cbbdb63ca96c085a");
+            public static PropBlueprint CookingStuff_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("CookingStuff_A", "d7829402bd122fb48b81177a971cd910");
             public static PropBlueprint Corpse_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Corpse_A", "b313ccc2f26152f419e409eea576564e");
             public static PropBlueprint Corpse_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Corpse_B", "de4d8ee2197f1ab40865d2172597c687");
             public static PropBlueprint Corpse_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Corpse_C", "47b9efbd9020afc4686586a042ddfab3");
@@ -281,15 +341,37 @@ namespace SolastaModApi
             public static PropBlueprint Crate_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Crate_C", "f61e04a82728ab54fa4b67f3bf10a267");
             public static PropBlueprint CrateStack_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("CrateStack_A", "4a3d2d6a1da7cfe4095ceff41e8b3ab8");
             public static PropBlueprint CrateStack_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("CrateStack_B", "36de04d3e0aae78479df930582f29b67");
+            public static PropBlueprint Creeper_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Creeper_A", "dc85e4dde71868a4fa7bdaadbb8c1d23");
+            public static PropBlueprint Creeper_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Creeper_B", "99e63510e0feae046a06a0d119fc17ec");
+            public static PropBlueprint Creeper_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Creeper_C", "9ca1e4eadcae0e44c98657dc2f0eab1d");
             public static PropBlueprint Cushions_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cushions_A", "e888cfb60714ce54cb7265be83c97003");
             public static PropBlueprint Cushions_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Cushions_B", "2a4ece4fea9fff84ba7c878fa41d13b8");
+            public static PropBlueprint Dam_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Dam_A", "438cb9e9f3152e94fb41248ef831beb6");
             public static PropBlueprint Debris_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Debris_A", "86c9bc1ee7e0a9f498c01fd255139a41");
             public static PropBlueprint Debris_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Debris_B", "65450803769700e43879bec175f36a07");
+            public static PropBlueprint Debris_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Debris_C", "7846fc840e5b0734599df5283ba11eb5");
             public static PropBlueprint Desk_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Desk_A", "aff1f5032cbffc347a4c1576ea54fbdb");
+            public static PropBlueprint Drain_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Drain_A", "7c9254d5542c9cd44920530dbbedba1d");
+            public static PropBlueprint Drain_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Drain_B", "6b23ef653b579f94294863c532917ff3");
+            public static PropBlueprint Drain_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Drain_C", "aa12a90ba920e9746b26749ec270993d");
+            public static PropBlueprint DrainGrate_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("DrainGrate_A", "1bd3b70020dd3e840b524eccdf2e19fd");
+            public static PropBlueprint DrainGrate_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("DrainGrate_B", "05ec206d083bcd14a823c03ea846afa1");
             public static PropBlueprint FakeDoor => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("FakeDoor", "ebc0162ffd8255045bb77c7a01c2e12d");
+            public static PropBlueprint FakeLadderUp => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("FakeLadderUp", "88a8c854f63f7f64b8e8abfc09e9acbe");
             public static PropBlueprint FakeStairs_Down => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("FakeStairs_Down", "9a8463b86bdc549468bc5b42b5d3a1b6");
             public static PropBlueprint FakeStairs_Up => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("FakeStairs_Up", "6c129913493247642a2f594037d224a5");
-            public static PropBlueprint FireBasin => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("FireBasin", "cce3f226149369d41b1c58f69bc519a0");
+            public static PropBlueprint Field_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_A", "ca8bd22709d709c438b2b8678acfa35b");
+            public static PropBlueprint Field_A_Lemon => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_A_Lemon", "2365ca94e43ea4d429c0573a2ec5f28d");
+            public static PropBlueprint Field_A_Sunflowers => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_A_Sunflowers", "c60798b3ce36b6b42bdc6a18441b65e1");
+            public static PropBlueprint Field_A_Tomatoes => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_A_Tomatoes", "0bf6be664ae2c784fb53ed5405c6fb11");
+            public static PropBlueprint Field_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_B", "8cc62e8cea64b2841a436fd47c2006c4");
+            public static PropBlueprint Field_B_Lemon => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_B_Lemon", "dfce59ded60dcf54a9dc494f284222f9");
+            public static PropBlueprint Field_B_Sunflowers => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_B_Sunflowers", "ea6bd25fa59a538439c60f35fe5a5980");
+            public static PropBlueprint Field_B_Tomatoes => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_B_Tomatoes", "7b10102e395ef7d47b9603bb201c9f97");
+            public static PropBlueprint Field_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_C", "8c7f28574d6deac4c9953436707ee29e");
+            public static PropBlueprint Field_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Field_D", "fbd4861aa65561f41a6369589d1aaa66");
+            public static PropBlueprint FireBasin_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("FireBasin_A", "cce3f226149369d41b1c58f69bc519a0");
+            public static PropBlueprint FireBasin_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("FireBasin_B", "92dc292c5ea3d3842a3c6979a850efd5");
             public static PropBlueprint Fireplace => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Fireplace", "84599e7bf1181b949a0d838377789093");
             public static PropBlueprint Globe => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Globe", "ea8cd6e67d865264c94790627504b377");
             public static PropBlueprint Greenhouse_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Greenhouse_A", "bb1766f19dfd5f14ea6026825cc26116");
@@ -300,20 +382,30 @@ namespace SolastaModApi
             public static PropBlueprint Guardrail_Link => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Guardrail_Link", "2fb1c11c49569dd458f2bb9757430f3a");
             public static PropBlueprint Guardrail_Straight_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Guardrail_Straight_A", "d0e09026e7a761b4980b12d0d12a36ae");
             public static PropBlueprint Guardrail_Straight_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Guardrail_Straight_B", "d8772439a96b4e7439d24bcd3eb784b0");
+            public static PropBlueprint Gutter_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Gutter_A", "8fe28b00d641218468dd1bbeb1b98229");
+            public static PropBlueprint Gutter_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Gutter_B", "4e4504d7fd1a7bb48b50ace87554cc22");
+            public static PropBlueprint Gutter_Link => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Gutter_Link", "05626db9858629549b1a14acb374b9b4");
             public static PropBlueprint Harp => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Harp", "022a9cbf122ac2e409d4bf3e2b493c04");
+            public static PropBlueprint HayStack_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("HayStack_A", "dc55f9874adbc5742a2ffd043c979e22");
+            public static PropBlueprint HayStack_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("HayStack_B", "3b73641b60e824c43a742b24e78e940c");
             public static PropBlueprint Hut => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Hut", "262e6ea65495c7a4fad4a2d34de8c596");
+            public static PropBlueprint Ladder => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Ladder", "07251eab51ed1b741bfdd8d3dff90925");
             public static PropBlueprint LavaBasin_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("LavaBasin_A", "e6fe2507df617094db67f73334041165");
             public static PropBlueprint LavaBasin_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("LavaBasin_B", "bff1527bff271684a92a7785df527277");
             public static PropBlueprint LavaBasin_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("LavaBasin_C", "9d94753a539b3fb41b12f64a3c5f5bd3");
+            public static PropBlueprint Logs_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Logs_A", "085900771a401804fa2777e1536e34db");
+            public static PropBlueprint Logs_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Logs_B", "1dc5b97096984aa4097ada1ae0cb73d0");
             public static PropBlueprint MarketBooth_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("MarketBooth_A", "c0ff3fb494cace44da294756379fa71d");
             public static PropBlueprint MarketBooth_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("MarketBooth_B", "868e06f9faef13f4595969fc5ceab355");
             public static PropBlueprint MarketBooth_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("MarketBooth_C", "3f292bdf06109ba48b7b52b5d3a9c776");
             public static PropBlueprint MarketBooth_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("MarketBooth_D", "4985c6b3ad2c2c64697088e60d12a7f2");
             public static PropBlueprint Mausoleum => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Mausoleum", "77ee82b9649bc0e44bce5de974b6064e");
+            public static PropBlueprint MetalRailling_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("MetalRailling_A", "675be3c529673d847b11fc2d7f07324c");
             public static PropBlueprint Mirror_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Mirror_A", "e67db08a301a4314d8c336daa54a42d4");
             public static PropBlueprint Mirror_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Mirror_B", "e3aed77de82ccf144bc4b8b5bd2bcc2d");
             public static PropBlueprint Mirror_B_Covered => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Mirror_B_Covered", "d1caee73854be654abec24c8dfbb283d");
             public static PropBlueprint Mirror_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Mirror_C", "884e67037eb3b44448ccae24f412b54a");
+            public static PropBlueprint Monument_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Monument_A", "8bfc150196a8b2b43a1ce1cad9e11a29");
             public static PropBlueprint Mushrooms_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Mushrooms_A", "ff27bbca27740ba498b12249d3d4279c");
             public static PropBlueprint Mushrooms_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Mushrooms_B", "c331e0aa93e50aa47bfa9a715f77a661");
             public static PropBlueprint OldMine_Debris_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("OldMine_Debris_A", "0293f4ca1e291f9449c49a725d223fb3");
@@ -328,13 +420,31 @@ namespace SolastaModApi
             public static PropBlueprint Paint_B_Covered => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Paint_B_Covered", "7c1b232533602d241a647fc81e47d3ae");
             public static PropBlueprint Paint_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Paint_C", "7c2a54e5ed5c3c246acfdffb205ec48d");
             public static PropBlueprint Paint_C_Covered => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Paint_C_Covered", "0e8716e22d6d4784b82ffa827f611523");
+            public static PropBlueprint Path_Crossroad => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Crossroad", "65af05bfeb141144699f3d0a39952c9e");
+            public static PropBlueprint Path_End => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_End", "d9f8e36a4522a4740a94f2f09bc39cea");
+            public static PropBlueprint Path_Sjunction_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Sjunction_A", "d3bd7a08e8e15b44388fae261ef47dc0");
+            public static PropBlueprint Path_Sjunction_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Sjunction_B", "505322bc2b482f1469ed250ca3f36124");
+            public static PropBlueprint Path_Straight_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Straight_A", "37425a2299af68b41b0fb25c074ae96a");
+            public static PropBlueprint Path_Straight_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Straight_B", "323b1af17424e944bb5a9c71601f711d");
+            public static PropBlueprint Path_Straight_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Straight_C", "ff64ecf54509e4647a73ed4c3ddc03ea");
+            public static PropBlueprint Path_Straight_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Straight_D", "241fac4ace3f2614cad3977dba056f11");
+            public static PropBlueprint Path_Turn => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Turn", "64085c797ec9b21418c7a84a2e6b06ad");
+            public static PropBlueprint Path_Yjunction => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Path_Yjunction", "b0928b95e3b608f4f911c1a0c543833d");
+            public static PropBlueprint Planks_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Planks_A", "876b2ed30a22d5644b3fe775df6b8295");
+            public static PropBlueprint Planks_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Planks_B", "d818fe517899a40428f23517aa42dd27");
+            public static PropBlueprint Planks_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Planks_C", "4b26be49d8180bb44b950760c44a441d");
             public static PropBlueprint Plant_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Plant_A", "324b28fcd7ea7ca4db8c16a9ae2347d2");
             public static PropBlueprint Plant_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Plant_B", "cd742da6a285c354780c5740914fa964");
             public static PropBlueprint PrisonFence_Link => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("PrisonFence_Link", "5d5bfc9e614cf654786009735ee75638");
+            public static PropBlueprint PrisonFence_Link_LowGround => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("PrisonFence_Link_LowGround", "67ed2131105b8fe4ca57ca1182c5f6c1");
             public static PropBlueprint PrisonFence_Straight_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("PrisonFence_Straight_A", "cdf33f977ec3df841b74f52101c5ed83");
             public static PropBlueprint PrisonFence_Straight_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("PrisonFence_Straight_B", "7706995fa267d3c48b7f49fa822ccead");
+            public static PropBlueprint PrisonFence_Straight_LowGround_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("PrisonFence_Straight_LowGround_A", "382815d29c6aa3141be4015bc84edd4e");
+            public static PropBlueprint PrisonFence_Straight_LowGround_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("PrisonFence_Straight_LowGround_B", "c94b1361d74974940b305d757b049bd5");
             public static PropBlueprint ReadingDesk_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("ReadingDesk_A", "87617bb544b77a74e9727accb94805e8");
             public static PropBlueprint ReadingDesk_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("ReadingDesk_B", "fa5d0f8c643f42d4d94851f6519d8b3e");
+            public static PropBlueprint RitualStone_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RitualStone_A", "ef7664ba25dd28c4faf2dc808f83018d");
+            public static PropBlueprint RitualStone_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RitualStone_B", "260fdc0259f500d4e94857147a39db5a");
             public static PropBlueprint Rock_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Rock_A", "07f75b826feff8b4f99d74c68e01bf7a");
             public static PropBlueprint Rock_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Rock_B", "a595e1c4b560ec44c9a992daedf4b259");
             public static PropBlueprint Rock_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Rock_C", "cbf03ed9f54f6a04abe1dc3894e61218");
@@ -342,23 +452,61 @@ namespace SolastaModApi
             public static PropBlueprint Rock_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Rock_E", "90e26063a615c1146ab93c0e17345194");
             public static PropBlueprint Rock_F => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Rock_F", "340bbedd299a0d24cb6bbf45b65c8d96");
             public static PropBlueprint Rock_G => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Rock_G", "b2bcc5928bf69754fa32f3e2973a2a28");
+            public static PropBlueprint Root_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Root_A", "c7f978c863603974bb9254824f8c64b2");
+            public static PropBlueprint Root_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Root_B", "0cdc3df5c1bbb3d44ba93b0d2c3657a8");
+            public static PropBlueprint Root_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Root_C", "c29af24e1777f9647bd1fac5a7a78d33");
+            public static PropBlueprint RuinedArch_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedArch_A", "2eacee69c0f90034c852cac479d64a5e");
+            public static PropBlueprint RuinedArch_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedArch_B", "b1930e8bf46c14243bc172934905cf6e");
+            public static PropBlueprint RuinedArchEnd_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedArchEnd_A", "474c6151a984ea044b0eb380c04eccee");
+            public static PropBlueprint RuinedArchEnd_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedArchEnd_B", "34da085fdee96694eadd4a313cb5019d");
+            public static PropBlueprint RuinedBigColumn_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedBigColumn_A", "da35a87b96fc991498fb38f450962e6a");
+            public static PropBlueprint RuinedBigColumn_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedBigColumn_B", "f99e2c16a8f7bfb4999b0f996129d370");
+            public static PropBlueprint RuinedBigColumn_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedBigColumn_C", "3b90150177ad7c441a1b0cbf34dfee34");
+            public static PropBlueprint RuinedBigColumn_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedBigColumn_D", "0616b06582f2a9249a23b00671515ffd");
+            public static PropBlueprint RuinedBigColumn_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedBigColumn_E", "6a5fe4e0c7d29a0458cf1f0cf30bf671");
+            public static PropBlueprint RuinedColumn_Destroyed_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedColumn_Destroyed_A", "30e7ff081b62a984e88306f28dd48603");
+            public static PropBlueprint RuinedColumn_Destroyed_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedColumn_Destroyed_B", "804efff13a41c2b4f95cbc1fb11f5121");
+            public static PropBlueprint RuinedColumn_Destroyed_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedColumn_Destroyed_C", "78ab57afd8744fd43ac0631859129998");
+            public static PropBlueprint RuinedKiosk_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedKiosk_A", "5350c2e2ae9dc3040b5b10df21faa5a7");
+            public static PropBlueprint RuinedKiosk_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedKiosk_B", "8d4dca43692cdcd42bfdbfe122ae3604");
+            public static PropBlueprint RuinedWall_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedWall_A", "9ba3ba9276f138d4b91d7bb31d70480e");
+            public static PropBlueprint RuinedWall_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedWall_B", "d8c24f243a2b42643bad8fa1f97e7ef7");
+            public static PropBlueprint RuinedWall_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedWall_C", "91ccf81cb9cbe77458c3614cfe5fbc6d");
+            public static PropBlueprint RuinedWall_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedWall_D", "3b0c7a5cda8f608438d60d5763f79ad7");
+            public static PropBlueprint RuinedWall_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedWall_E", "21c04bd5730d44949baecaf4fe385ffa");
+            public static PropBlueprint RuinedWall_F => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("RuinedWall_F", "6f816cfab5391054bb5119337107ada8");
+            public static PropBlueprint Scaffolding_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Scaffolding_A", "0c6f7bd6ed02d044680dee1eed0375a2");
+            public static PropBlueprint Scaffolding_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Scaffolding_B", "ec1fa212f4a09c84394ea8f90be968b1");
+            public static PropBlueprint Scaffolding_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Scaffolding_C", "83263d9423656e646a32f0cd994ec764");
             public static PropBlueprint Shelves_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Shelves_A", "91f70de709bbec740bc340f58970b9c5");
             public static PropBlueprint Shelves_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Shelves_B", "7933755e92ff88344bc5553986f91369");
             public static PropBlueprint Shelves_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Shelves_C", "bb02c0ebfdcdb984ba90f020e07d7444");
             public static PropBlueprint Shelves_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Shelves_D", "4cc3a6b2586d43346b6e94b3c1f534fc");
+            public static PropBlueprint Shelves_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Shelves_E", "f574ca26ae91e1d4c80bdbfb34a5b22f");
             public static PropBlueprint Skins_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Skins_A", "a1790049352a8c14ea1fd4f4cac5a1dc");
             public static PropBlueprint Skins_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Skins_B", "79253b3b05f43034eb97c310594dbcb2");
             public static PropBlueprint Skins_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Skins_C", "f0f6b5ebb1623334f8286356a7fdaec4");
+            public static PropBlueprint SkullPile_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SkullPile_A", "30eaad8eb441800428722c0222aed3e6");
+            public static PropBlueprint SkullPile_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SkullPile_B", "eec5e7e3153af4842b4f92ecc16a4cd9");
+            public static PropBlueprint SkullPile_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SkullPile_C", "5e05179deae83c548ab29f557aad9e5f");
+            public static PropBlueprint Slope_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Slope_A", "dd4e8a2345d81c648816a002cde3ae98");
             public static PropBlueprint SpiderEggs_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderEggs_A", "481f4e2e96a21bf44a77313315686c24");
             public static PropBlueprint SpiderEggs_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderEggs_B", "accd404b277c9b743ad08c3abc35ade5");
             public static PropBlueprint SpiderEggs_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderEggs_C", "5a8b9edc854ef4b4185e9500096ec914");
             public static PropBlueprint SpiderEggs_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderEggs_D", "6d52b5a50cff51340a75b0bd4e1f1132");
             public static PropBlueprint SpiderWebs_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderWebs_A", "bfd9ad26110574f4296ccbba45cd0f38");
             public static PropBlueprint SpiderWebs_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderWebs_B", "c843f456e54d1c24b901293a60d0e7e6");
+            public static PropBlueprint SpiderWebs_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderWebs_C", "630ecc6094b97f749a961a8c2343199a");
+            public static PropBlueprint SpiderWebs_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpiderWebs_D", "46cee178c9a785841b51750e9909b6af");
             public static PropBlueprint SpinningWheel => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("SpinningWheel", "0f33cb32a1dbae341a03c71aea6844e1");
+            public static PropBlueprint Stairs_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stairs_A", "c3526f95331c90e469da808cc5f4c528");
+            public static PropBlueprint Stairs_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stairs_B", "d73b3f5762707ab41ae117ea3f5a8637");
+            public static PropBlueprint Stairs_Destroyed_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stairs_Destroyed_A", "2fd831b0f09d5ad4c9f3e42b96d4d881");
+            public static PropBlueprint Stairs_Destroyed_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stairs_Destroyed_B", "3dd4d3ab58d61aa49b38b4c76f73130d");
             public static PropBlueprint Stalagmite_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stalagmite_A", "1ad0e9a81e04d7f44a6d1d178751fcf5");
             public static PropBlueprint Stalagmite_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stalagmite_B", "cbb6e92d91959e84c9ffff34fd81255e");
             public static PropBlueprint Stalagmite_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stalagmite_C", "2686b035cdc54f649a5824667884425b");
+            public static PropBlueprint Stalagmite_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stalagmite_D", "83fdc7727d4907e47adacbaf218b5c5f");
             public static PropBlueprint Statue_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Statue_A", "c684c7a4369cd284c976d9c6657a2711");
             public static PropBlueprint Statue_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Statue_B", "522a1164073cf5549a234bd538cf92ed");
             public static PropBlueprint Statue_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Statue_C", "5c4bddd87cc85504c86e2d2f974dae41");
@@ -379,6 +527,9 @@ namespace SolastaModApi
             public static PropBlueprint Structure_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Structure_A", "4ed9786a6e7367544a1514461e753340");
             public static PropBlueprint Structure_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Structure_B", "36304c02204e1c547bc32e9daf1e5e3a");
             public static PropBlueprint Structure_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Structure_C", "d3c01e0478fc8c045926a53fe90d3fc3");
+            public static PropBlueprint Stump_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stump_A", "6677f4eff13281e42af1f2770f7103f4");
+            public static PropBlueprint Stump_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stump_B", "6d360d87533c4e4438ec4e1aa74c6050");
+            public static PropBlueprint Stump_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Stump_C", "17738a5dceb36d946b0edf6944d198a0");
             public static PropBlueprint Table_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Table_A", "3f2e69dd4f7e4a246adedb035bba5eed");
             public static PropBlueprint Table_A_Covered => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Table_A_Covered", "125aed43477cb0043909b85af3662812");
             public static PropBlueprint Table_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Table_B", "c01ef9b18ea404441af020b2b61df492");
@@ -386,13 +537,31 @@ namespace SolastaModApi
             public static PropBlueprint Table_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Table_D", "ab2377722468dec4fa12c34333ab6e38");
             public static PropBlueprint Telescope_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Telescope_A", "ebe2461f525ec9e4fa4f505523040b76");
             public static PropBlueprint Telescope_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Telescope_B", "c51b760bf81bf6149a5819a5f2e31173");
+            public static PropBlueprint Tent_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tent_A", "8b649e16fce5d65419b9217bfd262916");
+            public static PropBlueprint Tent_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tent_B", "a4c2cf387783d344b80ac818a7acbfcc");
+            public static PropBlueprint Tent_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tent_C", "edcc060f0baf72745bed20bb788010a1");
+            public static PropBlueprint Tent_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tent_D", "6ad054aa5caf6e04cb881f4aa63d38b7");
+            public static PropBlueprint Tent_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tent_E", "839692985d19bd24497ab90213e7d96a");
+            public static PropBlueprint Tent_F => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tent_F", "98c9f7f37bc972c4ba4bb9b354d58b68");
+            public static PropBlueprint Thicket_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Thicket_A", "df963b7bd56854a4492cc4fcb0453eba");
+            public static PropBlueprint Thicket_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Thicket_B", "a2f115fd4452ab34ca66a09b64eb39fe");
+            public static PropBlueprint Thicket_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Thicket_C", "c1353666da159234aaaf31427c46e780");
             public static PropBlueprint Tomb_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tomb_A", "66edd58df33b8354b87840f7c40e82a6");
             public static PropBlueprint Tomb_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tomb_B", "8913ab015a0454240952354b56b97553");
             public static PropBlueprint Tomb_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tomb_C", "a7a78d64b83663d4a923b22ce95ba118");
+            public static PropBlueprint TombLarge_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("TombLarge_A", "d8a0a2b0b3d4c4d478547014f2ba1611");
+            public static PropBlueprint Tombstone_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tombstone_A", "abb4a1c61337d0a4ba501df8a8844c7c");
+            public static PropBlueprint Tombstone_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tombstone_B", "f5077d7492ec5534296b738494bf71ac");
+            public static PropBlueprint Tombstone_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tombstone_C", "247a3dcf6f23fa944ae37c321e9f9eb0");
+            public static PropBlueprint Tombstone_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Tombstone_D", "98528bf97ebbeb9409d00a9147e316a6");
+            public static PropBlueprint TombstonePack_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("TombstonePack_A", "d6c03222a48c3ed478e38eae004e6f6f");
+            public static PropBlueprint TombstonePack_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("TombstonePack_B", "b323174fc8e69414283c179d082ba005");
+            public static PropBlueprint TombstonePack_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("TombstonePack_C", "6ef7fb1d699d13b409dddd656e1349be");
             public static PropBlueprint Totem_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Totem_A", "ffe2f462e21e03a43b2cc278f5287394");
             public static PropBlueprint Totem_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Totem_B", "8af5a6239efc0fe44a012f91a36b80af");
             public static PropBlueprint Totem_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Totem_C", "672e4f75e974c864a87e18355994dd8a");
             public static PropBlueprint TreasurePedestal => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("TreasurePedestal", "902eb77b0d4d2c748931779139abc445");
+            public static PropBlueprint Trunk_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Trunk_A", "73b4d60b3ab1e40419bf865b03ae6662");
             public static PropBlueprint Vase_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Vase_A", "34af563c7fd8adb41a28ce95bb26f99b");
             public static PropBlueprint Vase_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Vase_B", "a0b91f0dcaaa32e46afd93132d35ff5f");
             public static PropBlueprint Wall_Blocker_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Blocker_A", "7d2648a305507c24d974bcb29ce37ce0");
@@ -401,9 +570,16 @@ namespace SolastaModApi
             public static PropBlueprint Wall_Blocker_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Blocker_D", "22b71f128cfe97842bae52e6d77369aa");
             public static PropBlueprint Wall_Blocker_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Blocker_E", "444a413343a5b304aacf5ce536636a52");
             public static PropBlueprint Wall_Crawl_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Crawl_A", "c95621739d3339740b2d4fed318563a9");
+            public static PropBlueprint Wall_Destroyed_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Destroyed_A", "ff6239c0c7aaf264f802cc938c1fcb8a");
+            public static PropBlueprint Wall_Link => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Link", "cdb1e1515ab0f0c4a8f4c6ef7b15d9be");
             public static PropBlueprint Wall_Simple_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_A", "915e4468c12be56498672148a061ed4b");
             public static PropBlueprint Wall_Simple_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_B", "e9edb6ba07ffc7146b231df398e53705");
             public static PropBlueprint Wall_Simple_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_C", "1bb39489cab84f944a2192a62fec4b50");
+            public static PropBlueprint Wall_Simple_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_D", "04e61d661625eca43b2206964fc1329d");
+            public static PropBlueprint Wall_Simple_E => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_E", "c33cbf15ef484894f81d2fd2c33e8c6f");
+            public static PropBlueprint Wall_Simple_F => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_F", "b6d722587e8500f43bd8a39664c1b533");
+            public static PropBlueprint Wall_Simple_G => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_G", "f27cdefd41400004bac67336ac5c51bc");
+            public static PropBlueprint Wall_Simple_LowGround_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Simple_LowGround_A", "745644ad930d1ea4998a887a34f41d43");
             public static PropBlueprint Wall_Thin_Corner_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Thin_Corner_A", "ab3275b7536a65c4a8fe8cb8e51f17a6");
             public static PropBlueprint Wall_Thin_Corner_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Thin_Corner_B", "e6b05a3528da76148992732160157410");
             public static PropBlueprint Wall_Thin_CornerT => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("Wall_Thin_CornerT", "375104a8ac6dcec4eb7ffcac71cfd8db");
@@ -419,21 +595,44 @@ namespace SolastaModApi
             public static PropBlueprint WoodenFence_Straight_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WoodenFence_Straight_B", "ee8df3ba58319e44baa28e725ffd6c7c");
             public static PropBlueprint WoodenPlatform_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WoodenPlatform_A", "d9c0248e9391399439c8797a52a9c341");
             public static PropBlueprint WoodenPlatform_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WoodenPlatform_B", "5ca3226d96dfd7240bc5ee36a50f0f20");
+            public static PropBlueprint WoodLog_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WoodLog_A", "c5fefade6d85a5e419131332737fb04e");
+            public static PropBlueprint WoodLog_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WoodLog_B", "a945f7f1f8f428547b1d469730390845");
+            public static PropBlueprint WoodLog_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WoodLog_C", "5248cb676220d7642b49b8007de48448");
+            public static PropBlueprint WoodLog_D => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WoodLog_D", "ee187e9acc8028547b0909f42f44278c");
             public static PropBlueprint WorkTable_A => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WorkTable_A", "dd76f2400a68b8046b19b2e3b851545f");
             public static PropBlueprint WorkTable_B => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WorkTable_B", "8394bbccf6985d04280385ced2729956");
+            public static PropBlueprint WorkTable_C => DatabaseRepository.GetDatabase<PropBlueprint>().TryGetElement("WorkTable_C", "f79d8471c17f99a468cbca98d10fba4f");
         }
         public static class RoomBlueprints
         {
+            public static RoomBlueprint Building_Cabin_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Building_Cabin_12C", "68a47783f7d06ed42a65dbe1206622eb");
+            public static RoomBlueprint Building_Lodge_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Building_Lodge_24C", "18ad556db5b9a0742932d4e4f4c02327");
             public static RoomBlueprint Clearing_Large_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Clearing_Large_24C", "08c55adc054e0ac4b84ffdb789ce1d6a");
             public static RoomBlueprint Clearing_Small_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Clearing_Small_12C", "5fa3c571a4abaaa4e9207346804ced4f");
             public static RoomBlueprint Corner_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Corner_12C", "ac274ab7e73e33e4f84002520e16d8c6");
             public static RoomBlueprint Corner_Crypt_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Corner_Crypt_12C", "7c5cd72556f5f834d84a88572d4f2e90");
             public static RoomBlueprint Crossroad_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Crossroad_12C", "696b1b46fb30668468f79070d6d5ece3");
             public static RoomBlueprint Crossroad_12C_Organic => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Crossroad_12C_Organic", "41a9752fc80c3c3448bf77f405cd7de0");
+            public static RoomBlueprint Curve_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Curve_12C", "23d857c9bfe906c4d8ae45ac18f3ab57");
+            public static RoomBlueprint Curve_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Curve_24C", "9224608beb068f54295f074ac576b633");
+            public static RoomBlueprint Curve_U_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Curve_U_24C", "619cc4a34f75e0c43bf6295c57d28fea");
+            public static RoomBlueprint Drain_Big_24C_A => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Big_24C_A", "458c37aa56d6a4a4f842c22da0d4a623");
+            public static RoomBlueprint Drain_Big_24C_B => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Big_24C_B", "42cdabd948e29e646928c79576eeb3d0");
+            public static RoomBlueprint Drain_Corner_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Corner_12C", "4499afbc958db0d4f95fdc03939cc103");
+            public static RoomBlueprint Drain_Crossroad_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Crossroad_12C", "1137e06d7d2fca24cb667b7be801d948");
+            public static RoomBlueprint Drain_Line_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Line_12C", "189cf233e5d9fd44791302beee9c29ff");
+            public static RoomBlueprint Drain_Line_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Line_24C", "ab6ed535c1d172d4faca51dff0cb27b6");
+            public static RoomBlueprint Drain_Small_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Small_24C", "af71bac8ad20baf4f841dacedb9c7b37");
+            public static RoomBlueprint Drain_Turn_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Drain_Turn_12C", "f23e7a61e526d7f40ba889ef67a9f2c5");
             public static RoomBlueprint Hallway_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Hallway_12C", "ea82ea52ae247664b89b6068a4276845");
             public static RoomBlueprint Line_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Line_12C", "2f03de410cac6ba489f690c3b3cf6e36");
             public static RoomBlueprint Line_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Line_24C", "416dda25ff8bca7448cf34acc0b8d961");
             public static RoomBlueprint Line_Mausoleum_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Line_Mausoleum_12C", "f80e2e8fd54915d46b910fd7af76b37c");
+            public static RoomBlueprint LowGround_Big_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("LowGround_Big_24C", "2af075aee325dfa4da01951a8c9f35d0");
+            public static RoomBlueprint LowGround_Crossroad_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("LowGround_Crossroad_12C", "0a939bb17e201d541a9418bd054b2247");
+            public static RoomBlueprint LowGround_Small_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("LowGround_Small_24C", "7ae7804c919f3b741beb15bd148e503e");
+            public static RoomBlueprint Pond_Large_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Pond_Large_24C", "4624cb462b78f1640a3c5b0cf7a2c7e8");
+            public static RoomBlueprint Pond_Small_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Pond_Small_12C", "4807de961d784fd49bbc396c45ed227f");
             public static RoomBlueprint Room_Big_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Room_Big_24C", "146d99c0f8b2b444fa8ea9409df1f443");
             public static RoomBlueprint Room_Big_24C_A_Organic => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Room_Big_24C_A_Organic", "4951817456a8c1b4eb0a8cde45e06444");
             public static RoomBlueprint Room_Big_24C_B_Organic => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Room_Big_24C_B_Organic", "d9fdb658a73ffbe4ab33f437b7cdff48");
@@ -444,6 +643,8 @@ namespace SolastaModApi
             public static RoomBlueprint Room_Small_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Room_Small_24C", "491b4c7c434500248988c1d01d2eacfc");
             public static RoomBlueprint Room_Small_24C_A_Organic => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Room_Small_24C_A_Organic", "38bfc2645299d9043ad42ef89dbb38e8");
             public static RoomBlueprint Room_Small_24C_B_Organic => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Room_Small_24C_B_Organic", "1dae980ece261194c8b5782f8602de63");
+            public static RoomBlueprint Ruin_Large_24C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Ruin_Large_24C", "8f5ac7fe1acf4e9498ff05876fff601b");
+            public static RoomBlueprint Ruin_Small_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Ruin_Small_12C", "bc3114baf413bda47a112ffc0a7605de");
             public static RoomBlueprint Turn_12C => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Turn_12C", "2039ef3a2b28c674d8a9a11e00982a57");
             public static RoomBlueprint Turn_12C_Organic => DatabaseRepository.GetDatabase<RoomBlueprint>().TryGetElement("Turn_12C_Organic", "5fecb5b7d1691874a973aa99b0df1243");
         }
@@ -474,6 +675,7 @@ namespace SolastaModApi
             public static BlueprintCategory Encounter => DatabaseRepository.GetDatabase<BlueprintCategory>().TryGetElement("Encounter", "0c1aeaf66c91439428308b71a602a0d8");
             public static BlueprintCategory FurnishedRooms => DatabaseRepository.GetDatabase<BlueprintCategory>().TryGetElement("FurnishedRooms", "e823a9212f0eb9b4d80158f62fe41646");
             public static BlueprintCategory Furniture => DatabaseRepository.GetDatabase<BlueprintCategory>().TryGetElement("Furniture", "3aef4ff68889f2844b5a1fb9c567edaa");
+            public static BlueprintCategory Harvestable => DatabaseRepository.GetDatabase<BlueprintCategory>().TryGetElement("Harvestable", "50cacf00b7b25e74ba65a4a9324ec201");
             public static BlueprintCategory Lighting => DatabaseRepository.GetDatabase<BlueprintCategory>().TryGetElement("Lighting", "00654883e860cac4f942b8e4ea386181");
             public static BlueprintCategory Loot => DatabaseRepository.GetDatabase<BlueprintCategory>().TryGetElement("Loot", "acf1865538ee1c347b8ad71f5766914a");
             public static BlueprintCategory Lore => DatabaseRepository.GetDatabase<BlueprintCategory>().TryGetElement("Lore", "a98e51dde85543f4d94f67c2277184d7");
@@ -494,6 +696,7 @@ namespace SolastaModApi
         {
             public static CampaignDefinition CoTM___WorldMap => DatabaseRepository.GetDatabase<CampaignDefinition>().TryGetElement("CoTM - WorldMap", "4b3d7d4cf879ddf4c8b0d75fed272ffe");
             public static CampaignDefinition CrownOfTheMagister => DatabaseRepository.GetDatabase<CampaignDefinition>().TryGetElement("CrownOfTheMagister", "45b218b999978f64b983044e8c5df128");
+            public static CampaignDefinition DLC1_ValleyOfThePast_Campaign => DatabaseRepository.GetDatabase<CampaignDefinition>().TryGetElement("DLC1_ValleyOfThePast_Campaign", "9341c27ba88906a4ab7461ec8d47db17");
             public static CampaignDefinition TelemaDemo => DatabaseRepository.GetDatabase<CampaignDefinition>().TryGetElement("TelemaDemo", "d007f98ad89d171448159b55da41f6a7");
             public static CampaignDefinition UserCampaign => DatabaseRepository.GetDatabase<CampaignDefinition>().TryGetElement("UserCampaign", "c4ba3a35de0abc64988422d261021985");
             public static CampaignDefinition UserCampaignPlayTest => DatabaseRepository.GetDatabase<CampaignDefinition>().TryGetElement("UserCampaignPlayTest", "07eb26c8eb0fcb647ae77d71b65ad480");
@@ -546,6 +749,7 @@ namespace SolastaModApi
             public static CharacterClassDefinition Paladin => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Paladin", "b2e60f3a15ee5de40a14cce2d16f02ba");
             public static CharacterClassDefinition Ranger => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Ranger", "d4cb9ea3b00ab6a4c9d3cd07aa199f40");
             public static CharacterClassDefinition Rogue => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Rogue", "8ae0dcdf1cf0a264c8198e0ca715eaf3");
+            public static CharacterClassDefinition Sorcerer => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Sorcerer", "7214644869e323444b7817d1804eb985");
             public static CharacterClassDefinition Wizard => DatabaseRepository.GetDatabase<CharacterClassDefinition>().TryGetElement("Wizard", "a279003a65f95a64eb58fcc71463c734");
         }
         public static class CharacterFamilyDefinitions
@@ -569,6 +773,7 @@ namespace SolastaModApi
         {
             public static CharacterInteractionDefinition Attack => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("Attack", "f04b23faea6f00843a7c56d2eb465c30");
             public static CharacterInteractionDefinition BanditTracks => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("BanditTracks", "5a0657d6a5384774ebebad74f48a3ca9");
+            public static CharacterInteractionDefinition Cancel => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("Cancel", "db9132bf8f31790419286d870002d488");
             public static CharacterInteractionDefinition DisarmTrap => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("DisarmTrap", "181579194db83b1428c3486c92af2dec");
             public static CharacterInteractionDefinition GoblinTracks => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("GoblinTracks", "1b9118a294aad0a4abecb21a2816bc49");
             public static CharacterInteractionDefinition HardClimb => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("HardClimb", "22cb10d69f2aacf4a96940ba04f81a31");
@@ -580,6 +785,7 @@ namespace SolastaModApi
             public static CharacterInteractionDefinition Observe => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("Observe", "f5ab1993c4b368b4e95b0e11eac5af20");
             public static CharacterInteractionDefinition OpenCloseDoor => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("OpenCloseDoor", "97baa6569d1e59c4791cafa8a162e8ff");
             public static CharacterInteractionDefinition OpenCloseDoorArena => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("OpenCloseDoorArena", "877c09fbedcb3734594bb8b9de49988c");
+            public static CharacterInteractionDefinition OpenDoorWithKey => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("OpenDoorWithKey", "a77457326a73b704bade64b1fd907a05");
             public static CharacterInteractionDefinition PlantDocument => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("PlantDocument", "1a0fdd404b7de424c98255dbe3c154f6");
             public static CharacterInteractionDefinition PushBlock => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("PushBlock", "f68b3483693e5804293b4c12a423533a");
             public static CharacterInteractionDefinition PushBlock_NoAnim => DatabaseRepository.GetDatabase<CharacterInteractionDefinition>().TryGetElement("PushBlock_NoAnim", "0fcdad86f8884cb48967c5c5a3240ca6");
@@ -688,6 +894,9 @@ namespace SolastaModApi
             public static CharacterSubclassDefinition RoguishDarkweaver => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("RoguishDarkweaver", "925b9a2fac1dc674882aa606552c4730");
             public static CharacterSubclassDefinition RoguishShadowCaster => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("RoguishShadowCaster", "c5672e851a6615d4598b5ec32c3ff3dc");
             public static CharacterSubclassDefinition RoguishThief => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("RoguishThief", "256d5035bf3ac5740810a07115ec8e56");
+            public static CharacterSubclassDefinition SorcerousChildRift => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("SorcerousChildRift", "a5f62682f02bbd24a9dd3dd8e98b5d00");
+            public static CharacterSubclassDefinition SorcerousDraconicBloodline => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("SorcerousDraconicBloodline", "f3ff002265fd37f48adf21641715592d");
+            public static CharacterSubclassDefinition SorcerousManaPainter => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("SorcerousManaPainter", "717e19ce0b5e1014db7dfd9517992e71");
             public static CharacterSubclassDefinition TraditionGreenmage => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("TraditionGreenmage", "ca9d46f90b868fe43aaddd39c171ec5e");
             public static CharacterSubclassDefinition TraditionLoremaster => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("TraditionLoremaster", "77b38dd008b5ec645974812a45483e60");
             public static CharacterSubclassDefinition TraditionShockArcanist => DatabaseRepository.GetDatabase<CharacterSubclassDefinition>().TryGetElement("TraditionShockArcanist", "6f400ff2620a4c14cabd9f8fd450eee1");
@@ -701,6 +910,7 @@ namespace SolastaModApi
             public static CharacterTemplateDefinition Cleric_DomainBattle_Level04 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Cleric_DomainBattle_Level04", "20fa6207648aa434fac3e095a0c60e78");
             public static CharacterTemplateDefinition Cleric_DomainBattle_Level06 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Cleric_DomainBattle_Level06", "cce6e00b669200047ba1fe9d6d7d31f4");
             public static CharacterTemplateDefinition Cleric_DomainBattle_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Cleric_DomainBattle_Level10", "cc0570c1187521749b57526adde2bd77");
+            public static CharacterTemplateDefinition Cleric_DomainBattle_Level13 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Cleric_DomainBattle_Level13", "493276f02fcc8f34190fd3e0286340de");
             public static CharacterTemplateDefinition Cleric_DomainInsight_Level08 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Cleric_DomainInsight_Level08", "98f9d2ca9f78a1249a1779c896f374c3");
             public static CharacterTemplateDefinition Cleric_DomainLaw_Level08 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Cleric_DomainLaw_Level08", "89f928ba42a559b41b8983355d107347");
             public static CharacterTemplateDefinition Cleric_DomainLife_Level08 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Cleric_DomainLife_Level08", "d38a1b76d30e7a24d9364e854ae52700");
@@ -713,32 +923,41 @@ namespace SolastaModApi
             public static CharacterTemplateDefinition Fighter_MartialMountaineer_Level04 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Fighter_MartialMountaineer_Level04", "1eec6cad271c2544fb31abb3adf4ff15");
             public static CharacterTemplateDefinition Fighter_MartialMountaineer_Level06 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Fighter_MartialMountaineer_Level06", "f1de01b90eecac54b84772ce878aece0");
             public static CharacterTemplateDefinition Fighter_MartialMountaineer_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Fighter_MartialMountaineer_Level10", "58273a128a06cd546a1eabfcc00f3bf6");
+            public static CharacterTemplateDefinition Fighter_MartialMountaineer_Level13 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Fighter_MartialMountaineer_Level13", "1d3ef1b2141a7ec4597e5acaacbb09fa");
             public static CharacterTemplateDefinition Fighter_MartialSpellblade_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Fighter_MartialSpellblade_Level10", "409fb13ce627a204cbf0278414ca8cda");
+            public static CharacterTemplateDefinition Fighter_MartialSpellblade_Level13 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Fighter_MartialSpellblade_Level13", "07f4ea0402fd5584d895d7072b6e29be");
             public static CharacterTemplateDefinition Garrad => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Garrad", "cc81dfedd22918d449e7bc72227a50b9");
             public static CharacterTemplateDefinition Hyeronimus => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Hyeronimus", "99aa2705d7792124b913452c1a5314aa");
             public static CharacterTemplateDefinition JanetWiz2 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("JanetWiz2", "bfceb4f0673501d4299208b3af3d87db");
             public static CharacterTemplateDefinition JanetWiz2_QA => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("JanetWiz2_QA", "f0d34918947381749bfdc0a462f775d3");
-            public static CharacterTemplateDefinition Level1_Cleric_Tanya_Esbery => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Cleric_Tanya_Esbery", "1390d646a30c7b84787c6b33ddf42483");
+            public static CharacterTemplateDefinition Level1_Cleric_Celia_Esbery => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Cleric_Celia_Esbery", "1390d646a30c7b84787c6b33ddf42483");
             public static CharacterTemplateDefinition Level1_Fighter_Maiwen_Olfsborn => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Fighter_Maiwen_Olfsborn", "e33949a908777e44d92d2465ecb09b46");
             public static CharacterTemplateDefinition Level1_Paladin_Berden_Redstone => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Paladin_Berden_Redstone", "7a4486e979b349d4bb762826044ee51d");
             public static CharacterTemplateDefinition Level1_Ranger_Miles_Hawke => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Ranger_Miles_Hawke", "a1b5fb8009a27bc42bcf9e89bd206338");
             public static CharacterTemplateDefinition Level1_Rogue_Anton_Whitesail => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Rogue_Anton_Whitesail", "bafcc153dd29d314385b9348b303e57d");
+            public static CharacterTemplateDefinition Level1_Sorcerer_Aleris_Brightstone => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Sorcerer_Aleris_Brightstone", "92d41e0a09ca3004f8c0806aa0971489");
+            public static CharacterTemplateDefinition Level1_Sorcerer_Hector_Ros => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Sorcerer_Hector_Ros", "0b07c5683a102bc43b9729034c108a86");
             public static CharacterTemplateDefinition Level1_Wizard_Nialla_Wildwind => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level1_Wizard_Nialla_Wildwind", "0e502f1b8a546114da2040a58527eda8");
+            public static CharacterTemplateDefinition Level2_Sorcerer_Aleris_Brightstone => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level2_Sorcerer_Aleris_Brightstone", "8df38a5d9b6120f47b22067ecdb5cb3b");
+            public static CharacterTemplateDefinition Level6_Sorcerer_Aleris_Brightstone => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Level6_Sorcerer_Aleris_Brightstone", "d1ec0c2dff9d89a4f8958a6dfb69c95d");
             public static CharacterTemplateDefinition MattRogue2 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("MattRogue2", "e38bfd3f102a40d4b8f05ac2cc4b0f9d");
             public static CharacterTemplateDefinition MattRogue2_QA => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("MattRogue2_QA", "30ac55fc90b0efe4c8d3d1233161a0d9");
             public static CharacterTemplateDefinition Paladin_OathDevotion_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Paladin_OathDevotion_Level10", "ad8804b9f81d8e1439e500575b7af417");
+            public static CharacterTemplateDefinition Paladin_OathDevotion_Level13 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Paladin_OathDevotion_Level13", "92c96e90b21ad6b4582d038432a8a2eb");
             public static CharacterTemplateDefinition Paladin_OathDevotion2_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Paladin_OathDevotion2_Level10", "aacf44ada692e934e9891f0b05e7a541");
             public static CharacterTemplateDefinition Paladin_OathDevotion3_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Paladin_OathDevotion3_Level10", "c3cb79248eb9f014b8ab62e60f8a6b48");
             public static CharacterTemplateDefinition Paladin_OathDevotion4_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Paladin_OathDevotion4_Level10", "a48f8b83de20b104c9eb002a4d55db9e");
             public static CharacterTemplateDefinition Paladin_OathMotherland_Level8 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Paladin_OathMotherland_Level8", "9cf9c1565e108104eb79d2442a8d0277");
             public static CharacterTemplateDefinition Paladin_OathTirmar_Level8 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Paladin_OathTirmar_Level8", "5d70a3d7d5fc52d4c89bc2304bcbe86f");
             public static CharacterTemplateDefinition Ranger_Hunter_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Ranger_Hunter_Level10", "6d04f14e443a8e24593cf62d38759a4f");
+            public static CharacterTemplateDefinition Ranger_Hunter_Level13 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Ranger_Hunter_Level13", "92b83e99fe54af7488edd7265e8193d2");
             public static CharacterTemplateDefinition Ranger_Marksman_Level8 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Ranger_Marksman_Level8", "201c1823ed27d9945a0ba41c60e10b48");
             public static CharacterTemplateDefinition Ranger_ShadowTamer_Level8 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Ranger_ShadowTamer_Level8", "5e0c64fd7aac509439825d2ebbfbbf8c");
             public static CharacterTemplateDefinition Rhuad => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Rhuad", "0b9907f97f486a94380ab65685ee426e");
             public static CharacterTemplateDefinition Rogue_RoguishDarkweaver_Level04 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Rogue_RoguishDarkweaver_Level04", "e64bff13740c11a4792cc267a98cb08c");
             public static CharacterTemplateDefinition Rogue_RoguishDarkweaver_Level06 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Rogue_RoguishDarkweaver_Level06", "98cbae4109b1a1a409dc67429744db81");
             public static CharacterTemplateDefinition Rogue_RoguishDarkweaver_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Rogue_RoguishDarkweaver_Level10", "d3aa2464da4cbfd418d7c00171b529be");
+            public static CharacterTemplateDefinition Rogue_RoguishDarkweaver_Level13 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Rogue_RoguishDarkweaver_Level13", "1cd86a1955fe6e549a5786c66b4575ba");
             public static CharacterTemplateDefinition Rogue_RoguishShadowCaster_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Rogue_RoguishShadowCaster_Level10", "4818911146c251147a6527e23a7827f1");
             public static CharacterTemplateDefinition Rogue_RoguishThief_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Rogue_RoguishThief_Level10", "890024235c9fc5344962c6fa56201c59");
             public static CharacterTemplateDefinition Vigdis => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Vigdis", "390b6aae31bc53c4ca7f2965d4084051");
@@ -748,6 +967,7 @@ namespace SolastaModApi
             public static CharacterTemplateDefinition Wizard_LoreMaster_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Wizard_LoreMaster_Level10", "537ddd723e35ef14c9eee3825f3dff94");
             public static CharacterTemplateDefinition Wizard_ShockArcanist_Level04 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Wizard_ShockArcanist_Level04", "481621171645e00499ea9d44cf6bf386");
             public static CharacterTemplateDefinition Wizard_ShockArcanist_Level10 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Wizard_ShockArcanist_Level10", "1ce74f514152bdf4d97deba57f211edc");
+            public static CharacterTemplateDefinition Wizard_ShockArcanist_Level13 => DatabaseRepository.GetDatabase<CharacterTemplateDefinition>().TryGetElement("Wizard_ShockArcanist_Level13", "4732c6b134b2110449720fc9c5ff592d");
         }
         public static class ConditionDefinitions
         {
@@ -755,6 +975,11 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionAcidSpit => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAcidSpit", "d61df3a676b6b07428766e45fa6aab6f");
             public static ConditionDefinition ConditionActingCunningly => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionActingCunningly", "bd09a467444b8564ebdddb4926b7e0d4");
             public static ConditionDefinition ConditionActingCunninglyFastHands => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionActingCunninglyFastHands", "381cb3c6164082e4d8d811d14fa6fc19");
+            public static ConditionDefinition ConditionAdditionalSpellSlot1 => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAdditionalSpellSlot1", "8f30ad5c2eda0d1409417e69472f1c11");
+            public static ConditionDefinition ConditionAdditionalSpellSlot2 => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAdditionalSpellSlot2", "eb511764f21e58741b263364fa0c2b48");
+            public static ConditionDefinition ConditionAdditionalSpellSlot3 => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAdditionalSpellSlot3", "f8800b4f8e2658a4084369e0626d7260");
+            public static ConditionDefinition ConditionAdditionalSpellSlot4 => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAdditionalSpellSlot4", "1093bccd6377346458f70411237e5fb2");
+            public static ConditionDefinition ConditionAdditionalSpellSlot5 => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAdditionalSpellSlot5", "e75a232b796e46247b2cb1140ca4006f");
             public static ConditionDefinition ConditionAided => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAided", "0f3ca4961d9ecec4bb9ed8933a1bc4d4");
             public static ConditionDefinition ConditionAnnoyedByBee => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAnnoyedByBee", "d40a359e8ff6a1a44ae395249136ca2b");
             public static ConditionDefinition ConditionAntitoxin => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionAntitoxin", "b4be67eb83ed8e442ad01f8ee3f7854d");
@@ -826,6 +1051,7 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionDarkness => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDarkness", "5dccdb5c5c2d7a044b78e41440d2724b");
             public static ConditionDefinition ConditionDarkvision => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDarkvision", "acec7f6b3e28afe459b07617af3aa1b6");
             public static ConditionDefinition ConditionDashing => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDashing", "44488d4335d72fa4fb07c07254db4c9f");
+            public static ConditionDefinition ConditionDashingAdditional => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDashingAdditional", "be4b88e97c348f645ab1c50d11ca749f");
             public static ConditionDefinition ConditionDashingBonus => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDashingBonus", "3ac8bbfd8ce7eed4e891bcaa4a460805");
             public static ConditionDefinition ConditionDazzled => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDazzled", "6e97e1a13de7570488ea71e2ae203d09");
             public static ConditionDefinition ConditionDead => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDead", "9ec3d42bf0e13a8469b604a8dca4c477");
@@ -838,7 +1064,9 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionDiscipleImmuneFire => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDiscipleImmuneFire", "2c55d22f8cf37014383cf9b025202b3d");
             public static ConditionDefinition ConditionDiscipleImmuneLightning => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDiscipleImmuneLightning", "aa4ab312c9259424d98435978a1b08da");
             public static ConditionDefinition ConditionDiseased => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDiseased", "8aa3c57f0e1674d43a912da83b7d6adb");
+            public static ConditionDefinition ConditionDiseasedHarm => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDiseasedHarm", "9c6b5f455f7fda14ebd8fda4cb876c24");
             public static ConditionDefinition ConditionDisengaging => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDisengaging", "9d3de19ca17c6554ea5485fbc3eabd25");
+            public static ConditionDefinition ConditionDisintegrated => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDisintegrated", "bc6b8b76e32d19945a94c1d6aba58425");
             public static ConditionDefinition ConditionDispellingEvilAndGood => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDispellingEvilAndGood", "1d1f2c9deebe86a4d958f5d0fd78032f");
             public static ConditionDefinition ConditionDivineFavor => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDivineFavor", "c0fb515d23746ab4087250a0dbeee0cb");
             public static ConditionDefinition ConditionDivinelyRevealed => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionDivinelyRevealed", "235c32f952d6c8f4aba2bf9fbb34a844");
@@ -878,6 +1106,7 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionGiantStrengthFire => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionGiantStrengthFire", "a8a3555a29d1cf648ace21bf256382b7");
             public static ConditionDefinition ConditionGiantStrengthFrost => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionGiantStrengthFrost", "ae5ac73bbf4ca7c44880755011377122");
             public static ConditionDefinition ConditionGiantStrengthHill => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionGiantStrengthHill", "95b48ab3f062f6d41bfbe4d2ac06b0b1");
+            public static ConditionDefinition ConditionGlobeOfInvulnerability => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionGlobeOfInvulnerability", "8f15e5587057ddc408f060570f0d401b");
             public static ConditionDefinition ConditionGrappled => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionGrappled", "b9e3fa435129c33459a4847c9c551265");
             public static ConditionDefinition ConditionGrappledRestrainedRemorhaz => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionGrappledRestrainedRemorhaz", "0dbd713b861cd5944bb71371f9c60ce8");
             public static ConditionDefinition ConditionGuided => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionGuided", "a34bdbae57211644895ad1998e52c9de");
@@ -888,6 +1117,7 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionHeavilyObscured => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionHeavilyObscured", "bbda507287384254486b0b0577d9899f");
             public static ConditionDefinition ConditionHeavyArmorOverload => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionHeavyArmorOverload", "70e427483c8c9a847872038334bd7e6a");
             public static ConditionDefinition ConditionHeraldOfBattle => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionHeraldOfBattle", "3e1170e2acf47df41b64e6037c1892f7");
+            public static ConditionDefinition ConditionHeroesFeast => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionHeroesFeast", "a850495035a797545ba21b4dcf0c7b7c");
             public static ConditionDefinition ConditionHeroism => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionHeroism", "01843b7781adb2b4fb5a9ae34112c29c");
             public static ConditionDefinition ConditionHighlighted => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionHighlighted", "e656433f63f7c1e499a77c59ebc7ac84");
             public static ConditionDefinition ConditionHindered => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionHindered", "a7ec75561313d2a41aab8635a306ed41");
@@ -903,6 +1133,7 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionLethargic => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionLethargic", "37044f32f596e1441a4f4954b84b32b3");
             public static ConditionDefinition ConditionLevitate => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionLevitate", "49251c4ab697d8a42b8fe788f848ca33");
             public static ConditionDefinition ConditionLifeDrained => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionLifeDrained", "ce10be38f182d7046bca13becd0e6bf6");
+            public static ConditionDefinition ConditionLifeDrainedSorcererChildRiftOffering => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionLifeDrainedSorcererChildRiftOffering", "e94d3b9b1956e09438aa77ab039d14be");
             public static ConditionDefinition ConditionLightHypersensitive => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionLightHypersensitive", "3bd94127fc524e740a38596a57d7cdc1");
             public static ConditionDefinition ConditionLightSensitive => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionLightSensitive", "ca49770be06152b44aca3d6df2678a81");
             public static ConditionDefinition ConditionLightSensitiveSorakSaboteur => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionLightSensitiveSorakSaboteur", "533ff2b82c312534a80fc9b5e48f9649");
@@ -972,6 +1203,8 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionSilenced => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSilenced", "760d7f77ab62cb941b669ec458827067");
             public static ConditionDefinition ConditionSleetStorm => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSleetStorm", "5c7db68b5ff840a43ba0fe83b14648f0");
             public static ConditionDefinition ConditionSlowed => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSlowed", "dfe3b89227acda343bcad5defd6afe0c");
+            public static ConditionDefinition ConditionSorcererChildRiftDeflection => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSorcererChildRiftDeflection", "cc02122da26e3214eb4b63d5cb55ce6d");
+            public static ConditionDefinition ConditionSorcererDraconicElementalResistance => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSorcererDraconicElementalResistance", "37eb34368e5b7ce4284fb36cccbb0069");
             public static ConditionDefinition ConditionSpiderClimb => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSpiderClimb", "5a917a82060957048bc59b6623c6dd68");
             public static ConditionDefinition ConditionSpiritGuardians => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSpiritGuardians", "7694fe6825ce7e14f98e3020d7b9c6df");
             public static ConditionDefinition ConditionSpiritGuardiansSelf => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSpiritGuardiansSelf", "5e156379ed4ea7843b4cedbaa0cf6dab");
@@ -981,6 +1214,7 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionStepback => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionStepback", "dae9b88f7d095814cb9ee3cdc205c991");
             public static ConditionDefinition ConditionStoneskin => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionStoneskin", "c29249514e8e4774ea94c9608d863ede");
             public static ConditionDefinition ConditionStunned => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionStunned", "126115c02838c1a4ca7d25682af5ddb0");
+            public static ConditionDefinition ConditionSunbeam => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSunbeam", "e258514d7aafc7b4586ab6411a890c10");
             public static ConditionDefinition ConditionSurged => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSurged", "33179406a89123b49a6a27c5d9302afd");
             public static ConditionDefinition ConditionSurprised => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSurprised", "9aed67f904d928344b24ecd27674c22f");
             public static ConditionDefinition ConditionSwallowedRemorhaz => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionSwallowedRemorhaz", "1bf833241755e684fbef755a54de3fd6");
@@ -992,6 +1226,7 @@ namespace SolastaModApi
             public static ConditionDefinition ConditionTraditionShockArcanistArcaneFury => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionTraditionShockArcanistArcaneFury", "403fdec1b29b4ec4a9a4cba837c1d387");
             public static ConditionDefinition ConditionTraditionShockArcanistArcaneShocked => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionTraditionShockArcanistArcaneShocked", "6bbdeb63818fd0c47a1daa0b88f8bebc");
             public static ConditionDefinition ConditionTranceOfSorrtarr => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionTranceOfSorrtarr", "63dd2355deeb8cb40bb40ad0beefb9f8");
+            public static ConditionDefinition ConditionTrueSeeing => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionTrueSeeing", "1183f2ef9e26a8e42b8e022d17736e49");
             public static ConditionDefinition ConditionTruesight => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionTruesight", "c06a89a13f0855e4b9ba00219fce32ed");
             public static ConditionDefinition ConditionTruesight_GemOfSeeing => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionTruesight_GemOfSeeing", "e1a1387a016fa17429d8b6f510aa33d7");
             public static ConditionDefinition ConditionTrueStrike => DatabaseRepository.GetDatabase<ConditionDefinition>().TryGetElement("ConditionTrueStrike", "56ca167fe03b17d4aa21d379351e2ae7");
@@ -1013,6 +1248,14 @@ namespace SolastaModApi
         public static class ConsoleTableDefinitions
         {
             public static ConsoleTableDefinition ConsoleTable => DatabaseRepository.GetDatabase<ConsoleTableDefinition>().TryGetElement("ConsoleTable", "1dabbdd4332c7274fa77e59bc452736d");
+        }
+        public static class ContentPackDefinitions
+        {
+            public static ContentPackDefinition BackerItems => DatabaseRepository.GetDatabase<ContentPackDefinition>().TryGetElement("BackerItems", "0c28d9fc24710084491e3aa098161beb");
+            public static ContentPackDefinition DigitalBackerContent => DatabaseRepository.GetDatabase<ContentPackDefinition>().TryGetElement("DigitalBackerContent", "d90bd9484f5fc294fac26b21abacee4f");
+            public static ContentPackDefinition LoadedDice => DatabaseRepository.GetDatabase<ContentPackDefinition>().TryGetElement("LoadedDice", "c2b5e16a9fdcda641b276ff6bd2b9ad4");
+            public static ContentPackDefinition SorcererUpdate => DatabaseRepository.GetDatabase<ContentPackDefinition>().TryGetElement("SorcererUpdate", "a3a1c399e092c864997e4c234204d36f");
+            public static ContentPackDefinition SupporterPack => DatabaseRepository.GetDatabase<ContentPackDefinition>().TryGetElement("SupporterPack", "58573e4bbdbf26145a47d3f33bdccf27");
         }
         public static class CreditsGroupDefinitions
         {
@@ -1517,6 +1760,17 @@ namespace SolastaModApi
             public static NarrativeTreeDefinition Council_05_b => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("Council_05_b", "d7a35a8febce61941b29ce68014ec739");
             public static NarrativeTreeDefinition Council_05_c => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("Council_05_c", "dd6ba10907e8fea499210304523439c3");
             public static NarrativeTreeDefinition Debug_LookAtTest => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("Debug_LookAtTest", "76f644ec06008414aa43ba25bd28346f");
+            public static NarrativeTreeDefinition DLC1_EmptyNar => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_EmptyNar", "6ec964c61312f7145856db4d6279ff23");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS01_Speak_With_Galar => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS01_Speak_With_Galar", "6162f5fb3323a974e87f40d98de926e1");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS02_Speak_With_NPC_Acolyte => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS02_Speak_With_NPC_Acolyte", "7a94d7cff7d1eac42abf8fe05b407fb5");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS03_Speak_With_NPC_Spy_FirstVisit => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS03_Speak_With_NPC_Spy_FirstVisit", "c4300c2712385c04bb29158bc7191073");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS05_Speak_With_NPC_Spy_SecondVisit => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS05_Speak_With_NPC_Spy_SecondVisit", "f76bcba340210e644a60a9349c8ba296");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS06_Speak_With_NPC_Scribe_FirstVisit => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS06_Speak_With_NPC_Scribe_FirstVisit", "bfa8f34e82dcbd243880eaff2f05945b");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS06_Speak_With_NPC_Scribe_SecondVisit => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS06_Speak_With_NPC_Scribe_SecondVisit", "20278ef7f5fce1949b776bb089f176b5");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS06_Valley_Intro => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS06_Valley_Intro", "555d9f04430fae542a8210c7f98b5ac3");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS10_OfficerSpeech => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS10_OfficerSpeech", "46a5fc590ed74fb43998d926a691f7c3");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS11_LootVIPBag => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS11_LootVIPBag", "1f8507584ec3688478d0831a23c9c2d2");
+            public static NarrativeTreeDefinition DLC1_NarrativeTree_CS30_TrappedByRedeemers => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("DLC1_NarrativeTree_CS30_TrappedByRedeemers", "7ce557117a1764b4298eefc187768d59");
             public static NarrativeTreeDefinition Earcorn_01_Arriving => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("Earcorn_01_Arriving", "79989b7f1a0edd24a831f32c7bd057db");
             public static NarrativeTreeDefinition Earcorn_01_Arriving_WithMerton => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("Earcorn_01_Arriving_WithMerton", "c9534fdc7a71eca4c984115417072c66");
             public static NarrativeTreeDefinition Earcorn_02_Footsteps => DatabaseRepository.GetDatabase<NarrativeTreeDefinition>().TryGetElement("Earcorn_02_Footsteps", "3671abf1e522deb41a1c57fa4b220c92");
@@ -1823,6 +2077,7 @@ namespace SolastaModApi
             public static QuestTreeDefinition CaravanReturnCompatibilityScenario_EA_0_5_41 => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("CaravanReturnCompatibilityScenario_EA_0.5.41", "97c0d3ff95b76bc4ba0ce7c205dc1a8c");
             public static QuestTreeDefinition Compatibility_ChangeMerton => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Compatibility_ChangeMerton", "d1d8d21a676cb4f4bb54a2d510593d26");
             public static QuestTreeDefinition Compatibility_Council04_Quest_Lost => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Compatibility_Council04_Quest_Lost", "5a92f5d25dfe68e479da5a3e80dbb8a6");
+            public static QuestTreeDefinition Compatibility_LockEvocationExit_1_0 => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Compatibility_LockEvocationExit_1.0", "bf95dffeba2779d459b53db1e2845941");
             public static QuestTreeDefinition Conjuration_Quest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Conjuration_Quest", "97bb8e162f882b843a353dc357d57ea4");
             public static QuestTreeDefinition Conjuration_Quest_Arena => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Conjuration_Quest_Arena", "644214e30a6d484499a5047086eddb9b");
             public static QuestTreeDefinition Conjuration_Quest_SuperEgo_Mansion_HelpServant => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Conjuration_Quest_SuperEgo_Mansion_HelpServant", "8b39cbe50ea7aae429d66ed02ef9f1ed");
@@ -1838,6 +2093,13 @@ namespace SolastaModApi
             public static QuestTreeDefinition Cradle_Of_Fire_Quest_SandRaven => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Cradle_Of_Fire_Quest_SandRaven", "d10ed624185aefb44a77863699a851b5");
             public static QuestTreeDefinition Cradle_Of_Fire_Scenario_Evocation => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("Cradle_Of_Fire_Scenario_Evocation", "80e27c11f6e629945a44066c1e8e7d97");
             public static QuestTreeDefinition CrownCompatibilityScenario_EA_0_4_0 => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("CrownCompatibilityScenario_EA_0.4.0", "c621e49ce011e254bb61d8688764edbf");
+            public static QuestTreeDefinition DLC1_Quest_Marches => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("DLC1_Quest_Marches", "b39b5d101607d464dab37eaec45bb51c");
+            public static QuestTreeDefinition DLC1_Quest_Marches_Meet_Everyone => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("DLC1_Quest_Marches_Meet_Everyone", "cb1aacafb1d97bf408f58eec4287e005");
+            public static QuestTreeDefinition DLC1_Quest_Marches_NPC1_Scribe => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("DLC1_Quest_Marches_NPC1_Scribe", "1214abc952e3ed94bb4b44dc8a1340c2");
+            public static QuestTreeDefinition DLC1_Quest_Marches_NPC2_Spy => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("DLC1_Quest_Marches_NPC2_Spy", "7c6d2c931a238f9498833c0bf12f9b29");
+            public static QuestTreeDefinition DLC1_Scenario_Marches => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("DLC1_Scenario_Marches", "c81cbded1d972ad4baa0e575e2c697b3");
+            public static QuestTreeDefinition DLC1_Scenario_Marches_NPC2_Scribe => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("DLC1_Scenario_Marches_NPC2_Scribe", "0868207d4a244464181f34d6d4955973");
+            public static QuestTreeDefinition DLC1_Scenario_Marches_NPC2_Spy => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("DLC1_Scenario_Marches_NPC2_Spy", "00669e1d1582c134b93d9e193b1e4547");
             public static QuestTreeDefinition EncounterLibrary_Scenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("EncounterLibrary_Scenario", "2f4b7d610c3624b4eb5e4e1e2720a2c2");
             public static QuestTreeDefinition KillRazanCompatibilityScenario => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("KillRazanCompatibilityScenario", "ffff9a0093f427840a038d8275ec4337");
             public static QuestTreeDefinition LegendaryQuest_Quest => DatabaseRepository.GetDatabase<QuestTreeDefinition>().TryGetElement("LegendaryQuest_Quest", "e8e41ca868d17204fbf841906e2d063c");
@@ -1916,6 +2178,8 @@ namespace SolastaModApi
         }
         public static class EffectProxyDefinitions
         {
+            public static EffectProxyDefinition ProxyBladeBarrier_Line => DatabaseRepository.GetDatabase<EffectProxyDefinition>().TryGetElement("ProxyBladeBarrier_Line", "35ba71d35e9b9af4a964c384d4f099c5");
+            public static EffectProxyDefinition ProxyBladeBarrier_Ring => DatabaseRepository.GetDatabase<EffectProxyDefinition>().TryGetElement("ProxyBladeBarrier_Ring", "78e4b9ee3684fcc4ebbec4c2b565e74f");
             public static EffectProxyDefinition ProxyCloudKill => DatabaseRepository.GetDatabase<EffectProxyDefinition>().TryGetElement("ProxyCloudKill", "5e36d0a6299c11b42a7986e49c9afab2");
             public static EffectProxyDefinition ProxyDancingLights => DatabaseRepository.GetDatabase<EffectProxyDefinition>().TryGetElement("ProxyDancingLights", "eda8c7b0f62081849b49d7559dc751e3");
             public static EffectProxyDefinition ProxyDarkness => DatabaseRepository.GetDatabase<EffectProxyDefinition>().TryGetElement("ProxyDarkness", "882c0644f8b8b3148abb46c899653365");
@@ -2093,9 +2357,11 @@ namespace SolastaModApi
         }
         public static class EnvironmentDefinitions
         {
+            public static EnvironmentDefinition Catacombs => DatabaseRepository.GetDatabase<EnvironmentDefinition>().TryGetElement("Catacombs", "8d84a43758d1fff4c91bcf70459fe666");
             public static EnvironmentDefinition ElvenPalace => DatabaseRepository.GetDatabase<EnvironmentDefinition>().TryGetElement("ElvenPalace", "680e216a12492a44e973e780c1a66439");
             public static EnvironmentDefinition LavaCaves => DatabaseRepository.GetDatabase<EnvironmentDefinition>().TryGetElement("LavaCaves", "fc7c481ade1b78240b369477734e6180");
             public static EnvironmentDefinition Necropolis => DatabaseRepository.GetDatabase<EnvironmentDefinition>().TryGetElement("Necropolis", "60d0508fddb55344eb9bbbdaf5b2d233");
+            public static EnvironmentDefinition Sewers => DatabaseRepository.GetDatabase<EnvironmentDefinition>().TryGetElement("Sewers", "0438ca15e978f344ab3b972e95cc48d1");
             public static EnvironmentDefinition Stronghold => DatabaseRepository.GetDatabase<EnvironmentDefinition>().TryGetElement("Stronghold", "3d54e8d62157afa44ba8d716a3ae543a");
             public static EnvironmentDefinition WoodLand => DatabaseRepository.GetDatabase<EnvironmentDefinition>().TryGetElement("WoodLand", "6fdd64dbb2b4e80498c7d6accf652ba9");
         }
@@ -2107,6 +2373,7 @@ namespace SolastaModApi
             public static EnvironmentEffectDefinition DeathGlyph_DM => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("DeathGlyph_DM", "beb0c4d8236a3c849b1655ee0dedf978");
             public static EnvironmentEffectDefinition DisturbingRunes_DM => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("DisturbingRunes_DM", "78346c3147300574d9fb2971ce49f739");
             public static EnvironmentEffectDefinition ExplosiveRunes => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("ExplosiveRunes", "d6fd0e0e2ce586e429512761769de098");
+            public static EnvironmentEffectDefinition FallingTrunk_DM => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("FallingTrunk_DM", "d937b1d27b8af2f409bc6f41dd128283");
             public static EnvironmentEffectDefinition FireBurst_DM => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("FireBurst_DM", "f24dbaeefe9c0d4408c1d986a34ce356");
             public static EnvironmentEffectDefinition FlamableArea => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("FlamableArea", "4e30ca6852267114394b97b9921a89f5");
             public static EnvironmentEffectDefinition FlamableArea_Strong => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("FlamableArea_Strong", "bba1c373d4bae144fb44701da6a773c4");
@@ -2123,6 +2390,7 @@ namespace SolastaModApi
             public static EnvironmentEffectDefinition ManaWind => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("ManaWind", "fdc829ba00eb24840bc136ecade3eb91");
             public static EnvironmentEffectDefinition ManaWind_AntiDragon => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("ManaWind_AntiDragon", "a7676b023dfec674483c2446a60090bd");
             public static EnvironmentEffectDefinition Medium_BoulderFall => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("Medium_BoulderFall", "b60201adc20f7ff489f7d7b04a5cb28a");
+            public static EnvironmentEffectDefinition PoisonBulb_DM => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("PoisonBulb_DM", "89668e02fc473e644b1f1a644b51bc2b");
             public static EnvironmentEffectDefinition PoisonCloud_DM => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("PoisonCloud_DM", "3bca1c44557b3a040b1db75b6fc504f8");
             public static EnvironmentEffectDefinition PoisonNeedle => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("PoisonNeedle", "027633b5d4ff13a40adb264b91d7e43b");
             public static EnvironmentEffectDefinition PoisonousBulb => DatabaseRepository.GetDatabase<EnvironmentEffectDefinition>().TryGetElement("PoisonousBulb", "030c6571a411e374282800387f16dd01");
@@ -2137,6 +2405,11 @@ namespace SolastaModApi
             public static FactionDefinition CaerLem_Guards => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("CaerLem_Guards", "af5a07963a33b0042905822379706459");
             public static FactionDefinition ChurchOfEinar => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("ChurchOfEinar", "766e3e395551fb54bbaf66a2c43763e2");
             public static FactionDefinition CircleOfDanantar => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("CircleOfDanantar", "9756da05d2671e645890bf96292a0418");
+            public static FactionDefinition DLC1_Faction_Forge => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("DLC1_Faction_Forge", "72118ca0d51a56e42bf220d8d3d7218d");
+            public static FactionDefinition DLC1_Faction_Mask => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("DLC1_Faction_Mask", "c0558f767bbbf594bbab876657aef8bb");
+            public static FactionDefinition DLC1_Faction_Orenitis => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("DLC1_Faction_Orenitis", "bcce4e78efb98e243b09b8c505c56d87");
+            public static FactionDefinition DLC1_Faction_Rebellion => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("DLC1_Faction_Rebellion", "3cd23083de886004b816ef9a403f2592");
+            public static FactionDefinition DLC1_Faction_ThePeople => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("DLC1_Faction_ThePeople", "b3c8946dcd983ab41bb61d5da112f8f2");
             public static FactionDefinition Evocation_Suncloud_Clan => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("Evocation_Suncloud_Clan", "ed9c037cde37bed448754ad1e30626a7");
             public static FactionDefinition HostileMonsters => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("HostileMonsters", "b3e1a16573dc44a4aa95cf40f57471ec");
             public static FactionDefinition HostileMonsters_BK_Ghoul => DatabaseRepository.GetDatabase<FactionDefinition>().TryGetElement("HostileMonsters_BK_Ghoul", "47f7a4ad7c7c78f469af12395bbdbac4");
@@ -2280,6 +2553,7 @@ namespace SolastaModApi
             public static FeatureDefinitionActionAffinity ActionAffinityConditionRetchingReeling => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityConditionRetchingReeling", "b1c3e99763f0f364dab00f35cd486b7b");
             public static FeatureDefinitionActionAffinity ActionAffinityConditionShocked => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityConditionShocked", "9d9c23d1dafee674e81f1256feffd463");
             public static FeatureDefinitionActionAffinity ActionAffinityConditionSlowed => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityConditionSlowed", "645b812202efbfa46b8fb6a0c9440204");
+            public static FeatureDefinitionActionAffinity ActionAffinityConditionSunbeam => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityConditionSunbeam", "e71de4efbdab7e14a9e83847ae5ef19e");
             public static FeatureDefinitionActionAffinity ActionAffinityConditionSurprised => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityConditionSurprised", "451ec0949221f7748a8134e8fb5e23c4");
             public static FeatureDefinitionActionAffinity ActionAffinityConditionTurned => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityConditionTurned", "55b0151e1ea01da4c941402550283c0b");
             public static FeatureDefinitionActionAffinity ActionAffinityConditionVampiricTouch => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityConditionVampiricTouch", "2e8a9afb4086d7241827ce1c58f57ff3");
@@ -2295,7 +2569,11 @@ namespace SolastaModApi
             public static FeatureDefinitionActionAffinity ActionAffinityMartialMountainerShieldBash => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityMartialMountainerShieldBash", "d629b7d423721c64087a5e03628ae704");
             public static FeatureDefinitionActionAffinity ActionAffinityMountaineerShieldCharge => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityMountaineerShieldCharge", "2f1c83db23c1c984aa6a962d74e800d1");
             public static FeatureDefinitionActionAffinity ActionAffinityNimbleEscape => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityNimbleEscape", "c79ed2c68dfa49c4bb45d76d142a139c");
+            public static FeatureDefinitionActionAffinity ActionAffinityRangerHunterVolley => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityRangerHunterVolley", "43840adfa5a853c4f8454de392229f6e");
+            public static FeatureDefinitionActionAffinity ActionAffinityRangerHunterWhirlwindAttack => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityRangerHunterWhirlwindAttack", "5bff74324aa4f5f48b17b5127be56ffe");
+            public static FeatureDefinitionActionAffinity ActionAffinityRangerMarksmanFastAim => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityRangerMarksmanFastAim", "4746079c3d167bd4e80e30079e5821ec");
             public static FeatureDefinitionActionAffinity ActionAffinityRogueCunningAction => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityRogueCunningAction", "1db5972af0c18804882b2f8de86e9b1a");
+            public static FeatureDefinitionActionAffinity ActionAffinityShadowTamerSwiftRetaliation => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityShadowTamerSwiftRetaliation", "ee2724b6cb6fa8340b422498336376ec");
             public static FeatureDefinitionActionAffinity ActionAffinityThiefFastHands => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityThiefFastHands", "ef18115a49a7aa04f847b06f11cf5da4");
             public static FeatureDefinitionActionAffinity ActionAffinityTraditionGreenMageLeafScales => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityTraditionGreenMageLeafScales", "fb454fe6a27595447800cb857f7c437f");
             public static FeatureDefinitionActionAffinity ActionAffinityUncannyDodge => DatabaseRepository.GetDatabase<FeatureDefinitionActionAffinity>().TryGetElement("ActionAffinityUncannyDodge", "140a220d8a81e0c49880c50863ef88aa");
@@ -2333,6 +2611,7 @@ namespace SolastaModApi
             public static FeatureDefinitionAdditionalDamage AdditionalDamageOathOfTirmarSmiteTheHiddenSuperiorDarkvision => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageOathOfTirmarSmiteTheHiddenSuperiorDarkvision", "5b75a61a854822447b51387ab6f266cd");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageOilOfSharpness => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageOilOfSharpness", "41485645129d7a14cb409c856edd70b3");
             public static FeatureDefinitionAdditionalDamage AdditionalDamagePaladinDivineSmite => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamagePaladinDivineSmite", "be26393f37ff52340bb25c89836d37f6");
+            public static FeatureDefinitionAdditionalDamage AdditionalDamagePaladinImprovedDivineSmite => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamagePaladinImprovedDivineSmite", "6c97b5505269e6f46bf141e42a4580cd");
             public static FeatureDefinitionAdditionalDamage AdditionalDamagePoison_ArivadsKiss => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamagePoison_ArivadsKiss", "9c685bf11f737424686b3740a381aa5d");
             public static FeatureDefinitionAdditionalDamage AdditionalDamagePoison_ArunsLight => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamagePoison_ArunsLight", "d25e8886d659b4343a4c464fedc5784a");
             public static FeatureDefinitionAdditionalDamage AdditionalDamagePoison_Basic => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamagePoison_Basic", "6994e62515df6b44b86b78a2170cc7ae");
@@ -2362,6 +2641,7 @@ namespace SolastaModApi
             public static FeatureDefinitionAdditionalDamage AdditionalDamageRoguishDarkweaverPredator => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageRoguishDarkweaverPredator", "b63fac5750d9120479949a5a0ff1ffb8");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageShadowTamerDarkSlayerDmgHyperSensitive => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageShadowTamerDarkSlayerDmgHyperSensitive", "82219a195191f8d4c9c8cc925c76250d");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageShadowTamerDarkSlayerDmgSuperiorDarkvision => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageShadowTamerDarkSlayerDmgSuperiorDarkvision", "f266b5bc60d02c64b842704bbec09caf");
+            public static FeatureDefinitionAdditionalDamage AdditionalDamageSorcererDraconicElementalAffinity => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageSorcererDraconicElementalAffinity", "4b1f8ed81b6941a4993b86bc4a875c89");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageTraditionShockArcanistArcaneFury => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageTraditionShockArcanistArcaneFury", "6d905b89b6eacd84992513ff6f418266");
             public static FeatureDefinitionAdditionalDamage AdditionalDamageWeaponPlus1 => DatabaseRepository.GetDatabase<FeatureDefinitionAdditionalDamage>().TryGetElement("AdditionalDamageWeapon+1", "36f818eb3360de6498749ab687b5781f");
         }
@@ -2391,11 +2671,22 @@ namespace SolastaModApi
             public static FeatureDefinitionFeatureSet FeatureSetHunterHuntersPrey => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetHunterHuntersPrey", "3ea5b9dedb33e7f44939a9e8692cecb4");
             public static FeatureDefinitionFeatureSet FeatureSetLoreMasterArcaneLore => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetLoreMasterArcaneLore", "f606ed750f58826489c15b0b017b0ad6");
             public static FeatureDefinitionFeatureSet FeatureSetLoremasterKeenMind => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetLoremasterKeenMind", "53667750483570c44ac42764a06616f8");
+            public static FeatureDefinitionFeatureSet FeatureSetRangerHunterMultiAttackChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetRangerHunterMultiAttackChoice", "dd8c548e778c525489ecf9f01e9d7949");
             public static FeatureDefinitionFeatureSet FeatureSetShadowTamerDarkSlayer => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetShadowTamerDarkSlayer", "c1c96f0fa8eab884bbcdecc603d8f573");
             public static FeatureDefinitionFeatureSet FeatureSetShadowTamerKnowDarkness => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetShadowTamerKnowDarkness", "b09848b9f5aac9640857de648e0e530c");
+            public static FeatureDefinitionFeatureSet FeatureSetSorcererDraconicChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetSorcererDraconicChoice", "d0daeacd6d9590f439f4c1f6b9894bc7");
+            public static FeatureDefinitionFeatureSet FeatureSetSorcererDraconicResilience => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetSorcererDraconicResilience", "04335a9aa58b1064eb0b95ae7ae8506c");
+            public static FeatureDefinitionFeatureSet FeatureSetSorcererFlexibleCasting => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetSorcererFlexibleCasting", "42cb790f216dcc64091346e6e9ad37e1");
             public static FeatureDefinitionFeatureSet FeatureSetUndeadFeatures => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetUndeadFeatures", "8592d3b6e3b8c674e9076802bd971e08");
             public static FeatureDefinitionFeatureSet FeatureSetWizardRitualCasting => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("FeatureSetWizardRitualCasting", "bab38716f7cc9824bb498156b661422f");
             public static FeatureDefinitionFeatureSet TerrainTypeAffinityRangerNaturalExplorerChoice => DatabaseRepository.GetDatabase<FeatureDefinitionFeatureSet>().TryGetElement("TerrainTypeAffinityRangerNaturalExplorerChoice", "221976147ed339d489923450eb6c21ad");
+        }
+        public static class FeatureDefinitionAncestrys
+        {
+            public static FeatureDefinitionAncestry AncestrySorcererDraconicBlack => DatabaseRepository.GetDatabase<FeatureDefinitionAncestry>().TryGetElement("AncestrySorcererDraconicBlack", "51b706df4f7c7a64688d8b0ac501ae21");
+            public static FeatureDefinitionAncestry AncestrySorcererDraconicGold => DatabaseRepository.GetDatabase<FeatureDefinitionAncestry>().TryGetElement("AncestrySorcererDraconicGold", "057972fc72be321438914e957309a196");
+            public static FeatureDefinitionAncestry AncestrySorcererDraconicGreen => DatabaseRepository.GetDatabase<FeatureDefinitionAncestry>().TryGetElement("AncestrySorcererDraconicGreen", "db5dba36b3abfd049aa0ae4a49fa422b");
+            public static FeatureDefinitionAncestry AncestrySorcererDraconicSilver => DatabaseRepository.GetDatabase<FeatureDefinitionAncestry>().TryGetElement("AncestrySorcererDraconicSilver", "d1ac0e68210e8c448947f06f28e3eca5");
         }
         public static class FeatureDefinitionAttackModifiers
         {
@@ -2498,6 +2789,7 @@ namespace SolastaModApi
             public static FeatureDefinitionAttributeModifier AttributeModifierHasted => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierHasted", "3fca0e820a3d50e4aa9797bb72822089");
             public static FeatureDefinitionAttributeModifier AttributeModifierHeadbandOfIntellect => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierHeadbandOfIntellect", "bbaca6648a030f34584abd9b3e1096e8");
             public static FeatureDefinitionAttributeModifier AttributeModifierHeraldOfBattle => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierHeraldOfBattle", "b6b391db5bb106a4d9e9a88b7d005386");
+            public static FeatureDefinitionAttributeModifier AttributeModifierHeroesFeast => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierHeroesFeast", "4c1f841cd615f0d43b0fcf129a44cb23");
             public static FeatureDefinitionAttributeModifier AttributeModifierHumanAbilityScoreIncrease => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierHumanAbilityScoreIncrease", "b0cd677e67d900d45aa4dc0ac9b1b707");
             public static FeatureDefinitionAttributeModifier AttributeModifierLifeDrained => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierLifeDrained", "1df87241987a91f46a0fed245bde9858");
             public static FeatureDefinitionAttributeModifier AttributeModifierMageArmor => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierMageArmor", "725f993cc606597478aeb5119f9e2e29");
@@ -2513,6 +2805,10 @@ namespace SolastaModApi
             public static FeatureDefinitionAttributeModifier AttributeModifierRangerExtraAttack => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierRangerExtraAttack", "d09c1238730338c449bb56bc81b4e039");
             public static FeatureDefinitionAttributeModifier AttributeModifierShielded => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierShielded", "e2bdfbaee1dd9a745afee348167a143c");
             public static FeatureDefinitionAttributeModifier AttributeModifierShieldedByFaith => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierShieldedByFaith", "5a6adf8b35530e6438952758ee7b9d3d");
+            public static FeatureDefinitionAttributeModifier AttributeModifierSorcererDraconicResilienceAC => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierSorcererDraconicResilienceAC", "354b8c0cc0364dc41934ba2d7052c607");
+            public static FeatureDefinitionAttributeModifier AttributeModifierSorcererDraconicResilienceHitPoints => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierSorcererDraconicResilienceHitPoints", "2f3d137ff6ef7e44ab1e3b47c5bbb352");
+            public static FeatureDefinitionAttributeModifier AttributeModifierSorcererSorceryPointsBase => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierSorcererSorceryPointsBase", "1ddbd33242292a142ac2494b06e86172");
+            public static FeatureDefinitionAttributeModifier AttributeModifierSorcererSorceryPointsMultiplier => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierSorcererSorceryPointsMultiplier", "40e252e1ba0c2814e975f5a290ae3697");
             public static FeatureDefinitionAttributeModifier AttributeModifierSturdinessOfTheTundra => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierSturdinessOfTheTundra", "c96e7b756d1f29a4897a547d6902f4d8");
             public static FeatureDefinitionAttributeModifier AttributeModifierTomeOfAllThings_CHA => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierTomeOfAllThings_CHA", "450e3c60f1c44ee47bc17694ca1e0163");
             public static FeatureDefinitionAttributeModifier AttributeModifierTomeOfAllThings_CON => DatabaseRepository.GetDatabase<FeatureDefinitionAttributeModifier>().TryGetElement("AttributeModifierTomeOfAllThings_CON", "b886e22d4c51e184e9c2758c411685a7");
@@ -2534,6 +2830,9 @@ namespace SolastaModApi
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsOathOfDevotion => DatabaseRepository.GetDatabase<FeatureDefinitionAutoPreparedSpells>().TryGetElement("AutoPreparedSpellsOathOfDevotion", "373823dbc1c894149871f2efb16a827d");
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsOathOfMotherland => DatabaseRepository.GetDatabase<FeatureDefinitionAutoPreparedSpells>().TryGetElement("AutoPreparedSpellsOathOfMotherland", "a1be693f932dc9b44ac28509b715885d");
             public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsOathOfTirmar => DatabaseRepository.GetDatabase<FeatureDefinitionAutoPreparedSpells>().TryGetElement("AutoPreparedSpellsOathOfTirmar", "87bf1aa4f87720b4e9c80525d148fb05");
+            public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsSorcereDraconicBloodline => DatabaseRepository.GetDatabase<FeatureDefinitionAutoPreparedSpells>().TryGetElement("AutoPreparedSpellsSorcereDraconicBloodline", "20c7c393f55017344b4ebf57ea11331d");
+            public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsSorcererChildRift => DatabaseRepository.GetDatabase<FeatureDefinitionAutoPreparedSpells>().TryGetElement("AutoPreparedSpellsSorcererChildRift", "3f11c619268397d488488eb04ba08253");
+            public static FeatureDefinitionAutoPreparedSpells AutoPreparedSpellsSorcererManaPainter => DatabaseRepository.GetDatabase<FeatureDefinitionAutoPreparedSpells>().TryGetElement("AutoPreparedSpellsSorcererManaPainter", "55ad43c28015dd941aa73a95c70286af");
         }
         public static class FeatureDefinitionBonusCantripss
         {
@@ -2582,6 +2881,7 @@ namespace SolastaModApi
             public static FeatureDefinitionCastSpell CastSpellShockArcanist => DatabaseRepository.GetDatabase<FeatureDefinitionCastSpell>().TryGetElement("CastSpellShockArcanist", "062d4a570d452b743b224f79ad4a8e20");
             public static FeatureDefinitionCastSpell CastSpellSkeleton_Knight => DatabaseRepository.GetDatabase<FeatureDefinitionCastSpell>().TryGetElement("CastSpellSkeleton_Knight", "b78f466c0c97fc34ab6dfa3388f35d01");
             public static FeatureDefinitionCastSpell CastSpellSkeletonSorcerer => DatabaseRepository.GetDatabase<FeatureDefinitionCastSpell>().TryGetElement("CastSpellSkeletonSorcerer", "24c248bcdcaca9b489e5eba46c9988ab");
+            public static FeatureDefinitionCastSpell CastSpellSorcerer => DatabaseRepository.GetDatabase<FeatureDefinitionCastSpell>().TryGetElement("CastSpellSorcerer", "07d0f4afcef6b864983f59dd8a38a5c7");
             public static FeatureDefinitionCastSpell CastSpellSorr_Akkath_Acolyte_of_Sorr_Tarr => DatabaseRepository.GetDatabase<FeatureDefinitionCastSpell>().TryGetElement("CastSpellSorr-Akkath_Acolyte_of_Sorr-Tarr", "8131707d1a7e0ac40ab9b3503eeb04ef");
             public static FeatureDefinitionCastSpell CastSpellWizard => DatabaseRepository.GetDatabase<FeatureDefinitionCastSpell>().TryGetElement("CastSpellWizard", "399373f8f5f9ede498cb06ca39268290");
         }
@@ -2637,6 +2937,7 @@ namespace SolastaModApi
             public static FeatureDefinitionCombatAffinity CombatAffinityShadowMurder => DatabaseRepository.GetDatabase<FeatureDefinitionCombatAffinity>().TryGetElement("CombatAffinityShadowMurder", "c12cc5a4653e878489b15e4ecd43b6cb");
             public static FeatureDefinitionCombatAffinity CombatAffinityShadowTamerDarkSlayerHitHyperSensitive => DatabaseRepository.GetDatabase<FeatureDefinitionCombatAffinity>().TryGetElement("CombatAffinityShadowTamerDarkSlayerHitHyperSensitive", "e9ff7ea16c0ad764d8b3591c59dd9683");
             public static FeatureDefinitionCombatAffinity CombatAffinityShadowTamerDarkSlayerHitLightSensitive => DatabaseRepository.GetDatabase<FeatureDefinitionCombatAffinity>().TryGetElement("CombatAffinityShadowTamerDarkSlayerHitLightSensitive", "34692e87dfc6ae141aa3676f3e328ee9");
+            public static FeatureDefinitionCombatAffinity CombatAffinitySorcererChildRiftDeflection => DatabaseRepository.GetDatabase<FeatureDefinitionCombatAffinity>().TryGetElement("CombatAffinitySorcererChildRiftDeflection", "9aa776907e7102a47ae6236c6e587c8a");
             public static FeatureDefinitionCombatAffinity CombatAffinityStealthy => DatabaseRepository.GetDatabase<FeatureDefinitionCombatAffinity>().TryGetElement("CombatAffinityStealthy", "2f667d087401b6045a212d845c809c71");
             public static FeatureDefinitionCombatAffinity CombatAffinityStepback => DatabaseRepository.GetDatabase<FeatureDefinitionCombatAffinity>().TryGetElement("CombatAffinityStepback", "68d13f383b2cf59428f87f3ef87e42ec");
             public static FeatureDefinitionCombatAffinity CombatAffinityStunnedAdvantage => DatabaseRepository.GetDatabase<FeatureDefinitionCombatAffinity>().TryGetElement("CombatAffinityStunnedAdvantage", "9807e50c4ca97b24da1e0d66d7cf4431");
@@ -2749,6 +3050,9 @@ namespace SolastaModApi
             public static FeatureDefinitionDamageAffinity DamageAffinityForceImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityForceImmunity", "c2b9dd6f6f3dd6647af35a7545cd3b28");
             public static FeatureDefinitionDamageAffinity DamageAffinityLightningImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityLightningImmunity", "9acb6e13145079c40a27012146696746");
             public static FeatureDefinitionDamageAffinity DamageAffinityLightningResistance => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityLightningResistance", "443d9129d7904f14b8d9977881f95c08");
+            public static FeatureDefinitionDamageAffinity DamageAffinityMummyLord_BludgeoningImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityMummyLord_BludgeoningImmunity", "82cc17c2d2a73f14fbf7026120c180bc");
+            public static FeatureDefinitionDamageAffinity DamageAffinityMummyLord_PiercingImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityMummyLord_PiercingImmunity", "c8c668f866a09db45855aecc47f63175");
+            public static FeatureDefinitionDamageAffinity DamageAffinityMummyLord_SlashingImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityMummyLord_SlashingImmunity", "cc5209ebd30da554887b94bb0bf8c0d4");
             public static FeatureDefinitionDamageAffinity DamageAffinityNecroticImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityNecroticImmunity", "0c4d40bf6e1946143bae2746a57972b3");
             public static FeatureDefinitionDamageAffinity DamageAffinityNecroticResistance => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityNecroticResistance", "ee5f1fbda4f516844b493f08fdd4fb5a");
             public static FeatureDefinitionDamageAffinity DamageAffinityPiercingImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityPiercingImmunity", "0dac0e2db280cd746983da9c107b7070");
@@ -2772,6 +3076,7 @@ namespace SolastaModApi
             public static FeatureDefinitionDamageAffinity DamageAffinitySlashingResistanceByWardingBond => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinitySlashingResistanceByWardingBond", "79f996d85b4885d438b43afd38b602f6");
             public static FeatureDefinitionDamageAffinity DamageAffinitySlashingResistanceExceptSilver => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinitySlashingResistanceExceptSilver", "225f3571dfe75434e9db0b3fe2088d18");
             public static FeatureDefinitionDamageAffinity DamageAffinitySorakAbomination_SlashingResistance => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinitySorakAbomination_SlashingResistance", "f38fe55e17441bd4791f5fc00928babc");
+            public static FeatureDefinitionDamageAffinity DamageAffinitySorcererDraconicElementalResistance => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinitySorcererDraconicElementalResistance", "73f64b0abbec26241a5892a1e916069e");
             public static FeatureDefinitionDamageAffinity DamageAffinityStoneskinBludgeoning => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityStoneskinBludgeoning", "c2657b98081db5b47ad80b4cf3d0486a");
             public static FeatureDefinitionDamageAffinity DamageAffinityStoneskinPiercing => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityStoneskinPiercing", "e53f9e58fba622346ac91adc3c2f5fac");
             public static FeatureDefinitionDamageAffinity DamageAffinityStoneskinSlashing => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityStoneskinSlashing", "a8cfc2501e6e75645a0304bd64afcfd3");
@@ -2781,6 +3086,7 @@ namespace SolastaModApi
             public static FeatureDefinitionDamageAffinity DamageAffinityWerewolf_BludgeoningImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityWerewolf_BludgeoningImmunity", "e98060886b8773640ac96c045d340ca5");
             public static FeatureDefinitionDamageAffinity DamageAffinityWerewolf_PiercingImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityWerewolf_PiercingImmunity", "3b03b8436c544a24b9cf7b1d4009642c");
             public static FeatureDefinitionDamageAffinity DamageAffinityWerewolf_SlashingImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityWerewolf_SlashingImmunity", "cddf58860c4906e448a2c6c59dd4503d");
+            public static FeatureDefinitionDamageAffinity DamageAffinityWightLord_NecroticImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionDamageAffinity>().TryGetElement("DamageAffinityWightLord_NecroticImmunity", "0e10ee5d46a9c5b4fb64fcfa18256a2b");
         }
         public static class FeatureDefinitionDeathSavingThrowAffinitys
         {
@@ -2791,10 +3097,12 @@ namespace SolastaModApi
         public static class FeatureDefinitionDieRollModifiers
         {
             public static FeatureDefinitionDieRollModifier DieRollModifierCaerLemMonsterInitiativeFirst => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierCaerLemMonsterInitiativeFirst", "1bbe0e6e42b118340aba030655b3057d");
+            public static FeatureDefinitionDieRollModifier DieRollModifierEmpoweredSpell => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierEmpoweredSpell", "4f1ded0678f0d6e4eb6f1ed237699a99");
             public static FeatureDefinitionDieRollModifier DieRollModifierFightingStyleGreatWeapon => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierFightingStyleGreatWeapon", "3ae18874ff75d95478c32afeb9ca144e");
             public static FeatureDefinitionDieRollModifier DieRollModifierHalfingLucky => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierHalfingLucky", "8b06899d2a893244fabe45430b25530d");
             public static FeatureDefinitionDieRollModifier DieRollModifierHyeronimusAttackRollCritical => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierHyeronimusAttackRollCritical", "a64e3a101d38aaa49bb928ed62102b69");
             public static FeatureDefinitionDieRollModifier DieRollModifierPlayerInitiativeFirstHyeronimus => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierPlayerInitiativeFirstHyeronimus", "3b793ff41b3302c41adfbe00e38686d4");
+            public static FeatureDefinitionDieRollModifier DieRollModifierRogueReliableTalent => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierRogueReliableTalent", "dd6638327b8ec1f4e9355d56f8b59f28");
             public static FeatureDefinitionDieRollModifier DieRollModifierTraditionShockArcanistArcaneWarfare => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierTraditionShockArcanistArcaneWarfare", "2123bba6eb04ad841b5321f52d783811");
             public static FeatureDefinitionDieRollModifier DieRollModifierTutorialLiamAttackRollDisadvantage => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierTutorialLiamAttackRollDisadvantage", "c2bcde0bd84e68448b6bbb4a402e426e");
             public static FeatureDefinitionDieRollModifier DieRollModifierTutorialPlayerAbilityCheckAdvantage => DatabaseRepository.GetDatabase<FeatureDefinitionDieRollModifier>().TryGetElement("DieRollModifierTutorialPlayerAbilityCheckAdvantage", "65e164f6574b33f4091403fe81bcfdca");
@@ -2859,6 +3167,11 @@ namespace SolastaModApi
         }
         public static class FeatureDefinitionMagicAffinitys
         {
+            public static FeatureDefinitionMagicAffinity MagicAffinityAdditionalSpellSlot1 => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityAdditionalSpellSlot1", "b6026a11243d6e44c92642da4b3ff44a");
+            public static FeatureDefinitionMagicAffinity MagicAffinityAdditionalSpellSlot2 => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityAdditionalSpellSlot2", "92322fe1929331846bccc1341e708ef0");
+            public static FeatureDefinitionMagicAffinity MagicAffinityAdditionalSpellSlot3 => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityAdditionalSpellSlot3", "fc7e8317e9dcafd44a07c8712d77d31d");
+            public static FeatureDefinitionMagicAffinity MagicAffinityAdditionalSpellSlot4 => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityAdditionalSpellSlot4", "0beab9f2ef8336c478c84971a3b11c49");
+            public static FeatureDefinitionMagicAffinity MagicAffinityAdditionalSpellSlot5 => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityAdditionalSpellSlot5", "d6628a2424e787f47992a6d345573f07");
             public static FeatureDefinitionMagicAffinity MagicAffinityAnnoyedByBee => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityAnnoyedByBee", "792da45b5ca416e43a8c531b554ac3e4");
             public static FeatureDefinitionMagicAffinity MagicAffinityBattleMagic => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityBattleMagic", "daf4e911e0bf3d74ebabeebfe28fcfe5");
             public static FeatureDefinitionMagicAffinity MagicAffinityClericRitualCasting => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityClericRitualCasting", "1c0b3c1fa82f308489cb593d01f8cc49");
@@ -2880,8 +3193,10 @@ namespace SolastaModApi
             public static FeatureDefinitionMagicAffinity MagicAffinityShadowRetribution => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityShadowRetribution", "b817d5d5fc773bf44bfc818e31e9bea6");
             public static FeatureDefinitionMagicAffinity MagicAffinityShockArcanistArcaneWarfare => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityShockArcanistArcaneWarfare", "704008e9c88acbc4c9a8e1bc4b906e7f");
             public static FeatureDefinitionMagicAffinity MagicAffinitySilenced => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinitySilenced", "45ed40e1e2282fc46bcc8ccb7000e0e3");
+            public static FeatureDefinitionMagicAffinity MagicAffinitySorcererChildRiftMagic => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinitySorcererChildRiftMagic", "5e70c16be10470f418e54e6c687bf7e7");
             public static FeatureDefinitionMagicAffinity MagicAffinitySpellBladeIntoTheFray => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinitySpellBladeIntoTheFray", "dcbc028742c7af3479f0c56e3146d286");
             public static FeatureDefinitionMagicAffinity MagicAffinityWizardRitualCasting => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffinityWizardRitualCasting", "e207225348c3bc44a87047d1a27968d2");
+            public static FeatureDefinitionMagicAffinity MagicAffnityGlobeOfInvulnerability => DatabaseRepository.GetDatabase<FeatureDefinitionMagicAffinity>().TryGetElement("MagicAffnityGlobeOfInvulnerability", "64ae50eb23054b043be034940207497a");
         }
         public static class FeatureDefinitionMovementAffinitys
         {
@@ -2890,6 +3205,7 @@ namespace SolastaModApi
             public static FeatureDefinitionMovementAffinity MovementAffinityChampionRemarkableAthlete => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityChampionRemarkableAthlete", "d3d2876542e9a6e4684b6ecda441b5b7");
             public static FeatureDefinitionMovementAffinity MovementAffinityCloakOfArachnida => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityCloakOfArachnida", "1bb5811d1fb8b094789aec0552567387");
             public static FeatureDefinitionMovementAffinity MovementAffinityConditionDashing => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityConditionDashing", "f04b97bac67dce94fae71500ae6412ad");
+            public static FeatureDefinitionMovementAffinity MovementAffinityConditionDashingAdditional => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityConditionDashingAdditional", "19db9cee75d1dd844a5a80ad1b0e1d94");
             public static FeatureDefinitionMovementAffinity MovementAffinityConditionDashingBonus => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityConditionDashingBonus", "649ffdce675aa9b4289cd5d20755975b");
             public static FeatureDefinitionMovementAffinity MovementAffinityConditionEncumbered => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityConditionEncumbered", "a810ba411fbe58d42a7a906850004c2c");
             public static FeatureDefinitionMovementAffinity MovementAffinityConditionHasted => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityConditionHasted", "010aed5428204144aaf5fb7dc04ab460");
@@ -2903,6 +3219,7 @@ namespace SolastaModApi
             public static FeatureDefinitionMovementAffinity MovementAffinityDarkweaverSpiderOnWall => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityDarkweaverSpiderOnWall", "3640df83dd86b20428769df9d4dd95d8");
             public static FeatureDefinitionMovementAffinity MovementAffinityFeatRushToBattle => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityFeatRushToBattle", "954100a9c7f93fe4dbac05d287d3f6ba");
             public static FeatureDefinitionMovementAffinity MovementAffinityFreedomOfMovement => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityFreedomOfMovement", "097ce72cf88822243afb196bbddc360c");
+            public static FeatureDefinitionMovementAffinity MovementAffinityHeavyArmorImmunity => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityHeavyArmorImmunity", "77421596eaccd5b4087a4c64e675d1e6");
             public static FeatureDefinitionMovementAffinity MovementAffinityHeavyArmorOverload => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityHeavyArmorOverload", "da440267c5d47b545b19342ff840e368");
             public static FeatureDefinitionMovementAffinity MovementAffinityJump => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityJump", "55aad51189aa27244b424a07aac234c3");
             public static FeatureDefinitionMovementAffinity MovementAffinityLongstrider => DatabaseRepository.GetDatabase<FeatureDefinitionMovementAffinity>().TryGetElement("MovementAffinityLongstrider", "2f32a56ca6d7b95499bd37b445e3ea4f");
@@ -2929,8 +3246,10 @@ namespace SolastaModApi
             public static FeatureDefinitionMoveMode MoveModeFly8 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeFly8", "d7d73f75fe686914f998f3c7b3f83e28");
             public static FeatureDefinitionMoveMode MoveModeMove10 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeMove10", "998d8b8df7417a940829ff6548ba5ca7");
             public static FeatureDefinitionMoveMode MoveModeMove2 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeMove2", "0127a492ba7a429408b3282dde9374d7");
+            public static FeatureDefinitionMoveMode MoveModeMove4 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeMove4", "463147192ec0e6f47b4cc7d1ebf5f7d3");
             public static FeatureDefinitionMoveMode MoveModeMove5 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeMove5", "39236d1a5cbaf114d96e2709eb817529");
             public static FeatureDefinitionMoveMode MoveModeMove6 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeMove6", "6f358015fcdb8e147a7cfef7e2506430");
+            public static FeatureDefinitionMoveMode MoveModeMove7 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeMove7", "2f5a9a22928893b4bb75beb84106a543");
             public static FeatureDefinitionMoveMode MoveModeMove8 => DatabaseRepository.GetDatabase<FeatureDefinitionMoveMode>().TryGetElement("MoveModeMove8", "4c110104739c99e4d920529a058ab2e2");
         }
         public static class FeatureDefinitionMoveThroughEnemyModifiers
@@ -2966,6 +3285,9 @@ namespace SolastaModApi
             public static FeatureDefinitionPointPool PointPoolRangerSkillPoints => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("PointPoolRangerSkillPoints", "178bf1aa5a8a7574e893c44ece9b30bf");
             public static FeatureDefinitionPointPool PointPoolRogueExpertise => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("PointPoolRogueExpertise", "2fbf34296f44187429597f8574ddc2b1");
             public static FeatureDefinitionPointPool PointPoolRogueSkillPoints => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("PointPoolRogueSkillPoints", "57b1e35812aa86941b8a2abf319ca12d");
+            public static FeatureDefinitionPointPool PointPoolSorcererAdditionalMetamagic => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("PointPoolSorcererAdditionalMetamagic", "ac3e756f216743c4ba08628ca89aa40b");
+            public static FeatureDefinitionPointPool PointPoolSorcererMetamagic => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("PointPoolSorcererMetamagic", "e0a19c3521e072d49a50619701cadcd5");
+            public static FeatureDefinitionPointPool PointPoolSorcererSkillPoints => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("PointPoolSorcererSkillPoints", "388294e65ae81294e967e351da221df8");
             public static FeatureDefinitionPointPool PointPoolWizardSkillPoints => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("PointPoolWizardSkillPoints", "2c68bd1101a20324d9c4fd61e40610fb");
             public static FeatureDefinitionPointPool ProficiencyMarksmanToolChoice => DatabaseRepository.GetDatabase<FeatureDefinitionPointPool>().TryGetElement("ProficiencyMarksmanToolChoice", "fc555a38799525846be9a0289dd71ae7");
         }
@@ -2976,6 +3298,7 @@ namespace SolastaModApi
             public static FeatureDefinitionPower PowerClericDivineInterventionPaladin => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericDivineInterventionPaladin", "4f9a2e4ff332b204aae612753dada617");
             public static FeatureDefinitionPower PowerClericDivineInterventionWizard => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericDivineInterventionWizard", "0b20466699780a74e801804f86af806b");
             public static FeatureDefinitionPower PowerClericTurnUndead => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericTurnUndead", "d76d6012075754e44b4d191b8b387633");
+            public static FeatureDefinitionPower PowerClericTurnUndead11 => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericTurnUndead11", "db14a6ae364552e48bea1c5bc3a7aa6f");
             public static FeatureDefinitionPower PowerClericTurnUndead5 => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericTurnUndead5", "fb5ef341e5829984d8c789d9aa500ff2");
             public static FeatureDefinitionPower PowerClericTurnUndead8 => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerClericTurnUndead8", "6fd2d50bba7337a43b4034a75d077911");
             public static FeatureDefinitionPower PowerDefilerDarkness => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerDefilerDarkness", "fd6fb44696a51b24e907474087d41bd7");
@@ -3020,6 +3343,7 @@ namespace SolastaModApi
             public static FeatureDefinitionPower PowerFeatTwinBlade => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFeatTwinBlade", "1069c13af472dda4fb0d0c1ce6734d05");
             public static FeatureDefinitionPower PowerFighterActionSurge => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFighterActionSurge", "f0303fb750e20564ebea8c51e8f20394");
             public static FeatureDefinitionPower PowerFighterSecondWind => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFighterSecondWind", "a15c3261b8fda3c44b002c5ee2165469");
+            public static FeatureDefinitionPower PowerFighterSecondWind_DLC1_NPC8 => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFighterSecondWind_DLC1_NPC8", "069cd2ebe4b531145848741d1390b953");
             public static FeatureDefinitionPower PowerFighterSecondWind_Robar => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFighterSecondWind_Robar", "60a9c60f94a4896429aad23579b6d98c");
             public static FeatureDefinitionPower PowerFighterSecondWind_Veteran => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFighterSecondWind_Veteran", "32bb746cb0521274cae139c3289eeae2");
             public static FeatureDefinitionPower PowerFighterSecondWind_Warlord => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFighterSecondWind_Warlord", "0ebc7ee5f859fa144924d1f7887671d6");
@@ -3051,6 +3375,8 @@ namespace SolastaModApi
             public static FeatureDefinitionPower PowerFunctionManualBodilyWealth => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionManualBodilyWealth", "67f2a568bff183446a04529248992321");
             public static FeatureDefinitionPower PowerFunctionManualGainfulExercise => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionManualGainfulExercise", "f3f5a2bcb34a40f49b71ce74d1bc3f0e");
             public static FeatureDefinitionPower PowerFunctionManualQuicknessOfAction => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionManualQuicknessOfAction", "ec6c59a713273b441a47069b5c2ec06f");
+            public static FeatureDefinitionPower PowerFunctionPotionOfClimbing => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfClimbing", "6e569217c558d3b489332b5e7e93d5b1");
+            public static FeatureDefinitionPower PowerFunctionPotionOfFly => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfFly", "25f08521341d7f9438005e06fe39d282");
             public static FeatureDefinitionPower PowerFunctionPotionOfGiantStrengthCloud => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfGiantStrengthCloud", "cd9e94b290369b9439a1ec48c910c083");
             public static FeatureDefinitionPower PowerFunctionPotionOfGiantStrengthFire => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfGiantStrengthFire", "61d72007903bfba4694478f6df984a4f");
             public static FeatureDefinitionPower PowerFunctionPotionOfGiantStrengthFrost => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfGiantStrengthFrost", "d93674885ea0cb94cb1f98c3f54ca913");
@@ -3059,6 +3385,9 @@ namespace SolastaModApi
             public static FeatureDefinitionPower PowerFunctionPotionOfGreaterHealingOther => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfGreaterHealingOther", "7ea89adb3542ec74cbe6cd46beda8f9e");
             public static FeatureDefinitionPower PowerFunctionPotionOfHealing => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfHealing", "fc362a2549efd82478514c902b2d7343");
             public static FeatureDefinitionPower PowerFunctionPotionOfHealingOther => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfHealingOther", "abd58b0c2a177164289ec31bce9b377e");
+            public static FeatureDefinitionPower PowerFunctionPotionOfHeroism => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfHeroism", "c14a4a4b79439774192b6bf939fd3eb6");
+            public static FeatureDefinitionPower PowerFunctionPotionOfInvisibility => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfInvisibility", "4b4ae335b979147438b5281887628a5b");
+            public static FeatureDefinitionPower PowerFunctionPotionOfSpeed => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfSpeed", "35a8db736bbe00a478dc02da85f45945");
             public static FeatureDefinitionPower PowerFunctionPotionOfSuperiorHealing => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfSuperiorHealing", "7ba72a4a578131d4bb43588a0ba01d90");
             public static FeatureDefinitionPower PowerFunctionPotionOfSuperiorHealingOther => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionOfSuperiorHealingOther", "00c10ee897d30724ba9032a1459f471c");
             public static FeatureDefinitionPower PowerFunctionPotionRemedy => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerFunctionPotionRemedy", "a048eecbd02fce14ba48106e224cc2e6");
@@ -3109,15 +3438,25 @@ namespace SolastaModApi
             public static FeatureDefinitionPower PowerSorakSaboteurTranceOfSorrtarr => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorakSaboteurTranceOfSorrtarr", "318953f4ceaca7742ab94b5a249b8e40");
             public static FeatureDefinitionPower PowerSorakShadowEscape => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorakShadowEscape", "3bc12de245ffb7b4b99aad36ea777f24");
             public static FeatureDefinitionPower PowerSorakShriek => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorakShriek", "195a1223da34d274fb963a43896ac933");
+            public static FeatureDefinitionPower PowerSorcererChildRiftDeflection => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorcererChildRiftDeflection", "b8500c7122e889542afe624ddd5add1e");
+            public static FeatureDefinitionPower PowerSorcererChildRiftOffering => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorcererChildRiftOffering", "cc162f4b81f3c69439b514bc87c621a1");
+            public static FeatureDefinitionPower PowerSorcererCreateSorceryPoints => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorcererCreateSorceryPoints", "61386039a5180c346bd5db553a34d4ed");
+            public static FeatureDefinitionPower PowerSorcererCreateSpellSlot => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorcererCreateSpellSlot", "02f20097b56f86847a07f2fe3bf30214");
+            public static FeatureDefinitionPower PowerSorcererDraconicElementalResistance => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorcererDraconicElementalResistance", "073aefb4cc1a7c74faf281f79e19fa7f");
+            public static FeatureDefinitionPower PowerSorcererManaPainterDrain => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorcererManaPainterDrain", "f41f49e3bce14fa40a92eaaabb4d8f4b");
+            public static FeatureDefinitionPower PowerSorcererManaPainterTap => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSorcererManaPainterTap", "1a0c65c870d2ed242b02129ad66887e2");
             public static FeatureDefinitionPower PowerSpecialEmtanHolySymbol => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSpecialEmtanHolySymbol", "81bacf5160093ff4abfa1eaa955b87fd");
             public static FeatureDefinitionPower PowerSpellBladeSpellTyrant => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSpellBladeSpellTyrant", "30d80b470a93c5340a76c867d40ece6f");
             public static FeatureDefinitionPower PowerSpiderQueenEatFriends => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSpiderQueenEatFriends", "3c60bb7dfd57c0844955f11ec95e1d9e");
             public static FeatureDefinitionPower PowerSpiderQueenPoisonCloud => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSpiderQueenPoisonCloud", "4b289501be6698e4eb3a1609a009a0ec");
             public static FeatureDefinitionPower PowerStaffOfMetis => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerStaffOfMetis", "a00bcafa2857e5f47afc681cc7f45d3c");
+            public static FeatureDefinitionPower PowerSunbeam => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerSunbeam", "ddb8f35f454801645a235ab236dee7c0");
             public static FeatureDefinitionPower PowerTraditionGreenmageMagicalArrow => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerTraditionGreenmageMagicalArrow", "8f6c1105a5186644296749e871cea873");
             public static FeatureDefinitionPower PowerTraditionShockArcanistArcaneFury => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerTraditionShockArcanistArcaneFury", "fff34fec1f8f3f04496651d8a9db5d14");
             public static FeatureDefinitionPower PowerTraditionShockArcanistArcaneShock => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerTraditionShockArcanistArcaneShock", "e0c75af06a2250d43b713c2ab5f0e57a");
             public static FeatureDefinitionPower PowerVampiricTouchIntelligence => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerVampiricTouchIntelligence", "a578a0f3cd07e6b4e892d32f8e786e07");
+            public static FeatureDefinitionPower PowerWightLord_CircleOfDeath => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerWightLord_CircleOfDeath", "4f3f13986f4eb304f81f625804a34ce5");
+            public static FeatureDefinitionPower PowerWightLordRetaliate => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerWightLordRetaliate", "0179d8d664dfa3f46bc655bc5d4af2ec");
             public static FeatureDefinitionPower PowerWinterWolfBreath => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerWinterWolfBreath", "9759b82db47c72849bda8cd6c764ff95");
             public static FeatureDefinitionPower PowerWizardArcaneRecovery => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerWizardArcaneRecovery", "c1066a5d900816e49ad9a47725bc69d8");
             public static FeatureDefinitionPower PowerYoungRemorhazRetaliate => DatabaseRepository.GetDatabase<FeatureDefinitionPower>().TryGetElement("PowerYoungRemorhazRetaliate", "d2238335e35f0ef4485d7a6670d4d9b4");
@@ -3188,6 +3527,10 @@ namespace SolastaModApi
             public static FeatureDefinitionProficiency ProficiencySellSwordSkillsArmor => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySellSwordSkillsArmor", "d9a04fa0b455acd4aaf3cbd7a988e068");
             public static FeatureDefinitionProficiency ProficiencyShockArcanistWarcasting => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencyShockArcanistWarcasting", "5ec7a963a6f51864688421e6d741116e");
             public static FeatureDefinitionProficiency ProficiencySmithTools => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySmithTools", "3c6eaf7ff81d3d34fa5cbf659e22dbef");
+            public static FeatureDefinitionProficiency ProficiencySorcererDraconicKnowledge => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySorcererDraconicKnowledge", "832aac71bbcb30546b71bdea1d24a442");
+            public static FeatureDefinitionProficiency ProficiencySorcererSavingThrow => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySorcererSavingThrow", "7b088eda8c859a0409791dbd3ebf314f");
+            public static FeatureDefinitionProficiency ProficiencySorcererTools => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySorcererTools", "4fee07bb54769b042925d427fc340448");
+            public static FeatureDefinitionProficiency ProficiencySorcererWeapon => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySorcererWeapon", "d6e4d7455028117418f54cbda213a3e9");
             public static FeatureDefinitionProficiency ProficiencySpyLanguage => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySpyLanguage", "787c6607f2f8f3e4290b8d0158acee4b");
             public static FeatureDefinitionProficiency ProficiencySpySkills => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySpySkills", "aabce064785be4d49b3f9cce39f7d64f");
             public static FeatureDefinitionProficiency ProficiencySturdinessOfTheTundra => DatabaseRepository.GetDatabase<FeatureDefinitionProficiency>().TryGetElement("ProficiencySturdinessOfTheTundra", "70680c8d1344fae4d91605a12f7d52b2");
@@ -3206,6 +3549,7 @@ namespace SolastaModApi
             public static FeatureDefinitionRegeneration RegenerationProphetOfDarkness_Darkness => DatabaseRepository.GetDatabase<FeatureDefinitionRegeneration>().TryGetElement("RegenerationProphetOfDarkness_Darkness", "b2b461996afac374a91c3c49a187b2d0");
             public static FeatureDefinitionRegeneration RegenerationProphetOfDarkness_DimLight => DatabaseRepository.GetDatabase<FeatureDefinitionRegeneration>().TryGetElement("RegenerationProphetOfDarkness_DimLight", "ae2964ba575938c4398fbabad4a57454");
             public static FeatureDefinitionRegeneration RegenerationRing => DatabaseRepository.GetDatabase<FeatureDefinitionRegeneration>().TryGetElement("RegenerationRing", "272a41bc93deb2c4ba93b55cf01b1bee");
+            public static FeatureDefinitionRegeneration RegenerationTroll => DatabaseRepository.GetDatabase<FeatureDefinitionRegeneration>().TryGetElement("RegenerationTroll", "cfeea454e6de2b940a6132741a2fee41");
             public static FeatureDefinitionRegeneration RegenerationVampire => DatabaseRepository.GetDatabase<FeatureDefinitionRegeneration>().TryGetElement("RegenerationVampire", "abb9d6f76c691f84f8f487e26e921f31");
         }
         public static class FeatureDefinitionSavingThrowAffinitys
@@ -3236,6 +3580,7 @@ namespace SolastaModApi
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityConditionBlinded => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityConditionBlinded", "83e5202a11865fa48ae4eccb125d0873");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityConditionDodging => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityConditionDodging", "cc45d3aa2c7294845b43952cf3f859d4");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityConditionHasted => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityConditionHasted", "112a137c1bd1c254581f2f1a654985c0");
+            public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityConditionHeroesFeast => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityConditionHeroesFeast", "3828eabed1f34dd41a0003e87e649e74");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityConditionParalyzed => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityConditionParalyzed", "38b293bacc1b7104a967a403629ad46e");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityConditionResisting => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityConditionResisting", "ff8c1b7151d44a84797a2211ee2f62c0");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityConditionRestrained => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityConditionRestrained", "fbdda0611e9c1254aa76ad4e303c668d");
@@ -3268,6 +3613,7 @@ namespace SolastaModApi
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityGemNecromancy => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityGemNecromancy", "16a08632003df20439ffad6d60eca34c");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityGemTransmutation => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityGemTransmutation", "a6dd251aab8302a498f81922ab2624e7");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityHeraldOfBattle => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityHeraldOfBattle", "cf8b3b13b09c84f4194016f8d0df0a78");
+            public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityManaPainterAbsorption => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityManaPainterAbsorption", "b4a8ba8d604d35e408b297bc174769d0");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityProphetOfDarkness_Darkness => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityProphetOfDarkness_Darkness", "6a576b2dcd5d24c429b0bb76ad358d99");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityProphetOfDarkness_DimLight => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityProphetOfDarkness_DimLight", "bd53a86953b76cd4f9dd4c0e05d908e9");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityRingOfProtectionPlusOne => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityRingOfProtectionPlusOne", "669341fa75d5684458b55bafa1d228a4");
@@ -3278,6 +3624,7 @@ namespace SolastaModApi
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityShadowTamerTunnelWisdom => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityShadowTamerTunnelWisdom", "c4d2fd151623f844ca143b0da76fbaba");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinitySigilRingAbjurationPlusOne => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinitySigilRingAbjurationPlusOne", "f89f2c6db2fc3ef4da73f623828b8517");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinitySnowDwarfEndurance => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinitySnowDwarfEndurance", "1c2193d0dfb68564b8862bdc84c6df9f");
+            public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinitySorcererChildRiftDeflection => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinitySorcererChildRiftDeflection", "37429f12103497243b44c4f463c0d535");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinitySpellResistance => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinitySpellResistance", "d6341ebb2cb967949b4426e31e993b86");
             public static FeatureDefinitionSavingThrowAffinity SavingThrowAffinityStoneOfGoodLuck => DatabaseRepository.GetDatabase<FeatureDefinitionSavingThrowAffinity>().TryGetElement("SavingThrowAffinityStoneOfGoodLuck", "cff7bfd1d09e0e24fba49a7d3c16b11a");
         }
@@ -3290,10 +3637,12 @@ namespace SolastaModApi
             public static FeatureDefinitionSense SenseBlindSight2 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseBlindSight2", "f6e92e044ad5c9945b1c01d9891bf49d");
             public static FeatureDefinitionSense SenseDarkvision => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseDarkvision", "446f786482b07db45b6f4a0854be3056");
             public static FeatureDefinitionSense SenseDarkvision12 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseDarkvision12", "b7ab84f45ce51764ca9c430f745a6b4e");
+            public static FeatureDefinitionSense SenseDarkvision24 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseDarkvision24", "a7a21553e478546448413923e8dd948e");
             public static FeatureDefinitionSense SenseDarkvisionFull => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseDarkvisionFull", "15ec2c28a19ed41429e50f78327dff40");
             public static FeatureDefinitionSense SenseNormalVision => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseNormalVision", "222ef639393ed4e4bbd7152690597945");
             public static FeatureDefinitionSense SenseSeeInvisible12 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseSeeInvisible12", "e97d2cb0545b7e74b9c548f69778c7b4");
             public static FeatureDefinitionSense SenseSeeInvisible16 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseSeeInvisible16", "9a94a1b657b56fd419fc6eec656de1fe");
+            public static FeatureDefinitionSense SenseSeeInvisible24 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseSeeInvisible24", "b99e1bc1bca11dc4ba4160ad09dcf6fe");
             public static FeatureDefinitionSense SenseSuperiorDarkvision => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseSuperiorDarkvision", "388ca3fa81ee8a84c831be14214fd1c0");
             public static FeatureDefinitionSense SenseTremorsense16 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseTremorsense16", "0c4195ea1bc8d6a48b516f82161efbae");
             public static FeatureDefinitionSense SenseTruesight16 => DatabaseRepository.GetDatabase<FeatureDefinitionSense>().TryGetElement("SenseTruesight16", "ea70a5054de732f4f8112f2ffca185a6");
@@ -3309,6 +3658,7 @@ namespace SolastaModApi
             public static FeatureDefinitionSubclassChoice SubclassChoicePaladinSacredOaths => DatabaseRepository.GetDatabase<FeatureDefinitionSubclassChoice>().TryGetElement("SubclassChoicePaladinSacredOaths", "1e2db957bbd51d342af5b952c6c5176b");
             public static FeatureDefinitionSubclassChoice SubclassChoiceRangerArchetypes => DatabaseRepository.GetDatabase<FeatureDefinitionSubclassChoice>().TryGetElement("SubclassChoiceRangerArchetypes", "4a4ea1d859b7e9548a79d80a376e5858");
             public static FeatureDefinitionSubclassChoice SubclassChoiceRogueRoguishArchetypes => DatabaseRepository.GetDatabase<FeatureDefinitionSubclassChoice>().TryGetElement("SubclassChoiceRogueRoguishArchetypes", "6f1a02cc72e74764dbf4db02d81cdd05");
+            public static FeatureDefinitionSubclassChoice SubclassChoiceSorcerousOrigin => DatabaseRepository.GetDatabase<FeatureDefinitionSubclassChoice>().TryGetElement("SubclassChoiceSorcerousOrigin", "9245ee52f3a8e0d4b8261797ea459062");
             public static FeatureDefinitionSubclassChoice SubclassChoiceWizardArcaneTraditions => DatabaseRepository.GetDatabase<FeatureDefinitionSubclassChoice>().TryGetElement("SubclassChoiceWizardArcaneTraditions", "e8d05f81af078134fb3179d25900a22d");
         }
         public static class FeatureDefinitionTerrainTypeAffinitys
@@ -3348,6 +3698,7 @@ namespace SolastaModApi
         {
             public static GadgetDefinition Activator => DatabaseRepository.GetDatabase<GadgetDefinition>().TryGetElement("Activator", "f05b58c5ba9444743a00057fd713faf2");
             public static GadgetDefinition BaseGadget => DatabaseRepository.GetDatabase<GadgetDefinition>().TryGetElement("BaseGadget", "91bbe2d9d47a6ad418928b4c902d99bb");
+            public static GadgetDefinition CancelLegendaryQuest => DatabaseRepository.GetDatabase<GadgetDefinition>().TryGetElement("CancelLegendaryQuest", "5be671bceef3cc8478b5fa163855936d");
             public static GadgetDefinition Door => DatabaseRepository.GetDatabase<GadgetDefinition>().TryGetElement("Door", "7428fdf9b707b1c4ca96d3e422b03a26");
             public static GadgetDefinition ExplosiveTrap => DatabaseRepository.GetDatabase<GadgetDefinition>().TryGetElement("ExplosiveTrap", "290e0ffb9a03a3749945cc322083e2e4");
             public static GadgetDefinition Flamable => DatabaseRepository.GetDatabase<GadgetDefinition>().TryGetElement("Flamable", "b08718033d7997944b662024903150cf");
@@ -3451,12 +3802,20 @@ namespace SolastaModApi
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Divine_Avatar_Cleric => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Divine_Avatar_Cleric", "5d3c0b9701c3c35448cc82b404d3daf9");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Divine_Avatar_Paladin => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Divine_Avatar_Paladin", "a6ed3bcf98542f44c99ad6372efa4cab");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Divine_Avatar_Wizard => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Divine_Avatar_Wizard", "297cb1ef6913b634c81979c53f1e55ac");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_1_Marches_VIP_Scribe => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_1_Marches_VIP_Scribe", "ab1387746412baa4b86bf7af07183040");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_2_Marches_Helia_Fairblade => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_2_Marches_Helia_Fairblade", "7ebdac2755b1f0e439bd87dc272af35a");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_3_Marches_Officer => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_3_Marches_Officer", "9c8ffe28174807b4197c5e09b43b1b62");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_4_Marches_Mercenary => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_4_Marches_Mercenary", "5267fdcfa716c0c4986804ed88ebccce");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_5_Marches_Misaye_Follower => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_5_Marches_Misaye_Follower", "8a89bec1c58b9be4c8bbc3495c962aac");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_6_Marches_Leader => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_6_Marches_Leader", "56d1d4e9b85776f44b5c9677e1f3cdf6");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_7_Marches_VIP_Cousin => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_7_Marches_VIP_Cousin", "e28ac7afdd5294043a872749ede90e6d");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_DLC1_NPC_8_Marches_FaithlessGuard => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_DLC1_NPC_8_Marches_FaithlessGuard", "54fb2b998ee4adb489d3a65cce3bf1f1");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Edvan_Danantar => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Edvan_Danantar", "113676ad427bf3941999806adc575c9e");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Emperor_Laethar => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Emperor_Laethar", "d71074bc122854f4995965e3bbe63aa0");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Emtan_Ghost => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Emtan_Ghost", "dc25835cf4091f44795493498e2eb79e");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Estalla => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Estalla", "1d054fb2d2cb51a46a6d3fec23d62644");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Galaefin => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Galaefin", "5fcb7913c3a53714fba963710a347624");
-            public static HumanoidMonsterPresentationDefinition NPC_Presentation_Galar_Goldentongue => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Galar_Goldentongue", "9c8ffe28174807b4197c5e09b43b1b62");
+            public static HumanoidMonsterPresentationDefinition NPC_Presentation_Galar_Goldentongue => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Galar_Goldentongue", "09342a18959d2754797eada6d22d9e26");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_GeleafinsButler => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_GeleafinsButler", "516d8a94fddbd8e489cd4ac21ebf51c3");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Generic_Acolyte => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Generic_Acolyte", "99841e185a9d3644d9c2d3fc1704372e");
             public static HumanoidMonsterPresentationDefinition NPC_Presentation_Generic_BadlandHunter => DatabaseRepository.GetDatabase<HumanoidMonsterPresentationDefinition>().TryGetElement("NPC_Presentation_Generic_BadlandHunter", "7bfca7fbb9134c44c810907e6924a683");
@@ -3683,6 +4042,7 @@ namespace SolastaModApi
             public static ItemDefinition _40D6_Silver_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("40D6_Silver_Coins", "fec8569877706c54d98f104622a41652");
             public static ItemDefinition _50_Gold_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("50_Gold_Coins", "691fbe1ec8a0c6a4e9d8987518a37c84");
             public static ItemDefinition _50_GP_Sapphire => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("50_GP_Sapphire", "94593fce05b78ec4aa7d55125259126e");
+            public static ItemDefinition _500_GP_Black_Pearl_Powder => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("500_GP_Black_Pearl_Powder", "9a301225fb86c7f4aa99439fa2465c68");
             public static ItemDefinition _500_GP_Ruby => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("500_GP_Ruby", "6edbb4ac30b262d4baba7949d0595158");
             public static ItemDefinition _5D6_Gold_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("5D6_Gold_Coins", "c7ef4dc502217ae498b72232aaf308e4");
             public static ItemDefinition _5D6_Silver_Coins => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("5D6_Silver_Coins", "020980cc4e72a9844ba977663091a68c");
@@ -4065,6 +4425,12 @@ namespace SolastaModApi
             public static ItemDefinition DaggerPlus1 => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Dagger+1", "10998149ce70f0849a5853659eee4467");
             public static ItemDefinition DaggerPlus2 => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Dagger+2", "c224470945ddf4d49a191456303c3dc7");
             public static ItemDefinition Dart => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Dart", "4fd5b12327964f74eae8cd62910dd518");
+            public static ItemDefinition DLC1_Equipment_Quest_Marches_Antique => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("DLC1_Equipment_Quest_Marches_Antique", "220c8e88cf0580743a5ce58b5db48aa2");
+            public static ItemDefinition DLC1_Equipment_Quest_Marches_Antique02 => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("DLC1_Equipment_Quest_Marches_Antique02", "bb9a753413393644d8b0cb94a8a6ee85");
+            public static ItemDefinition DLC1_Equipment_Quest_Marches_Antique03 => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("DLC1_Equipment_Quest_Marches_Antique03", "c8990cd3aab33c04596cff80472ebf1c");
+            public static ItemDefinition DLC1_Equipment_Quest_Marches_Nest_Key => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("DLC1_Equipment_Quest_Marches_Nest_Key", "b80294321be7a9a48bcdb6d457612691");
+            public static ItemDefinition DLC1_Equipment_Quest_Marches_Pelt => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("DLC1_Equipment_Quest_Marches_Pelt", "578b10b2127d702488efc8f585413355");
+            public static ItemDefinition DLC1_Equipment_Quest_Vip_Green_Book => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("DLC1_Equipment_Quest_Vip_Green_Book", "403dff672468d5d4695a82c0c3e6ae84");
             public static ItemDefinition Document_HalmanSummer_Conspiration_Docs => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Document_HalmanSummer_Conspiration_Docs", "20e49c5b2547f18458d47fdae5a23350");
             public static ItemDefinition Document_HalmanSummer_Letter => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Document_HalmanSummer_Letter", "ee6f487646be0fb4ea12aa79fe8fc44b");
             public static ItemDefinition DungeoneerPack => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("DungeoneerPack", "6286cf8295c47af42bca166999993f2b");
@@ -4167,9 +4533,11 @@ namespace SolastaModApi
             public static ItemDefinition Ingredient_Acid => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_Acid", "bd7e07506aad3a244807052e95004020");
             public static ItemDefinition Ingredient_AngryViolet => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_AngryViolet", "0ea316a14e9d7d344a648184b7b09af0");
             public static ItemDefinition Ingredient_BadlandsSpiderVenomGland => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_BadlandsSpiderVenomGland", "8fc51d73ff06c6f4baec8ee9a1c4acb7");
+            public static ItemDefinition Ingredient_BlackBear_Pelt => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_BlackBear_Pelt", "551a3237f80d1ff4fbd0d5c27ea0715f");
             public static ItemDefinition Ingredient_BloodDaffodil => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_BloodDaffodil", "7d3fe4ee8c57f7f45bbc5be4e279b115");
             public static ItemDefinition Ingredient_BrimstoneViperPoisonGland => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_BrimstoneViperPoisonGland", "e8a3fe9dafdb018488a800baac4304f7");
             public static ItemDefinition Ingredient_BrimstoneViperScales => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_BrimstoneViperScales", "9c0c994974528ee4c8a0c3d55ebb26fb");
+            public static ItemDefinition Ingredient_BrownBear_Pelt => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_BrownBear_Pelt", "dbb8ae86d0956db4ca14307e3fc39c06");
             public static ItemDefinition Ingredient_DeepRootLichen => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_DeepRootLichen", "95b954de7fac7c94b8a5888e53c3097b");
             public static ItemDefinition Ingredient_DeepSpiderVenomGland => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_DeepSpiderVenomGland", "714d148bc6e7d9342a373164062b9649");
             public static ItemDefinition Ingredient_DireWolf_Pelt => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Ingredient_DireWolf_Pelt", "b11fb659733a86d4389b6fab47e5c90f");
@@ -4239,6 +4607,7 @@ namespace SolastaModApi
             public static ItemDefinition Manual_Of_Bodily_Health => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Manual_Of_Bodily_Health", "5513b23d1ad926e439a6104306637750");
             public static ItemDefinition Manual_Of_Gainful_Exercise => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Manual_Of_Gainful_Exercise", "4b7141621a7307343be1e7e52bab107c");
             public static ItemDefinition Manual_Of_Quickness_of_Action => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Manual_Of_Quickness_of_Action", "7d55a8d368982d045b492a83a71d82d2");
+            public static ItemDefinition Mark_Of_The_Crown => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Mark_Of_The_Crown", "485f3a7825156ff40bb6c0f1c134aea8");
             public static ItemDefinition Maul => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Maul", "0b6e83a1958b06e46a5c5159a82aea9a");
             public static ItemDefinition Morningstar => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Morningstar", "d99766c4fc8941f4fb0c26038895fdea");
             public static ItemDefinition MorningstarPlus1 => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Morningstar+1", "765d5d65a4025534a8877141b7710242");
@@ -4356,12 +4725,15 @@ namespace SolastaModApi
             public static ItemDefinition ScrollBanishment => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBanishment", "a3fa37d897097e3499d04b3522d8b9af");
             public static ItemDefinition ScrollBarkskin => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBarkskin", "ec270d0dfe3b62643a165735479b9cc4");
             public static ItemDefinition ScrollBlackTentacles => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBlackTentacles", "2d1a43b3cff1dea41a9ed2023de35372");
+            public static ItemDefinition ScrollBladeBarrier => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBladeBarrier", "de0e4af73c6034f46a19c52a3aaf3c5b");
             public static ItemDefinition ScrollBless => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBless", "e53758827b2062f4d9a298d74256d7ab");
             public static ItemDefinition ScrollBlight => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBlight", "5746509a01507354883efc86deeb71f4");
             public static ItemDefinition ScrollBlindness => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBlindness", "dc7d9fa04dbaa2e49b958bc35ec509db");
             public static ItemDefinition ScrollBlur => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBlur", "42dce9d9c3789a54f964774d803a6630");
             public static ItemDefinition ScrollBurningHands => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollBurningHands", "5113cba42c953f64790aec094024c87e");
+            public static ItemDefinition ScrollChainLightning => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollChainLightning", "3dee2a43c01021146ae40da8fe01d5a2");
             public static ItemDefinition ScrollCharmPerson => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollCharmPerson", "604ad4231c86c9c4e9dc5775d9f58815");
+            public static ItemDefinition ScrollCircleOfDeath => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollCircleOfDeath", "e8c31ddcbe8bcb2439e336f7aaf46546");
             public static ItemDefinition ScrollCloudKill => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollCloudKill", "1e34c0c1d0ddff443834c3c4addd701c");
             public static ItemDefinition ScrollColorSpray => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollColorSpray", "72445827e6580b0489a60cf3d7fed593");
             public static ItemDefinition ScrollCommand => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollCommand", "29866102003676e438b34d4db2d787cc");
@@ -4382,11 +4754,15 @@ namespace SolastaModApi
             public static ItemDefinition ScrollDetectMagic => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollDetectMagic", "310603be831f9f54ab7e4ece1dcf2ea7");
             public static ItemDefinition ScrollDetectPoisonAndDisease => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollDetectPoisonAndDisease", "222ea3efc185fc441a6c69af53a8b207");
             public static ItemDefinition ScrollDimensionDoor => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollDimensionDoor", "4588ebb6f67702648b12927f654dffaf");
+            public static ItemDefinition ScrollDisintegrate => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollDisintegrate", "706b3d6e1d649504194a00ef4fb256a5");
             public static ItemDefinition ScrollDispelEvilAndGood => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollDispelEvilAndGood", "068a1117e91fcc748b2bc6d898978b03");
             public static ItemDefinition ScrollDispelMagic => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollDispelMagic", "b4c6f0dea717fd84789f154f772cc540");
             public static ItemDefinition ScrollDominatePerson => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollDominatePerson", "36396f3ea44e4564a9482101e128610e");
             public static ItemDefinition ScrollEntangle => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollEntangle", "d0c665135dc928843816ee66f3a9256e");
             public static ItemDefinition ScrollExpeditiousRetreat => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollExpeditiousRetreat", "71bff2e464044c844803e7f865ac8ca7");
+            public static ItemDefinition ScrollEyeBite_Asleep => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollEyeBite_Asleep", "21eede55a8d7bbc4781b35389be73e30");
+            public static ItemDefinition ScrollEyeBite_Panicked => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollEyeBite_Panicked", "c3545deee58f18e4ba1c092e14d2358f");
+            public static ItemDefinition ScrollEyeBite_Sickened => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollEyeBite_Sickened", "f2f7d464303b2c8449b22dee1c8b5580");
             public static ItemDefinition ScrollFaerieFire => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollFaerieFire", "0b3c20e4cc222454583cad2267415099");
             public static ItemDefinition ScrollFear => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollFear", "c8986f734ae38004da62ad47bc16bdb1");
             public static ItemDefinition ScrollFeatherFall => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollFeatherFall", "a314624d43dc7cf4882098d7e7334597");
@@ -4399,13 +4775,18 @@ namespace SolastaModApi
             public static ItemDefinition ScrollFly => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollFly", "ee195999a17fbeb499cc04a1b3218b53");
             public static ItemDefinition ScrollFogCloud => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollFogCloud", "bf14134eeccc22246bef874ec7771e00");
             public static ItemDefinition ScrollFreedomOfMovement => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollFreedomOfMovement", "aed2c2b18669262469531db3afe60cb6");
+            public static ItemDefinition ScrollFreezingSphere => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollFreezingSphere", "7fbed3633971b0f4db1be7c232b5e1a4");
             public static ItemDefinition ScrollGiantInsect => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollGiantInsect", "c889c4c55caca8047994ac70af57a289");
+            public static ItemDefinition ScrollGlobeOfInvulnerability => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollGlobeOfInvulnerability", "d511df2b9a0699c48b07f300cf8afd2f");
             public static ItemDefinition ScrollGrease => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollGrease", "e796f6bb2dfce474e870211bf2bc2e6d");
             public static ItemDefinition ScrollGreaterInvisibility => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollGreaterInvisibility", "229b37743e866bb49a35ddc68958768f");
             public static ItemDefinition ScrollGreaterRestoration => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollGreaterRestoration", "ddaf136902e301d4a808d6425df6eab0");
             public static ItemDefinition ScrollGuardianOfFaith => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollGuardianOfFaith", "eda40120a1db9934489d9e6dd7f883b2");
             public static ItemDefinition ScrollGuidingBolt => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollGuidingBolt", "6c3c2030fca246b4fafa352154f136ac");
+            public static ItemDefinition ScrollHarm => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollHarm", "ba3c79cc19a894b428b8e1665f6f266e");
             public static ItemDefinition ScrollHaste => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollHaste", "86282f21c767a9743be81fe51d2f72ba");
+            public static ItemDefinition ScrollHeal => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollHeal", "c481b39a6fa15a04b9732c983d3239bd");
+            public static ItemDefinition ScrollHeroesFeast => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollHeroesFeast", "ba69cec85e011804a80e990ffc364962");
             public static ItemDefinition ScrollHideousLaughter => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollHideousLaughter", "512dcbb67c4a4e6429e03a7e47b5d2fc");
             public static ItemDefinition ScrollHoldMonster => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollHoldMonster", "4543151359c3cb646a667238e4787aa0");
             public static ItemDefinition ScrollHoldPerson => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollHoldPerson", "5d0414e5cba03d94e8579216d981087a");
@@ -4436,6 +4817,7 @@ namespace SolastaModApi
             public static ItemDefinition ScrollRaiseDead => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollRaiseDead", "c1d6f26b1782eed42aee7f4168d2c73e");
             public static ItemDefinition ScrollRayOfEnfeeblement => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollRayOfEnfeeblement", "0fa445a0ded924343962cf0267ab5583");
             public static ItemDefinition ScrollRemoveCurse => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollRemoveCurse", "68d401c459c112e4bb38991888d43f22");
+            public static ItemDefinition ScrollResurrection => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollResurrection", "57b805ad7e8dac94199b00805ed63b3c");
             public static ItemDefinition ScrollRevivify => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollRevivify", "67a2c72f62b599946923a0a95a85e45c");
             public static ItemDefinition ScrollScorchingRay => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollScorchingRay", "654b42178137da54a8d1a4b18406dd4f");
             public static ItemDefinition ScrollSeeInvisibility => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollSeeInvisibility", "c603a2b3647b85945b63710db4c01db4");
@@ -4451,8 +4833,10 @@ namespace SolastaModApi
             public static ItemDefinition ScrollSpiritualWeapon => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollSpiritualWeapon", "56d54a08ceea76147b124f5536e10a21");
             public static ItemDefinition ScrollStinkingCloud => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollStinkingCloud", "6bc577f54ee8e2d489b6bb3089bdcc98");
             public static ItemDefinition ScrollStoneskin => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollStoneskin", "afa37f31ba1f43a48adc14c13978006a");
+            public static ItemDefinition ScrollSunbeam => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollSunbeam", "5baa925fa35173b4d8b2c0397beb4731");
             public static ItemDefinition ScrollThunderWave => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollThunderWave", "033edb0536ab4d14d9007d5cff96232a");
             public static ItemDefinition ScrollTongues => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollTongues", "dba183b613100194f9b308eea722771b");
+            public static ItemDefinition ScrollTrueSeeing => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollTrueSeeing", "71a8734317ac7254b9b4b68ce1c4753b");
             public static ItemDefinition ScrollVampiricTouch => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollVampiricTouch", "b9939dac5d8bbeb4da657c9c20e9614c");
             public static ItemDefinition ScrollWallOfFire => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollWallOfFire", "b5ac49e6f64cb68489acb86ff105e8b5");
             public static ItemDefinition ScrollWardingBond => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("ScrollWardingBond", "0de5c22d64e8aa64d999804498095508");
@@ -4480,6 +4864,7 @@ namespace SolastaModApi
             public static ItemDefinition SlippersOfSpiderClimbing => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("SlippersOfSpiderClimbing", "63ae1df35f54dfa49bfca2709b23abd4");
             public static ItemDefinition Sorak_Head => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Sorak_Head", "4d2e699e3ada7204585f11cc7956e44e");
             public static ItemDefinition SorakShriekerBlade => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("SorakShriekerBlade", "2c3e9af52b89ffc489b1e9be01c5e05d");
+            public static ItemDefinition SorcererArmor => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("SorcererArmor", "47654cd8e260fcf419effb71f8d5c64e");
             public static ItemDefinition Spear => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Spear", "f188e2e2e3e6ab04ba786bcaca6e8bd9");
             public static ItemDefinition Spellbook => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("Spellbook", "8fba4fb82a318ea4ab1076b0b607c9a9");
             public static ItemDefinition SpiderCrimson_AcidSpit => DatabaseRepository.GetDatabase<ItemDefinition>().TryGetElement("SpiderCrimson_AcidSpit", "a3e91850942c21744a6684af8643fd71");
@@ -4580,6 +4965,7 @@ namespace SolastaModApi
         public static class LanguageDefinitions
         {
             public static LanguageDefinition Language_Common => DatabaseRepository.GetDatabase<LanguageDefinition>().TryGetElement("Language_Common", "72ba845f64817e54182eb43f0bafbaae");
+            public static LanguageDefinition Language_Draconic => DatabaseRepository.GetDatabase<LanguageDefinition>().TryGetElement("Language_Draconic", "fa6330be7d12e5d49aff6c9d6a969ba5");
             public static LanguageDefinition Language_Dwarvish => DatabaseRepository.GetDatabase<LanguageDefinition>().TryGetElement("Language_Dwarvish", "04cf8f0f6a3003643bb3ecc3fbae74c5");
             public static LanguageDefinition Language_Elvish => DatabaseRepository.GetDatabase<LanguageDefinition>().TryGetElement("Language_Elvish", "cf39ea896db82294e85e99b5c9ea39dd");
             public static LanguageDefinition Language_Giant => DatabaseRepository.GetDatabase<LanguageDefinition>().TryGetElement("Language_Giant", "d8efe0da3b93e714fb9f52f865fbd7ec");
@@ -4615,6 +5001,14 @@ namespace SolastaModApi
             public static LocationDefinition CyflenPalaceResidence_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("CyflenPalaceResidence_LocationDB", "c4d894d2b81381546bda75100b87736c");
             public static LocationDefinition DangerRoom => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DangerRoom", "16b497018675a994c9a476a05edf68d6");
             public static LocationDefinition DebugSectorGenerationRoom => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DebugSectorGenerationRoom", "bbe8cc3782b58824a90cadb79f82c105");
+            public static LocationDefinition DLC1_BuriedCity_Scene_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_BuriedCity_Scene_LocationDB", "b0a6798a8fe045749943b52008642703");
+            public static LocationDefinition DLC1_City_Scene_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_City_Scene_LocationDB", "bb7dfc3933f2b214cbb112eecc8848c6");
+            public static LocationDefinition DLC1_Complex_Indoor_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_Complex_Indoor_LocationDB", "2ec87d3490c42ff49ade13031468ef8c");
+            public static LocationDefinition DLC1_Complex_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_Complex_LocationDB", "00f5584a1efa89147acc677145e03b73");
+            public static LocationDefinition DLC1_Complex_Underground_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_Complex_Underground_LocationDB", "b62e2764ce9622541b25250f25e5971e");
+            public static LocationDefinition DLC1_Marches_Scene_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_Marches_Scene_LocationDB", "25964fe7d37374f42ab57640482d1eee");
+            public static LocationDefinition DLC1_Swamp_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_Swamp_LocationDB", "e144146a9e3b8a74481b4362f0346e9f");
+            public static LocationDefinition DLC1_Valley_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("DLC1_Valley_LocationDB", "36e3b1088be066747b226e3c802254ac");
             public static LocationDefinition Earcorn_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("Earcorn_LocationDB", "47777aba484e79246bd0a4cc0fa18100");
             public static LocationDefinition Encounter_Bridge_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("Encounter_Bridge_LocationDB", "2e6db98596aa6a34682f5c1a3cb98a3f");
             public static LocationDefinition Encounter_Cemetery_LocationDB => DatabaseRepository.GetDatabase<LocationDefinition>().TryGetElement("Encounter_Cemetery_LocationDB", "05ccd4e38ea7c3f4c9f7e6290bba0223");
@@ -4783,6 +5177,7 @@ namespace SolastaModApi
             public static LootPackDefinition BasicSackPileLoot7 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("BasicSackPileLoot7", "fa63d9822d326a349924e278094e7281");
             public static LootPackDefinition BasicSackPileLoot8 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("BasicSackPileLoot8", "a1ae20cba7e53514b8ea79387e7767ad");
             public static LootPackDefinition BasicSackPileLoot9 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("BasicSackPileLoot9", "78625ad120f7ea448b79c9e8c73fd145");
+            public static LootPackDefinition BlackBear_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("BlackBear_loot_drop", "71531ec8f36f0184d89857cdc959950c");
             public static LootPackDefinition Bone_Keep_Cemetery_Loot_Angbi_Bones_01 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Bone_Keep_Cemetery_Loot_Angbi_Bones_01", "601ace10bbbfeee47b8262d09f481ae4");
             public static LootPackDefinition Bone_Keep_Cemetery_Loot_Angbi_Bones_02 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Bone_Keep_Cemetery_Loot_Angbi_Bones_02", "0d7fed0ad7567e94fa43ff34210140e8");
             public static LootPackDefinition Bone_Keep_Cemetery_Loot_Angbi_Bones_03 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Bone_Keep_Cemetery_Loot_Angbi_Bones_03", "345f0e8ce8a48bb4ca6139a476c110d5");
@@ -4827,6 +5222,8 @@ namespace SolastaModApi
             public static LootPackDefinition Bone_Keep_Solar_Loot_Crate_02 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Bone_Keep_Solar_Loot_Crate_02", "bc689356e45534c4a842544042884c4a");
             public static LootPackDefinition Bone_Keep_Solar_MasterChest => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Bone_Keep_Solar_MasterChest", "81a64ec5044f82348ae2c2aba6a12219");
             public static LootPackDefinition BrimstoneViper_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("BrimstoneViper_loot_drop", "a33b3fab9810e3346aab2e2123a505df");
+            public static LootPackDefinition BrownBear_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("BrownBear_loot_drop", "55d2ad0128614ad4097558e1c9395d75");
+            public static LootPackDefinition Bulette_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Bulette_loot_drop", "7e05a58b3e02cd549ae369deef0d7ec2");
             public static LootPackDefinition CAERLEM_Cave_Loot_01_Mushroom => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("CAERLEM_Cave_Loot_01_Mushroom", "c8977f0ce81814b4b88942c51d22aa8a");
             public static LootPackDefinition CAERLEM_Cave_Loot_02_Corpse => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("CAERLEM_Cave_Loot_02_Corpse", "69eaeb1ef99662e4fb6e74889abf0449");
             public static LootPackDefinition CAERLEM_Cave_Loot_03_Climb4Loot => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("CAERLEM_Cave_Loot_03_Climb4Loot", "8c8676b9f9bfc0b479e376a45fb3bd5c");
@@ -4885,6 +5282,9 @@ namespace SolastaModApi
             public static LootPackDefinition DEBUG_CHEAT_LotsOfFoodRations => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("DEBUG_CHEAT_LotsOfFoodRations", "a7e6aa80e94f55640bb1a8609266cc88");
             public static LootPackDefinition DeepSpider_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("DeepSpider_loot_drop", "de65e45ddcd4e1e4ab40c4e62ad82c81");
             public static LootPackDefinition DireWolf_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("DireWolf_loot_drop", "5ae4f7e17572ae944b9bf97002acfa27");
+            public static LootPackDefinition DLC1_Lootpack_Marches_Grotto_VIP_Pack => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("DLC1_Lootpack_Marches_Grotto_VIP_Pack", "572d13bb8b9a6fb429b7aa27a12ebf6d");
+            public static LootPackDefinition DLC1_Lootpack_Marches_Nest_Crate_Exit_Key => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("DLC1_Lootpack_Marches_Nest_Crate_Exit_Key", "bb99dff395481f148853bc8406055ea3");
+            public static LootPackDefinition DLC1_Lootpack_Marches_Outside_Grotto_Pack => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("DLC1_Lootpack_Marches_Outside_Grotto_Pack", "9607552434ddac6488ab6de7e4bb26b5");
             public static LootPackDefinition Eagle_Matriarch_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Eagle_Matriarch_loot_drop", "34d8821de9f30d54e98935342f2343ab");
             public static LootPackDefinition Earth_Elemental_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Earth_Elemental_loot_drop", "11f7dc6827c284e4f8faebbd620d5d0e");
             public static LootPackDefinition Estalla_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Estalla_loot_drop", "4e667886e14be33489f4087fdff0a0f6");
@@ -4924,10 +5324,17 @@ namespace SolastaModApi
             public static LootPackDefinition Generic_Necromancer_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Generic_Necromancer_loot_drop", "c79ccca0046b81e43a2c2732270feb7e");
             public static LootPackDefinition Ghost_Emtan_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Ghost_Emtan_loot_drop", "d2387a01d0f16c14dabe0c183aa285c6");
             public static LootPackDefinition Ghost_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Ghost_loot_drop", "d0df50bf74366bb438f09b5cc1822147");
+            public static LootPackDefinition Giant_Fire_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Giant_Fire_loot_drop", "d55e55ed1ecdb664d84b3c77432ff6cd");
+            public static LootPackDefinition Giant_Frost_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Giant_Frost_loot_drop", "6cbf0dbf28a578846b14458157d43edb");
+            public static LootPackDefinition Giant_Hill_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Giant_Hill_loot_drop", "ce00379a792fc774ba8f8421625170d4");
+            public static LootPackDefinition Giant_Stone_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Giant_Stone_loot_drop", "4866a5cf7dd3ac443afc599c4687c8c1");
             public static LootPackDefinition Goblin_Cutthroat_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Goblin_Cutthroat_loot_drop", "d7f3335642c193b4485744f8e271943e");
             public static LootPackDefinition Goblin_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Goblin_loot_drop", "e1798a35ed0332b4cbb3d2e9d14e5f3b");
             public static LootPackDefinition Goblin_Shaman_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Goblin_Shaman_loot_drop", "fd4c93779070d15469cc84be058a593b");
             public static LootPackDefinition Goblin_skirmisher_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Goblin_skirmisher_loot_drop", "67e86bd0d71c34b469e5224c740f499c");
+            public static LootPackDefinition Golem_Clay_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Golem_Clay_loot_drop", "947ac2660f7a5d649ad46a3f5afa5ef2");
+            public static LootPackDefinition Golem_Iron_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Golem_Iron_loot_drop", "bba6bcae387f0d04d8493d5714fab012");
+            public static LootPackDefinition Golem_Stone_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Golem_Stone_loot_drop", "1d8bbae67e1d32448bee8a6a232b8679");
             public static LootPackDefinition Harvestable_AcidPuddle_Loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Harvestable_AcidPuddle_Loot_drop", "8ab379faa0e77ea40b0259e00992b990");
             public static LootPackDefinition Harvestable_AngryBush_Loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Harvestable_AngryBush_Loot_drop", "a515a9524a7602b48bfe41656d59718b");
             public static LootPackDefinition Harvestable_BadlandsBriar_Loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Harvestable_BadlandsBriar_Loot_drop", "fd1e09deb1e296e4b871559984e6dc13");
@@ -4980,6 +5387,7 @@ namespace SolastaModApi
             public static LootPackDefinition Loot_PickupQuest_GhostsOfTheEmpire => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_PickupQuest_GhostsOfTheEmpire", "445049bf60a9a7b4fb1019fa62e0ef52");
             public static LootPackDefinition Loot_PickupQuest_HickoryCorner => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_PickupQuest_HickoryCorner", "833433f57edf4554e975af9a12cf9561");
             public static LootPackDefinition Loot_PickupQuest_LavaForest => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_PickupQuest_LavaForest", "6361f20cc70efc244b8f2a8de318d320");
+            public static LootPackDefinition Loot_PickupQuest_MagisterAmulet => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_PickupQuest_MagisterAmulet", "d089da82104c3884f85cb57cb6c3addf");
             public static LootPackDefinition Loot_RodricHideout_Chest_01 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_RodricHideout_Chest_01", "d4af42bb9cff60c4f9281730de692be7");
             public static LootPackDefinition Loot_RodricHideout_Crate_01 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_RodricHideout_Crate_01", "9ab411176304aba42b6ae32ea2773021");
             public static LootPackDefinition Loot_RodricHideout_Crate_02 => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_RodricHideout_Crate_02", "1d5573fde218a4c4a89fb18784a6d31e");
@@ -4989,7 +5397,11 @@ namespace SolastaModApi
             public static LootPackDefinition Loot_TempleOfMisaye_LockedChest => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_TempleOfMisaye_LockedChest", "b36108fc2554c49478b65c03f3adb7aa");
             public static LootPackDefinition Loot_Test_Quest => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Loot_Test_Quest", "226774c3649c1914eaf33b53018d1d63");
             public static LootPackDefinition Lootpack_Gifts_From_Princess => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Lootpack_Gifts_From_Princess", "2db69165e5568ea46a7bb66e3d2c1311");
+            public static LootPackDefinition Minotaur_Elite_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Minotaur_Elite_loot_drop", "e12b8853531ce2d4796c13d5a0af3f52");
             public static LootPackDefinition Minotaur_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Minotaur_loot_drop", "b1562ea2d3fc0794fb9a3fe6c937bf8c");
+            public static LootPackDefinition Minotaur_Spectral_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Minotaur_Spectral_loot_drop", "5fde2b8fbcebb49419f2ceb2b69aa5ce");
+            public static LootPackDefinition Mummy_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Mummy_loot_drop", "bbcfcaf487f28a445a9316e22c477c89");
+            public static LootPackDefinition MummyLord_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("MummyLord_loot_drop", "c7593920fd8302842bdfb3d30edc869f");
             public static LootPackDefinition Necromancer_BoneKeep_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Necromancer_BoneKeep_loot_drop", "137f6d266d87cff4d8b1683b53c1826d");
             public static LootPackDefinition NewEmpireEmbassy_Basket => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("NewEmpireEmbassy_Basket", "63655431d2ccb6a449d911ee10d17254");
             public static LootPackDefinition NewEmpireEmbassy_Small_Chest => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("NewEmpireEmbassy_Small_Chest", "12750b2e34d538b43b34b50db8b738a6");
@@ -5005,6 +5417,8 @@ namespace SolastaModApi
             public static LootPackDefinition Orc_Grunt_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Orc_Grunt_loot_drop", "d18827990ad84fe43a12ac9937006b88");
             public static LootPackDefinition Orc_Shaman_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Orc_Shaman_loot_drop", "fb6657e0fc4de064fa2ba06699a9e361");
             public static LootPackDefinition Palace_Residence_Lootpack => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Palace_Residence_Lootpack", "835910031aa067545a004d04cbf5c62e");
+            public static LootPackDefinition Pickpocket_generic_loot_100GP => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Pickpocket_generic_loot_100GP", "c2b94e6479f55b744b29cca9fab0884e");
+            public static LootPackDefinition Pickpocket_generic_loot_10GP => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Pickpocket_generic_loot_10GP", "e820f457ea1875f418f68bffe7dac142");
             public static LootPackDefinition Remorhaz_Loot_Drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Remorhaz_Loot_Drop", "f011fae64a89bb64f951e8ae635be70b");
             public static LootPackDefinition Rodric_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Rodric_loot_drop", "d361ccea688373749b7a2886f3da94f9");
             public static LootPackDefinition Secondary_KillRazan_Loot => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Secondary_KillRazan_Loot", "793ea08a289e97346bd276803f13074e");
@@ -5067,6 +5481,7 @@ namespace SolastaModApi
             public static LootPackDefinition TOWEROFMAGIC_Weird_Jump5_Lootpack => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("TOWEROFMAGIC_Weird_Jump5_Lootpack", "5f654105b07a02946be267fcc8593cd3");
             public static LootPackDefinition TOWEROFMAGIC_Weird_Levitate_Lootpack => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("TOWEROFMAGIC_Weird_Levitate_Lootpack", "768dc742403203345a3e848824620bdc");
             public static LootPackDefinition TOWEROFMAGIC_Weird_Trapped => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("TOWEROFMAGIC_Weird_Trapped", "3f57156a723bab645b738c1d40fff6bf");
+            public static LootPackDefinition Troll_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Troll_loot_drop", "9c2c1629d1cd2ce4ebce02314ce9fb17");
             public static LootPackDefinition Tutorial_01_Basket => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Tutorial_01_Basket", "2c9d3f8cc74176f4f8fcdf4a499eea53");
             public static LootPackDefinition Tutorial_01_Chest_Exit => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Tutorial_01_Chest_Exit", "400061d64ed4a674fa1cf10d52492477");
             public static LootPackDefinition Tutorial_01_Chest_Jump => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Tutorial_01_Chest_Jump", "333bbae1656295845834bf664ce57453");
@@ -5080,6 +5495,7 @@ namespace SolastaModApi
             public static LootPackDefinition Veteran_SorakAgent_Loot_Drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Veteran_SorakAgent_Loot_Drop", "076e8c792ff1cfd41adda3ac1cc77307");
             public static LootPackDefinition Warlord_Loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Warlord_Loot_drop", "d486d6fd0f848204fa27d8db786bee28");
             public static LootPackDefinition Wight_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Wight_loot_drop", "cfe6995b715071244949e3216b94a0fd");
+            public static LootPackDefinition WightLord_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("WightLord_loot_drop", "4933a39f992d626479e4d081522f52d6");
             public static LootPackDefinition WinterWolf_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("WinterWolf_loot_drop", "a682101025348a84aa78405ab34e5454");
             public static LootPackDefinition Wolf_snake_loot_drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Wolf_snake_loot_drop", "2168e729059d36e49adf2e4b292e0009");
             public static LootPackDefinition Young_Remorhaz_Loot_Drop => DatabaseRepository.GetDatabase<LootPackDefinition>().TryGetElement("Young_Remorhaz_Loot_Drop", "a8fbd57f0d952eb44a1361f155a3a450");
@@ -5157,6 +5573,13 @@ namespace SolastaModApi
             public static MapWaypointDefinition MapWaypointDefinition_CradleOfFire_RedscarHall => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_CradleOfFire_RedscarHall", "6d9e8a32deb6c8345affab9e3585bce2");
             public static MapWaypointDefinition MapWaypointDefinition_CradleOfFire_Sandraven => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_CradleOfFire_Sandraven", "a12aeb6e20ac5894e983a1efd164abd0");
             public static MapWaypointDefinition MapWaypointDefinition_CradleOfFire_To_Crossroads => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_CradleOfFire_To_Crossroads", "63afdbd229f90574484d9563c2f73429");
+            public static MapWaypointDefinition MapWaypointDefinition_Default_Exit => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_Default_Exit", "19d946c55363f044cbecda2f5424ad76");
+            public static MapWaypointDefinition MapWaypointDefinition_DLC1_City_Entrance => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_DLC1_City_Entrance", "6d49427b660f51b42a02dd8325bcdbaf");
+            public static MapWaypointDefinition MapWaypointDefinition_DLC1_City_Market => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_DLC1_City_Market", "b54b6b21ad1533e4694e5fe316ce0138");
+            public static MapWaypointDefinition MapWaypointDefinition_DLC1_City_MaskHQ_Low => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_DLC1_City_MaskHQ_Low", "ed64f4017e61af3459b42d223c6686b4");
+            public static MapWaypointDefinition MapWaypointDefinition_DLC1_City_MiddleGate => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_DLC1_City_MiddleGate", "b2909f1e7d02e164eba2f12c0dc0879b");
+            public static MapWaypointDefinition MapWaypointDefinition_DLC1_Marches_Camp => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_DLC1_Marches_Camp", "7c4509200a8c3bc48afe6e13daf9a7ba");
+            public static MapWaypointDefinition MapWaypointDefinition_DLC1_Marches_GrottoEntrance => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_DLC1_Marches_GrottoEntrance", "2fa72fc8ec50ad240b11ce58000848c4");
             public static MapWaypointDefinition MapWaypointDefinition_GENERIC_LONG_REST_AREA => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_GENERIC_LONG_REST_AREA", "4fbc65860bf33ba46a751c8687eea9e0");
             public static MapWaypointDefinition MapWaypointDefinition_LavaForest_Clearing => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_LavaForest_Clearing", "0fd539a3fb3a36244bc4ea79aa21ce05");
             public static MapWaypointDefinition MapWaypointDefinition_LavaForest_Forest => DatabaseRepository.GetDatabase<MapWaypointDefinition>().TryGetElement("MapWaypointDefinition_LavaForest_Forest", "9902f0c8083e38a459d8f77a99b0c431");
@@ -5231,6 +5654,16 @@ namespace SolastaModApi
             public static MerchantDefinition Store_Merchant_Wanderer_Telema_Weaponsmith => DatabaseRepository.GetDatabase<MerchantDefinition>().TryGetElement("Store_Merchant_Wanderer_Telema_Weaponsmith", "11aa66f67fe625944b44a4875fec0116");
             public static MerchantDefinition Store_Merchant_Wilf_Warmhearth => DatabaseRepository.GetDatabase<MerchantDefinition>().TryGetElement("Store_Merchant_Wilf_Warmhearth", "3b93db43d5b926140a41b09da99a45cf");
         }
+        public static class MetamagicOptionDefinitions
+        {
+            public static MetamagicOptionDefinition MetamagicCarefullSpell => DatabaseRepository.GetDatabase<MetamagicOptionDefinition>().TryGetElement("MetamagicCarefullSpell", "16e8b6b4feade224ca3b8c16d8c1cb89");
+            public static MetamagicOptionDefinition MetamagicDistantSpell => DatabaseRepository.GetDatabase<MetamagicOptionDefinition>().TryGetElement("MetamagicDistantSpell", "cfca33a87cfd1d54d91bfe722958bebe");
+            public static MetamagicOptionDefinition MetamagicEmpoweredSpell => DatabaseRepository.GetDatabase<MetamagicOptionDefinition>().TryGetElement("MetamagicEmpoweredSpell", "60aa7f9b10c0e6540987ab64abae02db");
+            public static MetamagicOptionDefinition MetamagicExtendedSpell => DatabaseRepository.GetDatabase<MetamagicOptionDefinition>().TryGetElement("MetamagicExtendedSpell", "c2960efb7ad6e734eb94655243ec7df9");
+            public static MetamagicOptionDefinition MetamagicHeightenedSpell => DatabaseRepository.GetDatabase<MetamagicOptionDefinition>().TryGetElement("MetamagicHeightenedSpell", "01d4312d9bdd4af47b46c229f45fd6f3");
+            public static MetamagicOptionDefinition MetamagicQuickenedSpell => DatabaseRepository.GetDatabase<MetamagicOptionDefinition>().TryGetElement("MetamagicQuickenedSpell", "4e47dcc5efd05b44ba3b07253f89d36d");
+            public static MetamagicOptionDefinition MetamagicTwinnedSpell => DatabaseRepository.GetDatabase<MetamagicOptionDefinition>().TryGetElement("MetamagicTwinnedSpell", "4a306f82461bee74a9f329b1642f9512");
+        }
         public static class MonsterAttackDefinitions
         {
             public static MonsterAttackDefinition Attack_Acolyte_Club => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Acolyte_Club", "18a6c18067c166043aeac7189b9d1c48");
@@ -5254,6 +5687,8 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Berserker_Greataxe => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Berserker_Greataxe", "0f61ea52e4105234a91895e363301a87");
             public static MonsterAttackDefinition Attack_Beryl_Hammer => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Beryl_Hammer", "f97af0e9ba1b3b740980b4dc7c1830a1");
             public static MonsterAttackDefinition Attack_Black_Dragon_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Black_Dragon_Bite", "9efd318a02322854bbbb65a917c4844c");
+            public static MonsterAttackDefinition Attack_BlackBear_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_BlackBear_Bite", "fc3fcbda8fde67d4198f8cedc66238a0");
+            public static MonsterAttackDefinition Attack_BlackBear_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_BlackBear_Claw", "df3f3715ca87fe949bd61709ad2d5204");
             public static MonsterAttackDefinition Attack_Brood_of_blood_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Brood_of_blood_Bite", "40d7f611f309ffe4f95ba9ebeb755db2");
             public static MonsterAttackDefinition Attack_Brood_of_blood_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Brood_of_blood_Claw", "b93bdfbb3bf347f468c0b83b61d25ccb");
             public static MonsterAttackDefinition Attack_Brood_of_blood_Spit => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Brood_of_blood_Spit", "93bf27bc6483c1c43a1773faee03a446");
@@ -5261,6 +5696,9 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Brood_of_dread_blood_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Brood_of_dread_blood_Claw", "005eefcd23518a9458f41669e61302c1");
             public static MonsterAttackDefinition Attack_Brood_of_flesh_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Brood_of_flesh_Bite", "2530fbf9040e63e40826d55439b2d0a4");
             public static MonsterAttackDefinition Attack_Brood_of_flesh_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Brood_of_flesh_Claw", "fbefaa0e200cb674cba6e55f5f138241");
+            public static MonsterAttackDefinition Attack_BrownBear_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_BrownBear_Bite", "6bd4f609ff180814c83917de1484b104");
+            public static MonsterAttackDefinition Attack_BrownBear_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_BrownBear_Claw", "8357a44901bfe244394b6d344a0baee4");
+            public static MonsterAttackDefinition Attack_Bulette_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Bulette_Bite", "85096f11896d3ba478e964a506ef38a0");
             public static MonsterAttackDefinition Attack_CityGuard => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_CityGuard", "b549410045013ae42866b01a604226a5");
             public static MonsterAttackDefinition Attack_CityGuard_Gallivan => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_CityGuard_Gallivan", "b75558ca6d19a4846a3c8c3b8d6f063c");
             public static MonsterAttackDefinition Attack_CityGuard_NewEmpire => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_CityGuard_NewEmpire", "9894202838f9610408153d39f1f64ba1");
@@ -5280,6 +5718,12 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Divine_Avatar => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Divine_Avatar", "a405d53256a4bb44d9f3528c80d97a82");
             public static MonsterAttackDefinition Attack_Divine_Avatar_Cleric => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Divine_Avatar_Cleric", "6d2d8b8acfd654943a749969808983a7");
             public static MonsterAttackDefinition Attack_Divine_Avatar_Wizard => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Divine_Avatar_Wizard", "12356d5b3bc8f3947949f6d3b30f29c4");
+            public static MonsterAttackDefinition Attack_DLC1_NPC3_Warhammer => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_DLC1_NPC3_Warhammer", "e94d05825a946fc4fb082e2ab1c5bda8");
+            public static MonsterAttackDefinition Attack_DLC1_NPC4_Shortbow => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_DLC1_NPC4_Shortbow", "f338ee88f06f52947826d4987f6fd723");
+            public static MonsterAttackDefinition Attack_DLC1_NPC4_Shortsword => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_DLC1_NPC4_Shortsword", "c90b65bdc6c3dda4abb251f4c6bb97af");
+            public static MonsterAttackDefinition Attack_DLC1_NPC5_Dagger => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_DLC1_NPC5_Dagger", "1f531ee2eb8906547ba752a806583c9b");
+            public static MonsterAttackDefinition Attack_DLC1_NPC5_Dart => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_DLC1_NPC5_Dart", "e4ee2c51400c420479135c222af74fbf");
+            public static MonsterAttackDefinition Attack_DLC1_NPC8_Longsword => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_DLC1_NPC8_Longsword", "5f1bc837f4c5b8642ae844e991155cb3");
             public static MonsterAttackDefinition Attack_EagleMatriarch_Talons => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_EagleMatriarch_Talons", "b535c4fc37512ba419f413748136fdec");
             public static MonsterAttackDefinition Attack_Earth_Elemental_Slam => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Earth_Elemental_Slam", "c9deeda1f3dded24b96cd620d03545b8");
             public static MonsterAttackDefinition Attack_Estalla_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Estalla_Claw", "1fe9ba0fb99688c4090042bb448114ec");
@@ -5304,6 +5748,16 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Ghost_Wolf_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Ghost_Wolf_Bite", "49ed88c6ef7391f4094bfd8690b50ada");
             public static MonsterAttackDefinition Attack_Ghoul_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Ghoul_Bite", "a5dee48dd355e404fa84f6b4f5bf8191");
             public static MonsterAttackDefinition Attack_Ghoul_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Ghoul_Claw", "8ef4997a0e8d4454480da736735aef6b");
+            public static MonsterAttackDefinition Attack_Giant_Fire_Rock => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Fire_Rock", "e6d866afb0afde542865a39a4dd18614");
+            public static MonsterAttackDefinition Attack_Giant_Fire_Sword => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Fire_Sword", "5eb530ece9f3bd74d877d0bd8c7c65c4");
+            public static MonsterAttackDefinition Attack_Giant_Frost_Axe => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Frost_Axe", "6f6752e783377074d8238f15f8203f45");
+            public static MonsterAttackDefinition Attack_Giant_Frost_Rock => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Frost_Rock", "4c829a845f2ddc74c8ecdff9e53d1a8f");
+            public static MonsterAttackDefinition Attack_Giant_Hill_Greatclub => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Hill_Greatclub", "c09542ba002e16d4ca1964e16b509b73");
+            public static MonsterAttackDefinition Attack_Giant_Hill_Rock => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Hill_Rock", "db4d208a43fa18b42bdea74a61692098");
+            public static MonsterAttackDefinition Attack_Giant_Stone_Club => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Stone_Club", "c66023c0538e8794e9bb4cfd48744ce5");
+            public static MonsterAttackDefinition Attack_Giant_Stone_Rock => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Giant_Stone_Rock", "e8b8204ab11a5cb42b2dfde15bc6cf6f");
+            public static MonsterAttackDefinition Attack_GiantBeetle_AcidSpray => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_GiantBeetle_AcidSpray", "8dbac0122cfe27941ad3a83af5d62a57");
+            public static MonsterAttackDefinition Attack_GiantBeetle_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_GiantBeetle_Claw", "36fe3d59c1f1aeb4487cd1476db3f49f");
             public static MonsterAttackDefinition Attack_GiantEagle_Beak => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_GiantEagle_Beak", "96545df6154d61b4b962a3ea675bb66b");
             public static MonsterAttackDefinition Attack_GiantEagle_Talons => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_GiantEagle_Talons", "31f060524a0fac7458701e9c9ab0be79");
             public static MonsterAttackDefinition Attack_Goblin_Cutthroat_Scimitar => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Goblin_Cutthroat_Scimitar", "68293acf895fd8c459863307de3c1a20");
@@ -5311,6 +5765,9 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Goblin_PebbleThrow => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Goblin_PebbleThrow", "c485f2e952abc3d47b571b0e5ca63732");
             public static MonsterAttackDefinition Attack_Goblin_Scimitar => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Goblin_Scimitar", "ab3cb33750e12d0409ab75df6376d886");
             public static MonsterAttackDefinition Attack_Goblin_ShortBow => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Goblin_ShortBow", "0752d7ebe808f2242b74bcd5bec13ec4");
+            public static MonsterAttackDefinition Attack_Golem_Clay_Slam => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Golem_Clay_Slam", "9ea77a9fbbc03d34ca3c1ba1d5357125");
+            public static MonsterAttackDefinition Attack_Golem_Iron_Slam => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Golem_Iron_Slam", "3cfd57a18b07118419037b8e4ca88e8b");
+            public static MonsterAttackDefinition Attack_Golem_Stone_Slam => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Golem_Stone_Slam", "e34082f8aa63f13429b1210fd96ab69c");
             public static MonsterAttackDefinition Attack_Green_Dragon_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Green_Dragon_Bite", "3994c83de724695489ad69c84c2c2444");
             public static MonsterAttackDefinition Attack_Green_Dragon_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Green_Dragon_Claw", "f1a189a088e4e4e42864c52ba2eeb456");
             public static MonsterAttackDefinition Attack_Green_Dragon_Tail => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Green_Dragon_Tail", "8b9e1f1692bd40f43904b14a03e6e1e3");
@@ -5330,10 +5787,18 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Mage_Dagger => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Mage_Dagger", "711167f70938ce846aa5be08bd918fbb");
             public static MonsterAttackDefinition Attack_Mardracht_Dagger => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Mardracht_Dagger", "83e78ab360260db4195bfd1985605b8c");
             public static MonsterAttackDefinition Attack_Minotaur_Charged_Gore => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Charged_Gore", "8741490bff5c37141b722a584a81dc16");
+            public static MonsterAttackDefinition Attack_Minotaur_Elite_Charged_Gore => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Elite_Charged_Gore", "d102834a687662c49984b6cd11889185");
+            public static MonsterAttackDefinition Attack_Minotaur_Elite_Gore => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Elite_Gore", "7aa03bb5ae32ca84ea683c04120f9305");
+            public static MonsterAttackDefinition Attack_Minotaur_Elite_Greataxe => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Elite_Greataxe", "8203d1698b401b14d8a5f639b01e7354");
             public static MonsterAttackDefinition Attack_Minotaur_Gore => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Gore", "fdb59eb65ebe05a4788ac2d041e334a2");
             public static MonsterAttackDefinition Attack_Minotaur_Greataxe => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Greataxe", "0696d52ae5edda84ba22d110a3b846f6");
+            public static MonsterAttackDefinition Attack_Minotaur_Spectral_Charged_Gore => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Spectral_Charged_Gore", "f480e4d37d7c0d6439b85e41ab2a228a");
+            public static MonsterAttackDefinition Attack_Minotaur_Spectral_Gore => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Spectral_Gore", "a1fba7ece573f874d805e307ba044362");
+            public static MonsterAttackDefinition Attack_Minotaur_Spectral_Greataxe => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Minotaur_Spectral_Greataxe", "de17573bc26d57e4a92fbde66b553487");
             public static MonsterAttackDefinition Attack_Mummy_DreadfulGlare => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Mummy_DreadfulGlare", "d14837342ea903b43940e133f81f0e17");
             public static MonsterAttackDefinition Attack_Mummy_RottingFist => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Mummy_RottingFist", "c80bdeaab5c1db84bbe0968559eb2bdf");
+            public static MonsterAttackDefinition Attack_MummyLord_DreadfulGlare => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_MummyLord_DreadfulGlare", "d5d7d59a8b5191749b848857ce1153ac");
+            public static MonsterAttackDefinition Attack_MummyLord_RottingFist => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_MummyLord_RottingFist", "3bb91e22330c6cd45ac82f3560415ab6");
             public static MonsterAttackDefinition Attack_Necromancer_BoneKeep_WitheringTouch => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Necromancer_BoneKeep_WitheringTouch", "dd474c47d1ff248478e10415c549e90b");
             public static MonsterAttackDefinition Attack_Necromancer_WitheringTouch => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Necromancer_WitheringTouch", "ace9c63a3f9b48341908332ed45ff960");
             public static MonsterAttackDefinition Attack_Ogre_Club => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Ogre_Club", "e77c953b324ef504a9f026424b2a5e5d");
@@ -5410,6 +5875,8 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Thug_Mace => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Thug_Mace", "f796774464eca1e45bb8f3750a33cccb");
             public static MonsterAttackDefinition Attack_TigerDrake_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_TigerDrake_Bite", "8b2d23ea7fa239847bd45db4ee8ccab9");
             public static MonsterAttackDefinition Attack_Torch => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Torch", "04f3825a92d12074292d0753a93c1925");
+            public static MonsterAttackDefinition Attack_Troll_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Troll_Bite", "70aa1d8e427db224c8db0f93a770c613");
+            public static MonsterAttackDefinition Attack_Troll_Claw => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Troll_Claw", "dfcc93511a5041a4da8af03c2c759a1a");
             public static MonsterAttackDefinition Attack_Veteran_HeavyCrossbow => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Veteran_HeavyCrossbow", "71a57bf6d1b1f5c43a3e885f6b82d34f");
             public static MonsterAttackDefinition Attack_Veteran_Longsword => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Veteran_Longsword", "2831e20104ee0f74498b456b839ec080");
             public static MonsterAttackDefinition Attack_Veteran_Shortsword => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Veteran_Shortsword", "8bddf5022cccceb4c8668a38e073164e");
@@ -5420,6 +5887,9 @@ namespace SolastaModApi
             public static MonsterAttackDefinition Attack_Wight_LifeDrain => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Wight_LifeDrain", "b17ac4098e29a304ea646bcea2e242f8");
             public static MonsterAttackDefinition Attack_Wight_Longbow => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Wight_Longbow", "342b40e13db0dff48ac341d3bf83f7e4");
             public static MonsterAttackDefinition Attack_Wight_Longsword => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Wight_Longsword", "f8f73b9c17719394584a35106a54e364");
+            public static MonsterAttackDefinition Attack_WightLord_LifeDrain => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_WightLord_LifeDrain", "14588372ac0b89d44805484799c31773");
+            public static MonsterAttackDefinition Attack_WightLord_Longbow => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_WightLord_Longbow", "5897dfc6ae3975a48a4df1b7df1e6959");
+            public static MonsterAttackDefinition Attack_WightLord_Longsword => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_WightLord_Longsword", "60744fb5794f689438639592a3bfc48e");
             public static MonsterAttackDefinition Attack_WindSnake_Freeze => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_WindSnake_Freeze", "8018e79f2df57194f839782350a3e1e9");
             public static MonsterAttackDefinition Attack_WindSnake_RayOfFrost => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_WindSnake_RayOfFrost", "c143b016a9558ec4d8794ad3028a5c4f");
             public static MonsterAttackDefinition Attack_Winter_Wolf_Bite => DatabaseRepository.GetDatabase<MonsterAttackDefinition>().TryGetElement("Attack_Winter_Wolf_Bite", "66e48052726d45c46a872ce720f6a984");
@@ -5468,6 +5938,7 @@ namespace SolastaModApi
             public static MonsterDefinition Bertram => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Bertram", "346cb7212857e954b92edbda4e230f5b");
             public static MonsterDefinition Beryl_Stonebeard => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Beryl_Stonebeard", "f7ae47f4f4629424cad7e989c8d2f275");
             public static MonsterDefinition Bitterroot => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Bitterroot", "8f5e0fce155d7a94fbc11019d4a79313");
+            public static MonsterDefinition BlackBear => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("BlackBear", "6c10eb2c039b5634786b530cac315baf");
             public static MonsterDefinition BlackDragon_MasterOfNecromancy => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("BlackDragon_MasterOfNecromancy", "88b4c2c2ce21c884ea4421c62ef8d69f");
             public static MonsterDefinition Bone_Keep_Adventurer_Ghost => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Bone_Keep_Adventurer_Ghost", "4ec0d765d6c2d0149ab5aa0b4c664642");
             public static MonsterDefinition Brok => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Brok", "65a63f1e6e67d764fb9254f10cd41cea");
@@ -5477,6 +5948,8 @@ namespace SolastaModApi
             public static MonsterDefinition Brood_of_blood => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Brood_of_blood", "a12d2fc412e653c4ca4f9b53119ed31c");
             public static MonsterDefinition Brood_of_dread => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Brood_of_dread", "f8c06b1a573ee5d458baf3bdec369db9");
             public static MonsterDefinition Brood_of_flesh => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Brood_of_flesh", "5aa04462ab7f6b84d8493d8d5c9240fa");
+            public static MonsterDefinition BrownBear => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("BrownBear", "303fa8bd7b2650942b0ab465fe5f8edb");
+            public static MonsterDefinition Bulette => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Bulette", "a701a84d22c492f40a8c724fb71fb451");
             public static MonsterDefinition Butler_Ravensworth => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Butler_Ravensworth", "ee4543c8bafde26408f7c2b2e65b6bf5");
             public static MonsterDefinition Caer_Cyflen_Guard => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Caer_Cyflen_Guard", "66413c3006abd0545911905534b08b84");
             public static MonsterDefinition Caer_Cyflen_Major_Gate_Officer => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Caer_Cyflen_Major_Gate_Officer", "568ecd71dfe7824478fc5189f122da89");
@@ -5522,6 +5995,15 @@ namespace SolastaModApi
             public static MonsterDefinition Divine_Avatar => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Divine_Avatar", "e2044dfe47f03bc49bb8c98a37bf76da");
             public static MonsterDefinition Divine_Avatar_Cleric => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Divine_Avatar_Cleric", "d6c6b67e7a7b96c4ea83c2a8ad58db7f");
             public static MonsterDefinition Divine_Avatar_Wizard => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Divine_Avatar_Wizard", "4eb20a05bf70e6e43bf02e6b343316e7");
+            public static MonsterDefinition DLC1_NPC_1_Marches_VIP_Scribe => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_1_Marches_VIP_Scribe", "e0286c73974a08f49a230af8e4e7c237");
+            public static MonsterDefinition DLC1_NPC_2_Marches_Helia_Fairblade => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_2_Marches_Helia_Fairblade", "3e70547412e1a4c4b95eb9c2f2dd1969");
+            public static MonsterDefinition DLC1_NPC_3_Marches_Officer => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_3_Marches_Officer", "f1beed365d496f042bdde15ff3580ba2");
+            public static MonsterDefinition DLC1_NPC_4_Marches_Mercenary => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_4_Marches_Mercenary", "5757a0003cc365a4bac3aff962dfcc61");
+            public static MonsterDefinition DLC1_NPC_5_Marches_Misaye_Follower => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_5_Marches_Misaye_Follower", "9fb9af00fb5229c4eaf082283d576db5");
+            public static MonsterDefinition DLC1_NPC_6_Marches_Leader => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_6_Marches_Leader", "190e6ae05e2ec0e4683816f196ed30bb");
+            public static MonsterDefinition DLC1_NPC_7_Marches_VIP_Cousin => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_7_Marches_VIP_Cousin", "3dd08471aed3feb4f84d6acba2e1e63b");
+            public static MonsterDefinition DLC1_NPC_8_Marches_FaithlessGuard => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_8_Marches_FaithlessGuard", "bb34c0cd2fe759645a2b0bb3b0d2f77b");
+            public static MonsterDefinition DLC1_NPC_Swamp_ForgeGuard => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("DLC1_NPC_Swamp_ForgeGuard", "3a18a0fefa4da7b469b80de2ec50baa1");
             public static MonsterDefinition Eagle_Matriarch => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Eagle_Matriarch", "2761b7315d8e9494083f46b34a8bfc04");
             public static MonsterDefinition Earth_Elemental => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Earth_Elemental", "28c6739d88058b540abaf6894b2f7969");
             public static MonsterDefinition Edrof => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Edrof", "d57c1cb29bf54be479d21ed3d03bc32e");
@@ -5552,13 +6034,21 @@ namespace SolastaModApi
             public static MonsterDefinition Ghost_Emtan => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Ghost_Emtan", "10ceb1ec9f1aa4d4e8be35b3341e8fbd");
             public static MonsterDefinition Ghost_Wolf => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Ghost_Wolf", "2779f42f460a3144ebe030a35cdd3b89");
             public static MonsterDefinition Ghoul => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Ghoul", "9c8231253df922e4bbced9595bc475f5");
+            public static MonsterDefinition Giant_Beetle => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Giant_Beetle", "56bf7a3f578751446b53a5d6c97daab6");
             public static MonsterDefinition Giant_Eagle => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Giant_Eagle", "370501009513e1348b7293c34c85e39a");
+            public static MonsterDefinition Giant_Fire => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Giant_Fire", "d8ba44c1c9ca5f542a04be7db366d2bd");
+            public static MonsterDefinition Giant_Frost => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Giant_Frost", "24ce4946c0d776b44b6bf7370147ccb7");
+            public static MonsterDefinition Giant_Hill => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Giant_Hill", "e0f8dfa38e5fbfb4ca1fd639c1477d5f");
+            public static MonsterDefinition Giant_Stone => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Giant_Stone", "6ad1c3c7594ff4b4a881bd22aff7c300");
             public static MonsterDefinition Goblin => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Goblin", "6385eddb59bc18a4b8dd19bffdd279a8");
             public static MonsterDefinition Goblin_Cutthroat => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Goblin_Cutthroat", "9507651679bdc734b8348130868cefd2");
             public static MonsterDefinition Goblin_Cutthroat_Ranged => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Goblin_Cutthroat_Ranged", "795e553e8285d9e41bb9753aa116599c");
             public static MonsterDefinition Goblin_Shaman => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Goblin_Shaman", "cb9c8bb91afe9dd48b94778d12797493");
             public static MonsterDefinition Goblin_Skirmisher => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Goblin_Skirmisher", "eb7bbfdae2a13504281402bdbce75722");
             public static MonsterDefinition GoldDragon_AerElai => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("GoldDragon_AerElai", "678559ae2adcb19448224941a39c3e08");
+            public static MonsterDefinition Golem_Clay => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Golem_Clay", "c64b84704d85fff40b59d2a636c20a72");
+            public static MonsterDefinition Golem_Iron => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Golem_Iron", "4a02c1d20726e4246bcb80c3a27761cf");
+            public static MonsterDefinition Golem_Stone => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Golem_Stone", "57d4e30a77570f045b3c739258b92f2a");
             public static MonsterDefinition GreenDragon_MasterOfConjuration => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("GreenDragon_MasterOfConjuration", "0ca3722ada0540f41be312bd4c571c83");
             public static MonsterDefinition GreenDragon_MasterOfConjuration_Fake => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("GreenDragon_MasterOfConjuration_Fake", "57d5e8999b9602b42ba0ab78f11dea89");
             public static MonsterDefinition Halman_Summer => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Halman_Summer", "fda8753ac2e43de4f99ed0af88f39400");
@@ -5603,9 +6093,12 @@ namespace SolastaModApi
             public static MonsterDefinition Milan => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Milan", "24e0385155712cc4a984a28e79452426");
             public static MonsterDefinition Mildred_Warmhearth => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Mildred_Warmhearth", "95bc484bbccd6c24895e569aee77cea0");
             public static MonsterDefinition Minotaur => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Minotaur", "e85f3e35b43edfa489df948fb9b480e3");
+            public static MonsterDefinition MinotaurElite => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("MinotaurElite", "fb69fb93dfe054246a195d65b6cbbacc");
+            public static MonsterDefinition MinotaurSpectral => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("MinotaurSpectral", "74939e2a0a09fbf49b8b5a8b446bf177");
             public static MonsterDefinition Morden_Kyre => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Morden_Kyre", "b35f9c1cc0dacfc4da918284ee85dc2b");
             public static MonsterDefinition Morden_Kyre_Infiltrator => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Morden_Kyre_Infiltrator", "46b50f4ebd284894093977ec7ca60058");
             public static MonsterDefinition Mummy => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Mummy", "b43fdb78f5aeb274bbd2e366ba183a88");
+            public static MonsterDefinition MummyLord => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("MummyLord", "f751315996ef39f4db4336b4935e38ec");
             public static MonsterDefinition Necromancer_Acolyte_BoneKeep => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Necromancer_Acolyte_BoneKeep", "a85882d253f924f4b90d1eebaab8e9ca");
             public static MonsterDefinition NPC_Brood => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("NPC_Brood", "675b262c4cb38de4c8e8986feb181a80");
             public static MonsterDefinition Ogre => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Ogre", "b421de8bacffa2d4ba3ee516bc145a08");
@@ -5697,10 +6190,12 @@ namespace SolastaModApi
             public static MonsterDefinition TEMP_Quest_Giver => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("TEMP_Quest_Giver", "ae8955a5cf3672e4d923cdf1031688f9");
             public static MonsterDefinition Tiger_Drake => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Tiger_Drake", "38cc0f56805dd8a44a25432990696848");
             public static MonsterDefinition TowerOfMagicWorkerNPC => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("TowerOfMagicWorkerNPC", "0cb05871cfa38f643a9904e1bebdf85b");
+            public static MonsterDefinition Troll => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Troll", "29949a3f8848b7a4898f9276248ec952");
             public static MonsterDefinition Tutorial_LoanShark => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Tutorial_LoanShark", "2873b8a3392a23d40a194bd81b61e952");
             public static MonsterDefinition Tutorial_QuarterMaster => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Tutorial_QuarterMaster", "7e69faff410dc20469945397e5cd2417");
             public static MonsterDefinition Urka => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Urka", "bf04d3e36e7ce7d449ad1d16de0f3797");
             public static MonsterDefinition Wight => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Wight", "89e86664a5e7c004d9a5409889818949");
+            public static MonsterDefinition WightLord => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("WightLord", "bc3594142da32144da8d2e32fb7f39c0");
             public static MonsterDefinition Wilf_Warmhearth => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Wilf_Warmhearth", "b7305eac8cb8fc449a7d350482ce533f");
             public static MonsterDefinition WindSnake => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("WindSnake", "6393456e4eba0a14d8c7c5ac156ef57e");
             public static MonsterDefinition Winter_Wolf => DatabaseRepository.GetDatabase<MonsterDefinition>().TryGetElement("Winter_Wolf", "355dd21d6b2867a41a2855dc09f2897c");
@@ -5762,6 +6257,8 @@ namespace SolastaModApi
             public static MorphotypeCategoryDefinition Backstory => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("Backstory", "bb2947dd0fb3c77469439e98a01b9b66");
             public static MorphotypeCategoryDefinition BeardShape => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("BeardShape", "54b20f3b81c75c743a48eb13298909bd");
             public static MorphotypeCategoryDefinition BodyDecoration => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("BodyDecoration", "dfb37e95573a35f41803fb881a6f8a42");
+            public static MorphotypeCategoryDefinition BodyDecorationColor => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("BodyDecorationColor", "13c7cf86377d3c24897f83c49548c659");
+            public static MorphotypeCategoryDefinition Eye => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("Eye", "640fba42a51c94844a25c5ff83c44357");
             public static MorphotypeCategoryDefinition EyeColor => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("EyeColor", "f9f739b726cdfec4bb5cbf1c20c009d7");
             public static MorphotypeCategoryDefinition FaceShape => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("FaceShape", "9c1f900fc95d98f42b82ff14c33e58a3");
             public static MorphotypeCategoryDefinition HairColor => DatabaseRepository.GetDatabase<MorphotypeCategoryDefinition>().TryGetElement("HairColor", "54e0381c6698d9043b98b1909480480b");
@@ -5790,6 +6287,46 @@ namespace SolastaModApi
             public static MorphotypeElementDefinition BeardShape_None => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BeardShape_None", "1d44e1c501dc46444b566a23ec9f2bf8");
             public static MorphotypeElementDefinition BeardShape_O => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BeardShape_O", "143a4678b94448246abd42dbc2d20179");
             public static MorphotypeElementDefinition BeardShape_P => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BeardShape_P", "b778e7bbac83bf74abf1d3c94ca18a15");
+            public static MorphotypeElementDefinition BodyDecoration_None => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecoration_None", "042683c126c49e044993600bca076c05");
+            public static MorphotypeElementDefinition BodyDecoration_SorcererChildOfTheRift => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecoration_SorcererChildOfTheRift", "bd0bae16761094a4089966a718ded4bc");
+            public static MorphotypeElementDefinition BodyDecoration_SorcererDraconic => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecoration_SorcererDraconic", "70fae0b3ed56e81408afad95addaf91f");
+            public static MorphotypeElementDefinition BodyDecoration_SorcererManaPainter => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecoration_SorcererManaPainter", "5845bca3adf96ce4a820fcd3d5a106c3");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_00 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_00", "19f2a6714c1a68347ba6142af3aa279e");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_01 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_01", "0d0af40fa70fe34428b0204447ef3c9a");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_02 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_02", "d3e6b0db5bad46e43879cc014c346794");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_03 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_03", "303801bf314af1e4f9223f5e1de9a4d4");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_04 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_04", "1d27ca23fd1f6f84194b7f059624b947");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_05 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_05", "497103a9cd1fa93458c7196ebd5d9723");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_06 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_06", "2bba308a9244b404d80106c7805cb3cb");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_07 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_07", "c51c81f41a356f645ae3bc69d52ad3c9");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_08 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_08", "8d6cad74386e4fa45828856b351c4fd2");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_09 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_09", "69c860b7063983a4c8d499c77b8c6dc0");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_10 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_10", "a5784537d767cad47a4d650d618e30b3");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_11 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_11", "2ee78366eda639d49ad31db4c35fe486");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_12 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_12", "c75a9308090debb4f924a9be3896809b");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_13 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_13", "58a5feda1cdfd4a41a40bec2a71c8715");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_14 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_14", "924ae8a0b15b72147bfd10a147885ee3");
+            public static MorphotypeElementDefinition BodyDecorationColor_Default_15 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_Default_15", "0c4b962c4b0edc441a245f0b506d7bc8");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_00 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_00", "b306571e047211b4cb70a85687b01dee");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_01 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_01", "17d2bba654f04134fa24800f5e10a838");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_02 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_02", "840d5657df8e1bd41af8136c02d1bb9e");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_03 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_03", "d5dda9cba60166b45afce8f7025dc6f1");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_04 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_04", "834ac2adb145f4148b96a2b662f89477");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_05 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_05", "d899ec0ac34d95a4d99180fe0c446c70");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_06 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_06", "fe66a79f88cde974b821fd266a77999b");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_07 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_07", "0195fb475b93bdd4c8499959d66bc149");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_08 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_08", "d1b556926e9992e4ba4a3493fc6d5eae");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_09 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_09", "ef951735488c45e45ab91b2f5a8d4655");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_10 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_10", "9e8dd4fca748aa74eb8c9e53e02d99c5");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_11 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_11", "6add20f9ec54da34f9e8b48bf88ed890");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_12 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_12", "ff8d2bfaff9ac414eb5805e8ceb9d6b1");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_13 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_13", "6fcd6fee6cc96c947bf2ff2596ca746e");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_14 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_14", "d50abcf7ee7a924439ea03d3a964ab42");
+            public static MorphotypeElementDefinition BodyDecorationColor_SorcererManaPainter_15 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("BodyDecorationColor_SorcererManaPainter_15", "38f1a2b97b46e894ea8f5faf4e8b0212");
+            public static MorphotypeElementDefinition Eye_Default => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("Eye_Default", "93f3400782ffac742aa154dcea6c34cb");
+            public static MorphotypeElementDefinition Eye_SorcererChildOfTheRift => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("Eye_SorcererChildOfTheRift", "cf2cff461326c5f4a827fdd2ca4859e2");
+            public static MorphotypeElementDefinition Eye_SorcererDraconic => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("Eye_SorcererDraconic", "c216e3ecde7753248b3f851e67e4f1c1");
+            public static MorphotypeElementDefinition Eye_SorcererManaPainter => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("Eye_SorcererManaPainter", "d76a42a8a26b01b44854f22e6c0d6eb8");
             public static MorphotypeElementDefinition EyeColor_001 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("EyeColor_001", "39fa4c957ac9eec4f84f12d7ba0f994d");
             public static MorphotypeElementDefinition EyeColor_002 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("EyeColor_002", "59c1f0a2ec9affd4e871f831b742257e");
             public static MorphotypeElementDefinition EyeColor_003 => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("EyeColor_003", "169d7e4740bdd2742a121c754faf483b");
@@ -6030,6 +6567,7 @@ namespace SolastaModApi
             public static MorphotypeElementDefinition HairShape_L => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("HairShape_L", "67f1a540bd693f8419316e9b6efe5b46");
             public static MorphotypeElementDefinition HairShape_M => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("HairShape_M", "1dbc88c9e7605c2478c9b56d6b1da57a");
             public static MorphotypeElementDefinition HairShape_N => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("HairShape_N", "716dd485f3f081b40a19fcdaa9713d60");
+            public static MorphotypeElementDefinition HairShape_None => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("HairShape_None", "65fd2a4fa4049284796c1c9be603750c");
             public static MorphotypeElementDefinition HairShape_O => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("HairShape_O", "13174d3338f824f4daf310a695b375a8");
             public static MorphotypeElementDefinition HairShape_P => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("HairShape_P", "b1846e6af5bde8240af34cfd5e2dc064");
             public static MorphotypeElementDefinition HairShape_Q => DatabaseRepository.GetDatabase<MorphotypeElementDefinition>().TryGetElement("HairShape_Q", "df7bc1fbe1fef2c4e9d7451fc37a472d");
@@ -6162,6 +6700,7 @@ namespace SolastaModApi
             public static ReactionDefinition ReadiedAction => DatabaseRepository.GetDatabase<ReactionDefinition>().TryGetElement("ReadiedAction", "aa957a99e8c0ec646b1feaec98e50593");
             public static ReactionDefinition SpendPower => DatabaseRepository.GetDatabase<ReactionDefinition>().TryGetElement("SpendPower", "405e5fee21bd3e846ad69b13c1b2530f");
             public static ReactionDefinition SpendSpellSlot => DatabaseRepository.GetDatabase<ReactionDefinition>().TryGetElement("SpendSpellSlot", "1388c7c8bf604aa45b3f4751fdc10ad0");
+            public static ReactionDefinition SwiftRetaliation => DatabaseRepository.GetDatabase<ReactionDefinition>().TryGetElement("SwiftRetaliation", "e77f66760ebf8684e962c04e8e1dcb1e");
             public static ReactionDefinition UncannyDodge => DatabaseRepository.GetDatabase<ReactionDefinition>().TryGetElement("UncannyDodge", "401471283c5796b4aaf1248244fab67f");
             public static ReactionDefinition UsePower => DatabaseRepository.GetDatabase<ReactionDefinition>().TryGetElement("UsePower", "eb90221fba8ce5f4dae08332dd798efd");
         }
@@ -6399,6 +6938,7 @@ namespace SolastaModApi
             public static RestActivityDefinition AttuneItemLong => DatabaseRepository.GetDatabase<RestActivityDefinition>().TryGetElement("AttuneItemLong", "45fbf86f6f125244e86618f54004193c");
             public static RestActivityDefinition AttuneItemShort => DatabaseRepository.GetDatabase<RestActivityDefinition>().TryGetElement("AttuneItemShort", "5a92d0b69ec855345b71bd462acf809d");
             public static RestActivityDefinition LevelUp => DatabaseRepository.GetDatabase<RestActivityDefinition>().TryGetElement("LevelUp", "b46ba9b25d5ab524c9011bc5bfe66618");
+            public static RestActivityDefinition ManaTap => DatabaseRepository.GetDatabase<RestActivityDefinition>().TryGetElement("ManaTap", "edd69107936a56243b5f2b64a31eb949");
             public static RestActivityDefinition MarksmanRecyclerLongRest => DatabaseRepository.GetDatabase<RestActivityDefinition>().TryGetElement("MarksmanRecyclerLongRest", "118b931ed4896ee46a39e3c9731ae663");
             public static RestActivityDefinition MarksmanRecyclerShortRest => DatabaseRepository.GetDatabase<RestActivityDefinition>().TryGetElement("MarksmanRecyclerShortRest", "a5bae23cfc590fe42a7a34faf1cfbb42");
             public static RestActivityDefinition PrepareSpells => DatabaseRepository.GetDatabase<RestActivityDefinition>().TryGetElement("PrepareSpells", "26a0d9d22c78ef54b8f527f8122b2e1c");
@@ -6483,6 +7023,7 @@ namespace SolastaModApi
             public static SmartAttributeDefinition LegendaryActionPoints => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("LegendaryActionPoints", "061a19a1fadf3174ca594e10be294704");
             public static SmartAttributeDefinition LegendaryResistances => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("LegendaryResistances", "530db017dde5259468e5704c3aa630cc");
             public static SmartAttributeDefinition ProficiencyBonus => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("ProficiencyBonus", "24be28aefcab9fc45925f187703f35d7");
+            public static SmartAttributeDefinition SorceryPoints => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("SorceryPoints", "e81d18be5d515af45877cff797ad060f");
             public static SmartAttributeDefinition Speed => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("Speed", "0edcde44dd051d745816bc439cced646");
             public static SmartAttributeDefinition Strength => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("Strength", "7f7891f8320180b48b07be2fef46adc9");
             public static SmartAttributeDefinition Wisdom => DatabaseRepository.GetDatabase<SmartAttributeDefinition>().TryGetElement("Wisdom", "632c5c4d66bdced418701396d96b078c");
@@ -6515,6 +7056,9 @@ namespace SolastaModApi
             public static SpellDefinition BestowCurseOnAttackRoll => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("BestowCurseOnAttackRoll", "39d2676834705034b8b3fa2d9f29f293");
             public static SpellDefinition BestowCurseOnDamageAddNecrotic => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("BestowCurseOnDamageAddNecrotic", "96716d2998ea6c3488ff852bcd76fa6f");
             public static SpellDefinition BlackTentacles => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("BlackTentacles", "3ed042e75b44763479efbc4b9680dd3a");
+            public static SpellDefinition BladeBarrier => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("BladeBarrier", "829110987c5e6614a9e59acfdaa3ceba");
+            public static SpellDefinition BladeBarrierWallLine => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("BladeBarrierWallLine", "fa31d9c4f5b43d449a2d811e6ab3038d");
+            public static SpellDefinition BladeBarrierWallRing => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("BladeBarrierWallRing", "d2283110490a1aa489cd31d8683790fe");
             public static SpellDefinition Bless => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Bless", "c2c3de28b2c1e294f9a604cdf03b9fd8");
             public static SpellDefinition Blight => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Blight", "bd131ed580e31734abb8189ab7e17a10");
             public static SpellDefinition Blindness => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Blindness", "3470e52d7a8b472498ee397e2532db04");
@@ -6525,8 +7069,10 @@ namespace SolastaModApi
             public static SpellDefinition CalmEmotions => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("CalmEmotions", "a879080b607fd75458e0eca2dea58e8a");
             public static SpellDefinition CalmEmotionsOnAlly => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("CalmEmotionsOnAlly", "c9f207be91400754d81771a737559ea2");
             public static SpellDefinition CalmEmotionsOnEnemy => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("CalmEmotionsOnEnemy", "62de388719576ab4ea2aba2cada27a55");
+            public static SpellDefinition ChainLightning => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("ChainLightning", "1f64e610644230f4fa5054960f9eda8c");
             public static SpellDefinition CharmPerson => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("CharmPerson", "9c98e5cba0f8b1649b3217a97cbc111b");
             public static SpellDefinition ChillTouch => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("ChillTouch", "2dffe98ad497e4b418abc947f6077fb7");
+            public static SpellDefinition CircleOfDeath => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("CircleOfDeath", "0fd4c89f6c07713499242fe6529aa816");
             public static SpellDefinition CloudKill => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("CloudKill", "264bc71496ff9db4682be867a130a0a4");
             public static SpellDefinition ColorSpray => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("ColorSpray", "72939f681f479494e97e0025f67726fe");
             public static SpellDefinition Command => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Command", "2e8593be0a135614c91f4a02123d7c47");
@@ -6576,9 +7122,11 @@ namespace SolastaModApi
             public static SpellDefinition DetectMagic => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DetectMagic", "a00ea7ca05339cb42a49056d722b6680");
             public static SpellDefinition DetectPoisonAndDisease => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DetectPoisonAndDisease", "18da711013867d949913c54b69bc70f1");
             public static SpellDefinition DimensionDoor => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DimensionDoor", "c85120485a4cc914eb81b7b75e9e7bbc");
+            public static SpellDefinition Disintegrate => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Disintegrate", "d57e7732a47d3fa4791776a5b99733a1");
             public static SpellDefinition DispelEvilAndGood => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DispelEvilAndGood", "e901e74132f97ac458cc80e09da39c88");
             public static SpellDefinition DispelMagic => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DispelMagic", "296e789b353c0324b804bee2c16a419a");
             public static SpellDefinition DivineFavor => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DivineFavor", "1a1c36371776b464fb7a633c5cd22af4");
+            public static SpellDefinition DominateBeast => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DominateBeast", "c3d07b9ef913f2d4ab8682c01ce7a3e1");
             public static SpellDefinition DominatePerson => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("DominatePerson", "89e34ee9a6361c040abb36971b697031");
             public static SpellDefinition EnhanceAbility => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("EnhanceAbility", "08840275ddebe7f40abaa4bc145ee9f8");
             public static SpellDefinition EnhanceAbilityBearsEndurance => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("EnhanceAbilityBearsEndurance", "c1f8c2c4c836c144cb1ecabb6cc77400");
@@ -6589,6 +7137,10 @@ namespace SolastaModApi
             public static SpellDefinition EnhanceAbilityOwlsWisdom => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("EnhanceAbilityOwlsWisdom", "2ee432693a5fd0344bad3ff57af2413b");
             public static SpellDefinition Entangle => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Entangle", "0224dcb79ea69f34eb9a51546fc78d0d");
             public static SpellDefinition ExpeditiousRetreat => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("ExpeditiousRetreat", "3713ff85f9f53f2459ae8d7a976a24b8");
+            public static SpellDefinition Eyebite => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Eyebite", "ea9050011d6bef2419be7b2d59750659");
+            public static SpellDefinition EyebiteAsleep => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("EyebiteAsleep", "8f0b6cd785cb391428956ef35dcce8e2");
+            public static SpellDefinition EyebitePanicked => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("EyebitePanicked", "8da3371ad40d8ef40a077c8cdb448e5e");
+            public static SpellDefinition EyebiteSickened => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("EyebiteSickened", "fa295cfa9708f2f4f83b38e8e917e2c5");
             public static SpellDefinition FaerieFire => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("FaerieFire", "72b2d8c811efbb04e8d70c0a41f5d963");
             public static SpellDefinition FalseLife => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("FalseLife", "97d70ac4c94f31540aa7b7e1555b7a49");
             public static SpellDefinition Fear => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Fear", "cff391ef9dd8106448ed464270dcc9c4");
@@ -6606,7 +7158,9 @@ namespace SolastaModApi
             public static SpellDefinition Fly => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Fly", "6c13f5461f5047645a8c165cc0f43f83");
             public static SpellDefinition FogCloud => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("FogCloud", "c0914cf3ec2124242b9f64d267e94c17");
             public static SpellDefinition FreedomOfMovement => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("FreedomOfMovement", "7c93b80e19d0f3e47843e96bd06d026c");
+            public static SpellDefinition FreezingSphere => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("FreezingSphere", "981aa235259bf274da28bd3e913902ad");
             public static SpellDefinition GiantInsect => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("GiantInsect", "752353d60e1c84c4cb0955798995a954");
+            public static SpellDefinition GlobeOfInvulnerability => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("GlobeOfInvulnerability", "eb567aec38beff84d87040cb9a006177");
             public static SpellDefinition Goodberry => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Goodberry", "6183e557cd5222e4eb6134ccbeb9db10");
             public static SpellDefinition Grease => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Grease", "31f056cc8a643054ba1e59be0d224482");
             public static SpellDefinition GreaterInvisibility => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("GreaterInvisibility", "463d00efd5590394ab707875f866dfe7");
@@ -6615,8 +7169,11 @@ namespace SolastaModApi
             public static SpellDefinition Guidance => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Guidance", "94ed96edd24acbe4f87e72375221868a");
             public static SpellDefinition GuidingBolt => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("GuidingBolt", "97277a5063bcd6d48af24984618dc218");
             public static SpellDefinition GustOfWind => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("GustOfWind", "fd5be1efa8e8abd479b5e5d2edf8cdd2");
+            public static SpellDefinition Harm => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Harm", "78d4369a08495d74f9a681f5f508c477");
             public static SpellDefinition Haste => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Haste", "134efafc59c7c58438b711271fb2c785");
+            public static SpellDefinition Heal => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Heal", "daa623d899a2bed43963b3bf60f731eb");
             public static SpellDefinition HealingWord => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("HealingWord", "0d615e01b2fdf5f42815342ea1e0a26f");
+            public static SpellDefinition HeroesFeast => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("HeroesFeast", "2df9af96f1ce6ee4aa3d1b9ecdb67b1f");
             public static SpellDefinition Heroism => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Heroism", "05578696fa5d08c4cacde7fcaa7ef9cb");
             public static SpellDefinition HideousLaughter => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("HideousLaughter", "8773ef52f0dd71e4a8dbe8a2814b3cf4");
             public static SpellDefinition HoldMonster => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("HoldMonster", "1c8a63324f25814408ca250ba5ec2d16");
@@ -6688,8 +7245,10 @@ namespace SolastaModApi
             public static SpellDefinition SpiritualWeapon => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("SpiritualWeapon", "2a304c1b2bfa7be4c9cf7c7e08268fd7");
             public static SpellDefinition StinkingCloud => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("StinkingCloud", "b62f452e6a757124da5eef6ca9fd46e9");
             public static SpellDefinition Stoneskin => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Stoneskin", "9040c4fcd7301184f8772720f716a837");
+            public static SpellDefinition Sunbeam => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Sunbeam", "ec547e11445032d4f9519982399724a6");
             public static SpellDefinition Thunderwave => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Thunderwave", "6c670662de0366842bca44119e9104da");
             public static SpellDefinition Tongues => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("Tongues", "fa71b90885b308f4b8998d433c9e41e8");
+            public static SpellDefinition TrueSeeing => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("TrueSeeing", "16c9f67d4a89cbf47baad67ecadafaa5");
             public static SpellDefinition TrueStrike => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("TrueStrike", "8adca77af0c221445af40629f3743ec8");
             public static SpellDefinition VampiricTouchIntelligence => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("VampiricTouchIntelligence", "149a2d0a835fda54b99a710e0dabfd53");
             public static SpellDefinition WallOfFire => DatabaseRepository.GetDatabase<SpellDefinition>().TryGetElement("WallOfFire", "c44e8ec6d1e888e47bbd40981b7a605d");
@@ -6731,6 +7290,7 @@ namespace SolastaModApi
             public static SpellListDefinition SpellListShockArcanist => DatabaseRepository.GetDatabase<SpellListDefinition>().TryGetElement("SpellListShockArcanist", "7ad858d9446f8d946bcfa01886cf8f68");
             public static SpellListDefinition SpellListSkeletonKnight => DatabaseRepository.GetDatabase<SpellListDefinition>().TryGetElement("SpellListSkeletonKnight", "2cf69c80c16344b48a7bba0267254b89");
             public static SpellListDefinition SpellListSkeletonSorcerer => DatabaseRepository.GetDatabase<SpellListDefinition>().TryGetElement("SpellListSkeletonSorcerer", "7ac7b9d3f44d916469f2a746ed8a39ff");
+            public static SpellListDefinition SpellListSorcerer => DatabaseRepository.GetDatabase<SpellListDefinition>().TryGetElement("SpellListSorcerer", "d6922d6bd72f7fa42b89475449744641");
             public static SpellListDefinition SpellListSorr_Akkath_Acolyte_of_Sorr_Tarr => DatabaseRepository.GetDatabase<SpellListDefinition>().TryGetElement("SpellListSorr-Akkath_Acolyte_of_Sorr-Tarr", "d45887d419d4ffe4a957b1104d10e8bb");
             public static SpellListDefinition SpellListWizard => DatabaseRepository.GetDatabase<SpellListDefinition>().TryGetElement("SpellListWizard", "ebbe572795f1e2e499bf55d00df9547f");
             public static SpellListDefinition SpellListWizardGreenmage => DatabaseRepository.GetDatabase<SpellListDefinition>().TryGetElement("SpellListWizardGreenmage", "ea5e70805c62e0748a07e9fbf6256d26");
@@ -6964,6 +7524,8 @@ namespace SolastaModApi
             public static TutorialStepDefinition Tutorial_T8_Scavengers01 => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_T8_Scavengers01", "b8ffaf029cfcee44da11514094897c3b");
             public static TutorialStepDefinition Tutorial_T8_Scavengers02 => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_T8_Scavengers02", "1e190064bdf50314c86c7cfcaf2093a5");
             public static TutorialStepDefinition Tutorial_T9_DifficultySettings => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_T9_DifficultySettings", "d158f0b1dda359a4eb485da81ea8db22");
+            public static TutorialStepDefinition Tutorial_T9_Legendary01 => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_T9_Legendary01", "b16880ec7618f3443abc60dfe99f9611");
+            public static TutorialStepDefinition Tutorial_T9_Legendary02 => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_T9_Legendary02", "a22aafb2ddec6bd4b93281fac8c0443d");
             public static TutorialStepDefinition Tutorial_T9_Puzzle_Conjuration => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_T9_Puzzle_Conjuration", "d28af46310366da4191e799ebf5cabd8");
             public static TutorialStepDefinition Tutorial_Telema_BattleCamera => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_Telema_BattleCamera", "7a9fe2c56b9834c478774f284195020e");
             public static TutorialStepDefinition Tutorial_Telema_CameraElevation => DatabaseRepository.GetDatabase<TutorialStepDefinition>().TryGetElement("Tutorial_Telema_CameraElevation", "af0ee16695184ba49ba67f896ef97b40");
@@ -7015,10 +7577,32 @@ namespace SolastaModApi
         }
         public static class VisualMoodDefinitions
         {
+            public static VisualMoodDefinition Acid => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Acid", "5a256924e8d7cb14c889176ad377aa6e");
+            public static VisualMoodDefinition Bluish => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Bluish", "36136f88eb4e51c479b84f4475c0b74e");
+            public static VisualMoodDefinition Calm => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Calm", "21cd554572c493a468b5d54fd2e4dcd0");
             public static VisualMoodDefinition ClearOutdoor => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("ClearOutdoor", "e3c3efd4e7e331e4da2c03206a5b93e1");
+            public static VisualMoodDefinition Cold => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Cold", "661a5cf82da565e4e908d58f3c5aefc6");
             public static VisualMoodDefinition Crypt => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Crypt", "3279b825963ec6346b2001cd257ffa8a");
+            public static VisualMoodDefinition Devilish => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Devilish", "8316e14defa27804b96e1ba70262ed5e");
+            public static VisualMoodDefinition Dull => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Dull", "651edddbdcd03b14d86b846076e3957a");
+            public static VisualMoodDefinition Gloomy => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Gloomy", "d9fefbc6a518aab4d94f61df00cf148f");
+            public static VisualMoodDefinition Golden => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Golden", "95f99265535ab704fac543a0c743ff5e");
+            public static VisualMoodDefinition Greenish => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Greenish", "c95db4ad173db72428d9c9d83a8d9078");
             public static VisualMoodDefinition Inferno => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Inferno", "26fd20072a55f92479e4c5de85929a37");
+            public static VisualMoodDefinition Lovely => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Lovely", "efb803c373a4f0e478534183b27a4314");
+            public static VisualMoodDefinition Mossy => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Mossy", "e69937badeec53040810e85e99ad1850");
+            public static VisualMoodDefinition Muddy => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Muddy", "69a028513a1f5ad4cb765e93c4b3c0ee");
+            public static VisualMoodDefinition Mystic => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Mystic", "b46f7cae5f91b3046be048466564ee52");
+            public static VisualMoodDefinition Ocher => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Ocher", "bf7be01747b85644c920648d0a8ff5a6");
+            public static VisualMoodDefinition Past => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Past", "d761e7aa4aa67e34abd6cb0a50c6c611");
+            public static VisualMoodDefinition PitchBlack => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("PitchBlack", "cb9d3e5423f6f9948aea5cf13d61644d");
+            public static VisualMoodDefinition Purplish => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Purplish", "66f5a8ff15af2634fa551c50b998aedd");
+            public static VisualMoodDefinition Radiant => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Radiant", "b90927fdad4ff54458e61f91f84d1503");
+            public static VisualMoodDefinition Spooky => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Spooky", "f99b40a82fbb62344817f832c71d38d6");
+            public static VisualMoodDefinition Stench => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Stench", "1f8af00c56a879f41b97667d78c513c7");
             public static VisualMoodDefinition Strange => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Strange", "0d21d90a9d5dade46958818ff0ef69b9");
+            public static VisualMoodDefinition Toxic => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Toxic", "a427d38166db91e4890514bcf52806b6");
+            public static VisualMoodDefinition Warm => DatabaseRepository.GetDatabase<VisualMoodDefinition>().TryGetElement("Warm", "e82f5438cb0bf34469e8a5225a10dbec");
         }
         public static class VoiceDefinitions
         {

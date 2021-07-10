@@ -159,6 +159,10 @@ namespace SolastaModApi
                 AddToDBIfMatch<FeatureDefinitionSavingThrowAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionTerrainTypeAffinity>(assertIfDuplicate);
             }
+            else if (Definition is SpellDefinition)
+            {
+                AddToDB<SpellDefinition>(Definition as SpellDefinition, assertIfDuplicate);
+            }
             else if (Definition is BaseBlueprint)
             {
                 AddToDBIfMatch<BaseBlueprint>(assertIfDuplicate);

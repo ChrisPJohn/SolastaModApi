@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using static RuleDefinitions;
+using static GraphicsCharacterDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -17,7 +18,7 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetGraphicsCharacterType<T>(this T entity, GraphicsCharacterDefinitions.CharacterType value)
+        public static T SetGraphicsCharacterType<T>(this T entity, CharacterType value)
             where T : StageDefinition
         {
             entity.SetField("graphicsCharacterType", value);

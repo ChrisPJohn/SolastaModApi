@@ -37,5 +37,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("guid", value);
             return entity;
         }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetEntity
+        {
+            entity.Name = value;
+            return entity;
+        }
     }
 }

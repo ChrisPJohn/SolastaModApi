@@ -72,5 +72,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("racePresentation", value);
             return entity;
         }
+
+        public static T SetSizeDefinition<T>(this T entity, CharacterSizeDefinition value)
+            where T : CharacterRaceDefinition
+        {
+            entity.SizeDefinition = value;
+            return entity;
+        }
     }
 }

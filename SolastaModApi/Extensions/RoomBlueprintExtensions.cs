@@ -32,10 +32,17 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetGrounMaskSprite<T>(this T entity, Sprite value)
+        public static T SetGroundElevationSprite<T>(this T entity, Sprite value)
             where T : RoomBlueprint
         {
-            entity.SetField("grounMaskSprite", value);
+            entity.SetField("groundElevationSprite", value);
+            return entity;
+        }
+
+        public static T SetGroundMaskSprite<T>(this T entity, Sprite value)
+            where T : RoomBlueprint
+        {
+            entity.SetField("groundMaskSprite", value);
             return entity;
         }
 

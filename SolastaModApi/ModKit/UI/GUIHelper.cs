@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using RGBA = ModKit.RGBA;
 namespace ModKit.Utility
 {
     public static class GUIHelper
@@ -87,7 +86,7 @@ namespace ModKit.Utility
 
         static bool CheckboxPrivate(
             ref bool value,
-            String title,
+            string title,
             GUIStyle style = null,
             params GUILayoutOption[] options
     ) {
@@ -99,7 +98,7 @@ namespace ModKit.Utility
         }
         public static bool Checkbox(
                 ref bool value,
-                String title,
+                string title,
                 GUIStyle style = null,
                 params GUILayoutOption[] options) {
             return CheckboxPrivate(ref value, title, style, options);

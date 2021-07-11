@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
+using static GraphicsCharacterDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -39,7 +40,7 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetFemaleBodyPartBehaviours<T>(this T entity, GraphicsCharacterDefinitions.BodyPartBehaviour[] value)
+        public static T SetFemaleBodyPartBehaviours<T>(this T entity, BodyPartBehaviour[] value)
             where T : ItemPresentation
         {
             entity.SetField("femaleBodyPartBehaviours", value);
@@ -53,7 +54,7 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetMaleBodyPartBehaviours<T>(this T entity, GraphicsCharacterDefinitions.BodyPartBehaviour[] value)
+        public static T SetMaleBodyPartBehaviours<T>(this T entity, BodyPartBehaviour[] value)
             where T : ItemPresentation
         {
             entity.SetField("maleBodyPartBehaviours", value);

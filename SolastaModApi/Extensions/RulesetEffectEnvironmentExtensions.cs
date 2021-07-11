@@ -24,6 +24,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetEffectEnvironment
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetSavingThrowDCOverride<T>(this T entity, int value)
             where T : RulesetEffectEnvironment
         {

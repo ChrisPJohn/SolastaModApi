@@ -19,6 +19,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDescription<T>(this T entity, string value)
+            where T : GuiPresentation
+        {
+            entity.Description = value;
+            return entity;
+        }
+
         public static T SetHidden<T>(this T entity, bool value)
             where T : GuiPresentation
         {
@@ -44,6 +51,13 @@ namespace SolastaModApi.Extensions
             where T : GuiPresentation
         {
             entity.SetField("symbolChar", value);
+            return entity;
+        }
+
+        public static T SetTitle<T>(this T entity, string value)
+            where T : GuiPresentation
+        {
+            entity.Title = value;
             return entity;
         }
 

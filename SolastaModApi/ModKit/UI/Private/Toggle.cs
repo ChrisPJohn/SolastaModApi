@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ModKit.Private {
+namespace ModKit.Private
+{
     public static partial class UI {
         public const string ChecklyphOn = "<color=green><b>✔</b></color>";
         public const string CheckGlyphOff = "<color=#B8B8B8FF>✖</color>";      // #A0A0A0E0

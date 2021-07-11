@@ -10,6 +10,27 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(ItemOccurence))]
     public static partial class ItemOccurenceExtensions
     {
+        public static T SetAdditiveModifier<T>(this T entity, int value)
+            where T : ItemOccurence
+        {
+            entity.AdditiveModifier = value;
+            return entity;
+        }
+
+        public static T SetDiceNumber<T>(this T entity, int value)
+            where T : ItemOccurence
+        {
+            entity.DiceNumber = value;
+            return entity;
+        }
+
+        public static T SetDiceType<T>(this T entity, DieType value)
+            where T : ItemOccurence
+        {
+            entity.DiceType = value;
+            return entity;
+        }
+
         public static T SetItemDefinition<T>(this T entity, ItemDefinition value)
             where T : ItemOccurence
         {

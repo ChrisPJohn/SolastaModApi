@@ -38,6 +38,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetRequireProficiency<T>(this T entity, bool value)
+            where T : FeatureDefinitionDieRollModifier
+        {
+            entity.SetField("requireProficiency", value);
+            return entity;
+        }
+
         public static T SetRerollCount<T>(this T entity, int value)
             where T : FeatureDefinitionDieRollModifier
         {

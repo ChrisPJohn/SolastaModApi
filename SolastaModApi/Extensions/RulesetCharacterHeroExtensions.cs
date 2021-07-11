@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(RulesetCharacterHero))]
     public static partial class RulesetCharacterHeroExtensions
     {
+        public static T SetAdditionalBackstory<T>(this T entity, string value)
+            where T : RulesetCharacterHero
+        {
+            entity.AdditionalBackstory = value;
+            return entity;
+        }
+
         public static T SetAlignmentDefinition<T>(this T entity, AlignmentDefinition value)
             where T : RulesetCharacterHero
         {
@@ -24,6 +31,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetBackgroundDefinition<T>(this T entity, CharacterBackgroundDefinition value)
+            where T : RulesetCharacterHero
+        {
+            entity.BackgroundDefinition = value;
+            return entity;
+        }
+
+        public static T SetBackgroundSubType<T>(this T entity, string value)
+            where T : RulesetCharacterHero
+        {
+            entity.BackgroundSubType = value;
+            return entity;
+        }
+
         public static T SetBodyAssetPrefix<T>(this T entity, string value)
             where T : RulesetCharacterHero
         {
@@ -31,10 +52,24 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetBuiltIn<T>(this T entity, bool value)
+            where T : RulesetCharacterHero
+        {
+            entity.BuiltIn = value;
+            return entity;
+        }
+
         public static T SetCharacterClassChanged<T>(this T entity, RulesetCharacterHero.CharacterClassChangedHandler value)
             where T : RulesetCharacterHero
         {
             entity.SetField("<CharacterClassChanged>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetCharacterInventory<T>(this T entity, RulesetInventory value)
+            where T : RulesetCharacterHero
+        {
+            entity.CharacterInventory = value;
             return entity;
         }
 
@@ -59,6 +94,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDeityDefinition<T>(this T entity, DeityDefinition value)
+            where T : RulesetCharacterHero
+        {
+            entity.DeityDefinition = value;
+            return entity;
+        }
+
         public static T SetDeviceAutoIdentified<T>(this T entity, RulesetCharacterHero.DeviceAutoIdentifiedHandler value)
             where T : RulesetCharacterHero
         {
@@ -77,6 +119,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacterHero
         {
             entity.SetField("earnedXP", value);
+            return entity;
+        }
+
+        public static T SetEditorOnly<T>(this T entity, bool value)
+            where T : RulesetCharacterHero
+        {
+            entity.EditorOnly = value;
             return entity;
         }
 
@@ -150,10 +199,31 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetCharacterHero
+        {
+            entity.Name = value;
+            return entity;
+        }
+
+        public static T SetRaceDefinition<T>(this T entity, CharacterRaceDefinition value)
+            where T : RulesetCharacterHero
+        {
+            entity.RaceDefinition = value;
+            return entity;
+        }
+
         public static T SetRefreshing<T>(this T entity, bool value)
             where T : RulesetCharacterHero
         {
             entity.SetField("refreshing", value);
+            return entity;
+        }
+
+        public static T SetRemainingSleepHours<T>(this T entity, int value)
+            where T : RulesetCharacterHero
+        {
+            entity.RemainingSleepHours = value;
             return entity;
         }
 
@@ -178,10 +248,24 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSubRaceDefinition<T>(this T entity, CharacterRaceDefinition value)
+            where T : RulesetCharacterHero
+        {
+            entity.SubRaceDefinition = value;
+            return entity;
+        }
+
         public static T SetSuccessfulAttacks<T>(this T entity, int value)
             where T : RulesetCharacterHero
         {
             entity.SetField("successfulAttacks", value);
+            return entity;
+        }
+
+        public static T SetSurName<T>(this T entity, string value)
+            where T : RulesetCharacterHero
+        {
+            entity.SurName = value;
             return entity;
         }
 
@@ -217,6 +301,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacterHero
         {
             entity.SetField("usedMagicAndPowers", value);
+            return entity;
+        }
+
+        public static T SetVoiceID<T>(this T entity, string value)
+            where T : RulesetCharacterHero
+        {
+            entity.VoiceID = value;
             return entity;
         }
     }

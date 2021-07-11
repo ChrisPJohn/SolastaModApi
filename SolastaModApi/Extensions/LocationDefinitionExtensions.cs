@@ -26,6 +26,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetCanAttackNonHostileCharacters<T>(this T entity, bool value)
+            where T : LocationDefinition
+        {
+            entity.SetField("canAttackNonHostileCharacters", value);
+            return entity;
+        }
+
         public static T SetChallengeRating<T>(this T entity, int value)
             where T : LocationDefinition
         {
@@ -72,6 +79,13 @@ namespace SolastaModApi.Extensions
             where T : LocationDefinition
         {
             entity.SetField("locationPresentation", value);
+            return entity;
+        }
+
+        public static T SetRenderSettingsSceneProfile<T>(this T entity, RenderSettingsSceneProfile value)
+            where T : LocationDefinition
+        {
+            entity.RenderSettingsSceneProfile = value;
             return entity;
         }
 

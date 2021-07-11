@@ -12,6 +12,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(EffectDescription))]
     public static partial class EffectDescriptionExtensions
     {
+        public static T SetAdvantageForEnemies<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.AdvantageForEnemies = value;
+            return entity;
+        }
+
         public static T SetAnimationMagicEffect<T>(this T entity, AnimationMagicEffect value)
             where T : EffectDescription
         {
@@ -51,6 +58,20 @@ namespace SolastaModApi.Extensions
             where T : EffectDescription
         {
             entity.SetField("disableSavingThrowOnAllies", value);
+            return entity;
+        }
+
+        public static T SetDurationParameter<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.DurationParameter = value;
+            return entity;
+        }
+
+        public static T SetDurationType<T>(this T entity, DurationType value)
+            where T : EffectDescription
+        {
+            entity.DurationType = value;
             return entity;
         }
 
@@ -103,6 +124,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetFixedSavingThrowDifficultyClass<T>(this T entity, int value)
+            where T : EffectDescription
+        {
+            entity.FixedSavingThrowDifficultyClass = value;
+            return entity;
+        }
+
         public static T SetHalfDamageOnAMiss<T>(this T entity, bool value)
             where T : EffectDescription
         {
@@ -117,6 +145,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetHasSavingThrow<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.HasSavingThrow = value;
+            return entity;
+        }
+
         public static T SetHasShoveRoll<T>(this T entity, bool value)
             where T : EffectDescription
         {
@@ -128,6 +163,13 @@ namespace SolastaModApi.Extensions
             where T : EffectDescription
         {
             entity.SetField("hasVelocity", value);
+            return entity;
+        }
+
+        public static T SetIgnoreCover<T>(this T entity, bool value)
+            where T : EffectDescription
+        {
+            entity.IgnoreCover = value;
             return entity;
         }
 
@@ -190,7 +232,7 @@ namespace SolastaModApi.Extensions
         public static T SetRangeType<T>(this T entity, RangeType value)
             where T : EffectDescription
         {
-            entity.SetField("rangeType", value);
+            entity.RangeType = value;
             return entity;
         }
 
@@ -226,6 +268,13 @@ namespace SolastaModApi.Extensions
             where T : EffectDescription
         {
             entity.SetField("retargetAfterDeath", value);
+            return entity;
+        }
+
+        public static T SetSavingThrowAbility<T>(this T entity, string value)
+            where T : EffectDescription
+        {
+            entity.SavingThrowAbility = value;
             return entity;
         }
 
@@ -309,14 +358,14 @@ namespace SolastaModApi.Extensions
         public static T SetTargetSide<T>(this T entity, Side value)
             where T : EffectDescription
         {
-            entity.SetField("targetSide", value);
+            entity.TargetSide = value;
             return entity;
         }
 
         public static T SetTargetType<T>(this T entity, TargetType value)
             where T : EffectDescription
         {
-            entity.SetField("targetType", value);
+            entity.TargetType = value;
             return entity;
         }
 

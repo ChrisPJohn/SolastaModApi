@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(RulesetEffect))]
     public static partial class RulesetEffectExtensions
     {
+        public static T SetApplied<T>(this T entity, RulesetEffect.RulesetActiveEffectAppliedHandler value)
+            where T : RulesetEffect
+        {
+            entity.SetField("<Applied>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetConditionTrackingStarted<T>(this T entity, RulesetEffect.ConditionTrackingStartedHandler value)
             where T : RulesetEffect
         {
@@ -28,6 +35,27 @@ namespace SolastaModApi.Extensions
             where T : RulesetEffect
         {
             entity.SetField("<DelayEnvironmentRegistration>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetMetamagicOption<T>(this T entity, MetamagicOptionDefinition value)
+            where T : RulesetEffect
+        {
+            entity.MetamagicOption = value;
+            return entity;
+        }
+
+        public static T SetRemainingRounds<T>(this T entity, int value)
+            where T : RulesetEffect
+        {
+            entity.RemainingRounds = value;
+            return entity;
+        }
+
+        public static T SetTerminated<T>(this T entity, bool value)
+            where T : RulesetEffect
+        {
+            entity.Terminated = value;
             return entity;
         }
 

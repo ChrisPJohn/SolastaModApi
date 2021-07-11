@@ -2,6 +2,7 @@ using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
 using TA.AI;
 using static RuleDefinitions;
+using static GraphicsCharacterDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -142,6 +143,20 @@ namespace SolastaModApi.Extensions
             where T : ConditionDefinition
         {
             entity.SetField("conditionType", value);
+            return entity;
+        }
+
+        public static T SetDisolveCharacterOnDeath<T>(this T entity, bool value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("disolveCharacterOnDeath", value);
+            return entity;
+        }
+
+        public static T SetDisolveParameters<T>(this T entity, DisolveParameters value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("disolveParameters", value);
             return entity;
         }
 

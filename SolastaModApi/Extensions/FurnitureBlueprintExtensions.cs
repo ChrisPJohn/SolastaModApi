@@ -10,6 +10,20 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(FurnitureBlueprint))]
     public static partial class FurnitureBlueprintExtensions
     {
+        public static T SetGroundHighPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("groundHighPlacement", value);
+            return entity;
+        }
+
+        public static T SetGroundLowPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("groundLowPlacement", value);
+            return entity;
+        }
+
         public static T SetGroundPlacement<T>(this T entity, bool value)
             where T : FurnitureBlueprint
         {

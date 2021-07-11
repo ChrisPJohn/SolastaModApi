@@ -257,6 +257,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetWantedEntranceIndex<T>(this T entity, int value)
+            where T : GadgetFlowDescription
+        {
+            entity.WantedEntranceIndex = value;
+            return entity;
+        }
+
         public static T SetWantedPresence<T>(this T entity, GadgetDefinitions.WantedPresence value)
             where T : GadgetFlowDescription
         {

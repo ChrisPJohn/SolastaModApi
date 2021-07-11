@@ -224,6 +224,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetIsUnique<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("isUnique", value);
+            return entity;
+        }
+
         public static T SetLegendaryCreature<T>(this T entity, bool value)
             where T : MonsterDefinition
         {
@@ -280,6 +287,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSizeDefinition<T>(this T entity, CharacterSizeDefinition value)
+            where T : MonsterDefinition
+        {
+            entity.SizeDefinition = value;
+            return entity;
+        }
+
         public static T SetSneakStance<T>(this T entity, MoveStance value)
             where T : MonsterDefinition
         {
@@ -305,6 +319,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("threatEvaluatorDefinition", value);
+            return entity;
+        }
+
+        public static T SetUniqueNameId<T>(this T entity, string value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("uniqueNameId", value);
             return entity;
         }
 

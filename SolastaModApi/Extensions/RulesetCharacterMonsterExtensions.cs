@@ -17,10 +17,45 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetConjuredByParty<T>(this T entity, bool value)
+            where T : RulesetCharacterMonster
+        {
+            entity.ConjuredByParty = value;
+            return entity;
+        }
+
+        public static T SetCurrentMonsterAttack<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.CurrentMonsterAttack = value;
+            return entity;
+        }
+
         public static T SetDroppedLootPackOverride<T>(this T entity, LootPackDefinition value)
             where T : RulesetCharacterMonster
         {
             entity.SetField("droppedLootPackOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionDamagingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionDamagingPenaltyOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionKillingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionKillingPenaltyOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionThievingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionThievingPenaltyOverride", value);
             return entity;
         }
 
@@ -70,6 +105,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacterMonster
         {
             entity.SetField("morphotypeAssetPrefix", value);
+            return entity;
+        }
+
+        public static T SetPrespawning<T>(this T entity, bool value)
+            where T : RulesetCharacterMonster
+        {
+            entity.Prespawning = value;
             return entity;
         }
 

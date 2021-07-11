@@ -1,18 +1,13 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using UnityEngine;
-using UnityModManagerNet;
-using UnityEngine.UI;
-using UnityEditor;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
-namespace ModKit {
+namespace ModKit
+{
     public static class Utilties {
 
         public static TValue GetValueOrDefault<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue = default(TValue)) {
@@ -22,8 +17,8 @@ namespace ModKit {
             TValue value;
             return dictionary.TryGetValue(key, out value) ? value : defaultValue;
         }
-        public static object GetPropValue(this object obj, String name) {
-            foreach (String part in name.Split('.')) {
+        public static object GetPropValue(this object obj, string name) {
+            foreach (string part in name.Split('.')) {
                 if (obj == null) { return null; }
 
                 Type type = obj.GetType();
@@ -34,17 +29,17 @@ namespace ModKit {
             }
             return obj;
         }
-        public static T GetPropValue<T>(this object obj, String name) {
+        public static T GetPropValue<T>(this object obj, string name) {
             object retval = GetPropValue(obj, name);
             if (retval == null) { return default(T); }
             // throws InvalidCastException if types are incompatible
             return (T)retval;
         }
-        public static object SetPropValue(this object obj, String name, object value) {
+        public static object SetPropValue(this object obj, string name, object value) {
             var parts = name.Split('.');
             var final = parts.Last();
             if (final == null) return null;
-            foreach (String part in parts) {
+            foreach (string part in parts) {
                 if (obj == null) { return null; }
                 Type type = obj.GetType();
                 PropertyInfo info = type.GetProperty(part);
@@ -59,14 +54,14 @@ namespace ModKit {
             }
             return null;
         }
-        public static T SetPropValue<T>(this object obj, String name, T value) {
+        public static T SetPropValue<T>(this object obj, string name, T value) {
             object retval = SetPropValue(obj, name, value);
             if (retval == null) { return default(T); }
             // throws InvalidCastException if types are incompatible
             return (T)retval;
         }
         public static string RemoveHtmlTags(string s) {
-            return Regex.Replace(s, "<.*?>", String.Empty);
+            return Regex.Replace(s, "<.*?>", string.Empty);
         }
         public static string UnityRichTextToHtml(string s) {
             s = s.Replace("<color=", "<font color=");

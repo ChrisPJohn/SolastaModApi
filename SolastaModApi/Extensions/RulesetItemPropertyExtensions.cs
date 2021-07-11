@@ -17,6 +17,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetItemProperty
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetRemainingRounds<T>(this T entity, int value)
             where T : RulesetItemProperty
         {

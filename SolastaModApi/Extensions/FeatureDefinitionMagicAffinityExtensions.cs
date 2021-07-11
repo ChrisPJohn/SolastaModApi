@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(FeatureDefinitionMagicAffinity))]
     public static partial class FeatureDefinitionMagicAffinityExtensions
     {
+        public static T SetAdditionalKnownSpellsCount<T>(this T entity, int value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("additionalKnownSpellsCount", value);
+            return entity;
+        }
+
         public static T SetAdditionalScribedSpells<T>(this T entity, int value)
             where T : FeatureDefinitionMagicAffinity
         {
@@ -80,6 +87,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMaxSpellLevelImmunity<T>(this T entity, int value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("maxSpellLevelImmunity", value);
+            return entity;
+        }
+
         public static T SetOverConcentrationThreshold<T>(this T entity, int value)
             where T : FeatureDefinitionMagicAffinity
         {
@@ -91,6 +105,27 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionMagicAffinity
         {
             entity.SetField("preparedSpellModifier", value);
+            return entity;
+        }
+
+        public static T SetPreserveSlotLevelCap<T>(this T entity, int value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("preserveSlotLevelCap", value);
+            return entity;
+        }
+
+        public static T SetPreserveSlotRoll<T>(this T entity, bool value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("preserveSlotRoll", value);
+            return entity;
+        }
+
+        public static T SetPreserveSlotThreshold<T>(this T entity, int value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("preserveSlotThreshold", value);
             return entity;
         }
 

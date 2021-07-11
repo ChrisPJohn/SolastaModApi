@@ -1,16 +1,10 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
 using UnityEngine;
-using UnityModManagerNet;
-using UnityEngine.UI;
-using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 
 using GL = UnityEngine.GUILayout;
 
-namespace ModKit {
+namespace ModKit
+{
     public static partial class UI {
 
         // Basic UI Elements (box, div, etc.)
@@ -65,7 +59,7 @@ namespace ModKit {
             if (width > 0) divStyle.fixedWidth = width;
             else divStyle.fixedWidth = 0;
             UI.Space((2f * height) / 3f);
-            GUILayout.Box(GUIContent.none, divStyle);
+            GL.Box(GUIContent.none, divStyle);
             UI.Space(height / 3f);
         }
 

@@ -1,18 +1,14 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
 using UnityEngine;
-using UnityModManagerNet;
-using UnityEngine.UI;
-using HarmonyLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using GL = UnityEngine.GUILayout;
 
-namespace ModKit {
+namespace ModKit
+{
     public static partial class UI {
         static public bool userHasHitReturn = false;
-        static public String focusedControlName = null;
+        static public string focusedControlName = null;
 
         public static Rect ummRect = new Rect();
         public static float ummWidth = 960f;
@@ -62,7 +58,7 @@ namespace ModKit {
                 action();
             }
         }
-        public static void HStack(String title = null, int stride = 0, params Action[] actions) {
+        public static void HStack(string title = null, int stride = 0, params Action[] actions) {
             var length = actions.Length;
             if (stride < 1) { stride = length; }
             if (UI.IsNarrow) stride = Math.Min(3, stride);
@@ -80,13 +76,13 @@ namespace ModKit {
                 UI.EndHorizontal();
             }
         }
-        public static void VStack(String title = null, params Action[] actions) {
+        public static void VStack(string title = null, params Action[] actions) {
             UI.BeginVertical();
             if (title != null) { UI.Label(title); }
             UI.Group(actions);
             UI.EndVertical();
         }
-        public static void Section(String title, params Action[] actions) {
+        public static void Section(string title, params Action[] actions) {
             UI.Space(25);
             UI.Label($"====== {title} ======".bold(), GL.ExpandWidth(true));
             UI.Space(25);

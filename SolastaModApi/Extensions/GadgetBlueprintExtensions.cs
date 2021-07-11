@@ -11,6 +11,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(GadgetBlueprint))]
     public static partial class GadgetBlueprintExtensions
     {
+        public static T SetCanBeActivated<T>(this T entity, bool value)
+            where T : GadgetBlueprint
+        {
+            entity.SetField("canBeActivated", value);
+            return entity;
+        }
+
         public static T SetCustomizableDimensions<T>(this T entity, bool value)
             where T : GadgetBlueprint
         {

@@ -87,6 +87,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetCurrentHitPoints<T>(this T entity, int value)
+            where T : RulesetActor
+        {
+            entity.SetProperty("CurrentHitPoints", value);
+            return entity;
+        }
+
         public static T SetDamageAltered<T>(this T entity, RulesetActor.DamageAlteredHandler value)
             where T : RulesetActor
         {
@@ -185,6 +192,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMaxExtentY<T>(this T entity, int value)
+            where T : RulesetActor
+        {
+            entity.SetProperty("MaxExtentY", value);
+            return entity;
+        }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetActor
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetPostLoaded<T>(this T entity, bool value)
             where T : RulesetActor
         {
@@ -210,6 +231,20 @@ namespace SolastaModApi.Extensions
             where T : RulesetActor
         {
             entity.SetField("side", value);
+            return entity;
+        }
+
+        public static T SetSizeParams<T>(this T entity, RulesetActor.SizeParameters value)
+            where T : RulesetActor
+        {
+            entity.SizeParams = value;
+            return entity;
+        }
+
+        public static T SetSortIndex<T>(this T entity, int value)
+            where T : RulesetActor
+        {
+            entity.SortIndex = value;
             return entity;
         }
 

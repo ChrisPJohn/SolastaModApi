@@ -17,6 +17,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetConditionDefinition<T>(this T entity, ConditionDefinition value)
+            where T : ConditionOperationDescription
+        {
+            entity.ConditionDefinition = value;
+            return entity;
+        }
+
         public static T SetConditionName<T>(this T entity, string value)
             where T : ConditionOperationDescription
         {
@@ -28,6 +35,13 @@ namespace SolastaModApi.Extensions
             where T : ConditionOperationDescription
         {
             entity.SetField("hasSavingThrow", value);
+            return entity;
+        }
+
+        public static T SetOperation<T>(this T entity, ConditionOperationDescription.ConditionOperation value)
+            where T : ConditionOperationDescription
+        {
+            entity.Operation = value;
             return entity;
         }
 

@@ -16,5 +16,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("gadgetDefinition", value);
             return entity;
         }
+
+        public static T SetPerceptionSizeParams<T>(this T entity, RulesetActor.SizeParameters value)
+            where T : RulesetGadget
+        {
+            entity.PerceptionSizeParams = value;
+            return entity;
+        }
     }
 }

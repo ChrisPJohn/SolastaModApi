@@ -82,6 +82,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetRenderSettingsSceneProfile<T>(this T entity, RenderSettingsSceneProfile value)
+            where T : LocationDefinition
+        {
+            entity.RenderSettingsSceneProfile = value;
+            return entity;
+        }
+
         public static T SetSceneFilePath<T>(this T entity, string value)
             where T : LocationDefinition
         {

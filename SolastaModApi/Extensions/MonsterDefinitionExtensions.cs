@@ -287,6 +287,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSizeDefinition<T>(this T entity, CharacterSizeDefinition value)
+            where T : MonsterDefinition
+        {
+            entity.SizeDefinition = value;
+            return entity;
+        }
+
         public static T SetSneakStance<T>(this T entity, MoveStance value)
             where T : MonsterDefinition
         {

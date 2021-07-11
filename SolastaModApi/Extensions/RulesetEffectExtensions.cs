@@ -38,6 +38,27 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMetamagicOption<T>(this T entity, MetamagicOptionDefinition value)
+            where T : RulesetEffect
+        {
+            entity.MetamagicOption = value;
+            return entity;
+        }
+
+        public static T SetRemainingRounds<T>(this T entity, int value)
+            where T : RulesetEffect
+        {
+            entity.RemainingRounds = value;
+            return entity;
+        }
+
+        public static T SetTerminated<T>(this T entity, bool value)
+            where T : RulesetEffect
+        {
+            entity.Terminated = value;
+            return entity;
+        }
+
         public static T SetTerminatedSelf<T>(this T entity, RulesetEffect.TerminatedSelfHandler value)
             where T : RulesetEffect
         {

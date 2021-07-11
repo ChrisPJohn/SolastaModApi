@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(RulesetEffectPower))]
     public static partial class RulesetEffectPowerExtensions
     {
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetEffectPower
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetOriginItem<T>(this T entity, RulesetItemDevice value)
             where T : RulesetEffectPower
         {

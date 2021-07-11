@@ -31,10 +31,31 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMetamagicOption<T>(this T entity, MetamagicOptionDefinition value)
+            where T : RulesetEffectSpell
+        {
+            entity.MetamagicOption = value;
+            return entity;
+        }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetEffectSpell
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetOriginItem<T>(this T entity, RulesetItemDevice value)
             where T : RulesetEffectSpell
         {
             entity.SetField("originItem", value);
+            return entity;
+        }
+
+        public static T SetSlotLevel<T>(this T entity, int value)
+            where T : RulesetEffectSpell
+        {
+            entity.SlotLevel = value;
             return entity;
         }
 

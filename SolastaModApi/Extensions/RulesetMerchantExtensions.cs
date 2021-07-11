@@ -16,5 +16,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("merchantDefinition", value);
             return entity;
         }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetMerchant
+        {
+            entity.Name = value;
+            return entity;
+        }
     }
 }

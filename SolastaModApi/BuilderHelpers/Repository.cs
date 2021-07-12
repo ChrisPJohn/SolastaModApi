@@ -97,6 +97,10 @@ namespace SolastaModApi
             {
                 return Get<EditableGraphDefinition, TDefinition>(name, guid, throwIfNotFound);
             }
+            else if (t is SpellDefinition)
+            {
+                return Get<SpellDefinition, TDefinition>(name, guid, throwIfNotFound);
+            }
 
             return Get<TDefinition, TDefinition>(name, guid, throwIfNotFound);
         }

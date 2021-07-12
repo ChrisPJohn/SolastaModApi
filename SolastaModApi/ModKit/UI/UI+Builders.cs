@@ -11,7 +11,7 @@ namespace ModKit
         static public string focusedControlName = null;
 
         public static Rect ummRect = new Rect();
-        public static float ummWidth = 960f;
+        public static float ummWidth = 1200f;
         public static int ummTabID = 0;
         public static bool IsNarrow { get { return ummWidth < 1200; } }
         public static bool IsWide { get { return ummWidth >= 1920; } }

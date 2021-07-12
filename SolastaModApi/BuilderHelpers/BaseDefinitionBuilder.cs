@@ -100,13 +100,15 @@ namespace SolastaModApi
         {
             if (Definition is RecordTableDefinition)
             {
-                AddToDBIfMatch<RecordTableDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<AdventureLogDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<BestiaryStatsDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<BestiaryTableDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<ConsoleTableDefinition>(assertIfDuplicate);
+                AddToDBIfMatch<CreditsTableDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<DailyLogDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<DocumentTableDefinition>(assertIfDuplicate);
+                AddToDBIfMatch<RecordTableDefinition>(assertIfDuplicate);
+                AddToDBIfMatch<SubtitleTableDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<TravelJournalDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<TutorialTableDefinition>(assertIfDuplicate);
                 AddToDBIfMatch<TutorialTocDefinition>(assertIfDuplicate);
@@ -114,62 +116,63 @@ namespace SolastaModApi
             else if (Definition is FeatureDefinition)
             {
                 AddToDBIfMatch<FeatureDefinition>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionAbilityCheckAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionActionAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionAdditionalAction>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionAdditionalDamage>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionAncestry>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionAttackModifier>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionAttributeModifier>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionAutoPreparedSpells>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionBonusCantrips>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionCampAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionCastSpell>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionCharacterPresentation>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionCriticalCharacter>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionFactionAffinity>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionFactionChange>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionFeatureSet>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionFightingStyleChoice>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionLightSource>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionLoreExpertise>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionMovementAffinity>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionMoveMode>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionPointPool>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionPower>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionProficiency>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionSchoolSavant>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionSense>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionSocialAffinity>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionSubclassChoice>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionAbilityCheckAffinity>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionAttackModifier>(assertIfDuplicate);
-                AddToDBIfMatch<FeatureDefinitionCampAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionCombatAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionConditionAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionCraftingAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionCriticalCharacter>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionDamageAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionDeathSavingThrowAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionDieRollModifier>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionEquipmentAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionFactionAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionFactionChange>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionFeatureSet>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionFightingStyleChoice>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionHealingModifier>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionLanguageAffinity>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionLightAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionLightSource>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionLoreExpertise>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionMagicAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionMovementAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionMoveMode>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionMoveThroughEnemyModifier>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionPerceptionAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionPointPool>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionPower>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionProficiency>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionRegeneration>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionSavingThrowAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionSchoolSavant>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionSense>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionSocialAffinity>(assertIfDuplicate);
+                AddToDBIfMatch<FeatureDefinitionSubclassChoice>(assertIfDuplicate);
                 AddToDBIfMatch<FeatureDefinitionTerrainTypeAffinity>(assertIfDuplicate);
             }
             else if (Definition is SpellDefinition)
             {
-                AddToDB<SpellDefinition>(Definition as SpellDefinition, assertIfDuplicate);
+                AddToDBIfMatch<SpellDefinition>(assertIfDuplicate);
             }
             else if (Definition is BaseBlueprint)
             {
                 AddToDBIfMatch<BaseBlueprint>(assertIfDuplicate);
                 AddToDBIfMatch<FurnitureBlueprint>(assertIfDuplicate);
-                AddToDBIfMatch<RoomBlueprint>(assertIfDuplicate);
                 AddToDBIfMatch<GadgetBlueprint>(assertIfDuplicate);
                 AddToDBIfMatch<PropBlueprint>(assertIfDuplicate);
+                AddToDBIfMatch<RoomBlueprint>(assertIfDuplicate);
             }
             else if (Definition is EditableGraphDefinition)
             {

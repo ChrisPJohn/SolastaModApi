@@ -24,6 +24,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetAbilityScoreDetermination<T>(this T entity, AbilityScoreDetermination value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("abilityScoreDetermination", value);
+            return entity;
+        }
+
         public static T SetActivationTime<T>(this T entity, ActivationTime value)
             where T : FeatureDefinitionPower
         {
@@ -63,6 +70,13 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionPower
         {
             entity.SetField("delegatedToAction", value);
+            return entity;
+        }
+
+        public static T SetDisableIfConditionIsOwned<T>(this T entity, ConditionDefinition value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("disableIfConditionIsOwned", value);
             return entity;
         }
 
@@ -115,6 +129,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetReactionName<T>(this T entity, string value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("reactionName", value);
+            return entity;
+        }
+
         public static T SetRechargeRate<T>(this T entity, RechargeRate value)
             where T : FeatureDefinitionPower
         {
@@ -140,6 +161,13 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionPower
         {
             entity.SetField("spellcastingFeature", value);
+            return entity;
+        }
+
+        public static T SetSurrogateToSpell<T>(this T entity, SpellDefinition value)
+            where T : FeatureDefinitionPower
+        {
+            entity.SetField("surrogateToSpell", value);
             return entity;
         }
 

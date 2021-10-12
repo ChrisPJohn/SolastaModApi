@@ -68,6 +68,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetBeforeImpactParticleReference<T>(this T entity, AssetReference value)
+            where T : EffectParticleParameters
+        {
+            entity.SetField("beforeImpactParticleReference", value);
+            return entity;
+        }
+
         public static T SetCasterParticleReference<T>(this T entity, AssetReference value)
             where T : EffectParticleParameters
         {
@@ -114,6 +121,13 @@ namespace SolastaModApi.Extensions
             where T : EffectParticleParameters
         {
             entity.SetField("effectParticleReference", value);
+            return entity;
+        }
+
+        public static T SetEffectSubTargetParticleReference<T>(this T entity, AssetReference value)
+            where T : EffectParticleParameters
+        {
+            entity.SetField("effectSubTargetParticleReference", value);
             return entity;
         }
 

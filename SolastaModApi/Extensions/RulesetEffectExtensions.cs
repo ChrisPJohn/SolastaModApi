@@ -34,7 +34,7 @@ namespace SolastaModApi.Extensions
         public static T SetDelayEnvironmentRegistration<T>(this T entity, bool value)
             where T : RulesetEffect
         {
-            entity.SetField("<DelayEnvironmentRegistration>k__BackingField", value);
+            entity.DelayEnvironmentRegistration = value;
             return entity;
         }
 

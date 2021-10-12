@@ -24,13 +24,6 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetCanFailSpellcasting<T>(this T entity, bool value)
-            where T : FeatureDefinitionMagicAffinity
-        {
-            entity.SetField("canFailSpellcasting", value);
-            return entity;
-        }
-
         public static T SetCantripRetribution<T>(this T entity, bool value)
             where T : FeatureDefinitionMagicAffinity
         {
@@ -45,10 +38,17 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetConcentrationAdvantage<T>(this T entity, AdvantageType value)
+        public static T SetCastingAffinity<T>(this T entity, CastingAffinity value)
             where T : FeatureDefinitionMagicAffinity
         {
-            entity.SetField("concentrationAdvantage", value);
+            entity.SetField("castingAffinity", value);
+            return entity;
+        }
+
+        public static T SetConcentrationAffinity<T>(this T entity, ConcentrationAffinity value)
+            where T : FeatureDefinitionMagicAffinity
+        {
+            entity.SetField("concentrationAffinity", value);
             return entity;
         }
 

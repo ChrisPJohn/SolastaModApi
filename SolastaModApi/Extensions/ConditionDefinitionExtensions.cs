@@ -1,4 +1,5 @@
 using SolastaModApi.Infrastructure;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using TA.AI;
 using static RuleDefinitions;
@@ -31,6 +32,13 @@ namespace SolastaModApi.Extensions
             where T : ConditionDefinition
         {
             entity.SetField("additionalConditionDurationType", value);
+            return entity;
+        }
+
+        public static T SetAdditionalConditionTurnOccurenceType<T>(this T entity, TurnOccurenceType value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("additionalConditionTurnOccurenceType", value);
             return entity;
         }
 
@@ -195,6 +203,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetFirstCharacterShaderColor<T>(this T entity, Color value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("firstCharacterShaderColor", value);
+            return entity;
+        }
+
         public static T SetFollowSourcePosition<T>(this T entity, bool value)
             where T : ConditionDefinition
         {
@@ -220,6 +235,13 @@ namespace SolastaModApi.Extensions
             where T : ConditionDefinition
         {
             entity.SetField("interruptionRequiresSavingThrow", value);
+            return entity;
+        }
+
+        public static T SetOverrideCharacterShaderColors<T>(this T entity, bool value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("overrideCharacterShaderColors", value);
             return entity;
         }
 
@@ -251,6 +273,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSecondCharacterShaderColor<T>(this T entity, Color value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("secondCharacterShaderColor", value);
+            return entity;
+        }
+
         public static T SetSilentWhenAdded<T>(this T entity, bool value)
             where T : ConditionDefinition
         {
@@ -279,10 +308,38 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSubsequentDCIncrease<T>(this T entity, int value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("subsequentDCIncrease", value);
+            return entity;
+        }
+
+        public static T SetSubsequentHasSavingThrow<T>(this T entity, bool value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("subsequentHasSavingThrow", value);
+            return entity;
+        }
+
         public static T SetSubsequentOnRemoval<T>(this T entity, ConditionDefinition value)
             where T : ConditionDefinition
         {
             entity.SetField("subsequentOnRemoval", value);
+            return entity;
+        }
+
+        public static T SetSubsequentSavingThrowAbilityScore<T>(this T entity, string value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("subsequentSavingThrowAbilityScore", value);
+            return entity;
+        }
+
+        public static T SetSubsequentVariableForDC<T>(this T entity, string value)
+            where T : ConditionDefinition
+        {
+            entity.SetField("subsequentVariableForDC", value);
             return entity;
         }
 

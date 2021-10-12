@@ -18,6 +18,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetCanSkipIntro<T>(this T entity, bool value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("canSkipIntro", value);
+            return entity;
+        }
+
         public static T SetConclusionMovieDefinition<T>(this T entity, MoviePlaybackDefinition value)
             where T : CampaignDefinition
         {
@@ -29,6 +36,13 @@ namespace SolastaModApi.Extensions
             where T : CampaignDefinition
         {
             entity.SetField("editorOnly", value);
+            return entity;
+        }
+
+        public static T SetFastTimeScaleDuringTravel<T>(this T entity, float value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("fastTimeScaleDuringTravel", value);
             return entity;
         }
 
@@ -95,6 +109,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMultiplayer<T>(this T entity, bool value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("multiplayer", value);
+            return entity;
+        }
+
+        public static T SetNormalTimeScaleDuringTravel<T>(this T entity, float value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("normalTimeScaleDuringTravel", value);
+            return entity;
+        }
+
         public static T SetPartySize<T>(this T entity, int value)
             where T : CampaignDefinition
         {
@@ -120,6 +148,20 @@ namespace SolastaModApi.Extensions
             where T : CampaignDefinition
         {
             entity.SetField("sceneReference", value);
+            return entity;
+        }
+
+        public static T SetSkipIntroEntrance<T>(this T entity, int value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("skipIntroEntrance", value);
+            return entity;
+        }
+
+        public static T SetSkipIntroLocation<T>(this T entity, string value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("skipIntroLocation", value);
             return entity;
         }
 

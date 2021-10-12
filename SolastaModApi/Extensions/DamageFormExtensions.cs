@@ -59,6 +59,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetIgnoreCriticalDoubleDice<T>(this T entity, bool value)
+            where T : DamageForm
+        {
+            entity.IgnoreCriticalDoubleDice = value;
+            return entity;
+        }
+
+        public static T SetIgnoreSpellAdvancementDamageDice<T>(this T entity, bool value)
+            where T : DamageForm
+        {
+            entity.IgnoreSpellAdvancementDamageDice = value;
+            return entity;
+        }
+
         public static T SetSpecialDeathCondition<T>(this T entity, ConditionDefinition value)
             where T : DamageForm
         {

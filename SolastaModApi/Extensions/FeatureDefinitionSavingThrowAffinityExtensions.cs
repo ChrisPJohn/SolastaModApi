@@ -23,5 +23,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("priorityAbilityScore", value);
             return entity;
         }
+
+        public static T SetUseControllerSavingThrows<T>(this T entity, bool value)
+            where T : FeatureDefinitionSavingThrowAffinity
+        {
+            entity.SetField("useControllerSavingThrows", value);
+            return entity;
+        }
     }
 }

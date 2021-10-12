@@ -150,6 +150,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSituationalContext<T>(this T entity, SituationalContext value)
+            where T : FeatureDefinitionMovementAffinity
+        {
+            entity.SetField("situationalContext", value);
+            return entity;
+        }
+
         public static T SetSpeedAddBase<T>(this T entity, bool value)
             where T : FeatureDefinitionMovementAffinity
         {

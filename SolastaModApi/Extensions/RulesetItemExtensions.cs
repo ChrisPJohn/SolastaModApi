@@ -52,6 +52,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetItemDestroyed<T>(this T entity, RulesetItem.ItemDestroyedHandler value)
+            where T : RulesetItem
+        {
+            entity.SetField("<ItemDestroyed>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetItemDurationRefreshed<T>(this T entity, RulesetItem.ItemDurationRefreshedHandler value)
             where T : RulesetItem
         {
@@ -91,6 +98,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetItem
         {
             entity.RulesetLightSource = value;
+            return entity;
+        }
+
+        public static T SetSourceSummoningEffectGuid<T>(this T entity, ulong value)
+            where T : RulesetItem
+        {
+            entity.SourceSummoningEffectGuid = value;
             return entity;
         }
     }

@@ -32,6 +32,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetAdditionalAbilityCheckDieRolled<T>(this T entity, RulesetCharacter.AdditionalAbilityCheckDieRolledHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<AdditionalAbilityCheckDieRolled>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetAdditionalAttackDieRolled<T>(this T entity, RulesetCharacter.AdditionalAttackDieRolledHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<AdditionalAttackDieRolled>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetAdditionalDamageGenerated<T>(this T entity, RulesetCharacter.AdditionalDamageGeneratedHandler value)
             where T : RulesetCharacter
         {
@@ -543,6 +557,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMonsterIdentificationRolled<T>(this T entity, RulesetCharacter.MonsterIdentificationRolledHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<MonsterIdentificationRolled>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetMotionRangeFlags<T>(this T entity, RulesetCharacter.MotionRange value)
             where T : RulesetCharacter
         {
@@ -606,6 +627,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetPowerRefunded<T>(this T entity, RulesetCharacter.PowerRefundedHandler value)
+            where T : RulesetCharacter
+        {
+            entity.SetField("<PowerRefunded>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetPreferredReadyCantrip<T>(this T entity, SpellDefinition value)
             where T : RulesetCharacter
         {
@@ -638,20 +666,6 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacter
         {
             entity.SetField("regenerationLapse", value);
-            return entity;
-        }
-
-        public static T SetRemovedFromTheGameStarted<T>(this T entity, RulesetCharacter.RemovedFromTheGameStartedHandler value)
-            where T : RulesetCharacter
-        {
-            entity.SetField("<RemovedFromTheGameStarted>k__BackingField", value);
-            return entity;
-        }
-
-        public static T SetRemovedFromTheGameStopped<T>(this T entity, RulesetCharacter.RemovedFromTheGameStoppedHandler value)
-            where T : RulesetCharacter
-        {
-            entity.SetField("<RemovedFromTheGameStopped>k__BackingField", value);
             return entity;
         }
 
@@ -802,10 +816,24 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetUsedKnockOutImmunityPerLongRest<T>(this T entity, int value)
+            where T : RulesetCharacter
+        {
+            entity.UsedKnockOutImmunityPerLongRest = value;
+            return entity;
+        }
+
         public static T SetUsedMainAttacks<T>(this T entity, int value)
             where T : RulesetCharacter
         {
             entity.UsedMainAttacks = value;
+            return entity;
+        }
+
+        public static T SetUsedRagePoints<T>(this T entity, int value)
+            where T : RulesetCharacter
+        {
+            entity.SetProperty("UsedRagePoints", value);
             return entity;
         }
 

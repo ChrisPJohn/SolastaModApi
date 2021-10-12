@@ -95,13 +95,6 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetHasMonsterPortraitBackground<T>(this T entity, bool value)
-            where T : HumanoidMonsterPresentationDefinition
-        {
-            entity.SetField("hasMonsterPortraitBackground", value);
-            return entity;
-        }
-
         public static T SetHelmetDefinition<T>(this T entity, string value)
             where T : HumanoidMonsterPresentationDefinition
         {
@@ -148,6 +141,13 @@ namespace SolastaModApi.Extensions
             where T : HumanoidMonsterPresentationDefinition
         {
             entity.SetField("raceDefinition", value);
+            return entity;
+        }
+
+        public static T SetScarsMorphotype<T>(this T entity, string value)
+            where T : HumanoidMonsterPresentationDefinition
+        {
+            entity.SetField("scarsMorphotype", value);
             return entity;
         }
 

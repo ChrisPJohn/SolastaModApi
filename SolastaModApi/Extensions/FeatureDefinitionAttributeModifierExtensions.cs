@@ -17,10 +17,10 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetModifierType<T>(this T entity, FeatureDefinitionAttributeModifier.AttributeModifierOperationOld value)
+        public static T SetModifierAbilityScore<T>(this T entity, string value)
             where T : FeatureDefinitionAttributeModifier
         {
-            entity.SetField("modifierType", value);
+            entity.SetField("modifierAbilityScore", value);
             return entity;
         }
 

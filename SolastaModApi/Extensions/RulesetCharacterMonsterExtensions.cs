@@ -108,6 +108,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetOriginalFormCharacter<T>(this T entity, RulesetCharacter value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("originalFormCharacter", value);
+            return entity;
+        }
+
         public static T SetPrespawning<T>(this T entity, bool value)
             where T : RulesetCharacterMonster
         {

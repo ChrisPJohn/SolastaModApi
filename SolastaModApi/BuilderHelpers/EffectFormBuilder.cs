@@ -42,9 +42,18 @@ namespace SolastaModApi.BuilderHelpers
             return this;
         }
 
+
+        // TODO: check this change from 
+        // effectForm.ApplyAbilityBonus = true;
+        // to
+        // effectForm.SetAddBonusMode(RuleDefinitions.AddBonusMode.AbilityBonus);
+
         public EffectFormBuilder ApplyAbilityBonus()
         {
-            effectForm.ApplyAbilityBonus = true;
+            effectForm.SetAddBonusMode(RuleDefinitions.AddBonusMode.AbilityBonus);
+
+            // effectForm.ApplyAbilityBonus = true;
+            
             return this;
         }
 

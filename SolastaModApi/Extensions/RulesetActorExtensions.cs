@@ -24,6 +24,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetActorReplaced<T>(this T entity, RulesetActor.ActorReplacedHandler value)
+            where T : RulesetActor
+        {
+            entity.SetField("<ActorReplaced>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetAdditionalSaveDieRolled<T>(this T entity, RulesetActor.AdditionalSaveDieRolledHandler value)
+            where T : RulesetActor
+        {
+            entity.SetField("<AdditionalSaveDieRolled>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetAlterationInflicted<T>(this T entity, RulesetActor.AlterationInflictedHandler value)
             where T : RulesetActor
         {
@@ -189,6 +203,20 @@ namespace SolastaModApi.Extensions
             where T : RulesetActor
         {
             entity.SetField("<IncomingDamageNotified>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetMatchingCancellingCondition<T>(this T entity, bool value)
+            where T : RulesetActor
+        {
+            entity.SetField("matchingCancellingCondition", value);
+            return entity;
+        }
+
+        public static T SetMatchingInterruption<T>(this T entity, bool value)
+            where T : RulesetActor
+        {
+            entity.SetField("matchingInterruption", value);
             return entity;
         }
 

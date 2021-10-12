@@ -31,6 +31,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSourceEffectGuid<T>(this T entity, ulong value)
+            where T : RulesetItemProperty
+        {
+            entity.SourceEffectGuid = value;
+            return entity;
+        }
+
         public static T SetTargetItemGuid<T>(this T entity, ulong value)
             where T : RulesetItemProperty
         {

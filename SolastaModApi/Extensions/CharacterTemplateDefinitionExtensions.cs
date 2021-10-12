@@ -214,6 +214,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetScarsMorphotype<T>(this T entity, string value)
+            where T : CharacterTemplateDefinition
+        {
+            entity.SetField("scarsMorphotype", value);
+            return entity;
+        }
+
         public static T SetSex<T>(this T entity, CreatureSex value)
             where T : CharacterTemplateDefinition
         {

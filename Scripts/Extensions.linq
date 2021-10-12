@@ -143,7 +143,6 @@ void CreateExtensions(Type t, bool createFiles = false)
 			GetUsingSyntax("System.Text"),
 			GetUsingSyntax("TA.AI"),
 			GetUsingSyntax("TA"),
-			GetUsingSyntax("TriangleNet"),
 			GetUsingSyntax("System.Collections.Generic"),
 			GetUsingSyntax("UnityEngine.Rendering.PostProcessing"),
 			GetUsingSyntax("static ActionDefinitions"),

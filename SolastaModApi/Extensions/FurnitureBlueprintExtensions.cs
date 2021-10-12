@@ -31,6 +31,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetOpeningHighPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("openingHighPlacement", value);
+            return entity;
+        }
+
+        public static T SetOpeningLowPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("openingLowPlacement", value);
+            return entity;
+        }
+
         public static T SetOpeningPlacement<T>(this T entity, bool value)
             where T : FurnitureBlueprint
         {

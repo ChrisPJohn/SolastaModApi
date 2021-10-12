@@ -10,6 +10,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(FeatureDefinitionAutoPreparedSpells))]
     public static partial class FeatureDefinitionAutoPreparedSpellsExtensions
     {
+        public static T SetAffinityRace<T>(this T entity, CharacterRaceDefinition value)
+            where T : FeatureDefinitionAutoPreparedSpells
+        {
+            entity.SetField("affinityRace", value);
+            return entity;
+        }
+
         public static T SetAutopreparedTag<T>(this T entity, string value)
             where T : FeatureDefinitionAutoPreparedSpells
         {

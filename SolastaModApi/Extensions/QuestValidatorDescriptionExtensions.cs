@@ -31,6 +31,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetIntParameter2<T>(this T entity, int value)
+            where T : QuestValidatorDescription
+        {
+            entity.IntParameter2 = value;
+            return entity;
+        }
+
+        public static T SetIntParameter3<T>(this T entity, int value)
+            where T : QuestValidatorDescription
+        {
+            entity.IntParameter3 = value;
+            return entity;
+        }
+
         public static T SetQuestUpdateType<T>(this T entity, QuestDefinitions.QuestUpdateType value)
             where T : QuestValidatorDescription
         {

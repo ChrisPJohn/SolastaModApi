@@ -52,6 +52,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetHasAttackedOnce<T>(this T entity, bool value)
+            where T : RulesetCharacterEffectProxy
+        {
+            entity.HasAttackedOnce = value;
+            return entity;
+        }
+
         public static T SetOnEffectProxyDestroying<T>(this T entity, RulesetCharacterEffectProxy.OnEffectProxyDestroyingHandler value)
             where T : RulesetCharacterEffectProxy
         {

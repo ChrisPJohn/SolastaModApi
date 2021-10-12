@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine;
+using TA;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
@@ -11,6 +12,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(RacePresentation))]
     public static partial class RacePresentationExtensions
     {
+        public static T SetBeardBlendShapes<T>(this T entity, RacePresentation.BeardBlendShape[] value)
+            where T : RacePresentation
+        {
+            entity.SetField("beardBlendShapes", value);
+            return entity;
+        }
+
         public static T SetBodyAssetPrefix<T>(this T entity, string value)
             where T : RacePresentation
         {
@@ -74,10 +82,31 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetPreferedHairColors<T>(this T entity, RangedInt value)
+            where T : RacePresentation
+        {
+            entity.SetField("preferedHairColors", value);
+            return entity;
+        }
+
+        public static T SetPreferedSkinColors<T>(this T entity, RangedInt value)
+            where T : RacePresentation
+        {
+            entity.SetField("preferedSkinColors", value);
+            return entity;
+        }
+
         public static T SetSurNameTitle<T>(this T entity, string value)
             where T : RacePresentation
         {
             entity.SetField("surNameTitle", value);
+            return entity;
+        }
+
+        public static T SetUseBeardBlendShape<T>(this T entity, bool value)
+            where T : RacePresentation
+        {
+            entity.SetField("useBeardBlendShape", value);
             return entity;
         }
     }

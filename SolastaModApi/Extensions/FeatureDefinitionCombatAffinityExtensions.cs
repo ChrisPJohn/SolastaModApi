@@ -45,6 +45,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetCanRageToOvercomeSurprise<T>(this T entity, bool value)
+            where T : FeatureDefinitionCombatAffinity
+        {
+            entity.SetField("canRageToOvercomeSurprise", value);
+            return entity;
+        }
+
         public static T SetCriticalHitImmunity<T>(this T entity, bool value)
             where T : FeatureDefinitionCombatAffinity
         {

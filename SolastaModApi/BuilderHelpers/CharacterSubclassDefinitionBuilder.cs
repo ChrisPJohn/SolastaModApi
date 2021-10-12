@@ -14,15 +14,17 @@ namespace SolastaModApi
             return this;
         }
 
-        public CharacterSubclassDefinitionBuilder AddPersonality(PersonalityFlagDefinition personalityType, int weight)
-        {
-            Definition.PersonalityFlagOccurences.Add(
-                new PersonalityFlagOccurence()
-                    .SetWeight(weight)
-                    .SetPersonalityFlag(personalityType.Name));
+        // TODO: 'new PersonalityFlagOccurence()' now requires the parameter 'PersonalityFlagOccurence reference'
 
-            return this;
-        }
+        //public CharacterSubclassDefinitionBuilder AddPersonality(PersonalityFlagDefinition personalityType, int weight)
+        //{
+        //    Definition.PersonalityFlagOccurences.Add(
+        //        new PersonalityFlagOccurence()
+        //            .SetWeight(weight)
+        //            .SetPersonalityFlag(personalityType.Name));
+
+        //    return this;
+        //}
 
         public CharacterSubclassDefinitionBuilder AddFeatureAtLevel(FeatureDefinition feature, int level)
         {

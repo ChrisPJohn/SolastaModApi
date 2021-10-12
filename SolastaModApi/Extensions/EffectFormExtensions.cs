@@ -10,17 +10,17 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(EffectForm))]
     public static partial class EffectFormExtensions
     {
+        public static T SetAddBonusMode<T>(this T entity, AddBonusMode value)
+            where T : EffectForm
+        {
+            entity.AddBonusMode = value;
+            return entity;
+        }
+
         public static T SetAlterationForm<T>(this T entity, AlterationForm value)
             where T : EffectForm
         {
             entity.SetField("alterationForm", value);
-            return entity;
-        }
-
-        public static T SetApplyAbilityBonus<T>(this T entity, bool value)
-            where T : EffectForm
-        {
-            entity.ApplyAbilityBonus = value;
             return entity;
         }
 
@@ -168,6 +168,13 @@ namespace SolastaModApi.Extensions
             where T : EffectForm
         {
             entity.SavingThrowAffinity = value;
+            return entity;
+        }
+
+        public static T SetShapeChangeForm<T>(this T entity, ShapeChangeForm value)
+            where T : EffectForm
+        {
+            entity.SetField("shapeChangeForm", value);
             return entity;
         }
 

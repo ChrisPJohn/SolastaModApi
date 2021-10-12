@@ -78,7 +78,7 @@ namespace SolastaModApi.Extensions
         public static T SetInteractor<T>(this T entity, WorldManipulationInteractor value)
             where T : GadgetFlowDescription
         {
-            entity.SetField("interactor", value);
+            entity.Interactor = value;
             return entity;
         }
 
@@ -134,7 +134,7 @@ namespace SolastaModApi.Extensions
         public static T SetQuestName<T>(this T entity, string value)
             where T : GadgetFlowDescription
         {
-            entity.SetField("questName", value);
+            entity.QuestName = value;
             return entity;
         }
 
@@ -190,7 +190,7 @@ namespace SolastaModApi.Extensions
         public static T SetStepName<T>(this T entity, string value)
             where T : GadgetFlowDescription
         {
-            entity.SetField("stepName", value);
+            entity.StepName = value;
             return entity;
         }
 
@@ -218,7 +218,7 @@ namespace SolastaModApi.Extensions
         public static T SetVariableName<T>(this T entity, string value)
             where T : GadgetFlowDescription
         {
-            entity.SetField("variableName", value);
+            entity.VariableName = value;
             return entity;
         }
 
@@ -254,6 +254,13 @@ namespace SolastaModApi.Extensions
             where T : GadgetFlowDescription
         {
             entity.SetField("wantedContentPack", value);
+            return entity;
+        }
+
+        public static T SetWantedEncounterName<T>(this T entity, GadgetDefinitions.GadgetVariableString value)
+            where T : GadgetFlowDescription
+        {
+            entity.SetField("wantedEncounterName", value);
             return entity;
         }
 

@@ -24,6 +24,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetHasRacialAffinity<T>(this T entity, bool value)
+            where T : FeatureDefinitionFeatureSet
+        {
+            entity.SetField("hasRacialAffinity", value);
+            return entity;
+        }
+
         public static T SetMode<T>(this T entity, FeatureDefinitionFeatureSet.FeatureSetMode value)
             where T : FeatureDefinitionFeatureSet
         {

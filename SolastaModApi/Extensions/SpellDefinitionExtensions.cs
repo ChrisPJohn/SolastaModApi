@@ -32,6 +32,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDisplayConditionDuration<T>(this T entity, bool value)
+            where T : SpellDefinition
+        {
+            entity.SetField("displayConditionDuration", value);
+            return entity;
+        }
+
         public static T SetEffectDescription<T>(this T entity, EffectDescription value)
             where T : SpellDefinition
         {
@@ -120,6 +127,13 @@ namespace SolastaModApi.Extensions
             where T : SpellDefinition
         {
             entity.SetField("spellsBundle", value);
+            return entity;
+        }
+
+        public static T SetTerminateOnItemUnequip<T>(this T entity, bool value)
+            where T : SpellDefinition
+        {
+            entity.SetField("terminateOnItemUnequip", value);
             return entity;
         }
 

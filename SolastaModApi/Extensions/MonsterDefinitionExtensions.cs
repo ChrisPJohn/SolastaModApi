@@ -1,4 +1,5 @@
 using SolastaModApi.Infrastructure;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using TA.AI;
 using static ActionDefinitions;
@@ -45,7 +46,7 @@ namespace SolastaModApi.Extensions
         public static T SetArmorClass<T>(this T entity, int value)
             where T : MonsterDefinition
         {
-            entity.SetField("armorClass", value);
+            entity.ArmorClass = value;
             return entity;
         }
 
@@ -53,6 +54,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("audioRaceRTPCValue", value);
+            return entity;
+        }
+
+        public static T SetBestiaryCameraOffset<T>(this T entity, Vector3 value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("bestiaryCameraOffset", value);
             return entity;
         }
 
@@ -123,6 +131,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("dualSex", value);
+            return entity;
+        }
+
+        public static T SetDungeonMakerPresence<T>(this T entity, MonsterDefinition.DungeonMaker value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("dungeonMakerPresence", value);
             return entity;
         }
 
@@ -200,13 +215,6 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("hitPointsBonus", value);
-            return entity;
-        }
-
-        public static T SetInDungeonEditor<T>(this T entity, bool value)
-            where T : MonsterDefinition
-        {
-            entity.SetField("inDungeonEditor", value);
             return entity;
         }
 
@@ -304,7 +312,7 @@ namespace SolastaModApi.Extensions
         public static T SetStandardHitPoints<T>(this T entity, int value)
             where T : MonsterDefinition
         {
-            entity.SetField("standardHitPoints", value);
+            entity.StandardHitPoints = value;
             return entity;
         }
 
@@ -326,6 +334,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("uniqueNameId", value);
+            return entity;
+        }
+
+        public static T SetUserMonster<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("<UserMonster>k__BackingField", value);
             return entity;
         }
 

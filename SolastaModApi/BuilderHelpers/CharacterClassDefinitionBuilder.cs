@@ -28,14 +28,16 @@ namespace SolastaModApi
             return this;
         }
 
-        public CharacterClassDefinitionBuilder AddPersonality(PersonalityFlagDefinition personalityType, int weight)
-        {
-            Definition.PersonalityFlagOccurences.Add(
-                new PersonalityFlagOccurence()
-                    .SetWeight(weight)
-                    .SetPersonalityFlag(personalityType.Name));
-            return this;
-        }
+        // TODO: 'new PersonalityFlagOccurence()' now requires the parameter 'PersonalityFlagOccurence reference'
+
+        //public CharacterClassDefinitionBuilder AddPersonality(PersonalityFlagDefinition personalityType, int weight)
+        //{
+        //    Definition.PersonalityFlagOccurences.Add(
+        //        new PersonalityFlagOccurence()
+        //            .SetWeight(weight)
+        //            .SetPersonalityFlag(personalityType.Name));
+        //    return this;
+        //}
 
         public CharacterClassDefinitionBuilder AddToolPreference(ToolTypeDefinition toolType)
         {

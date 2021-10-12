@@ -66,5 +66,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("summonType", value);
             return entity;
         }
+
+        public static T SetTrackItem<T>(this T entity, bool value)
+            where T : SummonForm
+        {
+            entity.SetField("trackItem", value);
+            return entity;
+        }
     }
 }

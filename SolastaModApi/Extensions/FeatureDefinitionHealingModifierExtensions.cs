@@ -1,4 +1,5 @@
 using SolastaModApi.Infrastructure;
+using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
@@ -45,10 +46,31 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetHealingReceivedParticleReference<T>(this T entity, AssetReference value)
+            where T : FeatureDefinitionHealingModifier
+        {
+            entity.SetField("healingReceivedParticleReference", value);
+            return entity;
+        }
+
+        public static T SetHealSelfHealsKindred<T>(this T entity, bool value)
+            where T : FeatureDefinitionHealingModifier
+        {
+            entity.SetField("healSelfHealsKindred", value);
+            return entity;
+        }
+
         public static T SetHealsSelfWhenCastingHealingSpell<T>(this T entity, bool value)
             where T : FeatureDefinitionHealingModifier
         {
             entity.SetField("healsSelfWhenCastingHealingSpell", value);
+            return entity;
+        }
+
+        public static T SetHitDiceHealsKindred<T>(this T entity, bool value)
+            where T : FeatureDefinitionHealingModifier
+        {
+            entity.SetField("hitDiceHealsKindred", value);
             return entity;
         }
 

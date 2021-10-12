@@ -61,6 +61,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDisplayPowerTooltip<T>(this T entity, bool value)
+            where T : ActionDefinition
+        {
+            entity.SetField("displayPowerTooltip", value);
+            return entity;
+        }
+
         public static T SetFeedbackOnHoverType<T>(this T entity, FeedbackOnHoverType value)
             where T : ActionDefinition
         {
@@ -93,6 +100,13 @@ namespace SolastaModApi.Extensions
             where T : ActionDefinition
         {
             entity.SetField("iterativeTargeting", value);
+            return entity;
+        }
+
+        public static T SetMatchingCondition<T>(this T entity, string value)
+            where T : ActionDefinition
+        {
+            entity.SetField("matchingCondition", value);
             return entity;
         }
 

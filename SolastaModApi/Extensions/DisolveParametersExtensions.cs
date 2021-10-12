@@ -54,6 +54,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetStartAfterDeathAnimation<T>(this T entity, bool value)
+            where T : DisolveParameters
+        {
+            entity.SetField("startAfterDeathAnimation", value);
+            return entity;
+        }
+
         public static T SetVertexOffset<T>(this T entity, float value)
             where T : DisolveParameters
         {

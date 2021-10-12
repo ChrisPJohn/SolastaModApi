@@ -59,6 +59,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDestroyedWhenUnequiped<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("destroyedWhenUnequiped", value);
+            return entity;
+        }
+
         public static T SetDocumentDescription<T>(this T entity, DocumentDescription value)
             where T : ItemDefinition
         {
@@ -301,6 +308,13 @@ namespace SolastaModApi.Extensions
             where T : ItemDefinition
         {
             entity.SetField("usableDeviceDescription", value);
+            return entity;
+        }
+
+        public static T SetUserItem<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("<UserItem>k__BackingField", value);
             return entity;
         }
 

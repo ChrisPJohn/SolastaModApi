@@ -41,7 +41,7 @@ namespace SolastaModApi.Extensions
         public static T SetGuiPresentation<T>(this T entity, GuiPresentation value)
             where T : BaseDefinition
         {
-            entity.SetField("guiPresentation", value);
+            entity.GuiPresentation = value;
             return entity;
         }
     }

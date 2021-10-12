@@ -23,5 +23,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("reactTitle", value);
             return entity;
         }
+
+        public static T SetValidationDismissesSimilarReactions<T>(this T entity, bool value)
+            where T : ReactionDefinition
+        {
+            entity.SetField("validationDismissesSimilarReactions", value);
+            return entity;
+        }
     }
 }

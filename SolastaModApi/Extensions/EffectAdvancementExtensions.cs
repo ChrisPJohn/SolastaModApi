@@ -73,6 +73,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetAdditionalWeaponDie<T>(this T entity, int value)
+            where T : EffectAdvancement
+        {
+            entity.SetField("additionalWeaponDie", value);
+            return entity;
+        }
+
         public static T SetAlteredDuration<T>(this T entity, AdvancementDuration value)
             where T : EffectAdvancement
         {

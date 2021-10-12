@@ -7,13 +7,13 @@ namespace SolastaModApi.Extensions
     /// This helper extensions class was automatically generated.
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
-    [TargetType(typeof(GuiCampaignNode))]
-    public static partial class GuiCampaignNodeExtensions
+    [TargetType(typeof(FeatureDefinitionAbilityCheckAffinity))]
+    public static partial class FeatureDefinitionAbilityCheckAffinityExtensions
     {
-        public static T SetGameCampaignNode<T>(this T entity, GameCampaignNode value)
-            where T : GuiCampaignNode
+        public static T SetUseControllerAbilityChecks<T>(this T entity, bool value)
+            where T : FeatureDefinitionAbilityCheckAffinity
         {
-            entity.SetField("gameCampaignNode", value);
+            entity.SetField("useControllerAbilityChecks", value);
             return entity;
         }
     }

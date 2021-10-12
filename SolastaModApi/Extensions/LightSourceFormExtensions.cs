@@ -12,6 +12,13 @@ namespace SolastaModApi.Extensions
     [TargetType(typeof(LightSourceForm))]
     public static partial class LightSourceFormExtensions
     {
+        public static T SetApplyToSelf<T>(this T entity, bool value)
+            where T : LightSourceForm
+        {
+            entity.SetField("applyToSelf", value);
+            return entity;
+        }
+
         public static T SetBrightRange<T>(this T entity, int value)
             where T : LightSourceForm
         {

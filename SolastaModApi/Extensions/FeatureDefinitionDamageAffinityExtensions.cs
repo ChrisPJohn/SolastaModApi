@@ -52,10 +52,38 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetKnockOutImmunity<T>(this T entity, bool value)
+        public static T SetKnockOutAddDC<T>(this T entity, int value)
             where T : FeatureDefinitionDamageAffinity
         {
-            entity.SetField("knockOutImmunity", value);
+            entity.SetField("knockOutAddDC", value);
+            return entity;
+        }
+
+        public static T SetKnockOutAffinity<T>(this T entity, KnockoutAffinity value)
+            where T : FeatureDefinitionDamageAffinity
+        {
+            entity.SetField("knockOutAffinity", value);
+            return entity;
+        }
+
+        public static T SetKnockOutDCAttribute<T>(this T entity, string value)
+            where T : FeatureDefinitionDamageAffinity
+        {
+            entity.SetField("knockOutDCAttribute", value);
+            return entity;
+        }
+
+        public static T SetKnockOutOccurencesNumber<T>(this T entity, int value)
+            where T : FeatureDefinitionDamageAffinity
+        {
+            entity.SetField("knockOutOccurencesNumber", value);
+            return entity;
+        }
+
+        public static T SetKnockOutRequiredCondition<T>(this T entity, ConditionDefinition value)
+            where T : FeatureDefinitionDamageAffinity
+        {
+            entity.SetField("knockOutRequiredCondition", value);
             return entity;
         }
 

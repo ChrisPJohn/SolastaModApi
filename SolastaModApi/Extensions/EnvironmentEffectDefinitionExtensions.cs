@@ -23,5 +23,12 @@ namespace SolastaModApi.Extensions
             entity.SetField("inDungeonEditor", value);
             return entity;
         }
+
+        public static T SetSoundEffectOnHitDescription<T>(this T entity, SoundEffectOnHitDescription value)
+            where T : EnvironmentEffectDefinition
+        {
+            entity.SetField("soundEffectOnHitDescription", value);
+            return entity;
+        }
     }
 }

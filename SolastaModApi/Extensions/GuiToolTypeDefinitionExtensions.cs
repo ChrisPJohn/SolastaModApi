@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiToolTypeDefinition))]
-    public static class GuiToolTypeDefinitionExtensions
+    public static partial class GuiToolTypeDefinitionExtensions
     {
         public static T SetToolTypeDefinition<T>(this T entity, ToolTypeDefinition value)
             where T : GuiToolTypeDefinition

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DailyLogDefinition))]
-    public static class DailyLogDefinitionExtensions
+    public static partial class DailyLogDefinitionExtensions
     {
         public static T SetHeaderHeight<T>(this T entity, int value)
             where T : DailyLogDefinition

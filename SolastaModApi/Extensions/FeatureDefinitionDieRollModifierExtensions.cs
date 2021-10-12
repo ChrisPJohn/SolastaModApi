@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionDieRollModifier))]
-    public static class FeatureDefinitionDieRollModifierExtensions
+    public static partial class FeatureDefinitionDieRollModifierExtensions
     {
         public static T SetForcedMinimalHalfDamageOnDice<T>(this T entity, bool value)
             where T : FeatureDefinitionDieRollModifier
@@ -35,6 +35,13 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionDieRollModifier
         {
             entity.SetField("minRollValue", value);
+            return entity;
+        }
+
+        public static T SetRequireProficiency<T>(this T entity, bool value)
+            where T : FeatureDefinitionDieRollModifier
+        {
+            entity.SetField("requireProficiency", value);
             return entity;
         }
 

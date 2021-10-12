@@ -1,23 +1,18 @@
 ﻿// some stuff borrowed shamelessly and enhanced from Bag of Tricks https://www.nexusmods.com/pathfinderkingmaker/mods/26, which is under the MIT License
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HarmonyLib;
-using UnityEngine;
 using UnityModManagerNet;
-using ModKit;
 
-namespace ModKit {
+namespace ModKit
+{
     public class Logger {
         public static UnityModManager.ModEntry.ModLogger modLogger;
         public static string modEntryPath = null;
 
         public static readonly string logFile = "ModKit";
 
-        private String path;
+        private string path;
         private bool removeHtmlTags = true;
         public bool RemoveHtmlTags { get => removeHtmlTags; set => removeHtmlTags = value; }
         private bool useTimeStamp = true;
@@ -27,7 +22,7 @@ namespace ModKit {
 
         }
 
-        public Logger(String fileName, String fileExtension = ".log") {
+        public Logger(string fileName, string fileExtension = ".log") {
             path = Path.Combine(modEntryPath, (fileName + fileExtension));
             Clear();
         }
@@ -109,7 +104,7 @@ namespace ModKit {
         public HtmlLogger() : this(Logger.logFile) {
         }
 
-        public HtmlLogger(String fileName) : base(fileName, ".html") {
+        public HtmlLogger(string fileName) : base(fileName, ".html") {
             this.RemoveHtmlTags = false;
             this.UseTimeStamp = false;
         }

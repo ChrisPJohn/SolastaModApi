@@ -8,8 +8,15 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionActionAffinity))]
-    public static class FeatureDefinitionActionAffinityExtensions
+    public static partial class FeatureDefinitionActionAffinityExtensions
     {
+        public static T SetAllowedActionTypes<T>(this T entity, bool[] value)
+            where T : FeatureDefinitionActionAffinity
+        {
+            entity.AllowedActionTypes = value;
+            return entity;
+        }
+
         public static T SetEitherMainOrBonus<T>(this T entity, bool value)
             where T : FeatureDefinitionActionAffinity
         {

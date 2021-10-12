@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(BestiaryTableDefinition))]
-    public static class BestiaryTableDefinitionExtensions
+    public static partial class BestiaryTableDefinitionExtensions
     {
         public static T SetCellHeight<T>(this T entity, float value)
             where T : BestiaryTableDefinition

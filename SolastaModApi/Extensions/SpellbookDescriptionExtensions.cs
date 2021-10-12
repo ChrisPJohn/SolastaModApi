@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SpellbookDescription))]
-    public static class SpellbookDescriptionExtensions
+    public static partial class SpellbookDescriptionExtensions
     {
         public static T SetPagesCapacity<T>(this T entity, int value)
             where T : SpellbookDescription

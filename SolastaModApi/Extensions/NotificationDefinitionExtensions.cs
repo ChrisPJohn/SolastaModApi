@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(NotificationDefinition))]
-    public static class NotificationDefinitionExtensions
+    public static partial class NotificationDefinitionExtensions
     {
         public static T SetContextualImageSize<T>(this T entity, Vector2 value)
             where T : NotificationDefinition

@@ -1,15 +1,10 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
 using UnityEngine;
-using UnityModManagerNet;
-using UnityEngine.UI;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 
 using GL = UnityEngine.GUILayout;
 
-namespace ModKit {
+namespace ModKit
+{
     public static partial class UI {
 
         // GUILayout wrappers and extensions so other modules can use UI.MethodName()
@@ -35,7 +30,7 @@ namespace ModKit {
         public static void BeginHorizontal(params GUILayoutOption[] options) { GL.BeginHorizontal(options); }
         public static void EndHorizontal() { GL.EndHorizontal(); }
         public static GL.AreaScope AreaScope(Rect screenRect) { return new GL.AreaScope(screenRect); }
-        public static GL.AreaScope AreaScope(Rect screenRect, String text) { return new GL.AreaScope(screenRect, text); }
+        public static GL.AreaScope AreaScope(Rect screenRect, string text) { return new GL.AreaScope(screenRect, text); }
         public static GL.HorizontalScope HorizontalScope(params GUILayoutOption[] options) { return new GL.HorizontalScope(options);  }
         public static GL.HorizontalScope HorizontalScope(GUIStyle style, params GUILayoutOption[] options) { return new GL.HorizontalScope(style, options); }
         public static GL.VerticalScope VerticalScope(params GUILayoutOption[] options) { return new GL.VerticalScope(options); }

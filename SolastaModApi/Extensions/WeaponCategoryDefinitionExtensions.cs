@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(WeaponCategoryDefinition))]
-    public static class WeaponCategoryDefinitionExtensions
+    public static partial class WeaponCategoryDefinitionExtensions
     {
         public static T SetCategoryChoice<T>(this T entity, WeaponCategoryDefinition.CategoryChoiceEnum value)
             where T : WeaponCategoryDefinition

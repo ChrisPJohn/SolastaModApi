@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ActionDefinition))]
-    public static class ActionDefinitionExtensions
+    public static partial class ActionDefinitionExtensions
     {
         public static T SetAbilityScore<T>(this T entity, string value)
             where T : ActionDefinition
@@ -61,6 +61,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDisplayPowerTooltip<T>(this T entity, bool value)
+            where T : ActionDefinition
+        {
+            entity.SetField("displayPowerTooltip", value);
+            return entity;
+        }
+
         public static T SetFeedbackOnHoverType<T>(this T entity, FeedbackOnHoverType value)
             where T : ActionDefinition
         {
@@ -93,6 +100,13 @@ namespace SolastaModApi.Extensions
             where T : ActionDefinition
         {
             entity.SetField("iterativeTargeting", value);
+            return entity;
+        }
+
+        public static T SetMatchingCondition<T>(this T entity, string value)
+            where T : ActionDefinition
+        {
+            entity.SetField("matchingCondition", value);
             return entity;
         }
 
@@ -156,6 +170,20 @@ namespace SolastaModApi.Extensions
             where T : ActionDefinition
         {
             entity.SetField("stealthBreakerBehavior", value);
+            return entity;
+        }
+
+        public static T SetTargetParameter<T>(this T entity, int value)
+            where T : ActionDefinition
+        {
+            entity.SetField("targetParameter", value);
+            return entity;
+        }
+
+        public static T SetTargetType<T>(this T entity, TargetType value)
+            where T : ActionDefinition
+        {
+            entity.SetField("targetType", value);
             return entity;
         }
 

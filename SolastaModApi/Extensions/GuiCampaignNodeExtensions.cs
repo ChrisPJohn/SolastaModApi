@@ -8,19 +8,12 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiCampaignNode))]
-    public static class GuiCampaignNodeExtensions
+    public static partial class GuiCampaignNodeExtensions
     {
         public static T SetGameCampaignNode<T>(this T entity, GameCampaignNode value)
             where T : GuiCampaignNode
         {
             entity.SetField("gameCampaignNode", value);
-            return entity;
-        }
-
-        public static T SetListing<T>(this T entity, string value)
-            where T : GuiCampaignNode
-        {
-            entity.SetField("listing", value);
             return entity;
         }
     }

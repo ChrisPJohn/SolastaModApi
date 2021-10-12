@@ -1,5 +1,5 @@
 using SolastaModApi.Infrastructure;
-using UnityEngine;
+using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RoomBlueprint))]
-    public static class RoomBlueprintExtensions
+    public static partial class RoomBlueprintExtensions
     {
         public static T SetCellInfos<T>(this T entity, int[] value)
             where T : RoomBlueprint
@@ -32,24 +32,38 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetGrounMaskSprite<T>(this T entity, Sprite value)
+        public static T SetGroundElevationSpriteReference<T>(this T entity, AssetReferenceSprite value)
             where T : RoomBlueprint
         {
-            entity.SetField("grounMaskSprite", value);
+            entity.SetField("groundElevationSpriteReference", value);
             return entity;
         }
 
-        public static T SetWallAndOpeningSprite<T>(this T entity, Sprite value)
+        public static T SetGroundMaskSpriteReference<T>(this T entity, AssetReferenceSprite value)
             where T : RoomBlueprint
         {
-            entity.SetField("wallAndOpeningSprite", value);
+            entity.SetField("groundMaskSpriteReference", value);
             return entity;
         }
 
-        public static T SetWallSprite<T>(this T entity, Sprite value)
+        public static T SetSurfaceInfos<T>(this T entity, int[] value)
             where T : RoomBlueprint
         {
-            entity.SetField("wallSprite", value);
+            entity.SetField("surfaceInfos", value);
+            return entity;
+        }
+
+        public static T SetWallAndOpeningSpriteReference<T>(this T entity, AssetReferenceSprite value)
+            where T : RoomBlueprint
+        {
+            entity.SetField("wallAndOpeningSpriteReference", value);
+            return entity;
+        }
+
+        public static T SetWallSpriteReference<T>(this T entity, AssetReferenceSprite value)
+            where T : RoomBlueprint
+        {
+            entity.SetField("wallSpriteReference", value);
             return entity;
         }
     }

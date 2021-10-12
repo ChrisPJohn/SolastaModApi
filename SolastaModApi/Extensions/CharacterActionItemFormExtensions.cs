@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterActionItemForm))]
-    public static class CharacterActionItemFormExtensions
+    public static partial class CharacterActionItemFormExtensions
     {
         public static T SetActionActivated<T>(this T entity, CharacterActionItemForm.ActionActivatedHandler value)
             where T : CharacterActionItemForm
@@ -187,6 +187,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSlotStatusPrefab<T>(this T entity, GameObject value)
+            where T : CharacterActionItemForm
+        {
+            entity.SetField("slotStatusPrefab", value);
+            return entity;
+        }
+
         public static T SetStackCountGroup<T>(this T entity, RectTransform value)
             where T : CharacterActionItemForm
         {
@@ -205,6 +212,13 @@ namespace SolastaModApi.Extensions
             where T : CharacterActionItemForm
         {
             entity.SetField("tooltip", value);
+            return entity;
+        }
+
+        public static T SetUseSlotsTable<T>(this T entity, RectTransform value)
+            where T : CharacterActionItemForm
+        {
+            entity.SetField("useSlotsTable", value);
             return entity;
         }
     }

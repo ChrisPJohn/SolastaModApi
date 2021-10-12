@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionFeatureSet))]
-    public static class FeatureDefinitionFeatureSetExtensions
+    public static partial class FeatureDefinitionFeatureSetExtensions
     {
         public static T SetDefaultSelection<T>(this T entity, int value)
             where T : FeatureDefinitionFeatureSet
@@ -21,6 +21,13 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionFeatureSet
         {
             entity.SetField("enumerateInDescription", value);
+            return entity;
+        }
+
+        public static T SetHasRacialAffinity<T>(this T entity, bool value)
+            where T : FeatureDefinitionFeatureSet
+        {
+            entity.SetField("hasRacialAffinity", value);
             return entity;
         }
 

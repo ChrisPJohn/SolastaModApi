@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(InteractionNodeDescription))]
-    public static class InteractionNodeDescriptionExtensions
+    public static partial class InteractionNodeDescriptionExtensions
     {
         public static T SetOrientation<T>(this T entity, LocationDefinitions.Orientation value)
             where T : InteractionNodeDescription

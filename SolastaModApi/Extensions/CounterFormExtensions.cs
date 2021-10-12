@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CounterForm))]
-    public static class CounterFormExtensions
+    public static partial class CounterFormExtensions
     {
         public static T SetAddProficiencyBonus<T>(this T entity, bool value)
             where T : CounterForm

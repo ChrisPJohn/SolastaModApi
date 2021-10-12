@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(HumanoidMonsterPresentationDefinition))]
-    public static class HumanoidMonsterPresentationDefinitionExtensions
+    public static partial class HumanoidMonsterPresentationDefinitionExtensions
     {
         public static T SetAgeMorphotypeValue<T>(this T entity, float value)
             where T : HumanoidMonsterPresentationDefinition
@@ -32,6 +32,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetBodyDecorationColorMorphotype<T>(this T entity, string value)
+            where T : HumanoidMonsterPresentationDefinition
+        {
+            entity.SetField("bodyDecorationColorMorphotype", value);
+            return entity;
+        }
+
         public static T SetBodyDecorationMorphotype<T>(this T entity, string value)
             where T : HumanoidMonsterPresentationDefinition
         {
@@ -43,6 +50,13 @@ namespace SolastaModApi.Extensions
             where T : HumanoidMonsterPresentationDefinition
         {
             entity.SetField("eyeColorMorphotype", value);
+            return entity;
+        }
+
+        public static T SetEyeMorphotype<T>(this T entity, string value)
+            where T : HumanoidMonsterPresentationDefinition
+        {
+            entity.SetField("eyeMorphotype", value);
             return entity;
         }
 
@@ -78,13 +92,6 @@ namespace SolastaModApi.Extensions
             where T : HumanoidMonsterPresentationDefinition
         {
             entity.SetField("hairShapeMorphotype", value);
-            return entity;
-        }
-
-        public static T SetHasMonsterPortraitBackground<T>(this T entity, bool value)
-            where T : HumanoidMonsterPresentationDefinition
-        {
-            entity.SetField("hasMonsterPortraitBackground", value);
             return entity;
         }
 
@@ -134,6 +141,13 @@ namespace SolastaModApi.Extensions
             where T : HumanoidMonsterPresentationDefinition
         {
             entity.SetField("raceDefinition", value);
+            return entity;
+        }
+
+        public static T SetScarsMorphotype<T>(this T entity, string value)
+            where T : HumanoidMonsterPresentationDefinition
+        {
+            entity.SetField("scarsMorphotype", value);
             return entity;
         }
 

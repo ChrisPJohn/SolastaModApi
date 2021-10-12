@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureDeviceParameters))]
-    public static class TooltipFeatureDeviceParametersExtensions
+    public static partial class TooltipFeatureDeviceParametersExtensions
     {
         public static T SetAttunementLabel<T>(this T entity, GuiLabel value)
             where T : TooltipFeatureDeviceParameters

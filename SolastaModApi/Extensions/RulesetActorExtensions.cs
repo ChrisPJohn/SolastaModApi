@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetActor))]
-    public static class RulesetActorExtensions
+    public static partial class RulesetActorExtensions
     {
         public static T SetAbilityScoreIncreased<T>(this T entity, RulesetActor.AbilityScoreIncreasedHandler value)
             where T : RulesetActor
@@ -21,6 +21,20 @@ namespace SolastaModApi.Extensions
             where T : RulesetActor
         {
             entity.SetField("actionModifier", value);
+            return entity;
+        }
+
+        public static T SetActorReplaced<T>(this T entity, RulesetActor.ActorReplacedHandler value)
+            where T : RulesetActor
+        {
+            entity.SetField("<ActorReplaced>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetAdditionalSaveDieRolled<T>(this T entity, RulesetActor.AdditionalSaveDieRolledHandler value)
+            where T : RulesetActor
+        {
+            entity.SetField("<AdditionalSaveDieRolled>k__BackingField", value);
             return entity;
         }
 
@@ -84,6 +98,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetActor
         {
             entity.SetField("<ConditionSaveRerollRequested>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetCurrentHitPoints<T>(this T entity, int value)
+            where T : RulesetActor
+        {
+            entity.SetProperty("CurrentHitPoints", value);
             return entity;
         }
 
@@ -164,6 +185,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetImmuneToSpellLevel<T>(this T entity, RulesetActor.ImmuneToSpellLevelHandler value)
+            where T : RulesetActor
+        {
+            entity.SetField("<ImmuneToSpellLevel>k__BackingField", value);
+            return entity;
+        }
+
         public static T SetIncomingAttackRolled<T>(this T entity, RulesetActor.IncomingAttackRolledHandler value)
             where T : RulesetActor
         {
@@ -178,10 +206,45 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMatchingCancellingCondition<T>(this T entity, bool value)
+            where T : RulesetActor
+        {
+            entity.SetField("matchingCancellingCondition", value);
+            return entity;
+        }
+
+        public static T SetMatchingInterruption<T>(this T entity, bool value)
+            where T : RulesetActor
+        {
+            entity.SetField("matchingInterruption", value);
+            return entity;
+        }
+
+        public static T SetMaxExtentY<T>(this T entity, int value)
+            where T : RulesetActor
+        {
+            entity.SetProperty("MaxExtentY", value);
+            return entity;
+        }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetActor
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetPostLoaded<T>(this T entity, bool value)
             where T : RulesetActor
         {
             entity.SetField("<PostLoaded>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetReplacedAbilityScoreForSave<T>(this T entity, RulesetActor.ReplacedAbilityScoreForSaveHandler value)
+            where T : RulesetActor
+        {
+            entity.SetField("<ReplacedAbilityScoreForSave>k__BackingField", value);
             return entity;
         }
 
@@ -196,6 +259,20 @@ namespace SolastaModApi.Extensions
             where T : RulesetActor
         {
             entity.SetField("side", value);
+            return entity;
+        }
+
+        public static T SetSizeParams<T>(this T entity, RulesetActor.SizeParameters value)
+            where T : RulesetActor
+        {
+            entity.SizeParams = value;
+            return entity;
+        }
+
+        public static T SetSortIndex<T>(this T entity, int value)
+            where T : RulesetActor
+        {
+            entity.SortIndex = value;
             return entity;
         }
 

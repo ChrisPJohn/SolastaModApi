@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectAdvancement))]
-    public static class EffectAdvancementExtensions
+    public static partial class EffectAdvancementExtensions
     {
         public static T SetAdditionalDicePerIncrement<T>(this T entity, int value)
             where T : EffectAdvancement
@@ -38,6 +38,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetAdditionalSubtargetsPerIncrement<T>(this T entity, int value)
+            where T : EffectAdvancement
+        {
+            entity.SetField("additionalSubtargetsPerIncrement", value);
+            return entity;
+        }
+
         public static T SetAdditionalSummonsPerIncrement<T>(this T entity, int value)
             where T : EffectAdvancement
         {
@@ -63,6 +70,13 @@ namespace SolastaModApi.Extensions
             where T : EffectAdvancement
         {
             entity.SetField("additionalTempHPPerIncrement", value);
+            return entity;
+        }
+
+        public static T SetAdditionalWeaponDie<T>(this T entity, int value)
+            where T : EffectAdvancement
+        {
+            entity.SetField("additionalWeaponDie", value);
             return entity;
         }
 

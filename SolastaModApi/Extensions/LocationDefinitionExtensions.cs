@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LocationDefinition))]
-    public static class LocationDefinitionExtensions
+    public static partial class LocationDefinitionExtensions
     {
         public static T SetAlwaysHidden<T>(this T entity, bool value)
             where T : LocationDefinition
@@ -23,6 +23,13 @@ namespace SolastaModApi.Extensions
             where T : LocationDefinition
         {
             entity.SetField("audioState", value);
+            return entity;
+        }
+
+        public static T SetCanAttackNonHostileCharacters<T>(this T entity, bool value)
+            where T : LocationDefinition
+        {
+            entity.SetField("canAttackNonHostileCharacters", value);
             return entity;
         }
 
@@ -72,6 +79,13 @@ namespace SolastaModApi.Extensions
             where T : LocationDefinition
         {
             entity.SetField("locationPresentation", value);
+            return entity;
+        }
+
+        public static T SetRenderSettingsSceneProfile<T>(this T entity, RenderSettingsSceneProfile value)
+            where T : LocationDefinition
+        {
+            entity.RenderSettingsSceneProfile = value;
             return entity;
         }
 

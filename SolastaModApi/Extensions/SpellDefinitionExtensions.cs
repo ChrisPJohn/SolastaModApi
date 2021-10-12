@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SpellDefinition))]
-    public static class SpellDefinitionExtensions
+    public static partial class SpellDefinitionExtensions
     {
         public static T SetAiParameters<T>(this T entity, SpellAIParameters value)
             where T : SpellDefinition
@@ -29,6 +29,13 @@ namespace SolastaModApi.Extensions
             where T : SpellDefinition
         {
             entity.SetField("concentrationAction", value);
+            return entity;
+        }
+
+        public static T SetDisplayConditionDuration<T>(this T entity, bool value)
+            where T : SpellDefinition
+        {
+            entity.SetField("displayConditionDuration", value);
             return entity;
         }
 
@@ -120,6 +127,13 @@ namespace SolastaModApi.Extensions
             where T : SpellDefinition
         {
             entity.SetField("spellsBundle", value);
+            return entity;
+        }
+
+        public static T SetTerminateOnItemUnequip<T>(this T entity, bool value)
+            where T : SpellDefinition
+        {
+            entity.SetField("terminateOnItemUnequip", value);
             return entity;
         }
 

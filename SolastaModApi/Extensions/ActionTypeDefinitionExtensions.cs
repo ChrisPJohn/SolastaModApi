@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ActionTypeDefinition))]
-    public static class ActionTypeDefinitionExtensions
+    public static partial class ActionTypeDefinitionExtensions
     {
         public static T SetColor<T>(this T entity, Color value)
             where T : ActionTypeDefinition

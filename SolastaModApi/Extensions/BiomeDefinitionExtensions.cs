@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(BiomeDefinition))]
-    public static class BiomeDefinitionExtensions
+    public static partial class BiomeDefinitionExtensions
     {
         public static T SetEncounterTable<T>(this T entity, EncounterTableDefinition value)
             where T : BiomeDefinition

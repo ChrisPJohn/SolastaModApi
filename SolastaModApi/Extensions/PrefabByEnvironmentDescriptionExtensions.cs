@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(PrefabByEnvironmentDescription))]
-    public static class PrefabByEnvironmentDescriptionExtensions
+    public static partial class PrefabByEnvironmentDescriptionExtensions
     {
         public static T SetEnvironment<T>(this T entity, string value)
             where T : PrefabByEnvironmentDescription

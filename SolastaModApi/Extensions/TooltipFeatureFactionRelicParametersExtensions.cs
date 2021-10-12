@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TooltipFeatureFactionRelicParameters))]
-    public static class TooltipFeatureFactionRelicParametersExtensions
+    public static partial class TooltipFeatureFactionRelicParametersExtensions
     {
         public static T SetFactionItemPrefab<T>(this T entity, GameObject value)
             where T : TooltipFeatureFactionRelicParameters

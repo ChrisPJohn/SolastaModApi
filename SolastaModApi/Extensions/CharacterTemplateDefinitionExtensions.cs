@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterTemplateDefinition))]
-    public static class CharacterTemplateDefinitionExtensions
+    public static partial class CharacterTemplateDefinitionExtensions
     {
         public static T SetAbilityScores<T>(this T entity, int[] value)
             where T : CharacterTemplateDefinition
@@ -88,6 +88,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetBodyDecorationColorMorphotype<T>(this T entity, string value)
+            where T : CharacterTemplateDefinition
+        {
+            entity.SetField("bodyDecorationColorMorphotype", value);
+            return entity;
+        }
+
         public static T SetBodyDecorationMorphotype<T>(this T entity, string value)
             where T : CharacterTemplateDefinition
         {
@@ -120,6 +127,13 @@ namespace SolastaModApi.Extensions
             where T : CharacterTemplateDefinition
         {
             entity.SetField("eyeColorMorphotype", value);
+            return entity;
+        }
+
+        public static T SetEyeMorphotype<T>(this T entity, string value)
+            where T : CharacterTemplateDefinition
+        {
+            entity.SetField("eyeMorphotype", value);
             return entity;
         }
 
@@ -197,6 +211,13 @@ namespace SolastaModApi.Extensions
             where T : CharacterTemplateDefinition
         {
             entity.SetField("pronoun", value);
+            return entity;
+        }
+
+        public static T SetScarsMorphotype<T>(this T entity, string value)
+            where T : CharacterTemplateDefinition
+        {
+            entity.SetField("scarsMorphotype", value);
             return entity;
         }
 

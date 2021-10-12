@@ -8,12 +8,19 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ConditionOperationDescription))]
-    public static class ConditionOperationDescriptionExtensions
+    public static partial class ConditionOperationDescriptionExtensions
     {
         public static T SetCanSaveToCancel<T>(this T entity, bool value)
             where T : ConditionOperationDescription
         {
             entity.SetField("canSaveToCancel", value);
+            return entity;
+        }
+
+        public static T SetConditionDefinition<T>(this T entity, ConditionDefinition value)
+            where T : ConditionOperationDescription
+        {
+            entity.ConditionDefinition = value;
             return entity;
         }
 
@@ -28,6 +35,13 @@ namespace SolastaModApi.Extensions
             where T : ConditionOperationDescription
         {
             entity.SetField("hasSavingThrow", value);
+            return entity;
+        }
+
+        public static T SetOperation<T>(this T entity, ConditionOperationDescription.ConditionOperation value)
+            where T : ConditionOperationDescription
+        {
+            entity.Operation = value;
             return entity;
         }
 

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiEffectProxyDefinition))]
-    public static class GuiEffectProxyDefinitionExtensions
+    public static partial class GuiEffectProxyDefinitionExtensions
     {
         public static T SetEffectProxyDefinition<T>(this T entity, EffectProxyDefinition value)
             where T : GuiEffectProxyDefinition

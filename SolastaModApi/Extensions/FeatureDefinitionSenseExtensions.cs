@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionSense))]
-    public static class FeatureDefinitionSenseExtensions
+    public static partial class FeatureDefinitionSenseExtensions
     {
         public static T SetSenseRange<T>(this T entity, int value)
             where T : FeatureDefinitionSense

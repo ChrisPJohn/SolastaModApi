@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ReactionDefinition))]
-    public static class ReactionDefinitionExtensions
+    public static partial class ReactionDefinitionExtensions
     {
         public static T SetReactDescription<T>(this T entity, string value)
             where T : ReactionDefinition
@@ -21,6 +21,13 @@ namespace SolastaModApi.Extensions
             where T : ReactionDefinition
         {
             entity.SetField("reactTitle", value);
+            return entity;
+        }
+
+        public static T SetValidationDismissesSimilarReactions<T>(this T entity, bool value)
+            where T : ReactionDefinition
+        {
+            entity.SetField("validationDismissesSimilarReactions", value);
             return entity;
         }
     }

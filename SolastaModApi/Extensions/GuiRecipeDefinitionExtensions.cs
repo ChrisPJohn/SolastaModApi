@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiRecipeDefinition))]
-    public static class GuiRecipeDefinitionExtensions
+    public static partial class GuiRecipeDefinitionExtensions
     {
         public static T SetRecipeDefinition<T>(this T entity, RecipeDefinition value)
             where T : GuiRecipeDefinition

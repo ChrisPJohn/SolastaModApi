@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetLightSource))]
-    public static class RulesetLightSourceExtensions
+    public static partial class RulesetLightSourceExtensions
     {
         public static T SetAssetGUID<T>(this T entity, string value)
             where T : RulesetLightSource
@@ -47,6 +47,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetIsDayCycleActive<T>(this T entity, bool value)
+            where T : RulesetLightSource
+        {
+            entity.IsDayCycleActive = value;
+            return entity;
+        }
+
+        public static T SetIsObscured<T>(this T entity, bool value)
+            where T : RulesetLightSource
+        {
+            entity.IsObscured = value;
+            return entity;
+        }
+
         public static T SetIsSpot<T>(this T entity, bool value)
             where T : RulesetLightSource
         {
@@ -79,6 +93,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetLightSource
         {
             entity.SetField("lightSourceType", value);
+            return entity;
+        }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetLightSource
+        {
+            entity.Name = value;
             return entity;
         }
 

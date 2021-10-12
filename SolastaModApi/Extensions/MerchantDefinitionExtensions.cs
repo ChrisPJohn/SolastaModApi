@@ -8,33 +8,33 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MerchantDefinition))]
-    public static class MerchantDefinitionExtensions
+    public static partial class MerchantDefinitionExtensions
     {
         public static T SetBuyBackPercent<T>(this T entity, int value)
             where T : MerchantDefinition
         {
-            entity.SetField("buyBackPercent", value);
+            entity.BuyBackPercent = value;
             return entity;
         }
 
         public static T SetCanDetectMagic<T>(this T entity, bool value)
             where T : MerchantDefinition
         {
-            entity.SetField("canDetectMagic", value);
+            entity.CanDetectMagic = value;
             return entity;
         }
 
         public static T SetCanIdentify<T>(this T entity, bool value)
             where T : MerchantDefinition
         {
-            entity.SetField("canIdentify", value);
+            entity.CanIdentify = value;
             return entity;
         }
 
         public static T SetDetectMagicCostGp<T>(this T entity, int value)
             where T : MerchantDefinition
         {
-            entity.SetField("detectMagicCostGp", value);
+            entity.DetectMagicCostGp = value;
             return entity;
         }
 
@@ -55,14 +55,28 @@ namespace SolastaModApi.Extensions
         public static T SetIdentifyCostGp<T>(this T entity, int value)
             where T : MerchantDefinition
         {
-            entity.SetField("identifyCostGp", value);
+            entity.IdentifyCostGp = value;
+            return entity;
+        }
+
+        public static T SetInDungeonEditor<T>(this T entity, bool value)
+            where T : MerchantDefinition
+        {
+            entity.InDungeonEditor = value;
             return entity;
         }
 
         public static T SetOverchargePercent<T>(this T entity, int value)
             where T : MerchantDefinition
         {
-            entity.SetField("overchargePercent", value);
+            entity.OverchargePercent = value;
+            return entity;
+        }
+
+        public static T SetUserMerchantInventory<T>(this T entity, bool value)
+            where T : MerchantDefinition
+        {
+            entity.SetField("<UserMerchantInventory>k__BackingField", value);
             return entity;
         }
     }

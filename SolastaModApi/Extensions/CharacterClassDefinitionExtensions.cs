@@ -11,7 +11,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterClassDefinition))]
-    public static class CharacterClassDefinitionExtensions
+    public static partial class CharacterClassDefinitionExtensions
     {
         public static T SetClassAnimationId<T>(this T entity, ClassAnimationId value)
             where T : CharacterClassDefinition

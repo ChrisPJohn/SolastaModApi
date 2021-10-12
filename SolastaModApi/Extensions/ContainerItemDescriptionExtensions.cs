@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ContainerItemDescription))]
-    public static class ContainerItemDescriptionExtensions
+    public static partial class ContainerItemDescriptionExtensions
     {
         public static T SetMinSlotsNumber<T>(this T entity, int value)
             where T : ContainerItemDescription

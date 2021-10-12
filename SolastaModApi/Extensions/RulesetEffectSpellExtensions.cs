@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetEffectSpell))]
-    public static class RulesetEffectSpellExtensions
+    public static partial class RulesetEffectSpellExtensions
     {
         public static T SetCaster<T>(this T entity, RulesetCharacter value)
             where T : RulesetEffectSpell
@@ -31,10 +31,31 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMetamagicOption<T>(this T entity, MetamagicOptionDefinition value)
+            where T : RulesetEffectSpell
+        {
+            entity.MetamagicOption = value;
+            return entity;
+        }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetEffectSpell
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetOriginItem<T>(this T entity, RulesetItemDevice value)
             where T : RulesetEffectSpell
         {
             entity.SetField("originItem", value);
+            return entity;
+        }
+
+        public static T SetSlotLevel<T>(this T entity, int value)
+            where T : RulesetEffectSpell
+        {
+            entity.SlotLevel = value;
             return entity;
         }
 

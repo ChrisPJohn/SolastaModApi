@@ -62,8 +62,24 @@ namespace SolastaModApi.Infrastructure
             return instance.GetField<object, V>(fieldName);
         }
 
-        public static void SetProperty<T, V>(this T instance, string propertyName, V value)
+        public static V GetProperty<V>(this object instance, string propertyName)
         {
+            Preconditions.IsNotNull(instance, nameof(instance));
+            Preconditions.IsNotNullOrWhiteSpace(propertyName, nameof(propertyName));
+
+            var t = Traverse.Create(instance);
+
+            if (FailOnMissingMember && !t.Property(propertyName).PropertyExists())
+            {
+                throw new MissingMemberException(instance.GetType().FullName, propertyName);
+            }
+
+            return t.Property<V>(propertyName).Value;
+        }
+
+        public static void SetProperty<T, V>(this T instance, string propertyName, V value) where T : class
+        {
+            Preconditions.IsNotNull(instance, nameof(instance));
             Preconditions.IsNotNullOrWhiteSpace(propertyName, nameof(propertyName));
 
             var t = Traverse.Create(instance);

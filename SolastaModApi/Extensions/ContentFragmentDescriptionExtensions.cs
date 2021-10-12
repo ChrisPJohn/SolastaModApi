@@ -9,26 +9,26 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ContentFragmentDescription))]
-    public static class ContentFragmentDescriptionExtensions
+    public static partial class ContentFragmentDescriptionExtensions
     {
         public static T SetSpriteReference<T>(this T entity, AssetReferenceSprite value)
             where T : ContentFragmentDescription
         {
-            entity.SetField("spriteReference", value);
+            entity.SpriteReference = value;
             return entity;
         }
 
         public static T SetText<T>(this T entity, string value)
             where T : ContentFragmentDescription
         {
-            entity.SetField("text", value);
+            entity.Text = value;
             return entity;
         }
 
         public static T SetType<T>(this T entity, ContentFragmentDescription.FragmentType value)
             where T : ContentFragmentDescription
         {
-            entity.SetField("type", value);
+            entity.Type = value;
             return entity;
         }
     }

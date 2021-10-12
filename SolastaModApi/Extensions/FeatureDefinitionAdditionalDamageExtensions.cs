@@ -1,5 +1,5 @@
 using SolastaModApi.Infrastructure;
-using UnityEngine;
+using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionAdditionalDamage))]
-    public static class FeatureDefinitionAdditionalDamageExtensions
+    public static partial class FeatureDefinitionAdditionalDamageExtensions
     {
         public static T SetAdditionalDamageType<T>(this T entity, AdditionalDamageType value)
             where T : FeatureDefinitionAdditionalDamage
@@ -88,10 +88,17 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetImpactParticle<T>(this T entity, GameObject value)
+        public static T SetIgnoreCriticalDoubleDice<T>(this T entity, bool value)
             where T : FeatureDefinitionAdditionalDamage
         {
-            entity.SetField("impactParticle", value);
+            entity.SetField("ignoreCriticalDoubleDice", value);
+            return entity;
+        }
+
+        public static T SetImpactParticleReference<T>(this T entity, AssetReference value)
+            where T : FeatureDefinitionAdditionalDamage
+        {
+            entity.SetField("impactParticleReference", value);
             return entity;
         }
 

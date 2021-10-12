@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EncounterOccurenceDescription))]
-    public static class EncounterOccurenceDescriptionExtensions
+    public static partial class EncounterOccurenceDescriptionExtensions
     {
         public static T SetEncounterDefinition<T>(this T entity, EncounterDefinition value)
             where T : EncounterOccurenceDescription

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ConsoleTableDefinition))]
-    public static class ConsoleTableDefinitionExtensions
+    public static partial class ConsoleTableDefinitionExtensions
     {
         public static T SetIndentWidth<T>(this T entity, float value)
             where T : ConsoleTableDefinition

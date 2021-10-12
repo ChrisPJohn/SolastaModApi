@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiMerchantDefinition))]
-    public static class GuiMerchantDefinitionExtensions
+    public static partial class GuiMerchantDefinitionExtensions
     {
         public static T SetMerchantDefinition<T>(this T entity, MerchantDefinition value)
             where T : GuiMerchantDefinition

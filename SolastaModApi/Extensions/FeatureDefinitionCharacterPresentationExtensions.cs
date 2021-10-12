@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionCharacterPresentation))]
-    public static class FeatureDefinitionCharacterPresentationExtensions
+    public static partial class FeatureDefinitionCharacterPresentationExtensions
     {
         public static T SetForcedBeard<T>(this T entity, string value)
             where T : FeatureDefinitionCharacterPresentation

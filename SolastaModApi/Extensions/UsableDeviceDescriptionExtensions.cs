@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(UsableDeviceDescription))]
-    public static class UsableDeviceDescriptionExtensions
+    public static partial class UsableDeviceDescriptionExtensions
     {
         public static T SetChargesCapital<T>(this T entity, EquipmentDefinitions.ItemChargesCapital value)
             where T : UsableDeviceDescription

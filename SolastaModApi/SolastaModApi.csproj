@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net472</TargetFramework>
-		<AssemblyVersion>1.0.3.0</AssemblyVersion>
-		<FileVersion>1.0.3.0</FileVersion>
+		<AssemblyVersion>1.2.0.0</AssemblyVersion>
+		<FileVersion>1.2.0.0</FileVersion>
 		<Description></Description>
 		<PackageProjectUrl>https://github.com/SolastaMods/SolastaModApi</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SolastaMods/SolastaModApi</RepositoryUrl>
@@ -72,6 +72,10 @@
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.CoreModule.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
+		<Reference Include="UnityEngine.Timeline">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Unity.Timeline.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
 		<Reference Include="UnityEngine.Addressables">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Unity.Addressables.dll'))</HintPath>
 			<Private>false</Private>
@@ -82,6 +86,10 @@
 		</Reference>
 		<Reference Include="UnityEngine.TextRenderingModule">
 			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.TextRenderingModule.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="WWise">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Wwise.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 	</ItemGroup>

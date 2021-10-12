@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(LightSourceItemDescription))]
-    public static class LightSourceItemDescriptionExtensions
+    public static partial class LightSourceItemDescriptionExtensions
     {
         public static T SetActiveSpriteReference<T>(this T entity, AssetReferenceSprite value)
             where T : LightSourceItemDescription

@@ -8,8 +8,15 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectForm))]
-    public static class EffectFormExtensions
+    public static partial class EffectFormExtensions
     {
+        public static T SetAddBonusMode<T>(this T entity, AddBonusMode value)
+            where T : EffectForm
+        {
+            entity.AddBonusMode = value;
+            return entity;
+        }
+
         public static T SetAlterationForm<T>(this T entity, AlterationForm value)
             where T : EffectForm
         {
@@ -21,6 +28,20 @@ namespace SolastaModApi.Extensions
             where T : EffectForm
         {
             entity.SetField("applyLevel", value);
+            return entity;
+        }
+
+        public static T SetCanSaveToCancel<T>(this T entity, bool value)
+            where T : EffectForm
+        {
+            entity.CanSaveToCancel = value;
+            return entity;
+        }
+
+        public static T SetConditionForm<T>(this T entity, ConditionForm value)
+            where T : EffectForm
+        {
+            entity.ConditionForm = value;
             return entity;
         }
 
@@ -45,10 +66,31 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDamageForm<T>(this T entity, DamageForm value)
+            where T : EffectForm
+        {
+            entity.DamageForm = value;
+            return entity;
+        }
+
         public static T SetDivinationForm<T>(this T entity, DivinationForm value)
             where T : EffectForm
         {
             entity.SetField("divinationForm", value);
+            return entity;
+        }
+
+        public static T SetFormType<T>(this T entity, EffectForm.EffectFormType value)
+            where T : EffectForm
+        {
+            entity.FormType = value;
+            return entity;
+        }
+
+        public static T SetHasSavingThrow<T>(this T entity, bool value)
+            where T : EffectForm
+        {
+            entity.HasSavingThrow = value;
             return entity;
         }
 
@@ -112,6 +154,27 @@ namespace SolastaModApi.Extensions
             where T : EffectForm
         {
             entity.SetField("reviveForm", value);
+            return entity;
+        }
+
+        public static T SetSaveOccurence<T>(this T entity, TurnOccurenceType value)
+            where T : EffectForm
+        {
+            entity.SaveOccurence = value;
+            return entity;
+        }
+
+        public static T SetSavingThrowAffinity<T>(this T entity, EffectSavingThrowType value)
+            where T : EffectForm
+        {
+            entity.SavingThrowAffinity = value;
+            return entity;
+        }
+
+        public static T SetShapeChangeForm<T>(this T entity, ShapeChangeForm value)
+            where T : EffectForm
+        {
+            entity.SetField("shapeChangeForm", value);
             return entity;
         }
 

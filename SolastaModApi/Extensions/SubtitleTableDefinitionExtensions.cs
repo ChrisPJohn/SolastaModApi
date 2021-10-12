@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SubtitleTableDefinition))]
-    public static class SubtitleTableDefinitionExtensions
+    public static partial class SubtitleTableDefinitionExtensions
     {
         public static T SetLineHeight<T>(this T entity, float value)
             where T : SubtitleTableDefinition

@@ -1,6 +1,7 @@
 using SolastaModApi.Infrastructure;
 using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
+using static GraphicsCharacterDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -9,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ItemPresentation))]
-    public static class ItemPresentationExtensions
+    public static partial class ItemPresentationExtensions
     {
         public static T SetArmorAddressableName<T>(this T entity, string value)
             where T : ItemPresentation
@@ -39,7 +40,7 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetFemaleBodyPartBehaviours<T>(this T entity, GraphicsCharacterDefinitions.BodyPartBehaviour[] value)
+        public static T SetFemaleBodyPartBehaviours<T>(this T entity, BodyPartBehaviour[] value)
             where T : ItemPresentation
         {
             entity.SetField("femaleBodyPartBehaviours", value);
@@ -53,7 +54,7 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetMaleBodyPartBehaviours<T>(this T entity, GraphicsCharacterDefinitions.BodyPartBehaviour[] value)
+        public static T SetMaleBodyPartBehaviours<T>(this T entity, BodyPartBehaviour[] value)
             where T : ItemPresentation
         {
             entity.SetField("maleBodyPartBehaviours", value);

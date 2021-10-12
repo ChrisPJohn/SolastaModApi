@@ -8,12 +8,19 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetGadget))]
-    public static class RulesetGadgetExtensions
+    public static partial class RulesetGadgetExtensions
     {
         public static T SetGadgetDefinition<T>(this T entity, GadgetDefinition value)
             where T : RulesetGadget
         {
             entity.SetField("gadgetDefinition", value);
+            return entity;
+        }
+
+        public static T SetPerceptionSizeParams<T>(this T entity, RulesetActor.SizeParameters value)
+            where T : RulesetGadget
+        {
+            entity.PerceptionSizeParams = value;
             return entity;
         }
     }

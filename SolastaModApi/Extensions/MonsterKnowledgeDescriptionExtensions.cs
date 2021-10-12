@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterKnowledgeDescription))]
-    public static class MonsterKnowledgeDescriptionExtensions
+    public static partial class MonsterKnowledgeDescriptionExtensions
     {
         public static T SetKnowledgeLevel<T>(this T entity, string value)
             where T : MonsterKnowledgeDescription

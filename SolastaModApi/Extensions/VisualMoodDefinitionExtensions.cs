@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(VisualMoodDefinition))]
-    public static class VisualMoodDefinitionExtensions
+    public static partial class VisualMoodDefinitionExtensions
     {
         public static VisualMoodDefinition SetGlobalPostProcessProfile(this VisualMoodDefinition entity, PostProcessProfile value)
         {

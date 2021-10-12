@@ -8,12 +8,40 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FurnitureBlueprint))]
-    public static class FurnitureBlueprintExtensions
+    public static partial class FurnitureBlueprintExtensions
     {
+        public static T SetGroundHighPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("groundHighPlacement", value);
+            return entity;
+        }
+
+        public static T SetGroundLowPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("groundLowPlacement", value);
+            return entity;
+        }
+
         public static T SetGroundPlacement<T>(this T entity, bool value)
             where T : FurnitureBlueprint
         {
             entity.SetField("groundPlacement", value);
+            return entity;
+        }
+
+        public static T SetOpeningHighPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("openingHighPlacement", value);
+            return entity;
+        }
+
+        public static T SetOpeningLowPlacement<T>(this T entity, bool value)
+            where T : FurnitureBlueprint
+        {
+            entity.SetField("openingLowPlacement", value);
             return entity;
         }
 

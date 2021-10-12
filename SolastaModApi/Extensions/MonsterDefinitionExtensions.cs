@@ -1,4 +1,5 @@
 using SolastaModApi.Infrastructure;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using TA.AI;
 using static ActionDefinitions;
@@ -12,7 +13,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterDefinition))]
-    public static class MonsterDefinitionExtensions
+    public static partial class MonsterDefinitionExtensions
     {
         public static T SetAbilityScores<T>(this T entity, int[] value)
             where T : MonsterDefinition
@@ -45,7 +46,7 @@ namespace SolastaModApi.Extensions
         public static T SetArmorClass<T>(this T entity, int value)
             where T : MonsterDefinition
         {
-            entity.SetField("armorClass", value);
+            entity.ArmorClass = value;
             return entity;
         }
 
@@ -53,6 +54,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("audioRaceRTPCValue", value);
+            return entity;
+        }
+
+        public static T SetBestiaryCameraOffset<T>(this T entity, Vector3 value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("bestiaryCameraOffset", value);
             return entity;
         }
 
@@ -123,6 +131,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("dualSex", value);
+            return entity;
+        }
+
+        public static T SetDungeonMakerPresence<T>(this T entity, MonsterDefinition.DungeonMaker value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("dungeonMakerPresence", value);
             return entity;
         }
 
@@ -203,13 +218,6 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetInDungeonEditor<T>(this T entity, bool value)
-            where T : MonsterDefinition
-        {
-            entity.SetField("inDungeonEditor", value);
-            return entity;
-        }
-
         public static T SetInterceptStance<T>(this T entity, MoveStance value)
             where T : MonsterDefinition
         {
@@ -221,6 +229,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("isHusk", value);
+            return entity;
+        }
+
+        public static T SetIsUnique<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("isUnique", value);
             return entity;
         }
 
@@ -280,6 +295,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSizeDefinition<T>(this T entity, CharacterSizeDefinition value)
+            where T : MonsterDefinition
+        {
+            entity.SizeDefinition = value;
+            return entity;
+        }
+
         public static T SetSneakStance<T>(this T entity, MoveStance value)
             where T : MonsterDefinition
         {
@@ -290,7 +312,7 @@ namespace SolastaModApi.Extensions
         public static T SetStandardHitPoints<T>(this T entity, int value)
             where T : MonsterDefinition
         {
-            entity.SetField("standardHitPoints", value);
+            entity.StandardHitPoints = value;
             return entity;
         }
 
@@ -305,6 +327,20 @@ namespace SolastaModApi.Extensions
             where T : MonsterDefinition
         {
             entity.SetField("threatEvaluatorDefinition", value);
+            return entity;
+        }
+
+        public static T SetUniqueNameId<T>(this T entity, string value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("uniqueNameId", value);
+            return entity;
+        }
+
+        public static T SetUserMonster<T>(this T entity, bool value)
+            where T : MonsterDefinition
+        {
+            entity.SetField("<UserMonster>k__BackingField", value);
             return entity;
         }
 

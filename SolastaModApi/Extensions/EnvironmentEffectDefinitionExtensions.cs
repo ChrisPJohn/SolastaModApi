@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EnvironmentEffectDefinition))]
-    public static class EnvironmentEffectDefinitionExtensions
+    public static partial class EnvironmentEffectDefinitionExtensions
     {
         public static T SetEffectDescription<T>(this T entity, EffectDescription value)
             where T : EnvironmentEffectDefinition
@@ -21,6 +21,13 @@ namespace SolastaModApi.Extensions
             where T : EnvironmentEffectDefinition
         {
             entity.SetField("inDungeonEditor", value);
+            return entity;
+        }
+
+        public static T SetSoundEffectOnHitDescription<T>(this T entity, SoundEffectOnHitDescription value)
+            where T : EnvironmentEffectDefinition
+        {
+            entity.SetField("soundEffectOnHitDescription", value);
             return entity;
         }
     }

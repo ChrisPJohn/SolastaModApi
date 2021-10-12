@@ -8,12 +8,19 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ConditionForm))]
-    public static class ConditionFormExtensions
+    public static partial class ConditionFormExtensions
     {
         public static T SetApplyToSelf<T>(this T entity, bool value)
             where T : ConditionForm
         {
             entity.SetField("applyToSelf", value);
+            return entity;
+        }
+
+        public static T SetConditionDefinition<T>(this T entity, ConditionDefinition value)
+            where T : ConditionForm
+        {
+            entity.ConditionDefinition = value;
             return entity;
         }
 
@@ -28,6 +35,13 @@ namespace SolastaModApi.Extensions
             where T : ConditionForm
         {
             entity.SetField("forceOnSelf", value);
+            return entity;
+        }
+
+        public static T SetOperation<T>(this T entity, ConditionForm.ConditionOperation value)
+            where T : ConditionForm
+        {
+            entity.Operation = value;
             return entity;
         }
     }

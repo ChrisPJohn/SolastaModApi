@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionSchoolSavant))]
-    public static class FeatureDefinitionSchoolSavantExtensions
+    public static partial class FeatureDefinitionSchoolSavantExtensions
     {
         public static T SetReductionFactor<T>(this T entity, float value)
             where T : FeatureDefinitionSchoolSavant

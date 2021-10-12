@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FallbackImageDescription))]
-    public static class FallbackImageDescriptionExtensions
+    public static partial class FallbackImageDescriptionExtensions
     {
         public static T SetFallbackReference<T>(this T entity, AssetReference value)
             where T : FallbackImageDescription

@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CreditsTableDefinition))]
-    public static class CreditsTableDefinitionExtensions
+    public static partial class CreditsTableDefinitionExtensions
     {
         public static T SetBackersTextAsset<T>(this T entity, TextAsset value)
             where T : CreditsTableDefinition

@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectProxyDefinition))]
-    public static class EffectProxyDefinitionExtensions
+    public static partial class EffectProxyDefinitionExtensions
     {
         public static T SetActionId<T>(this T entity, Id value)
             where T : EffectProxyDefinition
@@ -47,6 +47,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetAttackPower<T>(this T entity, FeatureDefinitionPower value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("attackPower", value);
+            return entity;
+        }
+
         public static T SetCanAttack<T>(this T entity, bool value)
             where T : EffectProxyDefinition
         {
@@ -61,6 +68,20 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetCanMoveOnCharacters<T>(this T entity, bool value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("canMoveOnCharacters", value);
+            return entity;
+        }
+
+        public static T SetConstrainedToSpellArea<T>(this T entity, bool value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("constrainedToSpellArea", value);
+            return entity;
+        }
+
         public static T SetDamageDie<T>(this T entity, DieType value)
             where T : EffectProxyDefinition
         {
@@ -72,6 +93,20 @@ namespace SolastaModApi.Extensions
             where T : EffectProxyDefinition
         {
             entity.SetField("damageType", value);
+            return entity;
+        }
+
+        public static T SetFirstAttackIsFree<T>(this T entity, bool value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("firstAttackIsFree", value);
+            return entity;
+        }
+
+        public static T SetFreeActionId<T>(this T entity, Id value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("freeActionId", value);
             return entity;
         }
 
@@ -110,6 +145,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetMaxSpellLevelImmunity<T>(this T entity, int value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("maxSpellLevelImmunity", value);
+            return entity;
+        }
+
         public static T SetModelScale<T>(this T entity, float value)
             where T : EffectProxyDefinition
         {
@@ -142,6 +184,13 @@ namespace SolastaModApi.Extensions
             where T : EffectProxyDefinition
         {
             entity.SetField("soundEffectOnHitDescription", value);
+            return entity;
+        }
+
+        public static T SetSpellImmunityFromOutside<T>(this T entity, bool value)
+            where T : EffectProxyDefinition
+        {
+            entity.SetField("spellImmunityFromOutside", value);
             return entity;
         }
 

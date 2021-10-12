@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MapWaypointDefinition))]
-    public static class MapWaypointDefinitionExtensions
+    public static partial class MapWaypointDefinitionExtensions
     {
         public static T SetAllowFastTravel<T>(this T entity, bool value)
             where T : MapWaypointDefinition

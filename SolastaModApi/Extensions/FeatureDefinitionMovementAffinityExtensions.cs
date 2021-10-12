@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionMovementAffinity))]
-    public static class FeatureDefinitionMovementAffinityExtensions
+    public static partial class FeatureDefinitionMovementAffinityExtensions
     {
         public static T SetAdditionalFallThreshold<T>(this T entity, int value)
             where T : FeatureDefinitionMovementAffinity
@@ -147,6 +147,13 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionMovementAffinity
         {
             entity.SetField("moveMode", value);
+            return entity;
+        }
+
+        public static T SetSituationalContext<T>(this T entity, SituationalContext value)
+            where T : FeatureDefinitionMovementAffinity
+        {
+            entity.SetField("situationalContext", value);
             return entity;
         }
 

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetItemProperty))]
-    public static class RulesetItemPropertyExtensions
+    public static partial class RulesetItemPropertyExtensions
     {
         public static T SetFeatureDefinition<T>(this T entity, FeatureDefinition value)
             where T : RulesetItemProperty
@@ -17,10 +17,24 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetItemProperty
+        {
+            entity.Name = value;
+            return entity;
+        }
+
         public static T SetRemainingRounds<T>(this T entity, int value)
             where T : RulesetItemProperty
         {
             entity.SetField("<RemainingRounds>k__BackingField", value);
+            return entity;
+        }
+
+        public static T SetSourceEffectGuid<T>(this T entity, ulong value)
+            where T : RulesetItemProperty
+        {
+            entity.SourceEffectGuid = value;
             return entity;
         }
 

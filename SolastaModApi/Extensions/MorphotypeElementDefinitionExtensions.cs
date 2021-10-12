@@ -11,8 +11,22 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MorphotypeElementDefinition))]
-    public static class MorphotypeElementDefinitionExtensions
+    public static partial class MorphotypeElementDefinitionExtensions
     {
+        public static T SetBodyDecorationBlendFactor<T>(this T entity, float value)
+            where T : MorphotypeElementDefinition
+        {
+            entity.SetField("bodyDecorationBlendFactor", value);
+            return entity;
+        }
+
+        public static T SetBodyDecorationType<T>(this T entity, GraphicsDefinitions.BodyDecorationType value)
+            where T : MorphotypeElementDefinition
+        {
+            entity.SetField("bodyDecorationType", value);
+            return entity;
+        }
+
         public static T SetCategory<T>(this T entity, ElementCategory value)
             where T : MorphotypeElementDefinition
         {
@@ -48,10 +62,24 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetReplaceEyeColorMask<T>(this T entity, bool value)
+            where T : MorphotypeElementDefinition
+        {
+            entity.SetField("replaceEyeColorMask", value);
+            return entity;
+        }
+
         public static T SetSecondColor<T>(this T entity, Color value)
             where T : MorphotypeElementDefinition
         {
             entity.SetField("secondColor", value);
+            return entity;
+        }
+
+        public static T SetSubClassFilterMask<T>(this T entity, GraphicsDefinitions.MorphotypeSubclassFilterTag value)
+            where T : MorphotypeElementDefinition
+        {
+            entity.SetField("subClassFilterMask", value);
             return entity;
         }
 

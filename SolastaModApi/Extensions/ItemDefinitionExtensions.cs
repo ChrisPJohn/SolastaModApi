@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(ItemDefinition))]
-    public static class ItemDefinitionExtensions
+    public static partial class ItemDefinitionExtensions
     {
         public static T SetActiveOnGround<T>(this T entity, bool value)
             where T : ItemDefinition
@@ -59,6 +59,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetDestroyedWhenUnequiped<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("destroyedWhenUnequiped", value);
+            return entity;
+        }
+
         public static T SetDocumentDescription<T>(this T entity, DocumentDescription value)
             where T : ItemDefinition
         {
@@ -105,6 +112,104 @@ namespace SolastaModApi.Extensions
             where T : ItemDefinition
         {
             entity.SetField("inDungeonEditor", value);
+            return entity;
+        }
+
+        public static T SetIsAmmunition<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsAmmunition = value;
+            return entity;
+        }
+
+        public static T SetIsArmor<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsArmor = value;
+            return entity;
+        }
+
+        public static T SetIsContainerItem<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsContainerItem = value;
+            return entity;
+        }
+
+        public static T SetIsDocument<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsDocument = value;
+            return entity;
+        }
+
+        public static T SetIsFactionRelic<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsFactionRelic = value;
+            return entity;
+        }
+
+        public static T SetIsFocusItem<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsFocusItem = value;
+            return entity;
+        }
+
+        public static T SetIsFood<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsFood = value;
+            return entity;
+        }
+
+        public static T SetIsLightSourceItem<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsLightSourceItem = value;
+            return entity;
+        }
+
+        public static T SetIsSpellbook<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsSpellbook = value;
+            return entity;
+        }
+
+        public static T SetIsStarterPack<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsStarterPack = value;
+            return entity;
+        }
+
+        public static T SetIsTool<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsTool = value;
+            return entity;
+        }
+
+        public static T SetIsUsableDevice<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsUsableDevice = value;
+            return entity;
+        }
+
+        public static T SetIsWealthPile<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsWealthPile = value;
+            return entity;
+        }
+
+        public static T SetIsWeapon<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.IsWeapon = value;
             return entity;
         }
 
@@ -203,6 +308,13 @@ namespace SolastaModApi.Extensions
             where T : ItemDefinition
         {
             entity.SetField("usableDeviceDescription", value);
+            return entity;
+        }
+
+        public static T SetUserItem<T>(this T entity, bool value)
+            where T : ItemDefinition
+        {
+            entity.SetField("<UserItem>k__BackingField", value);
             return entity;
         }
 

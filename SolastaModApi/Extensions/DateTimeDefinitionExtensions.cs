@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(DateTimeDefinition))]
-    public static class DateTimeDefinitionExtensions
+    public static partial class DateTimeDefinitionExtensions
     {
         public static T SetDay<T>(this T entity, int value)
             where T : DateTimeDefinition

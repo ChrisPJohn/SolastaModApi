@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiCharacterRaceDefinition))]
-    public static class GuiCharacterRaceDefinitionExtensions
+    public static partial class GuiCharacterRaceDefinitionExtensions
     {
         public static T SetCharacterRaceDefinition<T>(this T entity, CharacterRaceDefinition value)
             where T : GuiCharacterRaceDefinition

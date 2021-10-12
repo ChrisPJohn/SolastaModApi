@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MusicalStateDefinition))]
-    public static class MusicalStateDefinitionExtensions
+    public static partial class MusicalStateDefinitionExtensions
     {
         public static T SetAudioStateLocation<T>(this T entity, State value)
             where T : MusicalStateDefinition

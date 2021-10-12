@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterPresentation))]
-    public static class MonsterPresentationExtensions
+    public static partial class MonsterPresentationExtensions
     {
         public static T SetAttachedParticlesReference<T>(this T entity, AssetReference value)
             where T : MonsterPresentation
@@ -61,6 +61,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetFirstCharacterShaderColor<T>(this T entity, Color value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("firstCharacterShaderColor", value);
+            return entity;
+        }
+
         public static T SetHasLightingCutscene<T>(this T entity, bool value)
             where T : MonsterPresentation
         {
@@ -75,6 +82,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetHasPhantomDistortion<T>(this T entity, bool value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("hasPhantomDistortion", value);
+            return entity;
+        }
+
         public static T SetHasPrefabVariants<T>(this T entity, bool value)
             where T : MonsterPresentation
         {
@@ -86,6 +100,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterPresentation
         {
             entity.SetField("hasUniqueName", value);
+            return entity;
+        }
+
+        public static T SetHideDuringCutscene<T>(this T entity, bool value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("hideDuringCutscene", value);
             return entity;
         }
 
@@ -124,6 +145,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetOverrideCharacterShaderColors<T>(this T entity, bool value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("overrideCharacterShaderColors", value);
+            return entity;
+        }
+
         public static T SetPortraitCameraFollowOffset<T>(this T entity, Vector3 value)
             where T : MonsterPresentation
         {
@@ -152,6 +180,13 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetSecondCharacterShaderColor<T>(this T entity, Color value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("secondCharacterShaderColor", value);
+            return entity;
+        }
+
         public static T SetUniqueNameTitle<T>(this T entity, string value)
             where T : MonsterPresentation
         {
@@ -163,6 +198,13 @@ namespace SolastaModApi.Extensions
             where T : MonsterPresentation
         {
             entity.SetField("useCustomMaterials", value);
+            return entity;
+        }
+
+        public static T SetWieldedItemsScale<T>(this T entity, float value)
+            where T : MonsterPresentation
+        {
+            entity.SetField("wieldedItemsScale", value);
             return entity;
         }
     }

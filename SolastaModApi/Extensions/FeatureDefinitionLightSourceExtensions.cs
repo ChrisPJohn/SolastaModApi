@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionLightSource))]
-    public static class FeatureDefinitionLightSourceExtensions
+    public static partial class FeatureDefinitionLightSourceExtensions
     {
         public static T SetLightSourceForm<T>(this T entity, LightSourceForm value)
             where T : FeatureDefinitionLightSource

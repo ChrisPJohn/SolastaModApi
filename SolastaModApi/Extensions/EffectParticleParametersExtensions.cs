@@ -10,7 +10,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectParticleParameters))]
-    public static class EffectParticleParametersExtensions
+    public static partial class EffectParticleParametersExtensions
     {
         public static T SetActiveEffectCellEndParticleReference<T>(this T entity, AssetReference value)
             where T : EffectParticleParameters
@@ -30,6 +30,13 @@ namespace SolastaModApi.Extensions
             where T : EffectParticleParameters
         {
             entity.SetField("activeEffectCellStartParticleReference", value);
+            return entity;
+        }
+
+        public static T SetActiveEffectImpactParticleReference<T>(this T entity, AssetReference value)
+            where T : EffectParticleParameters
+        {
+            entity.SetField("activeEffectImpactParticleReference", value);
             return entity;
         }
 
@@ -58,6 +65,13 @@ namespace SolastaModApi.Extensions
             where T : EffectParticleParameters
         {
             entity.SetField("applyEmissionColorOnWeapons", value);
+            return entity;
+        }
+
+        public static T SetBeforeImpactParticleReference<T>(this T entity, AssetReference value)
+            where T : EffectParticleParameters
+        {
+            entity.SetField("beforeImpactParticleReference", value);
             return entity;
         }
 
@@ -107,6 +121,13 @@ namespace SolastaModApi.Extensions
             where T : EffectParticleParameters
         {
             entity.SetField("effectParticleReference", value);
+            return entity;
+        }
+
+        public static T SetEffectSubTargetParticleReference<T>(this T entity, AssetReference value)
+            where T : EffectParticleParameters
+        {
+            entity.SetField("effectSubTargetParticleReference", value);
             return entity;
         }
 

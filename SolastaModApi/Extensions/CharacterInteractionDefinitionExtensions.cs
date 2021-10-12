@@ -11,7 +11,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CharacterInteractionDefinition))]
-    public static class CharacterInteractionDefinitionExtensions
+    public static partial class CharacterInteractionDefinitionExtensions
     {
         public static T SetActionId<T>(this T entity, Id value)
             where T : CharacterInteractionDefinition

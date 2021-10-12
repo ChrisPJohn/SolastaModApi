@@ -10,12 +10,19 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(GuiPresentation))]
-    public static class GuiPresentationExtensions
+    public static partial class GuiPresentationExtensions
     {
         public static T SetColor<T>(this T entity, Color value)
             where T : GuiPresentation
         {
             entity.SetField("color", value);
+            return entity;
+        }
+
+        public static T SetDescription<T>(this T entity, string value)
+            where T : GuiPresentation
+        {
+            entity.Description = value;
             return entity;
         }
 
@@ -44,6 +51,13 @@ namespace SolastaModApi.Extensions
             where T : GuiPresentation
         {
             entity.SetField("symbolChar", value);
+            return entity;
+        }
+
+        public static T SetTitle<T>(this T entity, string value)
+            where T : GuiPresentation
+        {
+            entity.Title = value;
             return entity;
         }
 

@@ -1,25 +1,22 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
 using UnityEngine;
-using UnityModManagerNet;
-using UnityEngine.UI;
-using HarmonyLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using GL = UnityEngine.GUILayout;
 
-namespace ModKit {
+namespace ModKit
+{
     public static partial class UI {
 
         // UI for picking items from a collection
-        public static void Toolbar(ref int value, String[] texts, params GUILayoutOption[] options) {
+        public static void Toolbar(ref int value, string[] texts, params GUILayoutOption[] options) {
             value = GL.Toolbar(value, texts, options);
         }
-        public static void Toolbar(ref int value, String[] texts, GUIStyle style, params GUILayoutOption[] options) {
+        public static void Toolbar(ref int value, string[] texts, GUIStyle style, params GUILayoutOption[] options) {
             value = GL.Toolbar(value, texts, style, options);
         }
-        public static bool SelectionGrid(ref int selected, String[] texts, int xCols, params GUILayoutOption[] options) {
+        public static bool SelectionGrid(ref int selected, string[] texts, int xCols, params GUILayoutOption[] options) {
             if (xCols <= 0) xCols = texts.Count();
             if (UI.IsNarrow) xCols = Math.Min(4, xCols);
             int sel = selected;
@@ -28,7 +25,7 @@ namespace ModKit {
             selected = GL.SelectionGrid(selected, titles.ToArray(), xCols, options);
             return sel != selected;
         }
-        public static bool SelectionGrid(ref int selected, String[] texts, int xCols, GUIStyle style, params GUILayoutOption[] options) {
+        public static bool SelectionGrid(ref int selected, string[] texts, int xCols, GUIStyle style, params GUILayoutOption[] options) {
             if (xCols <= 0) xCols = texts.Count();
             if (UI.IsNarrow) xCols = Math.Min(4, xCols);
             int sel = selected;
@@ -55,7 +52,7 @@ namespace ModKit {
             selected = GL.SelectionGrid(selected, titles.ToArray(), xCols, style, options);
             return sel != selected;
         }
-        public static void ActionSelectionGrid(ref int selected, String[] texts, int xCols, Action<int> action, params GUILayoutOption[] options) {
+        public static void ActionSelectionGrid(ref int selected, string[] texts, int xCols, Action<int> action, params GUILayoutOption[] options) {
             int sel = selected;
             var titles = texts.Select((a, i) => i == sel ? a.orange().bold() : a);
             if (xCols <= 0) xCols = texts.Count();
@@ -65,7 +62,7 @@ namespace ModKit {
                 action(selected);
             }
         }
-        public static void ActionSelectionGrid(ref int selected, String[] texts, int xCols, Action<int> action, GUIStyle style, params GUILayoutOption[] options) {
+        public static void ActionSelectionGrid(ref int selected, string[] texts, int xCols, Action<int> action, GUIStyle style, params GUILayoutOption[] options) {
             int sel = selected;
             var titles = texts.Select((a, i) => i == sel ? a.orange().bold() : a);
             if (xCols <= 0) xCols = texts.Count();
@@ -96,7 +93,7 @@ namespace ModKit {
                 }
             }
         }
-        public static void EnumGrid<TEnum>(String title, ref TEnum value, int xCols, params GUILayoutOption[] options) where TEnum : struct {
+        public static void EnumGrid<TEnum>(string title, ref TEnum value, int xCols, params GUILayoutOption[] options) where TEnum : struct {
             UI.BeginHorizontal();
             UI.Label(title.cyan(), UI.Width(300));
             UI.Space(25);
@@ -104,11 +101,11 @@ namespace ModKit {
             UI.EndHorizontal();
         }
         public static void EnumerablePicker<T>(
-                String title,
+                string title,
                 ref int selected,
                 IEnumerable<T> range,
                 int xCols,
-                Func<T, String> titleFormater = null,
+                Func<T, string> titleFormater = null,
                 params GUILayoutOption[] options
             ) {
             if (titleFormater == null) titleFormater = (a) => $"{a}";
@@ -121,7 +118,7 @@ namespace ModKit {
             UI.Space(25);
             selected = GL.SelectionGrid(selected, titles.ToArray(), xCols, options);
         }
-        public static NamedFunc<T> TypePicker<T>(String title, ref int selectedIndex, NamedFunc<T>[] items) where T : class {
+        public static NamedFunc<T> TypePicker<T>(string title, ref int selectedIndex, NamedFunc<T>[] items) where T : class {
             int sel = selectedIndex;
             var titles = items.Select((item, i) => i == sel ? item.name.orange().bold() : item.name).ToArray();
             if (title?.Length > 0) { Label(title); }

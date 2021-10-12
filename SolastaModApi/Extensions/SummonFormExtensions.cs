@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(SummonForm))]
-    public static class SummonFormExtensions
+    public static partial class SummonFormExtensions
     {
         public static T SetConditionDefinition<T>(this T entity, ConditionDefinition value)
             where T : SummonForm
@@ -64,6 +64,13 @@ namespace SolastaModApi.Extensions
             where T : SummonForm
         {
             entity.SetField("summonType", value);
+            return entity;
+        }
+
+        public static T SetTrackItem<T>(this T entity, bool value)
+            where T : SummonForm
+        {
+            entity.SetField("trackItem", value);
             return entity;
         }
     }

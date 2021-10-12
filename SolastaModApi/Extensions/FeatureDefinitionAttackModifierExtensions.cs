@@ -1,4 +1,5 @@
 using SolastaModApi.Infrastructure;
+using UnityEngine.AddressableAssets;
 using static RuleDefinitions;
 
 namespace SolastaModApi.Extensions
@@ -8,12 +9,33 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(FeatureDefinitionAttackModifier))]
-    public static class FeatureDefinitionAttackModifierExtensions
+    public static partial class FeatureDefinitionAttackModifierExtensions
     {
+        public static T SetAbilityScoreReplacement<T>(this T entity, AbilityScoreReplacement value)
+            where T : FeatureDefinitionAttackModifier
+        {
+            entity.SetField("abilityScoreReplacement", value);
+            return entity;
+        }
+
         public static T SetAdditionalAttackTag<T>(this T entity, string value)
             where T : FeatureDefinitionAttackModifier
         {
             entity.SetField("additionalAttackTag", value);
+            return entity;
+        }
+
+        public static T SetAdditionalBonusAttackFromMain<T>(this T entity, bool value)
+            where T : FeatureDefinitionAttackModifier
+        {
+            entity.SetField("additionalBonusAttackFromMain", value);
+            return entity;
+        }
+
+        public static T SetAdditionalDamageDice<T>(this T entity, int value)
+            where T : FeatureDefinitionAttackModifier
+        {
+            entity.SetField("additionalDamageDice", value);
             return entity;
         }
 
@@ -49,6 +71,13 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionAttackModifier
         {
             entity.SetField("canDualWieldNonLight", value);
+            return entity;
+        }
+
+        public static T SetDamageDieReplacement<T>(this T entity, DamageDieReplacement value)
+            where T : FeatureDefinitionAttackModifier
+        {
+            entity.SetField("damageDieReplacement", value);
             return entity;
         }
 
@@ -91,6 +120,20 @@ namespace SolastaModApi.Extensions
             where T : FeatureDefinitionAttackModifier
         {
             entity.SetField("followUpStrike", value);
+            return entity;
+        }
+
+        public static T SetImpactParticleReference<T>(this T entity, AssetReference value)
+            where T : FeatureDefinitionAttackModifier
+        {
+            entity.SetField("impactParticleReference", value);
+            return entity;
+        }
+
+        public static T SetReplacedDieType<T>(this T entity, DieType value)
+            where T : FeatureDefinitionAttackModifier
+        {
+            entity.SetField("replacedDieType", value);
             return entity;
         }
     }

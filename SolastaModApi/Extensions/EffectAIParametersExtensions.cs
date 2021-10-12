@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EffectAIParameters))]
-    public static class EffectAIParametersExtensions
+    public static partial class EffectAIParametersExtensions
     {
         public static T SetAoeScoreMultiplier<T>(this T entity, float value)
             where T : EffectAIParameters

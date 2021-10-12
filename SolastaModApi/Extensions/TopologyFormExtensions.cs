@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TopologyForm))]
-    public static class TopologyFormExtensions
+    public static partial class TopologyFormExtensions
     {
         public static T SetChangeType<T>(this T entity, TopologyForm.Type value)
             where T : TopologyForm

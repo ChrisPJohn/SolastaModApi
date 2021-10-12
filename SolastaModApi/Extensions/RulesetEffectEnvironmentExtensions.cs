@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetEffectEnvironment))]
-    public static class RulesetEffectEnvironmentExtensions
+    public static partial class RulesetEffectEnvironmentExtensions
     {
         public static T SetAddDice<T>(this T entity, int value)
             where T : RulesetEffectEnvironment
@@ -21,6 +21,13 @@ namespace SolastaModApi.Extensions
             where T : RulesetEffectEnvironment
         {
             entity.SetField("environmentEffectDefinition", value);
+            return entity;
+        }
+
+        public static T SetName<T>(this T entity, string value)
+            where T : RulesetEffectEnvironment
+        {
+            entity.Name = value;
             return entity;
         }
 

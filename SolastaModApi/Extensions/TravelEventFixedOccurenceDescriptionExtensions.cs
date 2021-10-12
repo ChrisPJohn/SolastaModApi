@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TravelEventFixedOccurenceDescription))]
-    public static class TravelEventFixedOccurenceDescriptionExtensions
+    public static partial class TravelEventFixedOccurenceDescriptionExtensions
     {
         public static T SetEventDefinition<T>(this T entity, TravelEventDefinition value)
             where T : TravelEventFixedOccurenceDescription

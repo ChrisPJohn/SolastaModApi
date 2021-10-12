@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(TutorialStepDefinition))]
-    public static class TutorialStepDefinitionExtensions
+    public static partial class TutorialStepDefinitionExtensions
     {
         public static T SetHideCharacterInspection<T>(this T entity, bool value)
             where T : TutorialStepDefinition

@@ -10,8 +10,15 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CreditsEntryDescription))]
-    public static class CreditsEntryDescriptionExtensions
+    public static partial class CreditsEntryDescriptionExtensions
     {
+        public static T SetEntryType<T>(this T entity, EntryType value)
+            where T : CreditsEntryDescription
+        {
+            entity.EntryType = value;
+            return entity;
+        }
+
         public static T SetImageHeight<T>(this T entity, float value)
             where T : CreditsEntryDescription
         {
@@ -23,6 +30,13 @@ namespace SolastaModApi.Extensions
             where T : CreditsEntryDescription
         {
             entity.SetField("spriteReference", value);
+            return entity;
+        }
+
+        public static T SetTextContent<T>(this T entity, string value)
+            where T : CreditsEntryDescription
+        {
+            entity.TextContent = value;
             return entity;
         }
     }

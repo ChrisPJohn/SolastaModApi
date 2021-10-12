@@ -1,5 +1,6 @@
 using SolastaModApi.Infrastructure;
 using static RuleDefinitions;
+using static GraphicsCharacterDefinitions;
 
 namespace SolastaModApi.Extensions
 {
@@ -8,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(StageDefinition))]
-    public static class StageDefinitionExtensions
+    public static partial class StageDefinitionExtensions
     {
         public static T SetAddAudioCharacter<T>(this T entity, bool value)
             where T : StageDefinition
@@ -17,7 +18,7 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetGraphicsCharacterType<T>(this T entity, GraphicsCharacterDefinitions.CharacterType value)
+        public static T SetGraphicsCharacterType<T>(this T entity, CharacterType value)
             where T : StageDefinition
         {
             entity.SetField("graphicsCharacterType", value);

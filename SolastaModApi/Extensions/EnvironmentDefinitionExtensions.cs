@@ -9,7 +9,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(EnvironmentDefinition))]
-    public static class EnvironmentDefinitionExtensions
+    public static partial class EnvironmentDefinitionExtensions
     {
         public static EnvironmentDefinition SetOutdoor(this EnvironmentDefinition entity, bool value)
         {

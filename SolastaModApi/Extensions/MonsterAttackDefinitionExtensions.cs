@@ -11,7 +11,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(MonsterAttackDefinition))]
-    public static class MonsterAttackDefinitionExtensions
+    public static partial class MonsterAttackDefinitionExtensions
     {
         public static T SetActionType<T>(this T entity, ActionType value)
             where T : MonsterAttackDefinition

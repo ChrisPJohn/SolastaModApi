@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(AmmunitionDescription))]
-    public static class AmmunitionDescriptionExtensions
+    public static partial class AmmunitionDescriptionExtensions
     {
         public static T SetAmmunitionType<T>(this T entity, string value)
             where T : AmmunitionDescription

@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(KillForm))]
-    public static class KillFormExtensions
+    public static partial class KillFormExtensions
     {
         public static T SetChallengeRating<T>(this T entity, float value)
             where T : KillForm

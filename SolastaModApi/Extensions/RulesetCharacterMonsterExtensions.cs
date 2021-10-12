@@ -8,7 +8,7 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(RulesetCharacterMonster))]
-    public static class RulesetCharacterMonsterExtensions
+    public static partial class RulesetCharacterMonsterExtensions
     {
         public static T SetBodyAssetPrefix<T>(this T entity, string value)
             where T : RulesetCharacterMonster
@@ -17,10 +17,45 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
+        public static T SetConjuredByParty<T>(this T entity, bool value)
+            where T : RulesetCharacterMonster
+        {
+            entity.ConjuredByParty = value;
+            return entity;
+        }
+
+        public static T SetCurrentMonsterAttack<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.CurrentMonsterAttack = value;
+            return entity;
+        }
+
         public static T SetDroppedLootPackOverride<T>(this T entity, LootPackDefinition value)
             where T : RulesetCharacterMonster
         {
             entity.SetField("droppedLootPackOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionDamagingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionDamagingPenaltyOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionKillingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionKillingPenaltyOverride", value);
+            return entity;
+        }
+
+        public static T SetFactionThievingPenaltyOverride<T>(this T entity, int value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("factionThievingPenaltyOverride", value);
             return entity;
         }
 
@@ -70,6 +105,20 @@ namespace SolastaModApi.Extensions
             where T : RulesetCharacterMonster
         {
             entity.SetField("morphotypeAssetPrefix", value);
+            return entity;
+        }
+
+        public static T SetOriginalFormCharacter<T>(this T entity, RulesetCharacter value)
+            where T : RulesetCharacterMonster
+        {
+            entity.SetField("originalFormCharacter", value);
+            return entity;
+        }
+
+        public static T SetPrespawning<T>(this T entity, bool value)
+            where T : RulesetCharacterMonster
+        {
+            entity.Prespawning = value;
             return entity;
         }
 

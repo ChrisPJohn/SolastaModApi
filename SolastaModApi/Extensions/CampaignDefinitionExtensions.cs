@@ -9,12 +9,19 @@ namespace SolastaModApi.Extensions
     /// If you find a problem please report at https://github.com/SolastaMods/SolastaModApi/issues.
     /// </summary>
     [TargetType(typeof(CampaignDefinition))]
-    public static class CampaignDefinitionExtensions
+    public static partial class CampaignDefinitionExtensions
     {
         public static T SetCalendar<T>(this T entity, CalendarDefinition value)
             where T : CampaignDefinition
         {
             entity.SetField("calendar", value);
+            return entity;
+        }
+
+        public static T SetCanSkipIntro<T>(this T entity, bool value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("canSkipIntro", value);
             return entity;
         }
 
@@ -29,6 +36,13 @@ namespace SolastaModApi.Extensions
             where T : CampaignDefinition
         {
             entity.SetField("editorOnly", value);
+            return entity;
+        }
+
+        public static T SetFastTimeScaleDuringTravel<T>(this T entity, float value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("fastTimeScaleDuringTravel", value);
             return entity;
         }
 
@@ -74,17 +88,38 @@ namespace SolastaModApi.Extensions
             return entity;
         }
 
-        public static T SetMaxLevel<T>(this T entity, int value)
+        public static T SetLevelCap<T>(this T entity, int value)
             where T : CampaignDefinition
         {
-            entity.SetField("maxLevel", value);
+            entity.SetField("levelCap", value);
             return entity;
         }
 
-        public static T SetMinLevel<T>(this T entity, int value)
+        public static T SetMaxStartLevel<T>(this T entity, int value)
             where T : CampaignDefinition
         {
-            entity.SetField("minLevel", value);
+            entity.SetField("maxStartLevel", value);
+            return entity;
+        }
+
+        public static T SetMinStartLevel<T>(this T entity, int value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("minStartLevel", value);
+            return entity;
+        }
+
+        public static T SetMultiplayer<T>(this T entity, bool value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("multiplayer", value);
+            return entity;
+        }
+
+        public static T SetNormalTimeScaleDuringTravel<T>(this T entity, float value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("normalTimeScaleDuringTravel", value);
             return entity;
         }
 
@@ -113,6 +148,20 @@ namespace SolastaModApi.Extensions
             where T : CampaignDefinition
         {
             entity.SetField("sceneReference", value);
+            return entity;
+        }
+
+        public static T SetSkipIntroEntrance<T>(this T entity, int value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("skipIntroEntrance", value);
+            return entity;
+        }
+
+        public static T SetSkipIntroLocation<T>(this T entity, string value)
+            where T : CampaignDefinition
+        {
+            entity.SetField("skipIntroLocation", value);
             return entity;
         }
 
